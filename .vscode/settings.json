@@ -23,5 +23,8 @@
   "editor.wordWrap": "on",
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
   }
 }
