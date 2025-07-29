@@ -4,9 +4,16 @@ import React from "react";
 
 import styles from "./index.module.css";
 
+const hoverDirectionMap = {
+  up: "[&>*]:bottom-0 [&>*]:group-hover:bottom-1",
+  bottom: "[&>*]:top-0 [&>*]:group-hover:top-1",
+  left: "[&>*]:right-0 [&>*]:group-hover:right-1",
+  right: "[&>*]:left-0 [&>*]:group-hover:left-1",
+} as const;
+
 type GhostButtonProps = React.ComponentProps<"button"> & {
   asChild?: boolean;
-  hoverDirection?: "up" | "bottom" | "left" | "right";
+  hoverDirection?: keyof typeof hoverDirectionMap;
   hoverColor?: "accent";
   color?: "primary" | "secondary" | "accent";
   children: React.ReactNode;
@@ -25,17 +32,18 @@ const GhostButton = ({
 
   return (
     <Comp
+      data-slot="button"
       className={cn(
+        "group",
         styles.button,
         styles[hoverColor],
         styles[color],
+        hoverDirectionMap[hoverDirection],
         className
       )}
       {...props}
     >
-      <div className={styles[hoverDirection]}>
-        {asChild ? <span>{children}</span> : children}
-      </div>
+      {asChild ? <span>{children}</span> : children}
     </Comp>
   );
 };

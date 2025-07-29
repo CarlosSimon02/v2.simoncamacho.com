@@ -1,30 +1,9 @@
+@reference "../../../styles/index.css";
+
 .button {
-  @apply group;
-
   & > *:not(.sr-only) {
-    @apply relative 
-    duration-300 
+    @apply relative duration-300 
     motion-safe:transition-all;
-  }
-
-  &.up {
-    @apply bottom-0 
-    group-hover:bottom-1;
-  }
-
-  &.bottom {
-    @apply top-0 
-    group-hover:top-1;
-  }
-
-  &.left {
-    @apply right-0 
-    group-hover:right-1;
-  }
-
-  &.right {
-    @apply left-0 
-    group-hover:left-1;
   }
 
   &.primary {
