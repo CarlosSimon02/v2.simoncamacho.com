@@ -7,41 +7,41 @@
     motion-safe:transition-all;
   }
 
-  .up {
+  &.up {
     @apply bottom-0 
     group-hover:bottom-1;
   }
 
-  .bottom {
+  &.bottom {
     @apply top-0 
     group-hover:top-1;
   }
 
-  .left {
+  &.left {
     @apply right-0 
     group-hover:right-1;
   }
 
-  .right {
+  &.right {
     @apply left-0 
     group-hover:left-1;
   }
 
-  .primary {
+  &.primary {
     @apply text-dark-gray-950 
     dark:text-light-gray-50;
   }
 
-  .secondary {
+  &.secondary {
     @apply text-shadow-dark-gray-50 
     dark:text-light-gray-950;
   }
 
-  .accent {
+  &.accent {
     @apply text-accent;
   }
 
-  .accentHover {
+  &.accentHover {
     @apply group-hover:text-accent;
   }
 }
