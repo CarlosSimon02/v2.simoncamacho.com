@@ -1,0 +1,12 @@
+@reference "../../styles/index.css";
+
+.header {
+  @apply sticky 
+  top-0
+  z-40
+  h-[var(--header-height)]
+  bg-red-500
+  shadow-none
+  duration-300
+  motion-safe:transition-all;
+}

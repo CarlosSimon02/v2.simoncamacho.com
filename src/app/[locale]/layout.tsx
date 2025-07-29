@@ -3,6 +3,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 
 import Background from "@/components/Background";
+import TailwindScreenIndicator from "@/components/TailwindScreenIndicator";
 import { LEXEND, MONTSERRAT, OSWALD } from "@/constants/fonts";
 import "@/styles/index.css";
 import { cn } from "@/utils";
@@ -28,6 +29,7 @@ const LocaleLayout = async ({
         <NextIntlClientProvider>
           <Background />
           {children}
+          <TailwindScreenIndicator />
         </NextIntlClientProvider>
       </body>
     </html>

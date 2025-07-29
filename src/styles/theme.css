@@ -30,3 +30,9 @@
   --color-white: oklch(1 0 269);
   --color-black: oklch(0 0 269);
 }
+
+html {
+  @apply [--header-height:3.5rem] 
+  md:[--header-height:4.5rem]
+  lg:[--header-height:5rem];
+}

@@ -1,0 +1,53 @@
+@reference "../../styles/index.css";
+
+.circleContainer {
+  @apply fixed  
+  bottom-1 
+  left-1 
+  z-50 
+  flex 
+  size-6 
+  items-center 
+  justify-center 
+  rounded-full 
+  bg-white 
+  p-3
+  text-xs
+  text-black 
+  dark:bg-white 
+  dark:text-black;
+
+  .xsLabel {
+    @apply block 
+    sm:hidden;
+  }
+
+  .smLabel {
+    @apply hidden 
+    sm:block 
+    md:hidden;
+  }
+
+  .mdLabel {
+    @apply hidden 
+    md:block 
+    lg:hidden;
+  }
+
+  .lgLabel {
+    @apply hidden 
+    lg:block 
+    xl:hidden;
+  }
+
+  .xlLabel {
+    @apply hidden 
+    xl:block 
+    2xl:hidden;
+  }
+
+  .xl2Label {
+    @apply hidden 
+    2xl:block;
+  }
+}

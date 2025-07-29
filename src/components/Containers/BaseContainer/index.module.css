@@ -1,0 +1,10 @@
+@reference "../../../styles/index.css";
+
+.baseContainer {
+  @apply mx-auto 
+  w-full 
+  max-w-[90rem] 
+  px-[1rem] 
+  sm:px-[2rem] 
+  lg:px-[3rem];
+}
