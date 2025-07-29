@@ -1,0 +1,26 @@
+@reference "../../styles/index.css";
+
+.wrapper {
+  @apply fixed 
+  inset-0 
+  -z-9999;
+
+  .main {
+    @apply dark:bg-dark-gray-900 
+    size-full
+    bg-white;
+  }
+
+  .triangle {
+    @apply dark:bg-dark-gray-950
+    bg-light-gray-50
+    absolute 
+    top-0 
+    left-0
+    aspect-[600/400] 
+    w-xl 
+    md:w-[50vw];
+
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+  }
+}

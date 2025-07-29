@@ -1,0 +1,32 @@
+@theme {
+  --font-montserrat: var(--font-montserrat);
+  --font-oswald: var(--font-oswald);
+  --font-lexend: var(--font-lexend);
+
+  --color-dark-gray-50: oklch(0.32 0 269);
+  --color-dark-gray-100: oklch(0.31 0 269);
+  --color-dark-gray-200: oklch(0.29 0 269);
+  --color-dark-gray-300: oklch(0.27 0 269);
+  --color-dark-gray-400: oklch(0.25 0 269);
+  --color-dark-gray-500: oklch(0.23 0 269);
+  --color-dark-gray-600: oklch(0.21 0 269);
+  --color-dark-gray-700: oklch(0.19 0 269);
+  --color-dark-gray-800: oklch(0.17 0 269);
+  --color-dark-gray-900: oklch(0.15 0 269);
+  --color-dark-gray-950: oklch(0.14 0 269);
+
+  --color-light-gray-50: oklch(0.99 0 269);
+  --color-light-gray-100: oklch(0.98 0 269);
+  --color-light-gray-200: oklch(0.96 0 269);
+  --color-light-gray-300: oklch(0.94 0 269);
+  --color-light-gray-400: oklch(0.92 0 269);
+  --color-light-gray-500: oklch(0.9 0 269);
+  --color-light-gray-600: oklch(0.88 0 269);
+  --color-light-gray-700: oklch(0.86 0 269);
+  --color-light-gray-800: oklch(0.84 0 269);
+  --color-light-gray-900: oklch(0.82 0 269);
+  --color-light-gray-950: oklch(0.8 0 269);
+
+  --color-white: oklch(1 0 269);
+  --color-black: oklch(0 0 269);
+}

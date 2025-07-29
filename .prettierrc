@@ -8,5 +8,6 @@
     "prettier-plugin-organize-imports",
     "prettier-plugin-tailwindcss"
   ],
-  "endOfLine": "auto"
+  "endOfLine": "auto",
+  "tailwindPreserveWhitespace": true
 }
