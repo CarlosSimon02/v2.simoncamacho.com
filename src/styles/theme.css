@@ -27,12 +27,7 @@
   --color-light-gray-900: oklch(0.82 0 269);
   --color-light-gray-950: oklch(0.8 0 269);
 
+  --color-accent: oklch(0.6658 0.1574 58.32);
   --color-white: oklch(1 0 269);
   --color-black: oklch(0 0 269);
-}
-
-html {
-  @apply [--header-height:3.5rem] 
-  md:[--header-height:4.5rem]
-  lg:[--header-height:5rem];
 }

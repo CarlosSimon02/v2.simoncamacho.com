@@ -11,7 +11,7 @@ type HeaderProps = {
 const Header = ({ className }: HeaderProps) => {
   return (
     <header className={cn(styles.header, className)}>
-      <BaseContainer></BaseContainer>
+      <BaseContainer className={styles.baseContainer}></BaseContainer>
     </header>
   );
 };

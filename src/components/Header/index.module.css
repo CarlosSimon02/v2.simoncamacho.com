@@ -9,4 +9,11 @@
   shadow-none
   duration-300
   motion-safe:transition-all;
+
+  .baseContainer {
+    @apply relative 
+    flex 
+    items-center 
+    justify-between;
+  }
 }

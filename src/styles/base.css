@@ -1,17 +1,33 @@
-* {
-  @apply subpixel-antialiased;
-}
+@layer base {
+  * {
+    @apply subpixel-antialiased;
+  }
 
-html,
-body {
-  @apply h-full;
-}
+  html,
+  body {
+    @apply h-full;
+  }
 
-body {
-  @apply font-lexend 
-  dark:bg-dark-gray-950 
-  bg-white 
-  text-black 
-  motion-safe:scroll-smooth 
-  dark:text-white;
+  html {
+    @apply [--header-height:3.5rem] 
+    md:[--header-height:4.5rem]
+    lg:[--header-height:5rem];
+  }
+
+  body {
+    @apply font-lexend 
+    dark:bg-dark-gray-950 
+    bg-white 
+    text-black 
+    motion-safe:scroll-smooth 
+    dark:text-white;
+  }
+
+  button,
+  a,
+  [role="button"] {
+    &:not(:disabled) {
+      @apply cursor-pointer;
+    }
+  }
 }
