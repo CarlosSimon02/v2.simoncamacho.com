@@ -1,6 +1,40 @@
 {
-  "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+  "containers": {
+    "navBar": {
+      "controls": {
+        "toggle": "Toggle navigation menu"
+      },
+      "mobileMenu": {
+        "title": "Navigation Menu",
+        "description": "Browse through the main sections of the site.",
+        "close": "Close mobile menu",
+        "avatar": "Mobile Nav Avatar"
+      },
+      "links": {
+        "home": "Home",
+        "about": "About",
+        "experience": "Experience",
+        "projects": "Projects",
+        "connect": "Connect"
+      }
+    }
+  },
+  "common": {
+    "mainNavigation": "Main navigation",
+    "navigateToHome": "Navigate to Home",
+    "languageDropdown": {
+      "label": "Choose Language"
+    },
+    "themeToggle": {
+      "darkMode": "Toggle Dark Mode",
+      "lightMode": "Toggle Light Mode"
+    },
+    "socialLinks": {
+      "reddit": "Visit my Reddit profile",
+      "frontendmentor": "Visit my Frontend Mentor profile",
+      "github": "Visit my GitHub",
+      "linkedin": "Visit my LinkedIn profile",
+      "email": "Send me an email"
+    }
   }
 }
