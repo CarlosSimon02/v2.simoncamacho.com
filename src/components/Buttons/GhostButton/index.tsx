@@ -23,9 +23,9 @@ const colorMap = {
 
 type GhostButtonProps = React.ComponentProps<"button"> & {
   asChild?: boolean;
-  hoverDirection?: keyof typeof hoverDirectionMap;
-  hoverColor?: keyof typeof hoverColorMap;
-  color?: keyof typeof colorMap;
+  hoverDirection?: "up" | "bottom" | "left" | "right";
+  hoverColor?: "accent";
+  color?: "primary" | "secondary" | "accent";
   children: React.ReactNode;
 };
 
@@ -44,14 +44,15 @@ const GhostButton = ({
     <Comp
       className={cn(
         styles.button,
-        hoverDirectionMap[hoverDirection],
-        hoverColorMap[hoverColor],
-        colorMap[color],
+        styles[hoverColor],
+        styles[color],
         className
       )}
       {...props}
     >
-      <div>{asChild ? <span>{children}</span> : children}</div>
+      <div className={styles[hoverDirection]}>
+        {asChild ? <span>{children}</span> : children}
+      </div>
     </Comp>
   );
 };
