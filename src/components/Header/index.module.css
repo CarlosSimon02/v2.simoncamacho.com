@@ -12,7 +12,8 @@
   .baseContainer {
     @apply relative 
     flex 
-    items-center 
+    h-full 
+    items-center
     justify-between;
   }
 }
