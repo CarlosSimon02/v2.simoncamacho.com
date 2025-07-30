@@ -5,10 +5,10 @@ import React from "react";
 import styles from "./index.module.css";
 
 const hoverDirectionMap = {
-  up: "[&>*]:bottom-0 [&>*]:group-hover:bottom-1",
-  bottom: "[&>*]:top-0 [&>*]:group-hover:top-1",
-  left: "[&>*]:right-0 [&>*]:group-hover:right-1",
-  right: "[&>*]:left-0 [&>*]:group-hover:left-1",
+  up: "[&>*]:bottom-0 [&>*]:group-hover:bottom-[0.1875rem]",
+  bottom: "[&>*]:top-0 [&>*]:group-hover:top-[0.1875rem]",
+  left: "[&>*]:right-0 [&>*]:group-hover:right-[0.1875rem]",
+  right: "[&>*]:left-0 [&>*]:group-hover:left-[0.1875rem]",
 } as const;
 
 type GhostButtonProps = React.ComponentProps<"button"> & {
