@@ -9,9 +9,11 @@
   }
 
   html {
-    @apply [--header-height:3.5rem] 
-    md:[--header-height:4.5rem]
-    lg:[--header-height:5rem];
+    @apply [--content-padding-x:0] 
+    [--header-height:3.5rem]
+    md:[--header-height:4.5rem] 
+    lg:[--header-height:5rem]
+    xl:[--content-padding-x:10.5rem];
   }
 
   body {

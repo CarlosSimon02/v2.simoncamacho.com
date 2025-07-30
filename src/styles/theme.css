@@ -15,6 +15,18 @@
   --color-dark-gray-900: oklch(0.15 0 269);
   --color-dark-gray-950: oklch(0.14 0 269);
 
+  --color-medium-gray-50: oklch(0.48 0 269);
+  --color-medium-gray-100: oklch(0.47 0 269);
+  --color-medium-gray-200: oklch(0.45 0 269);
+  --color-medium-gray-300: oklch(0.43 0 269);
+  --color-medium-gray-400: oklch(0.41 0 269);
+  --color-medium-gray-500: oklch(0.39 0 269);
+  --color-medium-gray-600: oklch(0.37 0 269);
+  --color-medium-gray-700: oklch(0.35 0 269);
+  --color-medium-gray-800: oklch(0.33 0 269);
+  --color-medium-gray-900: oklch(0.31 0 269);
+  --color-medium-gray-950: oklch(0.3 0 269);
+
   --color-light-gray-50: oklch(0.99 0 269);
   --color-light-gray-100: oklch(0.98 0 269);
   --color-light-gray-200: oklch(0.96 0 269);

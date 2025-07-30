@@ -36,14 +36,14 @@ const GhostButton = ({
       className={cn(
         "group",
         styles.button,
-        styles[hoverColor],
+        styles[`${hoverColor}Hover`],
         styles[color],
         hoverDirectionMap[hoverDirection],
         className
       )}
       {...props}
     >
-      {asChild ? <span>{children}</span> : children}
+      {asChild ? children : <span>{children}</span>}
     </Comp>
   );
 };

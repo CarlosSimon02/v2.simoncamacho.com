@@ -12,8 +12,8 @@
   }
 
   &.secondary {
-    @apply text-shadow-dark-gray-50 
-    dark:text-light-gray-950;
+    @apply text-medium-gray-950 
+    dark:text-medium-gray-50;
   }
 
   &.accent {
@@ -21,6 +21,8 @@
   }
 
   &.accentHover {
-    @apply group-hover:text-accent;
+    &:hover {
+      @apply text-accent;
+    }
   }
 }

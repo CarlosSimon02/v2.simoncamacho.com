@@ -15,5 +15,13 @@
     h-full 
     items-center
     justify-between;
+
+    .navMenu {
+      @apply absolute 
+      hidden
+      md:left-36 
+      md:block
+      xl:left-[var(--content-padding-x)];
+    }
   }
 }
