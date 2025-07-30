@@ -1,3 +1,5 @@
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 @theme {
   --font-montserrat: var(--font-montserrat);
   --font-oswald: var(--font-oswald);
@@ -15,17 +17,29 @@
   --color-dark-gray-900: oklch(0.15 0 269);
   --color-dark-gray-950: oklch(0.14 0 269);
 
-  --color-medium-gray-50: oklch(0.48 0 269);
-  --color-medium-gray-100: oklch(0.47 0 269);
-  --color-medium-gray-200: oklch(0.45 0 269);
-  --color-medium-gray-300: oklch(0.43 0 269);
-  --color-medium-gray-400: oklch(0.41 0 269);
-  --color-medium-gray-500: oklch(0.39 0 269);
-  --color-medium-gray-600: oklch(0.37 0 269);
-  --color-medium-gray-700: oklch(0.35 0 269);
-  --color-medium-gray-800: oklch(0.33 0 269);
-  --color-medium-gray-900: oklch(0.31 0 269);
-  --color-medium-gray-950: oklch(0.3 0 269);
+  --color-medium-gray-50: oklch(0.52 0 269);
+  --color-medium-gray-100: oklch(0.51 0 269);
+  --color-medium-gray-200: oklch(0.49 0 269);
+  --color-medium-gray-300: oklch(0.47 0 269);
+  --color-medium-gray-400: oklch(0.45 0 269);
+  --color-medium-gray-500: oklch(0.43 0 269);
+  --color-medium-gray-600: oklch(0.41 0 269);
+  --color-medium-gray-700: oklch(0.39 0 269);
+  --color-medium-gray-800: oklch(0.37 0 269);
+  --color-medium-gray-900: oklch(0.35 0 269);
+  --color-medium-gray-950: oklch(0.34 0 269);
+
+  --color-pale-gray-50: oklch(0.72 0 269);
+  --color-pale-gray-100: oklch(0.71 0 269);
+  --color-pale-gray-200: oklch(0.69 0 269);
+  --color-pale-gray-300: oklch(0.67 0 269);
+  --color-pale-gray-400: oklch(0.65 0 269);
+  --color-pale-gray-500: oklch(0.63 0 269);
+  --color-pale-gray-600: oklch(0.61 0 269);
+  --color-pale-gray-700: oklch(0.59 0 269);
+  --color-pale-gray-800: oklch(0.57 0 269);
+  --color-pale-gray-900: oklch(0.55 0 269);
+  --color-pale-gray-950: oklch(0.54 0 269);
 
   --color-light-gray-50: oklch(0.99 0 269);
   --color-light-gray-100: oklch(0.98 0 269);

@@ -1,0 +1,29 @@
+@reference "../../styles/index.css";
+
+.button {
+  @apply relative 
+  size-6;
+
+  .icon {
+    @apply absolute 
+    top-0 
+    left-0
+    size-full
+    transition-all
+    duration-300;
+  }
+
+  .moonIcon {
+    @apply rotate-180 
+    opacity-0
+    dark:rotate-0 
+    dark:opacity-100;
+  }
+
+  .sunIcon {
+    @apply rotate-0
+    opacity-100 
+    dark:-rotate-180 
+    dark:opacity-0;
+  }
+}

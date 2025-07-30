@@ -12,8 +12,8 @@
   }
 
   &.secondary {
-    @apply text-medium-gray-950 
-    dark:text-medium-gray-50;
+    @apply dark:text-medium-gray-50 
+    text-pale-gray-50;
   }
 
   &.accent {

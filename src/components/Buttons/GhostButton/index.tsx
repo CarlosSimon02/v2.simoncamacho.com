@@ -43,7 +43,7 @@ const GhostButton = ({
       )}
       {...props}
     >
-      {asChild ? children : <span>{children}</span>}
+      {children}
     </Comp>
   );
 };
