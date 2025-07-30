@@ -1,6 +1,6 @@
 @layer base {
   * {
-    @apply subpixel-antialiased;
+    @apply subpixel-antialiased transition-colors duration-300;
   }
 
   html,
