@@ -3,6 +3,7 @@
 import BaseContainer from "@/components/Containers/BaseContainer";
 import LanguageDropdown from "@/components/LanguageDropdown";
 import LogoLink from "@/components/LogoLink";
+import MobileMenu from "@/components/MobileMenu";
 import ThemeToggle from "@/components/ThemeToggle";
 import { cn } from "@/utils";
 import styles from "./index.module.css";
@@ -21,6 +22,7 @@ const Header = ({ className }: HeaderProps) => {
         <div className="flex items-center gap-4 md:gap-6">
           <LanguageDropdown />
           <ThemeToggle />
+          <MobileMenu className="md:hidden" />
         </div>
       </BaseContainer>
     </header>

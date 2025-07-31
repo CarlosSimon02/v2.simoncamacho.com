@@ -1,0 +1,12 @@
+@reference "../../../styles/index.css";
+
+.list {
+  @apply flex flex-col gap-6;
+}
+
+.iconLabel {
+  @apply font-oswald 
+  flex 
+  items-center 
+  gap-3;
+}

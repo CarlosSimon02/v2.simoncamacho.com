@@ -55,7 +55,7 @@ const LanguageDropdown = () => {
                 <language.icon className="size-4" />
                 <span>{language.name}</span>
               </div>
-              {isActive && <CheckIcon className="size-5" aria-hidden="true" />}
+              {isActive && <CheckIcon className="size-4" aria-hidden="true" />}
             </DropdownMenuItem>
           );
         })}

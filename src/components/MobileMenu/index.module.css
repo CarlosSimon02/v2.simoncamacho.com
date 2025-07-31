@@ -1,0 +1,52 @@
+@reference "../../styles/index.css";
+
+.backgroundWrapper {
+  @apply absolute 
+  inset-0 
+  overflow-hidden;
+
+  .ripple {
+    @apply absolute 
+    -top-7 
+    -left-7 
+    size-[12.5rem];
+  }
+
+  .contentWrapper {
+    @apply absolute 
+    inset-0 
+    overflow-y-scroll 
+    p-6;
+
+    .closeButton {
+      @apply absolute 
+      top-4 
+      right-4 
+      z-10;
+    }
+
+    .heroWaving {
+      @apply absolute 
+      -top-33 
+      -left-24 
+      h-auto 
+      w-[12.5rem] 
+      rotate-130;
+    }
+
+    .mobileNav {
+      @apply pt-46 
+      pb-12;
+    }
+  }
+}
+
+.socialsWrapper {
+  @apply mx-auto 
+  flex 
+  w-full 
+  max-w-[17rem] 
+  flex-wrap 
+  justify-center 
+  gap-6;
+}
