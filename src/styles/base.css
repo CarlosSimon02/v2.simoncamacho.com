@@ -1,6 +1,17 @@
 @layer base {
   * {
-    @apply subpixel-antialiased duration-300 motion-safe:transition-colors;
+    @apply outline-accent 
+    subpixel-antialiased
+    outline-0 
+    duration-300
+    motion-safe:transition-colors;
+  }
+
+  *:focus-visible {
+    @apply outline-accent 
+    outline-offset-1 
+    outline-dashed
+    motion-safe:transition-[outline-width];
   }
 
   html,
