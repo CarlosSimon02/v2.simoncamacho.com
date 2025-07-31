@@ -1,6 +1,6 @@
 @layer base {
   * {
-    @apply subpixel-antialiased transition-colors duration-300;
+    @apply subpixel-antialiased duration-300 motion-safe:transition-colors;
   }
 
   html,

@@ -1,6 +1,7 @@
 "use client";
 
 import BaseContainer from "@/components/Containers/BaseContainer";
+import LanguageDropdown from "@/components/LanguageDropdown";
 import LogoLink from "@/components/LogoLink";
 import ThemeToggle from "@/components/ThemeToggle";
 import { cn } from "@/utils";
@@ -18,6 +19,7 @@ const Header = ({ className }: HeaderProps) => {
         <LogoLink />
         <NavMenu className={cn(styles.navMenu)} />
         <div className="flex items-center gap-4 md:gap-6">
+          <LanguageDropdown />
           <ThemeToggle />
         </div>
       </BaseContainer>
