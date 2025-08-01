@@ -14,11 +14,6 @@
     motion-safe:transition-[outline-width];
   }
 
-  html,
-  body {
-    @apply h-full;
-  }
-
   html {
     @apply [--content-padding-x:0] 
     [--header-height:3.5rem]

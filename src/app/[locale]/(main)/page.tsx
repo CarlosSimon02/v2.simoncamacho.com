@@ -1,5 +1,9 @@
 const HomePage = () => {
-  return <></>;
+  return (
+    <>
+      <div className="h-[10000px] w-screen bg-transparent"></div>
+    </>
+  );
 };
 
 export default HomePage;
