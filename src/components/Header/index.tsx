@@ -8,14 +8,21 @@ import ThemeToggle from "@/components/ThemeToggle";
 import { cn } from "@/utils";
 import styles from "./index.module.css";
 import NavMenu from "./NavMenu";
+import useScrollDetection from "./useScrollDetection";
 
 type HeaderProps = {
   className?: string;
 };
 
+const SCROLL_THRESHOLD_PX = 64;
+
 const Header = ({ className }: HeaderProps) => {
+  const hasScrolled = useScrollDetection(SCROLL_THRESHOLD_PX);
+
   return (
-    <header className={cn(styles.header, className)}>
+    <header
+      className={cn(styles.header, hasScrolled && styles.scrolled, className)}
+    >
       <BaseContainer className={styles.baseContainer}>
         <LogoLink />
         <NavMenu className={cn(styles.navMenu)} />

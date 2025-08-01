@@ -9,6 +9,10 @@
   duration-300
   motion-safe:transition-all;
 
+  &.scrolled {
+    @apply dark:bg-dark-gray-950 bg-white shadow-sm backdrop-blur-md;
+  }
+
   .baseContainer {
     @apply relative 
     flex 
