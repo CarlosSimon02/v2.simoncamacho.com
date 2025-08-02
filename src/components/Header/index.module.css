@@ -1,22 +1,24 @@
 @reference "../../styles/index.css";
 
 .header {
-  @apply dark:border-dark-gray-500 
-  border-light-gray-400
-  sticky
+  @apply sticky
   top-0
   z-40
   h-[var(--header-height)]
   border-0
-  shadow-none 
+  border-transparent
+  shadow-none
   duration-300 
-  motion-safe:transition-all;
+  motion-safe:transition-all 
+  dark:border-transparent;
 
   &.scrolled {
     @apply dark:bg-dark-gray-950 
-    border-b 
-    bg-white
-    backdrop-blur-md;
+    dark:border-dark-gray-500 
+    border-light-gray-400
+    border-b
+    bg-white 
+  backdrop-blur-md;
   }
 
   .baseContainer {
@@ -29,8 +31,9 @@
     .navMenu {
       @apply absolute 
       hidden
-      md:left-36 
+      md:left-28
       md:block
+      lg:left-36 
       xl:left-[var(--content-padding-x)];
     }
   }

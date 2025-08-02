@@ -77,6 +77,7 @@ const MobileMenu = ({ className }: MobileMenuProps) => {
                 key={social.id}
                 social={social}
                 hoverDirection="up"
+                color="secondary"
               />
             ))}
           </div>

@@ -1,29 +1,28 @@
 @reference "../../styles/index.css";
 
-.baseContainer {
+.verticalLinesContainer {
+  @apply pointer-events-none 
+  fixed
+  top-0
+  left-1/2
+  -z-10
+  h-screen
+  -translate-x-1/2;
+}
+
+.socialsAndSectionNumbers {
   @apply pointer-events-none 
   fixed 
-  top-0 
-  left-1/2 
-  z-10  
-  flex 
-  h-screen  
+  top-[var(--header-height)]  
+  bottom-0 
+  left-1/2  
+  z-10 
+  flex  
   -translate-x-1/2 
   items-center 
-  justify-center 
-  max-xl:hidden;
-
-  .socialsAndSectionNumbers {
-    @apply absolute 
-    top-[var(--header-height)] 
-    right-0 
-    bottom-0 
-    left-0 
-    flex 
-    items-center 
-    justify-between 
-    px-[1rem] 
-    sm:px-[2rem] 
-    lg:px-[3rem];
-  }
+  justify-between
+  px-[1rem]
+  max-xl:hidden 
+  sm:px-[2rem] 
+  lg:px-[3rem];
 }
