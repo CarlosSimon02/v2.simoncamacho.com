@@ -30,7 +30,7 @@ const Ripple = React.memo(function Ripple({
         return (
           <div
             key={i}
-            className="animate-ripple dark:bg-dark-gray-800 bg-light-gray-400 absolute rounded-full"
+            className="animate-ripple dark:bg-dark-gray-700 bg-light-gray-500 absolute rounded-full"
             style={
               {
                 "--i": i,
