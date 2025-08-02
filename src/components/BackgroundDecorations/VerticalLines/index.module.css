@@ -22,7 +22,7 @@
   }
 
   .gizmo {
-    @apply dark:bg-dark-gray-700 bg-light-gray-950 absolute left-1/2 -translate-x-1/2  
+    @apply dark:bg-dark-gray-700 bg-light-gray-300 absolute left-1/2 -translate-x-1/2  
     -translate-y-1/2 
     transform;
     width: 5px;
