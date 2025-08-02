@@ -12,7 +12,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
       <Header />
       <Decorations />
       <main>{children}</main>
-      <ChatButton className="fixed right-16 bottom-16 z-10" />
+      <ChatButton className="fixed right-5 bottom-5 z-10 md:right-10 md:bottom-10 lg:right-16 lg:bottom-16" />
     </>
   );
 };

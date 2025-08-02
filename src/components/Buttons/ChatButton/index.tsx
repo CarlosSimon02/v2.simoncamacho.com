@@ -13,7 +13,7 @@ const ChatButton = ({ className }: ChatButtonProps) => {
         className
       )}
     >
-      <ChatBubbleBottomCenterIcon className="size-7 fill-white" />
+      <ChatBubbleBottomCenterIcon className="size-6 fill-white md:size-7" />
     </button>
   );
 };
