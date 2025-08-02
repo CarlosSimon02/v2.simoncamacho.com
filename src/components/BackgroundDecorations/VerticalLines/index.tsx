@@ -8,10 +8,8 @@ const VerticalLines = () => {
   const [positions, setPositions] = useState<number[]>([]);
 
   useEffect(() => {
-    // Initialize random positions
     setPositions(Array.from({ length: 3 }, () => Math.random() * 100));
 
-    // Update positions every second
     const interval = setInterval(() => {
       setPositions((prev) => prev.map(() => Math.random() * 100));
     }, 2000);
