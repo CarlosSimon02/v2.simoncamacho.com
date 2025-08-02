@@ -1,4 +1,5 @@
 import Decorations from "@/components/BackgroundDecorations";
+import ChatButton from "@/components/Buttons/ChatButton";
 import Header from "@/components/Header";
 
 type MainLayoutProps = {
@@ -11,6 +12,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
       <Header />
       <Decorations />
       <main>{children}</main>
+      <ChatButton className="fixed right-16 bottom-16 z-10" />
     </>
   );
 };

@@ -10,7 +10,7 @@
   }
 
   &.primary {
-    @apply text-dark-gray-950 
+    @apply text-dark-gray-50 
     dark:text-light-gray-50;
   }
 

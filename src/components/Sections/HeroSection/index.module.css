@@ -1,0 +1,9 @@
+@reference "../../../styles/index.css";
+
+.textDecor {
+  @apply transition-[-webkit-text-stroke-color] 
+  [-webkit-text-stroke-color:var(--color-light-gray-100)]
+  dark:[-webkit-text-stroke-color:var(--color-dark-gray-800)];
+
+  -webkit-text-stroke-width: 5px;
+}
