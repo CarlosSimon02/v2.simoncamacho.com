@@ -18,7 +18,7 @@ const Socials = ({ className }: SocialsProps) => {
         <SocialButton
           key={social.id}
           social={social}
-          hoverDirection="right"
+          hoverDirection="left"
           color="subtle"
         />
       ))}

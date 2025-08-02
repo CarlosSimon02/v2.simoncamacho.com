@@ -11,8 +11,8 @@ const Decorations = () => {
         <VerticalLines />
       </BaseContainer>
       <BaseContainer className={styles.socialsAndSectionNumbers}>
-        <Socials />
         <SectionNumbers />
+        <Socials />
       </BaseContainer>
     </>
   );

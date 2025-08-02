@@ -1,9 +1,12 @@
 @reference "../../../styles/index.css";
 
 .button {
-  & > *:not(.sr-only) {
-    @apply relative duration-300 
+  & > * {
+    @apply duration-300 
     motion-safe:transition-all;
+  }
+  & > *:not(.sr-only, .line) {
+    @apply relative;
   }
 
   &.primary {
