@@ -2,10 +2,11 @@
 
 .verticalLines {
   @apply flex 
-  h-full 
+  h-full
   w-full 
   justify-between 
-  px-16;
+  px-32
+  sm:px-16;
 
   .line {
     @apply dark:bg-medium-gray-500 
