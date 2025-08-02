@@ -24,7 +24,7 @@ const SectionNumbers = ({ className }: SectionNumbersProps) => {
                 "font-oswald text-foreground-2 flex items-center justify-center text-xl font-bold",
                 isLast ? "flex-col-reverse" : "flex-col"
               )}
-              color={isActive ? "primary" : "subtle"}
+              color={isActive ? "secondary" : "subtle"}
               hoverDirection="right"
               onClick={() => setActiveSection(index)}
             >

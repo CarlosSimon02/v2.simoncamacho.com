@@ -20,8 +20,8 @@
   }
 
   &.subtle {
-    @apply dark:text-medium-gray-950
-    text-light-gray-800;
+    @apply dark:text-dark-gray-200
+    text-light-gray-600;
   }
 
   &.accent {
