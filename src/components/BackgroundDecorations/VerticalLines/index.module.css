@@ -8,11 +8,27 @@
   px-32
   sm:px-16;
 
+  .lineContainer {
+    @apply relative h-full;
+    width: 1px; /* Maintain line width */
+  }
+
   .line {
-    @apply dark:bg-medium-gray-500 
+    @apply dark:bg-medium-gray-700 
     bg-light-gray-950 
-    h-full 
-    w-[0.0625rem] 
+    /* 
+    Fill  */ container h-full w-full
     opacity-10;
+  }
+
+  .gizmo {
+    @apply dark:bg-dark-gray-700 bg-light-gray-950 absolute left-1/2 -translate-x-1/2  
+    -translate-y-1/2 
+    transform;
+    width: 5px;
+    height: 20px;
+    border-radius: 2px;
+    transition: top 1s ease;
+    z-index: 10; /* Ensure visibility above lines */
   }
 }
