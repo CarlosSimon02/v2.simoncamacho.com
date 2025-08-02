@@ -1,0 +1,17 @@
+@reference "../../../styles/index.css";
+
+.verticalLines {
+  @apply flex 
+  h-full 
+  w-full 
+  justify-between 
+  px-16;
+
+  .line {
+    @apply dark:bg-medium-gray-500 
+    bg-light-gray-950 
+    h-full 
+    w-[0.0625rem] 
+    opacity-10;
+  }
+}

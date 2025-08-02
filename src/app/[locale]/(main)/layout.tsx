@@ -1,3 +1,4 @@
+import Decorations from "@/components/BackgroundDecorations";
 import Header from "@/components/Header";
 
 type MainLayoutProps = {
@@ -8,7 +9,8 @@ const MainLayout = ({ children }: MainLayoutProps) => {
   return (
     <>
       <Header />
-      {children}
+      <Decorations />
+      <main>{children}</main>
     </>
   );
 };

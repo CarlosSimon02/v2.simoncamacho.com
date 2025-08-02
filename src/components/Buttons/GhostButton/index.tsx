@@ -15,7 +15,7 @@ type GhostButtonProps = React.ComponentProps<"button"> & {
   asChild?: boolean;
   hoverDirection?: keyof typeof hoverDirectionMap;
   hoverColor?: "accent";
-  color?: "primary" | "secondary" | "accent";
+  color?: "primary" | "secondary" | "accent" | "subtle";
   children: React.ReactNode;
 };
 

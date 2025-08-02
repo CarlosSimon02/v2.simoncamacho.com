@@ -16,6 +16,11 @@
     text-pale-gray-50;
   }
 
+  &.subtle {
+    @apply dark:text-medium-gray-950
+    text-light-gray-800;
+  }
+
   &.accent {
     @apply text-accent;
   }

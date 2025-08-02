@@ -1,7 +1,9 @@
+import HeroSection from "@/components/Sections/HeroSection";
+
 const HomePage = () => {
   return (
     <>
-      <div className="h-[10000px] w-screen bg-transparent"></div>
+      <HeroSection className="h-auto min-h-[calc(100vh-var(--header-height))] py-14 md:py-20" />
     </>
   );
 };

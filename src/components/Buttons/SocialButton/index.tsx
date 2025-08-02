@@ -9,6 +9,7 @@ type SocialButtonProps = {
   className?: string;
   hoverDirection?: "up" | "bottom" | "left" | "right";
   size?: "sm" | "md";
+  color?: "primary" | "secondary" | "accent" | "subtle";
   active?: boolean;
 };
 
@@ -17,12 +18,13 @@ const SocialButton = ({
   className,
   hoverDirection,
   size = "sm",
+  color = "primary",
   active,
 }: SocialButtonProps) => {
   const t = useTranslations();
   return (
     <GhostButton
-      color={active ? "primary" : "secondary"}
+      color={active ? "primary" : color}
       hoverDirection={hoverDirection}
       className={cn(className)}
       asChild
