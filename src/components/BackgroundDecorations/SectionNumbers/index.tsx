@@ -3,6 +3,8 @@
 import GhostButton from "@/components/Buttons/GhostButton";
 import { cn } from "@/utils";
 import React from "react";
+import useSectionNumbersAnimation from "./useSectionNumbersAnimation";
+import { numberSectionStyle } from "./utils";
 
 type SectionNumbersProps = {
   className?: string;
@@ -10,15 +12,22 @@ type SectionNumbersProps = {
 
 const SectionNumbers = ({ className }: SectionNumbersProps) => {
   const [activeSection, setActiveSection] = React.useState(0);
+  const { sectionNumbersRef } = useSectionNumbersAnimation();
 
   return (
-    <ul className={cn("pointer-events-auto flex flex-col gap-4", className)}>
+    <ul
+      className={cn("pointer-events-auto flex flex-col gap-4", className)}
+      ref={sectionNumbersRef}
+    >
       {Array.from({ length: 5 }).map((_, index) => {
         const isActive = index === activeSection;
         const isLast = index === 4;
 
         return (
-          <li key={index}>
+          <li
+            key={index}
+            className={cn("section-number-item", numberSectionStyle)}
+          >
             <GhostButton
               className={cn(
                 "font-oswald text-foreground-2 flex items-center justify-center text-xl font-bold",

@@ -7,9 +7,13 @@ import TailwindScreenIndicator from "@/components/TailwindScreenIndicator";
 import { LEXEND, MONTSERRAT, OSWALD } from "@/constants/fonts";
 import "@/styles/index.css";
 import { cn } from "@/utils";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { ThemeProvider } from "next-themes";
 
 const fontClasses = cn(MONTSERRAT.variable, OSWALD.variable, LEXEND.variable);
+
+gsap.registerPlugin(useGSAP);
 
 const LocaleLayout = async ({
   children,

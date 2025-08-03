@@ -5,7 +5,7 @@ import { NAV_ITEMS } from "@/constants/navigation";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/utils";
 import { useTranslations } from "next-intl";
-import { headerItemStyle } from "..";
+import { headerItemStyle } from "../utils";
 import styles from "./index.module.css";
 
 type NavMenuProps = {
