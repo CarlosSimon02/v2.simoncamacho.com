@@ -14,7 +14,11 @@ import {
   DropdownMenuTrigger,
 } from "./DropdownMenu";
 
-const LanguageDropdown = () => {
+type LanguageDropdownProps = {
+  className?: string;
+};
+
+const LanguageDropdown = ({ className }: LanguageDropdownProps) => {
   const router = useRouter();
   const pathname = usePathname();
   const t = useTranslations("common.languageDropdown");
@@ -30,7 +34,7 @@ const LanguageDropdown = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <GhostButton aria-label={t("label")}>
+        <GhostButton aria-label={t("label")} className={className}>
           <LanguageIcon className="size-6" />
         </GhostButton>
       </DropdownMenuTrigger>

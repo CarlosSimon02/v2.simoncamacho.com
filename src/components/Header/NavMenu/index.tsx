@@ -5,6 +5,7 @@ import { NAV_ITEMS } from "@/constants/navigation";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/utils";
 import { useTranslations } from "next-intl";
+import { headerItemStyle } from "..";
 import styles from "./index.module.css";
 
 type NavMenuProps = {
@@ -18,7 +19,7 @@ const NavMenu = ({ className }: NavMenuProps) => {
     <nav className={cn(className)} aria-label={t("common.mainNavigation")}>
       <ul className={styles.itemList}>
         {NAV_ITEMS.map(({ href, id }) => (
-          <li key={id} className={styles.item}>
+          <li key={id} className={cn(headerItemStyle(false), styles.item)}>
             <GhostButton asChild color="secondary">
               <Link href={href}>
                 <span>{t(`containers.navBar.links.${id}`)}</span>

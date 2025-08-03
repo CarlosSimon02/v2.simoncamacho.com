@@ -8,14 +8,18 @@ import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import styles from "./index.module.css";
 
-const ThemeToggle = () => {
+type ThemeToggleProps = {
+  className?: string;
+};
+
+const ThemeToggle = ({ className }: ThemeToggleProps) => {
   const t = useTranslations("common.themeToggle");
   const { setTheme, theme } = useTheme();
 
   return (
     <GhostButton
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className={styles.button}
+      className={cn(styles.button, className)}
     >
       <div className="size-full">
         <MoonIcon className={cn(styles.icon, styles.moonIcon)} />

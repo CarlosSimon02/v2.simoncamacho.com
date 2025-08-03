@@ -1,5 +1,6 @@
 import GhostButton from "@/components/Buttons/GhostButton";
 import { SimonCamacho } from "@/components/Icons/Logos";
+import { cn } from "@/utils";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
@@ -11,7 +12,7 @@ const LogoLink = ({ className }: LogoLinkProps) => {
   const t = useTranslations("common");
 
   return (
-    <GhostButton className={className} asChild>
+    <GhostButton className={cn(className)} asChild>
       <Link href="/">
         <div>
           <SimonCamacho className="fill-accent size-8 md:size-10" />
