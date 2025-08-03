@@ -1,7 +1,7 @@
 import { CONDITIONAL_BREAKPOINTS } from "@/constants/breakpoints";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { SECTION_NUMBER_CLASS } from "./constants";
 
 type UseSectionNumbersAnimationProps = {
@@ -11,6 +11,7 @@ type UseSectionNumbersAnimationProps = {
 const useSectionNumbersAnimation = ({
   onComplete,
 }: UseSectionNumbersAnimationProps = {}) => {
+  const [isAnimationComplete, setIsAnimationComplete] = useState(false);
   const sectionNumbersRef = useRef(null);
 
   useGSAP(
@@ -33,7 +34,10 @@ const useSectionNumbersAnimation = ({
             stagger: 0.1,
             duration: 1,
             ease: "power4.out",
-            onComplete,
+            onComplete() {
+              setIsAnimationComplete(true);
+              onComplete?.();
+            },
           });
         }
       );
@@ -41,7 +45,7 @@ const useSectionNumbersAnimation = ({
     { scope: sectionNumbersRef }
   );
 
-  return { sectionNumbersRef };
+  return { sectionNumbersRef, isAnimationComplete };
 };
 
 export default useSectionNumbersAnimation;

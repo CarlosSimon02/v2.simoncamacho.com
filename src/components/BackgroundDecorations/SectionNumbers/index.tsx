@@ -1,27 +1,36 @@
 "use client";
 
 import GhostButton from "@/components/Buttons/GhostButton";
+import { useCurrentSectionStore } from "@/stores/useCurrentSectionStore";
 import { cn } from "@/utils";
-import React from "react";
+import React, { useEffect } from "react";
+import { Section } from "./types";
 import useSectionNumbersAnimation from "./useSectionNumbersAnimation";
 import { numberSectionStyle } from "./utils";
 
 type SectionNumbersProps = {
   className?: string;
+  sections: Section[];
 };
 
-const SectionNumbers = ({ className }: SectionNumbersProps) => {
-  const [activeSection, setActiveSection] = React.useState(0);
-  const { sectionNumbersRef } = useSectionNumbersAnimation();
+const SectionNumbers = ({ className, sections }: SectionNumbersProps) => {
+  const [activeSection, setActiveSection] = React.useState<string>("");
+  const { currentSection, setCurrentSection } = useCurrentSectionStore();
+  const { sectionNumbersRef, isAnimationComplete } =
+    useSectionNumbersAnimation();
+
+  useEffect(() => {
+    if (isAnimationComplete) setActiveSection(currentSection);
+  }, [isAnimationComplete, currentSection]);
 
   return (
     <ul
       className={cn("pointer-events-auto flex flex-col gap-4", className)}
       ref={sectionNumbersRef}
     >
-      {Array.from({ length: 5 }).map((_, index) => {
-        const isActive = index === activeSection;
-        const isLast = index === 4;
+      {sections.map(({ id, title }, index) => {
+        const isActive = id === activeSection;
+        const isLast = index === sections.length - 1;
 
         return (
           <li
@@ -35,14 +44,14 @@ const SectionNumbers = ({ className }: SectionNumbersProps) => {
               )}
               color={isActive ? "secondary" : "subtle"}
               hoverDirection="right"
-              onClick={() => setActiveSection(index)}
+              onClick={() => setCurrentSection(id)}
             >
               <div>{String(index).padStart(2, "0")}</div>
               <div
                 data-state={isActive ? "active" : "inactive"}
                 data-last={isLast ? "true" : "false"}
                 className={cn(
-                  "!static mt-0 mb-0 w-[0.0625rem] bg-current data-[state=active]:h-20 data-[state=active]:data-[last=false]:mt-4 data-[state=active]:data-[last=true]:mb-4 data-[state=inactive]:h-0"
+                  "!static mt-0 mb-0 w-[0.0625rem] bg-current ![transition:height_0.5s_ease-out] data-[state=active]:h-20 data-[state=active]:data-[last=false]:mt-4 data-[state=active]:data-[last=true]:mb-4 data-[state=inactive]:h-0"
                 )}
               />
             </GhostButton>

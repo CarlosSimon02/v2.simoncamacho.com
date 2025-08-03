@@ -1,4 +1,3 @@
-import Decorations from "@/components/BackgroundDecorations";
 import ChatButton from "@/components/Buttons/ChatButton";
 import Header from "@/components/Header";
 
@@ -10,8 +9,8 @@ const MainLayout = ({ children }: MainLayoutProps) => {
   return (
     <>
       <Header />
-      <Decorations />
-      <main>{children}</main>
+      {children}
+
       <ChatButton className="fixed right-5 bottom-5 z-10 md:right-10 md:bottom-10 lg:right-16 lg:bottom-16" />
     </>
   );

@@ -6,6 +6,6 @@ type CurrentSectionState = {
 };
 
 export const useCurrentSectionStore = create<CurrentSectionState>((set) => ({
-  currentSection: "",
+  currentSection: "home",
   setCurrentSection: (height) => set({ currentSection: height }),
 }));
