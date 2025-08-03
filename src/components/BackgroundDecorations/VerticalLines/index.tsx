@@ -20,13 +20,7 @@ const VerticalLines = () => {
   return (
     <div className={styles.verticalLines}>
       {Array.from({ length: 3 }).map((_, index) => (
-        <div
-          key={index}
-          className={cn(
-            styles.lineContainer,
-            "max-sm:invisible max-sm:last:visible"
-          )}
-        >
+        <div key={index} className={cn(styles.lineContainer)}>
           <div className={styles.line} />
           {positions.length > 0 && (
             <div

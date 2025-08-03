@@ -5,8 +5,9 @@
   h-full
   w-full 
   justify-between 
-  px-32
-  sm:px-16;
+  px-8
+  sm:px-16
+  md:px-28;
 
   .lineContainer {
     @apply relative 
