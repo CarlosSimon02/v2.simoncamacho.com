@@ -18,7 +18,7 @@ type HeaderProps = {
   className?: string;
 };
 
-const SCROLL_THRESHOLD_PX = 64;
+const SCROLL_THRESHOLD_PX = 32;
 
 gsap.registerPlugin(useGSAP);
 
