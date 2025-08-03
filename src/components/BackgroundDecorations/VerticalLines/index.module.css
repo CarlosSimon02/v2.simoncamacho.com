@@ -26,7 +26,7 @@
 
   .gizmo {
     @apply dark:bg-dark-gray-700 
-    bg-light-gray-300 
+    bg-light-gray-200 
     absolute 
     left-1/2 
     z-10  
