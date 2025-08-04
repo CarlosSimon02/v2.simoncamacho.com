@@ -6,6 +6,7 @@ import { cn } from "@/utils";
 import { useTranslations } from "next-intl";
 import React, { useEffect } from "react";
 import { NUMBER_SECTION_STYLE } from "./constants";
+import styles from "./index.module.css";
 import { Section } from "./types";
 import useSectionNumbersAnimation from "./useSectionNumbersAnimation";
 
@@ -27,7 +28,7 @@ const SectionNumbers = ({ className, sections }: SectionNumbersProps) => {
 
   return (
     <ul
-      className={cn("pointer-events-auto flex flex-col gap-4", className)}
+      className={cn(styles.sectionNumbersList, className)}
       ref={sectionNumbersRef}
     >
       {sections.map(({ id, title }, index) => {
@@ -38,8 +39,8 @@ const SectionNumbers = ({ className, sections }: SectionNumbersProps) => {
           <li key={index} className={cn(NUMBER_SECTION_STYLE)}>
             <GhostButton
               className={cn(
-                "font-oswald text-foreground-2 flex items-center justify-center text-xl font-bold",
-                isLast ? "flex-col-reverse" : "flex-col"
+                styles.sectionButton,
+                isLast ? styles.sectionButtonLast : styles.sectionButtonNormal
               )}
               color={isActive ? "secondary" : "subtle"}
               hoverDirection="right"
@@ -49,9 +50,7 @@ const SectionNumbers = ({ className, sections }: SectionNumbersProps) => {
               <div
                 data-state={isActive ? "active" : "inactive"}
                 data-last={isLast ? "true" : "false"}
-                className={cn(
-                  "!static mt-0 mb-0 w-[0.0625rem] bg-current ![transition:height_0.5s_ease-out] data-[state=active]:h-20 data-[state=active]:data-[last=false]:mt-4 data-[state=active]:data-[last=true]:mb-4 data-[state=inactive]:h-0"
-                )}
+                className={styles.sectionDivider}
               />
               <div className="sr-only">
                 {t("common.navigateToSection", { section: title })}
