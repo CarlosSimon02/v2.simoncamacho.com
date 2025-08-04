@@ -20,12 +20,8 @@
       @apply after:bg-accent 
       flex 
       flex-col 
-      gap-3 
-      after:-bottom-4 
-      after:h-1 
-      after:w-12 
-      after:rounded-full 
-      lg:after:mt-2;
+      gap-3;
+
       .heroLocation {
         @apply flex 
         items-center 
@@ -50,6 +46,14 @@
         md:text-2xl 
         lg:text-3xl 
         dark:text-white;
+      }
+
+      .heroHeaderLine {
+        @apply bg-accent
+        mt-2 
+        h-1 
+        w-12 
+        rounded-full;
       }
     }
 
