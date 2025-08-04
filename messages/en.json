@@ -22,6 +22,7 @@
   "common": {
     "mainNavigation": "Main navigation",
     "navigateToHome": "Navigate to Home",
+    "navigateToSection": "Navigate to {section} section",
     "languageDropdown": {
       "label": "Choose Language"
     },
