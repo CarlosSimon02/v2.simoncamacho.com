@@ -5,6 +5,7 @@ import gsap from "gsap";
 import {
   HERO_SECTION_CONTENT_ITEM_CLASS,
   HERO_SECTION_IMAGE_CLASS,
+  HERO_SECTION_IMAGE_CONTAINER_CLASS,
   HERO_SECTION_TEXT_DECOR_ITEM_CLASS,
 } from "./constants";
 
@@ -24,6 +25,10 @@ const HeaderSectionAnimation = () => {
       stagger: 0.1,
       duration: 1,
       ease: "power4.out",
+      scrollTrigger: {
+        trigger: `.${HERO_SECTION_IMAGE_CONTAINER_CLASS}`,
+        start: "top 80%",
+      },
     });
 
     gsap.to(`.${HERO_SECTION_IMAGE_CLASS}`, {
@@ -31,6 +36,10 @@ const HeaderSectionAnimation = () => {
       opacity: 1,
       duration: 2,
       ease: "power4.out",
+      scrollTrigger: {
+        trigger: `.${HERO_SECTION_IMAGE_CONTAINER_CLASS}`,
+        start: "top 80%",
+      },
     });
   });
 

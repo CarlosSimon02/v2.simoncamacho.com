@@ -5,15 +5,17 @@ import { notFound } from "next/navigation";
 import Background from "@/components/Background";
 import TailwindScreenIndicator from "@/components/TailwindScreenIndicator";
 import { LEXEND, MONTSERRAT, OSWALD } from "@/constants/fonts";
+import { GSAPSetupProvider } from "@/providers/GSAPSetupProvider";
 import "@/styles/index.css";
 import { cn } from "@/utils";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger as GSAPScrollTrigger } from "gsap/ScrollTrigger";
 import { ThemeProvider } from "next-themes";
 
 const fontClasses = cn(MONTSERRAT.variable, OSWALD.variable, LEXEND.variable);
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(useGSAP, GSAPScrollTrigger);
 
 const LocaleLayout = async ({
   children,
@@ -31,18 +33,20 @@ const LocaleLayout = async ({
   return (
     <html lang={locale} className={fontClasses} suppressHydrationWarning>
       <body>
-        <NextIntlClientProvider>
-          <ThemeProvider
-            attribute="data-theme"
-            defaultTheme="system"
-            storageKey="theme"
-            enableSystem
-          >
-            <Background />
-            {children}
-            <TailwindScreenIndicator />
-          </ThemeProvider>
-        </NextIntlClientProvider>
+        <GSAPSetupProvider>
+          <NextIntlClientProvider>
+            <ThemeProvider
+              attribute="data-theme"
+              defaultTheme="system"
+              storageKey="theme"
+              enableSystem
+            >
+              <Background />
+              {children}
+              <TailwindScreenIndicator />
+            </ThemeProvider>
+          </NextIntlClientProvider>
+        </GSAPSetupProvider>
       </body>
     </html>
   );

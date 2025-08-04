@@ -8,6 +8,7 @@ import Image from "next/image";
 import {
   HERO_SECTION_CLASS,
   HERO_SECTION_CONTENT_ITEM_STYLE,
+  HERO_SECTION_IMAGE_CONTAINER_CLASS,
   HERO_SECTION_IMAGE_STYLE,
   HERO_SECTION_TEXT_DECOR_ITEM_STYLE,
 } from "./constants";
@@ -78,7 +79,12 @@ const HeroSection = async ({ className }: HeroSectionProps) => {
             </PillButton>
           </div>
         </div>
-        <div className={styles.heroImageContainer}>
+        <div
+          className={cn(
+            styles.heroImageContainer,
+            HERO_SECTION_IMAGE_CONTAINER_CLASS
+          )}
+        >
           <div
             className={cn(styles.heroImageWrapper, HERO_SECTION_IMAGE_STYLE)}
           >
