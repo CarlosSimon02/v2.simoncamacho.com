@@ -1,9 +1,120 @@
 @reference "../../../styles/index.css";
+.heroSectionContainer {
+  @apply flex 
+  flex-col 
+  items-center 
+  justify-between 
+  gap-16 
+  max-md:justify-center 
+  md:flex-row 
+  md:gap-12 
+  lg:gap-16;
 
-.textDecor {
-  @apply transition-[-webkit-text-stroke-color] 
-  [-webkit-text-stroke-color:var(--color-light-gray-100)]
-  dark:[-webkit-text-stroke-color:var(--color-dark-gray-800)];
+  .heroContent {
+    @apply flex 
+    flex-col 
+    gap-5 
+    md:gap-7 
+    lg:gap-9;
+    .heroHeader {
+      @apply after:bg-accent 
+      flex 
+      flex-col 
+      gap-3 
+      after:-bottom-4 
+      after:h-1 
+      after:w-12 
+      after:rounded-full 
+      lg:after:mt-2;
+      .heroLocation {
+        @apply flex 
+        items-center 
+        gap-1;
+      }
 
-  -webkit-text-stroke-width: 5px;
+      .heroName {
+        @apply font-montserrat 
+        text-accent 
+        text-[2.375rem] 
+        leading-none 
+        font-black 
+        md:text-5xl 
+        lg:text-6xl;
+      }
+
+      .heroTitle {
+        @apply font-oswald 
+        text-dark-gray-50 
+        text-xl 
+        font-bold 
+        md:text-2xl 
+        lg:text-3xl 
+        dark:text-white;
+      }
+    }
+
+    .heroDescription {
+      @apply max-w-[70ch] 
+      leading-[1.7] 
+      md:max-w-[40ch]
+       md:leading-[1.9] 
+       lg:max-w-[50ch];
+    }
+
+    .heroButtons {
+      @apply flex 
+      gap-4;
+      .heroButton {
+        @apply w-full 
+        max-w-36;
+      }
+    }
+  }
+
+  .heroImageContainer {
+    @apply relative 
+    max-w-[31.25rem] 
+    md:flex-1;
+    .heroImageWrapper {
+      @apply relative 
+      mx-auto 
+      w-64 
+      max-w-96 
+      md:w-full;
+      .heroImage {
+        @apply h-full 
+        w-full 
+        object-cover;
+      }
+    }
+
+    .heroTextDecor {
+      @apply font-oswald 
+      dark:text-dark-gray-800 
+      text-light-gray-100 
+      absolute 
+      bottom-16 
+      -z-10 
+      text-9xl 
+      font-bold 
+      uppercase 
+      max-md:left-1/2 
+      max-md:-translate-x-1/2 
+      max-md:text-center 
+      md:text-[10rem];
+      .heroTextDecorSimon {
+        @apply text-[10rem] 
+        md:text-[12rem];
+      }
+    }
+
+    .textDecor {
+      @apply duration-[300ms]
+      [-webkit-text-stroke-color:var(--color-light-gray-100)]
+      motion-safe:transition-[-webkit-text-stroke-color]
+      dark:[-webkit-text-stroke-color:var(--color-dark-gray-800)];
+
+      -webkit-text-stroke-width: 5px;
+    }
+  }
 }

@@ -37,5 +37,16 @@
       "linkedin": "Visit my LinkedIn profile",
       "email": "Send me an email"
     }
+  },
+  "heroSection": {
+    "location": "Pampanga, Philippines",
+    "name": "Simon Camacho",
+    "title": "Software Engineer",
+    "description": "I am a developer who enjoys learning and expanding knowledge in the field of web. I am also determined to create solutions that provide excellent online experiences. Explore my portfolio to see my growing skills and dedication to quality development.",
+    "contact": "Contact",
+    "resume": "Resume",
+    "backgroundCarlos": "Carlos",
+    "backgroundSimon": "Simon",
+    "heroImageAlt": "Hero Image"
   }
 }
