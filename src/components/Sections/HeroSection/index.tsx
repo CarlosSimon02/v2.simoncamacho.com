@@ -8,6 +8,8 @@ import Image from "next/image";
 import {
   HERO_SECTION_CLASS,
   HERO_SECTION_CONTENT_ITEM_STYLE,
+  HERO_SECTION_IMAGE_STYLE,
+  HERO_SECTION_TEXT_DECOR_ITEM_STYLE,
 } from "./constants";
 import HeroSectionAnimation from "./HeroSectionAnimation";
 import styles from "./index.module.css";
@@ -77,7 +79,9 @@ const HeroSection = async ({ className }: HeroSectionProps) => {
           </div>
         </div>
         <div className={styles.heroImageContainer}>
-          <div className={styles.heroImageWrapper}>
+          <div
+            className={cn(styles.heroImageWrapper, HERO_SECTION_IMAGE_STYLE)}
+          >
             <Image
               src={heroImage.src}
               alt={t("heroImageAlt")}
@@ -88,8 +92,15 @@ const HeroSection = async ({ className }: HeroSectionProps) => {
             />
           </div>
           <div className={cn(styles.heroTextDecor, styles.textDecor)}>
-            <div>{t("backgroundCarlos")}</div>
-            <span className={styles.heroTextDecorSimon}>
+            <div className={HERO_SECTION_TEXT_DECOR_ITEM_STYLE}>
+              {t("backgroundCarlos")}
+            </div>
+            <span
+              className={cn(
+                styles.heroTextDecorSimon,
+                HERO_SECTION_TEXT_DECOR_ITEM_STYLE
+              )}
+            >
               {t("backgroundSimon")}
             </span>
           </div>

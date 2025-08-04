@@ -2,7 +2,11 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { HERO_SECTION_CONTENT_ITEM_CLASS } from "./constants";
+import {
+  HERO_SECTION_CONTENT_ITEM_CLASS,
+  HERO_SECTION_IMAGE_CLASS,
+  HERO_SECTION_TEXT_DECOR_ITEM_CLASS,
+} from "./constants";
 
 const HeaderSectionAnimation = () => {
   useGSAP(() => {
@@ -10,7 +14,22 @@ const HeaderSectionAnimation = () => {
       top: 0,
       opacity: 1,
       stagger: 0.1,
+      duration: 2,
+      ease: "power4.out",
+    });
+
+    gsap.to(`.${HERO_SECTION_TEXT_DECOR_ITEM_CLASS}`, {
+      top: 0,
+      opacity: 1,
+      stagger: 0.1,
       duration: 1,
+      ease: "power4.out",
+    });
+
+    gsap.to(`.${HERO_SECTION_IMAGE_CLASS}`, {
+      top: 0,
+      opacity: 1,
+      duration: 2,
       ease: "power4.out",
     });
   });
