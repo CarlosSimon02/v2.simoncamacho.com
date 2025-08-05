@@ -58,10 +58,8 @@
     }
 
     .heroDescription {
-      @apply max-w-[70ch] 
-      leading-[1.7] 
+      @apply max-w-[70ch]  
       md:max-w-[40ch]
-       md:leading-[1.9] 
        lg:max-w-[50ch];
     }
 
@@ -93,32 +91,18 @@
     }
 
     .heroTextDecor {
-      @apply font-oswald 
-      dark:text-dark-gray-800 
-      text-light-gray-100 
+      @apply text-decor 
       absolute 
-      bottom-16 
-      -z-10 
+      bottom-16  
       text-9xl 
-      font-bold 
-      uppercase 
       max-md:left-1/2 
       max-md:-translate-x-1/2 
-      max-md:text-center 
+      max-md:text-center
       md:text-[10rem];
       .heroTextDecorSimon {
         @apply text-[10rem] 
         md:text-[12rem];
       }
-    }
-
-    .textDecor {
-      @apply duration-[300ms]
-      [-webkit-text-stroke-color:var(--color-light-gray-100)]
-      motion-safe:transition-[-webkit-text-stroke-color]
-      dark:[-webkit-text-stroke-color:var(--color-dark-gray-800)];
-
-      -webkit-text-stroke-width: 5px;
     }
   }
 }

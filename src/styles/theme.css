@@ -70,3 +70,19 @@
     }
   }
 }
+
+@utility text-decor {
+  @apply font-oswald
+  dark:text-dark-gray-800
+  text-light-gray-100
+  -z-10
+  font-bold 
+  whitespace-nowrap 
+  uppercase
+  duration-[300ms] 
+  [-webkit-text-stroke-color:var(--color-light-gray-100)]
+  motion-safe:transition-[-webkit-text-stroke-color]
+  dark:[-webkit-text-stroke-color:var(--color-dark-gray-800)];
+
+  -webkit-text-stroke-width: 5px;
+}

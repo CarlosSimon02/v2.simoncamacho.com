@@ -38,4 +38,9 @@
       @apply cursor-pointer;
     }
   }
+
+  p {
+    @apply leading-[1.7] 
+    md:leading-[1.9];
+  }
 }

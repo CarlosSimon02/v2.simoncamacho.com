@@ -97,7 +97,7 @@ const HeroSection = async ({ className }: HeroSectionProps) => {
               priority
             />
           </div>
-          <div className={cn(styles.heroTextDecor, styles.textDecor)}>
+          <div className={cn(styles.heroTextDecor)}>
             <div className={HERO_SECTION_TEXT_DECOR_ITEM_STYLE}>
               {t("backgroundCarlos")}
             </div>
