@@ -34,7 +34,8 @@
 
   .sectionTitleDecor {
     @apply text-decor 
-    text-9xl  
+    text-9xl
+    select-none
     md:text-[10rem];
   }
 }

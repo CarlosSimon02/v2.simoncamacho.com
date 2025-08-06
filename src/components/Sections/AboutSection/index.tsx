@@ -3,6 +3,7 @@ import SectionTitle from "@/components/SectionTitle";
 import { TECHNOLOGIES } from "@/constants/technologies";
 import { cn } from "@/utils";
 import { useTranslations } from "next-intl";
+import Cubes from "./Cubes";
 import styles from "./index.module.css";
 
 const SubHeader = ({ children }: { children: React.ReactNode }) => (
@@ -31,7 +32,9 @@ const AboutSection = ({ className }: AboutSectionProps) => {
             })}
           </p>
         </div>
-        <div className={styles.aboutSectionImageCol}></div>
+        <div className={styles.aboutSectionImageCol}>
+          <Cubes />
+        </div>
       </div>
       <div className={styles.aboutSectionSkills}>
         <SubHeader>{t("skillsHeader")}</SubHeader>
