@@ -6,9 +6,9 @@
   items-center
   justify-center 
   [--cube-face-bg:oklch(0.9_0.01_264.695/0.2)]
-  [--cube-face-border:0.0625rem_solid_var(--color-light-gray-300)] 
+  [--cube-face-border:0.125rem_solid_var(--color-light-gray-300)] 
   dark:[--cube-face-bg:oklch(0.21_0.01_264.695/0.2)]
-  dark:[--cube-face-border:0.0625rem_solid_var(--color-dark-gray-500)];
+  dark:[--cube-face-border:0.125rem_solid_var(--color-dark-gray-500)];
 }
 
 .scene {
