@@ -1,10 +1,7 @@
-import { cn } from "@/utils";
-import {
-  SECTION_TITLE_CONTAINER_CLASS,
-  SECTION_TITLE_ITEM_STYLE,
-} from "./constants";
+import { cn, toKebabCase } from "@/utils";
 import styles from "./index.module.css";
 import SectionTitleAnimation from "./SectionTitleAnimation";
+import { getSectionTitleContainerStyle } from "./utils";
 
 type SectionTitleProps = {
   title: string;
@@ -12,30 +9,23 @@ type SectionTitleProps = {
 };
 
 const SectionTitle = ({ title, number }: SectionTitleProps) => {
+  const formattedTitle = toKebabCase(title);
   return (
     <>
-      <SectionTitleAnimation />
+      <SectionTitleAnimation id={formattedTitle} />
       <div
         className={cn(
           styles.sectionTitleContainer,
-          SECTION_TITLE_CONTAINER_CLASS
+          getSectionTitleContainerStyle(formattedTitle)
         )}
       >
         <div className={styles.sectionTitleText}>
-          <span
-            className={cn(styles.sectionTitleNumber, SECTION_TITLE_ITEM_STYLE)}
-          >
+          <span className={cn(styles.sectionTitleNumber)}>
             {String(number).padStart(2, "0")}
           </span>
-          <h2
-            className={cn(styles.sectionTitleHeading, SECTION_TITLE_ITEM_STYLE)}
-          >
-            {title}
-          </h2>
+          <h2 className={cn(styles.sectionTitleHeading)}>{title}</h2>
         </div>
-        <div className={cn(styles.sectionTitleDecor, SECTION_TITLE_ITEM_STYLE)}>
-          {title}
-        </div>
+        <div className={cn(styles.sectionTitleDecor)}>{title}</div>
       </div>
     </>
   );
