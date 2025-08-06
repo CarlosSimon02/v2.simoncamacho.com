@@ -24,25 +24,6 @@
   md:flex-shrink-1 
   md:flex-grow-4;
 }
-
-.aboutSectionImageCol {
-  @apply flex 
-  h-72
-  w-full
-  items-center
-  justify-center 
-  gap-16 
-  py-12
-  opacity-60
-  md:h-fit
-  md:flex-1
-  md:flex-shrink-1
-  md:flex-grow-2
-  md:flex-col
-  md:gap-24
-  md:px-14;
-}
-
 .aboutSectionSubHeader {
   @apply font-oswald 
   text-dark-gray-50 

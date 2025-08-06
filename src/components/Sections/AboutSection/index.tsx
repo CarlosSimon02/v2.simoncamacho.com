@@ -32,9 +32,7 @@ const AboutSection = ({ className }: AboutSectionProps) => {
             })}
           </p>
         </div>
-        <div className={styles.aboutSectionImageCol}>
-          <Cubes />
-        </div>
+        <Cubes />
       </div>
       <div className={styles.aboutSectionSkills}>
         <SubHeader>{t("skillsHeader")}</SubHeader>
