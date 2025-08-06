@@ -1,4 +1,10 @@
+import { cn } from "@/utils";
+import {
+  SECTION_TITLE_CONTAINER_CLASS,
+  SECTION_TITLE_ITEM_STYLE,
+} from "./constants";
 import styles from "./index.module.css";
+import SectionTitleAnimation from "./SectionTitleAnimation";
 
 type SectionTitleProps = {
   title: string;
@@ -7,15 +13,31 @@ type SectionTitleProps = {
 
 const SectionTitle = ({ title, number }: SectionTitleProps) => {
   return (
-    <div className={styles.sectionTitleContainer}>
-      <div className={styles.sectionTitleText}>
-        <span className={styles.sectionTitleNumber}>
-          {String(number).padStart(2, "0")}
-        </span>
-        <h2 className={styles.sectionTitleHeading}>{title}</h2>
+    <>
+      <SectionTitleAnimation />
+      <div
+        className={cn(
+          styles.sectionTitleContainer,
+          SECTION_TITLE_CONTAINER_CLASS
+        )}
+      >
+        <div className={styles.sectionTitleText}>
+          <span
+            className={cn(styles.sectionTitleNumber, SECTION_TITLE_ITEM_STYLE)}
+          >
+            {String(number).padStart(2, "0")}
+          </span>
+          <h2
+            className={cn(styles.sectionTitleHeading, SECTION_TITLE_ITEM_STYLE)}
+          >
+            {title}
+          </h2>
+        </div>
+        <div className={cn(styles.sectionTitleDecor, SECTION_TITLE_ITEM_STYLE)}>
+          {title}
+        </div>
       </div>
-      <div className={styles.sectionTitleDecor}>{title}</div>
-    </div>
+    </>
   );
 };
 
