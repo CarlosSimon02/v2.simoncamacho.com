@@ -19,8 +19,8 @@
     @apply dark:bg-medium-gray-700 
     bg-light-gray-950 
     container 
-    h-full 
-    w-full
+    h-full
+    w-full 
     opacity-10;
   }
 
@@ -35,9 +35,10 @@
     -translate-x-1/2
     -translate-y-1/2
     transform
-    rounded-full
-    transition-[top]
-    duration-1000
-    ease-initial;
+    rounded-full;
+
+    transition:
+      top 1000ms,
+      background-color 300ms;
   }
 }

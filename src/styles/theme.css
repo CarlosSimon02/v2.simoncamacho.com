@@ -73,16 +73,15 @@
 
 @utility text-decor {
   @apply font-oswald
-  dark:text-dark-gray-800
-  text-light-gray-100
-  -z-10
-  font-bold 
-  whitespace-nowrap 
-  uppercase
-  duration-[300ms] 
-  [-webkit-text-stroke-color:var(--color-light-gray-100)]
-  motion-safe:transition-[-webkit-text-stroke-color]
-  dark:[-webkit-text-stroke-color:var(--color-dark-gray-800)];
-
-  -webkit-text-stroke-width: 5px;
+    dark:text-dark-gray-800
+    text-light-gray-100
+    -z-10 
+    font-bold
+    whitespace-nowrap
+    uppercase 
+    antialiased
+    !transition-all
+    [text-shadow:1px_0_var(--color-light-gray-100),-1px_0_var(--color-light-gray-100),0_1px_var(--color-light-gray-100),0_-1px_var(--color-light-gray-100),1px_1px_var(--color-light-gray-100),-1px_-1px_var(--color-light-gray-100),1px_-1px_var(--color-light-gray-100),-1px_1px_var(--color-light-gray-100)]
+    motion-safe:transition-[text-shadow,colors]
+  dark:[text-shadow:1px_0_var(--color-dark-gray-800),-1px_0_var(--color-dark-gray-800),0_1px_var(--color-dark-gray-800),0_-1px_var(--color-dark-gray-800),1px_1px_var(--color-dark-gray-800),-1px_-1px_var(--color-dark-gray-800),1px_-1px_var(--color-dark-gray-800),-1px_1px_var(--color-dark-gray-800)];
 }

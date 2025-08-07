@@ -50,7 +50,7 @@ const SectionNumbers = ({ className, sections }: SectionNumbersProps) => {
               <div
                 data-state={isActive ? "active" : "inactive"}
                 data-last={isLast ? "true" : "false"}
-                className={styles.sectionDivider}
+                className={cn(styles.sectionDivider, "group-hover:!left-0")}
               />
               <div className="sr-only">
                 {t("common.navigateToSection", { section: title })}
