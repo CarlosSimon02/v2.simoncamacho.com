@@ -20,7 +20,8 @@
       @apply after:bg-accent 
       flex 
       flex-col 
-      gap-3;
+      gap-2
+      md:gap-3;
 
       .heroLocation {
         @apply flex 
