@@ -51,7 +51,7 @@
 
 .aboutSectionSkillCard {
   @apply dark:bg-dark-gray-800
-  bg-light-gray-100 
+  bg-light-gray-200 
   flex 
   items-center 
   gap-4 

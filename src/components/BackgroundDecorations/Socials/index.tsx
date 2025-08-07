@@ -17,14 +17,17 @@ const Socials = ({ className }: SocialsProps) => {
     <ul
       className={cn(
         "pointer-events-auto flex flex-col items-center gap-6",
-
         className
       )}
       ref={socialsRef}
     >
       {SOCIALS.map((social) => (
         <li className={SOCIAL_STYLE} key={social.id}>
-          <SocialButton social={social} hoverDirection="left" color="subtle" />
+          <SocialButton
+            social={social}
+            hoverDirection="left"
+            color="secondary"
+          />
         </li>
       ))}
     </ul>

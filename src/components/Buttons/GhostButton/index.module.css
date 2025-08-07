@@ -16,7 +16,7 @@
 
   &.secondary {
     @apply dark:text-medium-gray-50 
-    text-pale-gray-50;
+    text-pale-gray-500;
   }
 
   &.subtle {

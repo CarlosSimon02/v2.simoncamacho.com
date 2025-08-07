@@ -26,7 +26,7 @@
     @apply font-lexend 
     dark:bg-dark-gray-500 
     dark:text-medium-gray-50 
-    text-pale-gray-50 
+    text-pale-gray-500 
     bg-white 
     motion-safe:scroll-smooth;
   }

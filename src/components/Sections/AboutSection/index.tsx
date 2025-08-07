@@ -55,7 +55,7 @@ const AboutSection = ({ className }: AboutSectionProps) => {
                   style={{
                     backgroundColor:
                       technology.color !== "system"
-                        ? technology.color + "20"
+                        ? technology.color + "30"
                         : undefined,
                   }}
                 >

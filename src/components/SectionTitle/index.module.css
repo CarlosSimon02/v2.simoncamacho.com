@@ -17,7 +17,7 @@
   .sectionTitleNumber {
     @apply font-oswald 
     dark:text-dark-gray-700
-    text-light-gray-200 
+    text-light-gray-300 
     text-5xl 
     font-black 
     md:text-6xl;

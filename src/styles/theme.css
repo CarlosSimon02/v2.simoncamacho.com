@@ -74,7 +74,7 @@
 @utility text-decor {
   @apply font-oswald
     dark:text-dark-gray-800
-    text-light-gray-100
+    text-light-gray-200
     -z-10 
     font-bold
     whitespace-nowrap
