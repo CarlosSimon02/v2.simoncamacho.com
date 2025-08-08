@@ -6,19 +6,27 @@
   z-40
   h-[var(--header-height)]
   border-0
-  border-transparent
-  shadow-none
-  duration-300 
-  motion-safe:transition-all 
-  dark:border-transparent;
+  
+  shadow-none;
 
-  &.scrolled {
-    @apply dark:bg-dark-gray-950 
-    dark:border-dark-gray-500 
+  .headerBackground {
+    @apply dark:bg-dark-gray-950
+    dark:border-dark-gray-500
     border-light-gray-400
-    border-b
-    bg-white 
-  backdrop-blur-md;
+    theme-transition
+    absolute 
+    inset-0
+    -z-10
+    border-b 
+    bg-white
+    opacity-0
+    backdrop-blur-md
+    transition
+    duration-300;
+
+    &[data-scrolled="true"] {
+      @apply opacity-100;
+    }
   }
 
   .baseContainer {

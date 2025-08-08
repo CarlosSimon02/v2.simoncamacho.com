@@ -7,6 +7,7 @@
 
   .main {
     @apply dark:bg-dark-gray-900 
+    theme-transition
     size-full
     bg-white;
   }
@@ -14,6 +15,7 @@
   .triangle {
     @apply dark:bg-dark-gray-950
     bg-light-gray-50
+    theme-transition
     absolute 
     top-0 
     left-0

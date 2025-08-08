@@ -27,13 +27,23 @@ const Header = ({ className }: HeaderProps) => {
       ref={headerRef}
       className={cn(styles.header, hasScrolled && styles.scrolled, className)}
     >
+      <div
+        data-scrolled={hasScrolled}
+        className={cn(styles.headerBackground)}
+      />
       <BaseContainer className={styles.baseContainer}>
         <LogoLink className={headerItemStyle(true)} />
         <NavMenu className={cn(styles.navMenu)} />
         <div className="flex items-center gap-4 md:gap-6 ">
-          <LanguageDropdown className={headerItemStyle(true)} />
-          <ThemeToggle className={headerItemStyle(true)} />
-          <MobileMenu className={cn("md:hidden", headerItemStyle(true))} />
+          <div className={headerItemStyle(true)}>
+            <LanguageDropdown />
+          </div>
+          <div className={headerItemStyle(true)}>
+            <ThemeToggle />
+          </div>
+          <div className={headerItemStyle(true)}>
+            <MobileMenu className={cn("md:hidden")} />
+          </div>
         </div>
       </BaseContainer>
     </header>

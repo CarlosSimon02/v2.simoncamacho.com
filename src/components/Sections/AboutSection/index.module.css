@@ -27,49 +27,55 @@
 .aboutSectionSubHeader {
   @apply font-oswald 
   text-dark-gray-50 
+  theme-transition 
   mb-5 
   text-2xl 
   md:mb-7 
-  md:text-3xl 
+  md:text-3xl
   dark:text-white;
 }
 
 .aboutSectionSkills {
-  @apply flex 
-  flex-col 
+  @apply theme-transition 
+  flex 
+  flex-col
   gap-4;
 }
 
 .aboutSectionSkillsGrid {
-  @apply grid 
+  @apply theme-transition 
+  grid 
   grid-cols-2 
   gap-3 
   sm:grid-cols-3 
-  md:grid-cols-4 
+  md:grid-cols-4
   lg:grid-cols-5;
 }
 
 .aboutSectionSkillCard {
   @apply dark:bg-dark-gray-800
   bg-light-gray-200 
+  theme-transition 
   flex 
   items-center 
   gap-4 
-  rounded-xl 
+  rounded-xl
   p-2;
 }
 
 .aboutSectionSkillIcon {
-  @apply flex 
+  @apply theme-transition 
+  flex 
   items-center 
   justify-center 
   rounded-lg 
   p-2 
-  text-black 
+  text-black
   dark:text-white;
 }
 
 .aboutSectionSkillName {
   @apply text-medium-gray-50
-  dark:text-light-gray-950;
+  dark:text-light-gray-950
+  theme-transition;
 }

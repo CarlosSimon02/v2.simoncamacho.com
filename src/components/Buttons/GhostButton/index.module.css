@@ -1,36 +1,27 @@
 @reference "../../../styles/index.css";
 
 .button {
-  & > * {
-    @apply duration-300 
-    motion-safe:transition-all;
-  }
-  & > *:not(.sr-only, .line) {
-    @apply relative;
-  }
+  @apply theme-transition;
 
-  &.primary {
+  &[data-color="primary"] {
     @apply text-dark-gray-50 
-    dark:text-light-gray-50;
+    dark:text-light-gray-50 
+    theme-transition;
   }
-
-  &.secondary {
+  &[data-color="secondary"] {
     @apply dark:text-medium-gray-50 
-    text-pale-gray-500;
+    text-pale-gray-500 
+    theme-transition;
   }
-
-  &.subtle {
-    @apply dark:text-dark-gray-200
-    text-light-gray-600;
-  }
-
-  &.accent {
+  &[data-hover-color="accent"]:hover {
     @apply text-accent;
   }
-
-  &.accentHover {
-    &:hover {
-      @apply text-accent;
-    }
+  &[data-color="subtle"] {
+    @apply text-dark-gray-200
+    dark:text-light-gray-600
+    theme-transition;
+  }
+  &[data-color="accent"] {
+    @apply text-accent;
   }
 }

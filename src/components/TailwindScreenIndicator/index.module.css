@@ -1,7 +1,8 @@
 @reference "../../styles/index.css";
 
 .circleContainer {
-  @apply fixed  
+  @apply theme-transition  
+  fixed 
   bottom-1 
   left-1 
   z-50 
@@ -10,11 +11,11 @@
   items-center 
   justify-center 
   rounded-full 
-  bg-black 
+  bg-black
   p-3
-  text-xs
+  text-xs 
   text-white 
-  dark:bg-white 
+  dark:bg-white
   dark:text-black;
 
   .xsLabel {

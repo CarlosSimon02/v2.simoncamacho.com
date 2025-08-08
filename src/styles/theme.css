@@ -57,6 +57,8 @@
   --color-white: oklch(1 0.01 264.695);
   --color-black: oklch(0 0.01 264.695);
 
+  --theme-transition-duration: 300ms;
+
   --animate-ripple: ripple var(--duration, 2s) ease calc(var(--i, 0) * 0.2s)
     infinite;
 
@@ -71,17 +73,24 @@
   }
 }
 
+@utility duration-theme {
+  @apply duration-[var(--theme-transition-duration)];
+}
+
+@utility theme-transition {
+  @apply motion-safe:!duration-theme motion-safe:transition-[color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,--tw-gradient-from,--tw-gradient-via,--tw-gradient-to,text-shadow] motion-safe:!ease-linear;
+}
+
 @utility text-decor {
   @apply font-oswald
     dark:text-dark-gray-800
     text-light-gray-200
-    -z-10 
+    theme-transition 
+    -z-10
     font-bold
-    whitespace-nowrap
-    uppercase 
+    whitespace-nowrap 
+    uppercase
     antialiased
-    !transition-all
     [text-shadow:1px_0_var(--color-light-gray-100),-1px_0_var(--color-light-gray-100),0_1px_var(--color-light-gray-100),0_-1px_var(--color-light-gray-100),1px_1px_var(--color-light-gray-100),-1px_-1px_var(--color-light-gray-100),1px_-1px_var(--color-light-gray-100),-1px_1px_var(--color-light-gray-100)]
-    motion-safe:transition-[text-shadow,colors]
   dark:[text-shadow:1px_0_var(--color-dark-gray-800),-1px_0_var(--color-dark-gray-800),0_1px_var(--color-dark-gray-800),0_-1px_var(--color-dark-gray-800),1px_1px_var(--color-dark-gray-800),-1px_-1px_var(--color-dark-gray-800),1px_-1px_var(--color-dark-gray-800),-1px_1px_var(--color-dark-gray-800)];
 }
