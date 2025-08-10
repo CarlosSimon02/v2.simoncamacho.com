@@ -1,8 +1,6 @@
 @reference "../../../styles/index.css";
 
 .button {
-  @apply theme-transition;
-
   &[data-color="primary"] {
     @apply text-dark-gray-50 
     dark:text-light-gray-50 
@@ -13,13 +11,13 @@
     text-pale-gray-500 
     theme-transition;
   }
+  &[data-color="subtle"] {
+    @apply theme-transition
+    text-red-500
+    dark:text-red-500;
+  }
   &[data-hover-color="accent"]:hover {
     @apply text-accent;
-  }
-  &[data-color="subtle"] {
-    @apply text-dark-gray-200
-    dark:text-light-gray-600
-    theme-transition;
   }
   &[data-color="accent"] {
     @apply text-accent;
