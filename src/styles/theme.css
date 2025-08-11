@@ -78,8 +78,10 @@
 }
 
 @utility theme-transition {
-  @apply motion-safe:transition-[color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,--tw-gradient-from,--tw-gradient-via,--tw-gradient-to,text-shadow] 
-  motion-safe:!duration-300 motion-safe:ease-out;
+  @apply motion-safe:transition-colors 
+  motion-safe:!delay-0 
+  motion-safe:!duration-300 
+  motion-safe:!ease-out;
 }
 
 @utility text-decor {
@@ -88,10 +90,7 @@
     text-light-gray-200
     theme-transition 
     -z-10
-    font-bold
+    font-black
     whitespace-nowrap 
-    uppercase
-    antialiased
-    [text-shadow:1px_0_var(--color-light-gray-100),-1px_0_var(--color-light-gray-100),0_1px_var(--color-light-gray-100),0_-1px_var(--color-light-gray-100),1px_1px_var(--color-light-gray-100),-1px_-1px_var(--color-light-gray-100),1px_-1px_var(--color-light-gray-100),-1px_1px_var(--color-light-gray-100)]
-  dark:[text-shadow:1px_0_var(--color-dark-gray-800),-1px_0_var(--color-dark-gray-800),0_1px_var(--color-dark-gray-800),0_-1px_var(--color-dark-gray-800),1px_1px_var(--color-dark-gray-800),-1px_-1px_var(--color-dark-gray-800),1px_-1px_var(--color-dark-gray-800),-1px_1px_var(--color-dark-gray-800)];
+    uppercase;
 }
