@@ -16,18 +16,16 @@
   }
 
   .line {
-    @apply dark:bg-medium-gray-700 
-    bg-light-gray-950 
+    @apply dark:bg-dark-gray-700 
+    bg-light-gray-200 
+    theme-transition
     container 
     h-full
-    w-full 
-    opacity-10;
+    w-full;
   }
 
-  .gizmo {
-    @apply dark:bg-dark-gray-700 
-    bg-light-gray-300 
-    absolute 
+  .gizmoContainer {
+    @apply absolute 
     left-1/2 
     z-10  
     h-[1.25rem] 
@@ -35,10 +33,16 @@
     -translate-x-1/2
     -translate-y-1/2
     transform
-    rounded-full;
-
-    transition:
-      top 1000ms,
-      background-color 300ms;
+    overflow-clip 
+    rounded-full
+    transition-[top]
+    duration-1000;
+    .gizmo {
+      @apply dark:bg-dark-gray-700 
+      bg-light-gray-300 
+      theme-transition
+      absolute 
+      inset-0;
+    }
   }
 }

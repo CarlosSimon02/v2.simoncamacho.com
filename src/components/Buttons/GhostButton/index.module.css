@@ -1,36 +1,72 @@
 @reference "../../../styles/index.css";
 
 .button {
-  & > * {
-    @apply duration-300 
-    motion-safe:transition-all;
-  }
   & > *:not(.sr-only, .line) {
     @apply relative;
   }
-
-  &.primary {
+  &[data-color="primary"] {
     @apply text-dark-gray-50 
-    dark:text-light-gray-50;
+    dark:text-light-gray-50 
+    theme-transition;
   }
-
-  &.secondary {
+  &[data-color="secondary"] {
     @apply dark:text-medium-gray-50 
-    text-pale-gray-500;
+    text-pale-gray-500 
+    theme-transition;
   }
-
-  &.subtle {
+  &[data-color="subtle"] {
     @apply dark:text-dark-gray-200
-    text-light-gray-600;
+    text-light-gray-600
+    theme-transition;
   }
-
-  &.accent {
+  &[data-hover-color="accent"]:hover {
+    @apply text-accent;
+  }
+  &[data-color="accent"] {
     @apply text-accent;
   }
 
-  &.accentHover {
-    &:hover {
-      @apply text-accent;
+  &[data-hover-direction="up"] {
+    & > * {
+      @apply bottom-0
+      [transition:bottom_200ms_ease];
+    }
+
+    &:hover > * {
+      @apply bottom-[0.25rem];
+    }
+  }
+
+  &[data-hover-direction="bottom"] {
+    & > * {
+      @apply top-0
+      [transition:top_200ms_ease];
+    }
+
+    &:hover > * {
+      @apply top-[0.25rem];
+    }
+  }
+
+  &[data-hover-direction="left"] {
+    & > * {
+      @apply right-0
+      [transition:right_200ms_ease];
+    }
+
+    &:hover > * {
+      @apply right-[0.25rem];
+    }
+  }
+
+  &[data-hover-direction="right"] {
+    & > * {
+      @apply left-0
+      [transition:left_200ms_ease];
+    }
+
+    &:hover > * {
+      @apply left-[0.25rem];
     }
   }
 }

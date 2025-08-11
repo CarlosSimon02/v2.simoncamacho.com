@@ -40,6 +40,8 @@
 }
 
 .face {
+  @apply theme-transition;
+
   position: absolute;
   width: 100%;
   height: 100%;
@@ -48,6 +50,7 @@
   justify-content: center;
   background: var(--cube-face-bg);
   border: var(--cube-face-border);
+
   opacity: 1;
 }
 

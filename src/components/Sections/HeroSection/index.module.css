@@ -42,10 +42,10 @@
       .heroTitle {
         @apply font-oswald 
         text-dark-gray-50 
+        theme-transition 
         text-2xl 
         font-semibold 
-        lg:text-3xl 
-        dark:text-white;
+        lg:text-3xl dark:text-white;
       }
 
       .heroHeaderLine {

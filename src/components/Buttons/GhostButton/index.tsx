@@ -33,14 +33,10 @@ const GhostButton = ({
   return (
     <Comp
       data-slot="button"
-      className={cn(
-        "group",
-        styles.button,
-        styles[`${hoverColor}Hover`],
-        styles[color],
-        hoverDirectionMap[hoverDirection],
-        className
-      )}
+      data-color={color}
+      data-hover-color={hoverColor}
+      data-hover-direction={hoverDirection}
+      className={cn("group", styles.button, className)}
       {...props}
     >
       {children}

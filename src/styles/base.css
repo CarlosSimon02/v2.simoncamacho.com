@@ -1,12 +1,4 @@
 @layer base {
-  * {
-    @apply outline-accent 
-    subpixel-antialiased
-    outline-0 
-    duration-300
-    motion-safe:transition-colors;
-  }
-
   *:focus-visible {
     @apply outline-accent 
     outline-offset-1 
@@ -27,6 +19,7 @@
     dark:bg-dark-gray-500 
     dark:text-medium-gray-50 
     text-pale-gray-500 
+    theme-transition
     bg-white 
     motion-safe:scroll-smooth;
   }

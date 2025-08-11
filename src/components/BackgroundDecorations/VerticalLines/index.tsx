@@ -24,9 +24,11 @@ const VerticalLines = () => {
           <div className={styles.line} />
           {positions.length > 0 && (
             <div
-              className={styles.gizmo}
+              className={styles.gizmoContainer}
               style={{ top: `${positions[index]}%` }}
-            />
+            >
+              <div className={styles.gizmo} />
+            </div>
           )}
         </div>
       ))}

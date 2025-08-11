@@ -12,7 +12,8 @@
   flex 
   items-center 
   justify-center 
-  text-xl font-bold;
+  text-xl 
+  font-bold;
 }
 
 .sectionButtonNormal {
@@ -29,7 +30,7 @@
   mb-0 
   w-[0.0625rem] 
   bg-current 
-  [transition:height_0.5s_ease-out];
+  ![transition:height_0.5s_ease-out];
 
   &[data-state="active"] {
     @apply h-20;
