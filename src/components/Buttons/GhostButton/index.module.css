@@ -1,6 +1,9 @@
 @reference "../../../styles/index.css";
 
 .button {
+  & > *:not(.sr-only, .line) {
+    @apply relative;
+  }
   &[data-color="primary"] {
     @apply text-dark-gray-50 
     dark:text-light-gray-50 
@@ -25,41 +28,45 @@
 
   &[data-hover-direction="up"] {
     & > * {
-      @apply bottom-0;
+      @apply bottom-0
+      [transition:bottom_200ms_ease];
     }
 
     &:hover > * {
-      @apply bottom-[0.1875rem];
+      @apply bottom-[0.25rem];
     }
   }
 
-  &[data-hover-direction="down"] {
+  &[data-hover-direction="bottom"] {
     & > * {
-      @apply top-0;
+      @apply top-0
+      [transition:top_200ms_ease];
     }
 
     &:hover > * {
-      @apply top-[0.1875rem];
+      @apply top-[0.25rem];
     }
   }
 
   &[data-hover-direction="left"] {
     & > * {
-      @apply right-0;
+      @apply right-0
+      [transition:right_200ms_ease];
     }
 
     &:hover > * {
-      @apply right-[0.1875rem];
+      @apply right-[0.25rem];
     }
   }
 
   &[data-hover-direction="right"] {
     & > * {
-      @apply left-0;
+      @apply left-0
+      [transition:left_200ms_ease];
     }
 
     &:hover > * {
-      @apply left-[0.1875rem];
+      @apply left-[0.25rem];
     }
   }
 }
