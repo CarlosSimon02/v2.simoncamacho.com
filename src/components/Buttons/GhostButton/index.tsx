@@ -35,12 +35,8 @@ const GhostButton = ({
       data-slot="button"
       data-color={color}
       data-hover-color={hoverColor}
-      className={cn(
-        "group",
-        styles.button,
-        // hoverDirectionMap[hoverDirection],
-        className
-      )}
+      data-hover-direction={hoverDirection}
+      className={cn("group", styles.button, className)}
       {...props}
     >
       {children}

@@ -22,4 +22,44 @@
   &[data-color="accent"] {
     @apply text-accent;
   }
+
+  &[data-hover-direction="up"] {
+    & > * {
+      @apply bottom-0;
+    }
+
+    &:hover > * {
+      @apply bottom-[0.1875rem];
+    }
+  }
+
+  &[data-hover-direction="down"] {
+    & > * {
+      @apply top-0;
+    }
+
+    &:hover > * {
+      @apply top-[0.1875rem];
+    }
+  }
+
+  &[data-hover-direction="left"] {
+    & > * {
+      @apply right-0;
+    }
+
+    &:hover > * {
+      @apply right-[0.1875rem];
+    }
+  }
+
+  &[data-hover-direction="right"] {
+    & > * {
+      @apply left-0;
+    }
+
+    &:hover > * {
+      @apply left-[0.1875rem];
+    }
+  }
 }
