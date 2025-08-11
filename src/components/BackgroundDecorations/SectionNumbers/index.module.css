@@ -30,7 +30,7 @@
   mb-0 
   w-[0.0625rem] 
   bg-current 
-  ![transition:height_0.5s_ease-out];
+  ![transition:all_0.5s_ease-out];
 
   &[data-state="active"] {
     @apply h-20;
