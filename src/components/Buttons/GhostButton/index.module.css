@@ -12,9 +12,9 @@
     theme-transition;
   }
   &[data-color="subtle"] {
-    @apply theme-transition
-    text-red-500
-    dark:text-red-500;
+    @apply dark:text-dark-gray-200
+    text-light-gray-600
+    theme-transition;
   }
   &[data-hover-color="accent"]:hover {
     @apply text-accent;

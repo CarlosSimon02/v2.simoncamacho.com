@@ -78,7 +78,7 @@
 }
 
 @utility theme-transition {
-  @apply motion-safe:!duration-theme motion-safe:transition-[color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,--tw-gradient-from,--tw-gradient-via,--tw-gradient-to,text-shadow] motion-safe:!ease-linear;
+  @apply motion-safe:transition-[color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,--tw-gradient-from,--tw-gradient-via,--tw-gradient-to,text-shadow] motion-safe:!duration-300 motion-safe:ease-out;
 }
 
 @utility text-decor {
