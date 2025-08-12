@@ -39,9 +39,9 @@ const Timeline = ({ className }: TimelineProps) => {
       {experiences.map((experience) => (
         <div key={experience.title} className="relative pb-15 last:pb-0">
           <div className="border-light-gray-900 dark:border-medium-gray-500 absolute top-6 left-1 h-full w-0.5 border border-r-0 border-l border-dashed" />
-          <span className="relative top-6 -left-0.25 flex size-3 md:-left-[0.25rem] md:size-4">
+          <span className="relative top-6 -left-0.25 flex size-3">
             <span className="bg-light-gray-900 dark:bg-medium-gray-500 absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"></span>
-            <span className="bg-light-gray-900 dark:bg-medium-gray-500 relative inline-flex size-3 rounded-full md:size-4"></span>
+            <span className="bg-light-gray-900 dark:bg-medium-gray-500 relative inline-flex size-3 rounded-full"></span>
           </span>
           <div className="mt-[0.375rem] ml-6 flex justify-between gap-10 max-md:flex-col md:ml-10">
             <div className="flex w-[15.625rem] shrink-0 flex-col gap-2">
