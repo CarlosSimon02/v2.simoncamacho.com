@@ -2,9 +2,8 @@
 
 .baseContainer {
   @apply relative 
-  overflow-clip 
-  py-8 
-  md:py-12 
+  overflow-clip  
+  py-12 
   lg:py-16 
   xl:!px-[var(--content-padding-x)] 
   xl:py-20;

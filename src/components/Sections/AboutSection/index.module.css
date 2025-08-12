@@ -3,7 +3,7 @@
 .aboutSectionContainer {
   @apply flex 
   flex-col 
-  gap-7 
+  gap-9 
   md:gap-12;
 }
 

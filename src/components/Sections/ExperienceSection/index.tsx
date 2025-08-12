@@ -11,7 +11,7 @@ const HeroSection = ({ className }: HeroSectionProps) => {
   return (
     <ContentContainer
       sectionId="experience"
-      className={cn(className, "flex flex-col gap-7")}
+      className={cn(className, "flex flex-col gap-9")}
     >
       <SectionTitle title="Experience" number={2} />
       <div className="flex flex-col gap-4 md:mb-12">
