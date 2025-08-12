@@ -32,7 +32,7 @@
       .heroName {
         @apply font-montserrat 
         text-accent 
-        text-[2.375rem] 
+        text-[2.25rem] 
         leading-none 
         font-black 
         md:text-5xl 
@@ -43,7 +43,7 @@
         @apply font-oswald 
         text-dark-gray-50 
         theme-transition 
-        text-[1.375rem] 
+        text-2xl 
         font-semibold 
         lg:text-3xl 
         dark:text-white;
