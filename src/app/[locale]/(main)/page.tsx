@@ -16,7 +16,7 @@ const HomePage = async () => {
     <>
       <Decorations sections={homePageSections} />
       <main>
-        <HeroSection className="h-auto min-h-[calc(100vh-var(--header-height))] py-14 md:py-20" />
+        <HeroSection className="h-auto min-h-[calc(100vh-var(--header-height))] !py-8 md:py-20" />
         <AboutSection />
         <ExperienceSection />
       </main>
