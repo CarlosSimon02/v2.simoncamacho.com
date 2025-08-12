@@ -21,7 +21,9 @@
     text-pale-gray-500 
     theme-transition
     bg-white 
-    motion-safe:scroll-smooth;
+    text-[0.9375rem]
+    motion-safe:scroll-smooth
+    sm:text-base;
   }
 
   button,
@@ -33,7 +35,8 @@
   }
 
   p {
-    @apply leading-[1.7] 
+    @apply leading-[1.5]
+    sm:leading-[1.7] 
     md:leading-[1.9];
   }
 }
