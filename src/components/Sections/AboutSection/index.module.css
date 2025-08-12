@@ -28,10 +28,11 @@
   @apply font-oswald 
   text-dark-gray-50 
   theme-transition 
-  mb-5 
-  text-2xl 
+  mb-5
+  text-xl
+  font-black 
   md:mb-7 
-  md:text-3xl
+  md:text-2xl
   dark:text-white;
 }
 
