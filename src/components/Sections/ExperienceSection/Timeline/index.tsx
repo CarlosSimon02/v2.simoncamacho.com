@@ -56,7 +56,7 @@ const Timeline = ({ className }: TimelineProps) => {
             <ul className="flex flex-col gap-2 md:gap-3">
               {experience.descriptions.map((description) => (
                 <li key={description} className="flex items-start gap-2">
-                  <PaperAirplaneIcon className="stroke-accent size-6 flex-shrink-0" />
+                  <PaperAirplaneIcon className="stroke-accent size-5 flex-shrink-0 sm:size-6" />
                   <span>{description}</span>
                 </li>
               ))}
