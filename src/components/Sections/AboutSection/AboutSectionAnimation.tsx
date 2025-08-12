@@ -13,7 +13,7 @@ const AboutSectionAnimation = () => {
       ease: "power4.out",
       scrollTrigger: {
         trigger: `.${MY_JOURNEY_CLASS}`,
-        start: "top 80%",
+        start: "top 70%",
       },
     });
 
@@ -24,7 +24,7 @@ const AboutSectionAnimation = () => {
       ease: "power4.out",
       scrollTrigger: {
         trigger: `.${MY_SKILLS_CLASS}`,
-        start: "top 80%",
+        start: "top 70%",
       },
     });
   });

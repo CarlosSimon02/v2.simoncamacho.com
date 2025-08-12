@@ -29,10 +29,10 @@
   text-dark-gray-50 
   theme-transition 
   mb-5
-  text-xl
+  text-2xl
   font-black 
   md:mb-7 
-  md:text-2xl
+  md:text-3xl
   dark:text-white;
 }
 

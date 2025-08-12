@@ -18,7 +18,7 @@ const SectionTitleAnimation = ({ id }: SectionTitleAnimationProps) => {
       stagger: 0.1,
       scrollTrigger: {
         trigger: `.${SECTION_TITLE_CONTAINER_CLASS}-${id}`,
-        start: "top 80%",
+        start: "top 70%",
       },
     });
   });

@@ -27,7 +27,7 @@ const HeaderSectionAnimation = () => {
       ease: "power4.out",
       scrollTrigger: {
         trigger: `.${HERO_SECTION_IMAGE_CONTAINER_CLASS}`,
-        start: "top 80%",
+        start: "top 70%",
       },
     });
 
@@ -38,7 +38,7 @@ const HeaderSectionAnimation = () => {
       ease: "power4.out",
       scrollTrigger: {
         trigger: `.${HERO_SECTION_IMAGE_CONTAINER_CLASS}`,
-        start: "top 80%",
+        start: "top 70%",
       },
     });
   });
