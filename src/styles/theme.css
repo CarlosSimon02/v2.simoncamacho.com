@@ -93,4 +93,7 @@
     font-black
     whitespace-nowrap 
     uppercase;
+
+  -webkit-text-stroke: 0.25rem currentColor;
+  paint-order: stroke fill;
 }

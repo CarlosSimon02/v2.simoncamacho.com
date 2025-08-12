@@ -37,26 +37,26 @@ const Timeline = ({ className }: TimelineProps) => {
   return (
     <div className={cn(className, "flex flex-col")}>
       {experiences.map((experience) => (
-        <div key={experience.title} className="relative pb-12 last:pb-0">
-          <div className="border-medium-gray-950 dark:border-pale-gray-950 absolute top-6 left-1 h-full w-0.5 border border-r-0 border-l border-dashed" />
-          <span className="relative top-6 -left-0.25 flex size-3">
-            <span className="bg-foreground-2 absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"></span>
-            <span className="bg-foreground-2 relative inline-flex size-3 rounded-full"></span>
+        <div key={experience.title} className="relative pb-15 last:pb-0">
+          <div className="border-light-gray-900 dark:border-medium-gray-500 absolute top-6 left-1 h-full w-0.5 border border-r-0 border-l border-dashed" />
+          <span className="relative top-6 -left-0.25 flex size-3 md:-left-[0.25rem] md:size-4">
+            <span className="bg-light-gray-900 dark:bg-medium-gray-500 absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"></span>
+            <span className="bg-light-gray-900 dark:bg-medium-gray-500 relative inline-flex size-3 rounded-full md:size-4"></span>
           </span>
-          <div className="ml-6 flex flex-col md:ml-10 md:gap-1">
-            <h3 className="font-oswald text-foreground text-dark-gray-50 text-2xl font-black md:text-3xl dark:text-white">
-              {experience.title}
-            </h3>
-            <h4 className="font-oswald text-lg font-black md:text-xl">
-              @ {experience.company}
-            </h4>
-            <p className="font-oswald mb-6 text-lg font-black md:text-xl">
-              {experience.date}
-            </p>
-            <ul className="flex flex-col gap-2 md:gap-3">
+          <div className="mt-[0.375rem] ml-6 flex justify-between gap-10 max-md:flex-col md:ml-10">
+            <div className="flex w-[15.625rem] shrink-0 flex-col gap-2">
+              <div className="mb-3">{experience.date}</div>
+              <h3 className="font-oswald text-foreground text-dark-gray-50 text-2xl font-black md:text-3xl dark:text-white">
+                {experience.title}
+              </h3>
+              <h4 className="font-oswald text-lg font-black md:text-xl ">
+                @ {experience.company}
+              </h4>
+            </div>
+            <ul className="flex max-w-2xl flex-col gap-2 md:gap-3">
               {experience.descriptions.map((description) => (
                 <li key={description} className="flex items-start gap-2">
-                  <PaperAirplaneIcon className="stroke-accent size-5 flex-shrink-0 sm:size-6" />
+                  <PaperAirplaneIcon className="stroke-accent size-5 flex-shrink-0 pt-1 sm:size-6" />
                   <span>{description}</span>
                 </li>
               ))}

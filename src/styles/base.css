@@ -34,7 +34,8 @@
     }
   }
 
-  p {
+  p,
+  li {
     @apply leading-[1.6]
     sm:leading-[1.7] 
     md:leading-[1.9];

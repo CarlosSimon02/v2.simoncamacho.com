@@ -15,7 +15,7 @@ const HeroSection = ({ className }: HeroSectionProps) => {
     >
       <SectionTitle title="Experience" number={2} />
       <div className="flex flex-col gap-4 md:mb-12">
-        <Timeline className="mx-auto max-w-2xl" />
+        <Timeline />
       </div>
     </ContentContainer>
   );
