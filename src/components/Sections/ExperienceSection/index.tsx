@@ -2,23 +2,24 @@ import ContentContainer from "@/components/Containers/ContentContainer";
 import SectionTitle from "@/components/SectionTitle";
 import { cn } from "@/utils";
 import Timeline from "./Timeline";
+import styles from "./index.module.css";
 
-type HeroSectionProps = {
+type ExperienceSectionProps = {
   className?: string;
 };
 
-const HeroSection = ({ className }: HeroSectionProps) => {
+const ExperienceSection = ({ className }: ExperienceSectionProps) => {
   return (
     <ContentContainer
       sectionId="experience"
-      className={cn(className, "flex flex-col gap-9")}
+      className={cn(className, styles.experienceSectionContainer)}
     >
       <SectionTitle title="Experience" number={2} />
-      <div className="flex flex-col gap-4 md:mb-12">
+      <div className={styles.experienceTimelineWrapper}>
         <Timeline />
       </div>
     </ContentContainer>
   );
 };
 
-export default HeroSection;
+export default ExperienceSection;
