@@ -45,9 +45,10 @@
 
 .aboutSectionSkillsGrid {
   @apply theme-transition 
-  grid 
-  grid-cols-2 
+  grid
+  grid-cols-1 
   gap-3 
+  min-[22.5em]:grid-cols-2 
   sm:grid-cols-3 
   md:grid-cols-4
   lg:grid-cols-5;

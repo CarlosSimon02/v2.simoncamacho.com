@@ -45,7 +45,9 @@ const Timeline = ({ className }: TimelineProps) => {
         >
           <div className={styles.timelineItemLine} />
           <span className={styles.timelineItemPing}>
-            <span className={styles.timelineItemPingPulse}></span>
+            <span
+              className={cn(styles.timelineItemPingPulse, "animate-ping")}
+            ></span>
             <span className={styles.timelineItemPingDot}></span>
           </span>
           <div className={styles.timelineItemContentRow}>
