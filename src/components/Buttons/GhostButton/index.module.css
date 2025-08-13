@@ -6,18 +6,15 @@
   }
   &[data-color="primary"] {
     @apply text-dark-gray-50 
-    dark:text-light-gray-50 
-    theme-transition;
+    dark:text-light-gray-50;
   }
   &[data-color="secondary"] {
     @apply dark:text-medium-gray-50 
-    text-pale-gray-500 
-    theme-transition;
+    text-pale-gray-500;
   }
   &[data-color="subtle"] {
     @apply dark:text-dark-gray-200
-    text-light-gray-600
-    theme-transition;
+    text-light-gray-600;
   }
   &[data-hover-color="accent"]:hover {
     @apply text-accent;

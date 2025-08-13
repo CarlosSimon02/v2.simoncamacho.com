@@ -6,14 +6,12 @@
   z-40
   h-[var(--header-height)]
   border-0
-  
   shadow-none;
 
   .headerBackground {
     @apply dark:bg-dark-gray-950
     dark:border-dark-gray-500
     border-light-gray-400
-    theme-transition
     absolute 
     inset-0
     -z-10
@@ -21,7 +19,7 @@
     bg-white
     opacity-0
     backdrop-blur-md
-    transition
+    transition-opacity
     duration-300;
 
     &[data-scrolled="true"] {

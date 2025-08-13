@@ -50,7 +50,7 @@ const AboutSection = ({ className }: AboutSectionProps) => {
                   className={cn(
                     styles.aboutSectionSkillIcon,
                     technology.color === "system" &&
-                      "theme-transition bg-black/5 dark:bg-white/5"
+                      " bg-black/5 dark:bg-white/5"
                   )}
                   style={{
                     backgroundColor:

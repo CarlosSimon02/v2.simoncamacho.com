@@ -3,7 +3,6 @@
 .dropdownMenuContent {
   @apply font-oswald
   dark:bg-dark-gray-950
-  theme-transition
   dark:text-medium-gray-50
   text-pale-gray-500 
   dark:border-dark-gray-500
@@ -22,7 +21,6 @@
 
 .dropdownMenuItem {
   @apply dark:focus:bg-dark-gray-800 
-  theme-transition
   dark:focus:text-accent
   focus:bg-light-gray-100
   focus:text-accent
