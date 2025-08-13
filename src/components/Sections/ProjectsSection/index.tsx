@@ -65,7 +65,7 @@ const ProjectsSection = ({ className }: HeroSectionProps) => {
         )}
       >
         {projects.map((project) => (
-          <div key={project.slug} className="flex flex-col gap-4">
+          <div key={project.slug} className="flex flex-col gap-5 md:gap-8">
             <div className="bg-light-gray-200 dark:bg-dark-gray-700 relative flex aspect-video w-full flex-col items-center justify-center overflow-hidden rounded-lg">
               <InteractiveGridPattern
                 className={cn(
@@ -82,7 +82,7 @@ const ProjectsSection = ({ className }: HeroSectionProps) => {
               />
             </div>
             <div className="flex flex-col gap-3">
-              <h3 className="font-oswald text-dark-gray-50 text-2xl md:text-3xl dark:text-white">
+              <h3 className="font-oswald text-dark-gray-50 mb-1 text-2xl font-black md:mb-2 md:text-3xl dark:text-white">
                 {project.title}
               </h3>
               <div className="flex flex-wrap gap-2">
