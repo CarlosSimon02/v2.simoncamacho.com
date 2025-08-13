@@ -35,7 +35,8 @@
 
 .timelineItemPingPulse {
   @apply bg-light-gray-900 
-  dark:bg-medium-gray-500 
+  dark:bg-medium-gray-500
+  theme-transition
   absolute 
   inline-flex 
   h-full 
@@ -48,6 +49,7 @@
 .timelineItemPingDot {
   @apply bg-light-gray-900 
   dark:bg-medium-gray-500 
+  theme-transition
   relative 
   inline-flex 
   size-3 
@@ -107,9 +109,10 @@
 .timelineItemTitle {
   @apply font-oswald 
   text-dark-gray-50 
+  theme-transition 
   text-2xl 
   font-black 
-  max-md:mb-1 
+  max-md:mb-1
   md:text-3xl
   dark:text-white;
 }
