@@ -1,6 +1,7 @@
 @reference "../../../styles/index.css";
 
 .button {
+  @apply transition-colors duration-300;
   & > *:not(.sr-only, .line) {
     @apply relative;
   }
