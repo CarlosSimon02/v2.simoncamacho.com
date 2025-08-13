@@ -1,6 +1,6 @@
-import audiophile from "@/app/assets/images/projects/audiophile.png";
-import kanban from "@/app/assets/images/projects/kanban.png";
-import pomodoro from "@/app/assets/images/projects/pomodoro.png";
+import audiophile from "@/assets/projects/audiophile.png";
+import kanban from "@/assets/projects/kanban.png";
+import pomodoro from "@/assets/projects/pomodoro.png";
 import ContentContainer from "@/components/Containers/ContentContainer";
 import { InteractiveGridPattern } from "@/components/Effects";
 import SectionTitle from "@/components/SectionTitle";
@@ -51,7 +51,7 @@ const projects = [
   },
 ];
 
-const HeroSection = ({ className }: HeroSectionProps) => {
+const ProjectsSection = ({ className }: HeroSectionProps) => {
   return (
     <ContentContainer
       sectionId="projects"
@@ -66,7 +66,7 @@ const HeroSection = ({ className }: HeroSectionProps) => {
       >
         {projects.map((project) => (
           <div key={project.slug} className="flex flex-col gap-4">
-            <div className="bg-bg-card relative flex aspect-video w-full flex-col items-center justify-center overflow-hidden rounded-lg">
+            <div className="bg-light-gray-200 dark:bg-dark-gray-700 relative flex aspect-video w-full flex-col items-center justify-center overflow-hidden rounded-lg">
               <InteractiveGridPattern
                 className={cn(
                   "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
@@ -115,4 +115,4 @@ const HeroSection = ({ className }: HeroSectionProps) => {
   );
 };
 
-export default HeroSection;
+export default ProjectsSection;
