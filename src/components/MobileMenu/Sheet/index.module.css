@@ -108,7 +108,8 @@
   inset-0 
   z-50 
   bg-black/50
-  transition-[backdrop-filter,-webkit-backdrop-filter] duration-300;
+  transition-[backdrop-filter,-webkit-backdrop-filter] 
+  duration-300;
 
   &[data-state="open"] {
     @apply animate-in fade-in-0 backdrop-blur-xs;
