@@ -133,7 +133,9 @@
 }
 
 .timelineItemLogoWrapper {
-  @apply bg-dark-gray-500 
+  @apply dark:bg-dark-gray-500
+  bg-light-gray-300 
+  theme-transition
   size-fit 
   rounded-xl 
   p-3 
@@ -141,9 +143,11 @@
 }
 
 .timelineItemLogo {
-  @apply size-10 
-  fill-white 
-  md:size-10;
+  @apply fill-dark-gray-50 
+  theme-transition 
+  size-10
+  md:size-10
+  dark:fill-white;
 }
 
 .timelineItemDescriptions {
