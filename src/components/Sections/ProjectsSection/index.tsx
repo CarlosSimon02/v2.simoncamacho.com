@@ -60,7 +60,7 @@ const ProjectsSection = ({ className }: HeroSectionProps) => {
       <SectionTitle title="Projects" number={3} />
       <div
         className={cn(
-          "grid gap-x-10 gap-y-14 overflow-hidden sm:gap-x-12 sm:gap-y-20",
+          "grid gap-9 overflow-hidden md:gap-12",
           "md:grid-cols-[repeat(auto-fit,minmax(18rem,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(24rem,1fr))]"
         )}
       >
