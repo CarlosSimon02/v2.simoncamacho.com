@@ -1,6 +1,14 @@
+"use client";
+
 import { EXPERIENCES } from "@/constants/experiences";
 import { cn } from "@/utils";
+import { useGSAP } from "@gsap/react";
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
+import gsap from "gsap";
+import {
+  EXPERIENCE_TIMELINE_ITEM_CLASS,
+  EXPERIENCE_TIMELINE_ITEM_HIDDEN_STYLE,
+} from "../constants";
 import styles from "./index.module.css";
 
 type TimelineProps = {
@@ -8,10 +16,33 @@ type TimelineProps = {
 };
 
 const Timeline = ({ className }: TimelineProps) => {
+  useGSAP(() => {
+    const items = gsap.utils.toArray(`.${EXPERIENCE_TIMELINE_ITEM_CLASS}`);
+    items.forEach((item) => {
+      gsap.to(item as Element, {
+        top: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: item as Element,
+          start: "top 80%",
+        },
+      });
+    });
+  });
+
   return (
     <div className={cn(className, styles.timelineRoot)}>
       {EXPERIENCES.map((experience) => (
-        <div key={experience.title} className={styles.timelineItem}>
+        <div
+          key={experience.title}
+          className={cn(
+            styles.timelineItem,
+            EXPERIENCE_TIMELINE_ITEM_CLASS,
+            EXPERIENCE_TIMELINE_ITEM_HIDDEN_STYLE
+          )}
+        >
           <div className={styles.timelineItemLine} />
           <span className={styles.timelineItemPing}>
             <span className={styles.timelineItemPingPulse}></span>
