@@ -82,7 +82,7 @@ const ProjectsSection = ({ className }: HeroSectionProps) => {
               />
             </div>
             <div className="flex flex-col gap-3">
-              <h3 className="font-oswald text-foreground text-2xl md:text-3xl">
+              <h3 className="font-oswald text-dark-gray-50 text-2xl md:text-3xl dark:text-white">
                 {project.title}
               </h3>
               <div className="flex flex-wrap gap-2">
