@@ -18,8 +18,7 @@
     @apply font-lexend 
     dark:bg-dark-gray-900 
     dark:text-medium-gray-50 
-    text-pale-gray-500 
-    theme-transition
+    text-pale-gray-500   
     bg-white 
     text-[0.9375rem]
     motion-safe:scroll-smooth

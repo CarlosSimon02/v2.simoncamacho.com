@@ -2,6 +2,7 @@ import Decorations from "@/components/BackgroundDecorations";
 import AboutSection from "@/components/Sections/AboutSection";
 import ExperienceSection from "@/components/Sections/ExperienceSection";
 import HeroSection from "@/components/Sections/HeroSection";
+import ProjectsSection from "@/components/Sections/ProjectsSection";
 import { NAV_ITEMS } from "@/constants/navigation";
 import { getTranslations } from "next-intl/server";
 
@@ -19,6 +20,7 @@ const HomePage = async () => {
         <HeroSection className="h-auto min-h-[calc(100vh-var(--header-height))] !py-8 md:py-20" />
         <AboutSection />
         <ExperienceSection />
+        <ProjectsSection />
       </main>
     </>
   );

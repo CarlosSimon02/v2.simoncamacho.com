@@ -3,7 +3,6 @@
 .sheetContent {
   @apply dark:bg-dark-gray-950
   bg-light-gray-50
-  theme-transition
   fixed 
   z-50 
   flex 
@@ -89,7 +88,6 @@
   dark:border-dark-gray-500 
   border-light-gray-400 
   bg-light-gray-100
-  theme-transition 
   sticky 
   right-0 
   bottom-0 
@@ -109,7 +107,9 @@
   @apply fixed 
   inset-0 
   z-50 
-  bg-black/50;
+  bg-black/50
+  transition-[backdrop-filter,-webkit-backdrop-filter] 
+  duration-300;
 
   &[data-state="open"] {
     @apply animate-in fade-in-0 backdrop-blur-xs;

@@ -1,8 +1,7 @@
 @reference "../../styles/index.css";
 
 .circleContainer {
-  @apply theme-transition  
-  fixed 
+  @apply fixed 
   bottom-1 
   left-1 
   z-50 

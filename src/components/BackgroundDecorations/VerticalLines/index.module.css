@@ -18,7 +18,6 @@
   .line {
     @apply dark:bg-dark-gray-700 
     bg-light-gray-200 
-    theme-transition
     container 
     h-full
     w-full;
@@ -40,7 +39,6 @@
     .gizmo {
       @apply dark:bg-dark-gray-700 
       bg-light-gray-300 
-      theme-transition
       absolute 
       inset-0;
     }

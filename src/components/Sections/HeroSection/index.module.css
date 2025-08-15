@@ -41,8 +41,7 @@
 
       .heroTitle {
         @apply font-oswald 
-        text-dark-gray-50 
-        theme-transition 
+        text-dark-gray-50       
         text-2xl 
         font-semibold 
         lg:text-3xl 

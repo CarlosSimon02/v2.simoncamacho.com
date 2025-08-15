@@ -27,7 +27,6 @@
 .aboutSectionSubHeader {
   @apply font-oswald 
   text-dark-gray-50 
-  theme-transition 
   mb-5
   text-2xl
   font-black 
@@ -37,17 +36,16 @@
 }
 
 .aboutSectionSkills {
-  @apply theme-transition 
-  flex 
+  @apply flex 
   flex-col
   gap-4;
 }
 
 .aboutSectionSkillsGrid {
-  @apply theme-transition 
-  grid 
-  grid-cols-2 
+  @apply grid
+  grid-cols-1 
   gap-3 
+  min-[22.5em]:grid-cols-2 
   sm:grid-cols-3 
   md:grid-cols-4
   lg:grid-cols-5;
@@ -56,7 +54,6 @@
 .aboutSectionSkillCard {
   @apply dark:bg-dark-gray-800
   bg-light-gray-200 
-  theme-transition 
   flex 
   items-center 
   gap-4 
@@ -65,8 +62,7 @@
 }
 
 .aboutSectionSkillIcon {
-  @apply theme-transition 
-  flex 
+  @apply flex 
   items-center 
   justify-center 
   rounded-lg 
@@ -77,6 +73,5 @@
 
 .aboutSectionSkillName {
   @apply text-medium-gray-50
-  dark:text-light-gray-950
-  theme-transition;
+  dark:text-light-gray-950;
 }
