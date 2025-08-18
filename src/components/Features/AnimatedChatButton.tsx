@@ -24,7 +24,7 @@ const AnimatedChatButton = ({ className }: AnimatedChatButtonProps) => {
 
   return (
     <div className={className}>
-      <ChatButton className={cn(CHAT_BUTTON_CLASS, "from-right-xs")} />
+      <ChatButton className={cn(CHAT_BUTTON_CLASS, "from-right-sm")} />
     </div>
   );
 };
