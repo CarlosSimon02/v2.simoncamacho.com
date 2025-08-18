@@ -1,6 +1,6 @@
 "use client";
 
-import { EXPERIENCES } from "@/constants/experiences";
+import { EXPERIENCES } from "@/data/experiences";
 import { cn } from "@/utils";
 import { useGSAP } from "@gsap/react";
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline";

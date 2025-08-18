@@ -1,7 +1,7 @@
 "use client";
 
 import SocialButton from "@/components/UI/Buttons/SocialButton";
-import { SOCIALS } from "@/constants/socials";
+import { SOCIALS } from "@/data/socials";
 import { cn } from "@/utils";
 import { SOCIAL_ITEM_CLASS } from "./constants";
 import useSocialsAnimation from "./hooks/useSocialsAnimation";

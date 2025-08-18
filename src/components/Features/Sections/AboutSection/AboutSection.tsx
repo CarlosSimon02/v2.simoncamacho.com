@@ -1,6 +1,6 @@
 import ContentContainer from "@/components/UI/Containers/ContentContainer";
 import SectionTitle from "@/components/UI/SectionTitle";
-import { TECHNOLOGIES } from "@/constants/technologies";
+import { TECHNOLOGIES } from "@/data/technologies";
 import { cn } from "@/utils";
 import { useTranslations } from "next-intl";
 import AboutSectionAnimation from "./components/AboutSectionAnimation";

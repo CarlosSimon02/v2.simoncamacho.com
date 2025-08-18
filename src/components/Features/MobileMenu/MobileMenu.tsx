@@ -5,7 +5,7 @@ import CloseButton from "@/components/UI/Buttons/CloseButton";
 import GhostButton from "@/components/UI/Buttons/GhostButton";
 import SocialButton from "@/components/UI/Buttons/SocialButton";
 import Ripple from "@/components/UI/Effects/Ripple";
-import { SOCIALS } from "@/constants/socials";
+import { SOCIALS } from "@/data/socials";
 import useBreakpoint from "@/hooks/useBreakpoints";
 import { cn } from "@/utils";
 import { Bars3BottomRightIcon } from "@heroicons/react/24/outline";

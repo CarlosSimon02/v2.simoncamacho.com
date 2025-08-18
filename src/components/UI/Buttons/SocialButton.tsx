@@ -1,4 +1,4 @@
-import { SOCIALS } from "@/constants/socials";
+import { SOCIALS } from "@/data/socials";
 import { cn } from "@/utils";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
