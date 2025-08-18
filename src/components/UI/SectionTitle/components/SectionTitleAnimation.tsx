@@ -13,7 +13,7 @@ const SectionTitleAnimation = ({ id }: SectionTitleAnimationProps) => {
     gsap.to(`.${SECTION_TITLE_CONTAINER_CLASS}-${id}`, {
       top: 0,
       opacity: 1,
-      duration: 2,
+      duration: 1.2,
       ease: "power4.out",
       stagger: 0.1,
       scrollTrigger: {

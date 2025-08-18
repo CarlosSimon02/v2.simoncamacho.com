@@ -2,7 +2,7 @@ import Decorations from "@/components/Features/Decorations";
 import AboutSection from "@/components/Features/Sections/AboutSection";
 import ExperienceSection from "@/components/Features/Sections/ExperienceSection";
 import HeroSection from "@/components/Features/Sections/HeroSection";
-import ProjectsSection from "@/components/Features/Sections/ProjectsSeciton";
+import ProjectsSection from "@/components/Features/Sections/ProjectsSection";
 import { NAV_ITEMS } from "@/constants/navigation";
 import { getTranslations } from "next-intl/server";
 
