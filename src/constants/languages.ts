@@ -1,5 +1,5 @@
-import PHFlag from "@/components/Icons/Flags/PHFlag";
-import USFlag from "@/components/Icons/Flags/USFlag";
+import PHFlag from "@/components/UI/Icons/Flags/PHFlag";
+import USFlag from "@/components/UI/Icons/Flags/USFlag";
 
 export const LANGUAGES = [
   {

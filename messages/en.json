@@ -30,6 +30,9 @@
       "darkMode": "Toggle Dark Mode",
       "lightMode": "Toggle Light Mode"
     },
+    "chatButton": {
+      "open": "Open chat"
+    },
     "socialLinks": {
       "reddit": "Visit my Reddit profile",
       "frontendmentor": "Visit my Frontend Mentor profile",

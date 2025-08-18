@@ -1,0 +1,8 @@
+@layer base {
+  *:focus-visible {
+    @apply outline-accent 
+      outline-offset-1 
+      outline-dashed
+      motion-safe:transition-[outline-width];
+  }
+}

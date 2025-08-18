@@ -4,7 +4,7 @@ import {
   GithubIcon,
   LinkedinIcon,
   RedditIcon,
-} from "@/components/Icons/Socials";
+} from "@/components/UI/Icons/Socials";
 
 export const SOCIALS = [
   {

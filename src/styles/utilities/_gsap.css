@@ -1,0 +1,36 @@
+@theme {
+  --far-xs: 4rem;
+  --far-sm: 8rem;
+  --far-md: 12rem;
+  --far-lg: 16rem;
+  --far-xl: 20rem;
+  --far-2xl: 24rem;
+  --far-3xl: 28rem;
+  --far-4xl: 32rem;
+  --far-5xl: 36rem;
+  --far-6xl: 40rem;
+}
+
+@utility from-bottom-* {
+  @apply relative opacity-0;
+
+  top: --value(--far-*);
+}
+
+@utility from-top-* {
+  @apply relative opacity-0;
+
+  bottom: --value(--far-*);
+}
+
+@utility from-right-* {
+  @apply relative opacity-0;
+
+  left: --value(--far-*);
+}
+
+@utility from-left-* {
+  @apply relative opacity-0;
+
+  right: --value(--far-*);
+}

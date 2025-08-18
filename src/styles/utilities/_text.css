@@ -1,0 +1,15 @@
+@utility text-decor {
+  @apply font-oswald
+    text-bg-card
+    -z-10
+    font-black
+    whitespace-nowrap 
+    uppercase;
+
+  -webkit-text-stroke: 0.25rem currentColor;
+  paint-order: stroke fill;
+}
+
+@utility leading-paragraph {
+  @apply leading-[1.6] sm:leading-[1.7] md:leading-[1.9];
+}

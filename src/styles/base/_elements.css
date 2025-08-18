@@ -1,0 +1,9 @@
+@layer base {
+  button,
+  a,
+  [role="button"] {
+    &:not(:disabled) {
+      @apply cursor-pointer;
+    }
+  }
+}

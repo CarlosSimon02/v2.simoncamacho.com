@@ -1,4 +1,4 @@
-import { StaMonica, Supafaya } from "@/components/Icons/Logos";
+import { StaMonica, Supafaya } from "@/components/UI/Icons/Logos";
 
 export const EXPERIENCES = [
   {

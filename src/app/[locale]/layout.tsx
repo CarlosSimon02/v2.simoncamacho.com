@@ -2,11 +2,11 @@ import { routing } from "@/i18n/routing";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 
-import Background from "@/components/Background";
-import TailwindScreenIndicator from "@/components/TailwindScreenIndicator";
+import Background from "@/components/UI/Background";
+import TailwindScreenIndicator from "@/components/UI/TailwindScreenIndicator";
 import { LEXEND, MONTSERRAT, OSWALD } from "@/constants/fonts";
 import { GSAPSetupProvider } from "@/providers/GSAPSetupProvider";
-import "@/styles/index.css";
+import "@/styles/main.css";
 import { cn } from "@/utils";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";

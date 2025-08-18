@@ -1,0 +1,5 @@
+@theme {
+  --font-montserrat: var(--font-montserrat);
+  --font-oswald: var(--font-oswald);
+  --font-lexend: var(--font-lexend);
+}

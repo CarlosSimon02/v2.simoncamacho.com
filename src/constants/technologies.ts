@@ -12,7 +12,7 @@ import {
   ShadCnIcon,
   TailwindIcon,
   TypeScriptIcon,
-} from "@/components/Icons/Techs";
+} from "@/components/UI/Icons/Techs";
 
 export const TECHNOLOGIES = [
   {
