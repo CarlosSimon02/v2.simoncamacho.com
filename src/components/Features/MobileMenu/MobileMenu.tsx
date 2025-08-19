@@ -44,7 +44,11 @@ const MobileMenu = ({ className }: MobileMenuProps) => {
           <Bars3BottomRightIcon className="size-6 stroke-current" />
         </GhostButton>
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent
+        onCloseAutoFocus={(e) => {
+          e.preventDefault();
+        }}
+      >
         <div className="sr-only">
           <SheetTitle>{t("containers.navBar.mobileMenu.title")}</SheetTitle>
           <SheetDescription>
