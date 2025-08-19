@@ -62,6 +62,7 @@ const MobileMenu = ({ className }: MobileMenuProps) => {
               alt={t("containers.navBar.mobileMenu.avatar")}
               className="absolute -top-[8.25rem] -left-24 h-auto w-[12.5rem] rotate-[130deg]"
               width={200}
+              priority
             />
             <CloseButton
               className="absolute top-4 right-4 z-10"
