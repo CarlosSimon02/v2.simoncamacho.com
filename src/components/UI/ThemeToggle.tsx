@@ -17,7 +17,11 @@ const ThemeToggle = ({ className }: ThemeToggleProps) => {
 
   return (
     <GhostButton
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      onClick={() => {
+        setTheme(theme === "dark" ? "light" : "dark");
+        document.body.classList.add("no-transition");
+        setTimeout(() => document.body.classList.remove("no-transition"), 20);
+      }}
       className={cn("relative size-6", className)}
       color="secondary"
     >
