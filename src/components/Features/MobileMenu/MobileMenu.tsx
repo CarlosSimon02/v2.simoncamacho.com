@@ -48,6 +48,9 @@ const MobileMenu = ({ className }: MobileMenuProps) => {
         onCloseAutoFocus={(e) => {
           e.preventDefault();
         }}
+        onOpenAutoFocus={(e) => {
+          e.preventDefault();
+        }}
       >
         <div className="sr-only">
           <SheetTitle>{t("containers.navBar.mobileMenu.title")}</SheetTitle>
