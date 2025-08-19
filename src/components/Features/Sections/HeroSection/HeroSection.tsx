@@ -88,17 +88,16 @@ const HeroSection = async ({ className }: HeroSectionProps) => {
         >
           <div
             className={cn(
-              "relative mx-auto w-64 max-w-96 md:w-full",
+              "relative mx-auto aspect-[384/490] w-64 max-w-96 md:w-full",
               HERO_SECTION_IMAGE_STYLE
             )}
           >
             <Image
               src={heroImage.src}
               alt={t("heroImageAlt")}
-              width={1000}
-              height={1000}
-              className="h-full w-full object-cover"
+              fill
               priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
           <div className="text-decor absolute bottom-16 text-9xl max-md:left-1/2 max-md:-translate-x-1/2 max-md:text-center md:text-[10rem]">
