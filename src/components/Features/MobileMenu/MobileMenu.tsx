@@ -77,7 +77,7 @@ const MobileMenu = ({ className }: MobileMenuProps) => {
               onClick={() => setOpen(false)}
               type="sheet"
             />
-            <MobileNav className="pt-[11.5rem] pb-12" />
+            <MobileNav className="pt-[11.5rem] pb-18" />
           </div>
         </div>
         <SheetFooter>
