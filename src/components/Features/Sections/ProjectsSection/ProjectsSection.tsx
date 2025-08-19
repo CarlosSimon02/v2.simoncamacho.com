@@ -51,9 +51,7 @@ const ProjectsSection = ({ className }: ProjectsSectionProps) => {
                 />
               </div>
               <div className="flex flex-col gap-3">
-                <h3 className="font-oswald text-dark-gray-50 mb-1 text-2xl font-black md:mb-2 md:text-3xl dark:text-white">
-                  {project.title}
-                </h3>
+                <h3 className="subheading mb-1 md:mb-2">{project.title}</h3>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((technology) => (
                     <span

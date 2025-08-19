@@ -5,7 +5,6 @@ import { cn } from "@/utils";
 import { useTranslations } from "next-intl";
 import AboutSectionAnimation from "./components/AboutSectionAnimation";
 import Cubes from "./components/Cubes";
-import SubHeader from "./components/SubHeader";
 import { MY_JOURNEY_STYLE, MY_SKILLS_STYLE } from "./constants";
 
 type AboutSectionProps = {
@@ -30,7 +29,7 @@ const AboutSection = ({ className }: AboutSectionProps) => {
               MY_JOURNEY_STYLE
             )}
           >
-            <SubHeader>{t("journeyHeader")}</SubHeader>
+            <h3 className="subheading mb-5 md:mb-7">{t("journeyHeader")}</h3>
             <p>
               {t.rich("journey", {
                 br: () => <br />,
@@ -40,7 +39,7 @@ const AboutSection = ({ className }: AboutSectionProps) => {
           <Cubes />
         </div>
         <div className={cn("flex flex-col gap-4", MY_SKILLS_STYLE)}>
-          <SubHeader>{t("skillsHeader")}</SubHeader>
+          <h3 className="subheading mb-5 md:mb-7">{t("skillsHeader")}</h3>
           <div className="grid grid-cols-1 gap-3 min-[22.5em]:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             {TECHNOLOGIES.map((technology) => (
               <div

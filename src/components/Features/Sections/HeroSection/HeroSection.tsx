@@ -50,12 +50,7 @@ const HeroSection = async ({ className }: HeroSectionProps) => {
             >
               {t("name")}
             </h1>
-            <h2
-              className={cn(
-                "font-oswald text-dark-gray-50 text-2xl font-semibold lg:text-3xl dark:text-white",
-                HERO_SECTION_CONTENT_ITEM_STYLE
-              )}
-            >
+            <h2 className={cn("subheading", HERO_SECTION_CONTENT_ITEM_STYLE)}>
               {t("title")}
             </h2>
             <div

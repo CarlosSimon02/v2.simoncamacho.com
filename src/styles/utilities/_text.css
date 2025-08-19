@@ -11,5 +11,15 @@
 }
 
 @utility leading-paragraph {
-  @apply leading-[1.6] sm:leading-[1.7] md:leading-[1.9];
+  @apply leading-[1.6] 
+  sm:leading-[1.7] 
+  md:leading-[1.9];
+}
+
+@utility subheading {
+  @apply font-oswald 
+  text-fg-secondary 
+  text-2xl 
+  font-semibold 
+  lg:text-3xl;
 }

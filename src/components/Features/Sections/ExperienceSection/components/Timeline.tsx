@@ -56,9 +56,7 @@ const Timeline = ({ className }: TimelineProps) => {
             <div className="flex flex-col gap-7">
               <div className="flex flex-wrap-reverse items-end gap-5 max-md:justify-between md:flex-row-reverse md:items-center md:justify-end">
                 <div className="flex min-w-[11.25rem] flex-col md:gap-1">
-                  <h3 className="font-oswald text-dark-gray-50 text-2xl font-black max-md:mb-1 md:text-3xl dark:text-white">
-                    {experience.title}
-                  </h3>
+                  <h3 className="subheading max-md:mb-1">{experience.title}</h3>
                   <div className="font-oswald text-lg font-semibold md:hidden md:text-xl">
                     {experience.date}
                   </div>
