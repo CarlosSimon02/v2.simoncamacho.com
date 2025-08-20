@@ -60,5 +60,33 @@
     "journeyHeader": "My Journey",
     "journey": "Hi! I’m Simon. A self-taught programmer who realized code could build worlds—or at least, really fun retro games.<br></br><br></br>My first encounter with coding was in 2018, when I stumbled on a YouTube video of someone building Tetris in C++. I was 16 and obsessed: Wait, you can just… make games? So I dove in, armed with C++ tutorials and dreams of recreating every pixelated classic I’d ever played (Snake, Frogger—you name it).<br></br><br></br>Fast-forward to today: I’m a Software Engineer at a startup, wrangling Next.js, NestJS, and Stripe to build apps that actually earn money (a wild concept to 16-year-old-me). My proudest moment? Learning payment integrations and seeing strangers use—and pay for—something I helped create.<br></br><br></br>But I’m itching for my next challenge. I love full-stack work—whether it’s crafting sleek UIs with shadcn or debugging backend mysteries. And while I didn’t take the traditional CS path, my time building systems and web apps proved something: code isn’t just about games; it’s about solving real problems.<br></br><br></br>When I'm not coding, I'm probably at the gym, sleeping, or dead.<br></br><br></br>I focus on clean fundamentals, building systems that are sustainable, easy to maintain, and built to last.",
     "skillsHeader": "My Skills"
+  },
+  "connectSection": {
+    "title": "Connect",
+    "getInTouch": {
+      "title": "Get in touch",
+      "description": "Whether you have an exciting project in mind, an amazing job opportunity, or just want to say hello, I'd be thrilled to hear from you!",
+      "messageForm": {
+        "name": "Name",
+        "email": "Email",
+        "message": "Your Message",
+        "send": "Submit",
+        "success": "Thanks for reaching out! I'll get back to you soon.",
+        "error": "Oops! Something went wrong. Please try again later."
+      }
+    },
+    "onFrontendMentor": {
+      "title": "Join me on Frontend Mentor!",
+      "description": "Frontend Mentor is an excellent platform to sharpen your skills, and that's based on my experience. Follow me so we can share ideas and solutions, discuss various topics, and check out my work!",
+      "screenshotsAlt": "Frontend Mentor Screenshots",
+      "screenshots": {
+        "desktop": "Desktop",
+        "mobile": "Mobile"
+      }
+    },
+    "playChess": {
+      "title": "Let's Play Chess!",
+      "description": "Do you play chess? I do too! It's what I often do in my free time because it's relaxing and it sharpens my mind. Add me on Chess.com and challenge me to a game. I'm excited to play and learn from you!"
+    }
   }
 }

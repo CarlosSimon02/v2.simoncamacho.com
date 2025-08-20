@@ -1,5 +1,6 @@
 import Decorations from "@/components/Features/Decorations";
 import AboutSection from "@/components/Features/Sections/AboutSection";
+import ConnectSection from "@/components/Features/Sections/ConnectSection/ConnectSection";
 import ExperienceSection from "@/components/Features/Sections/ExperienceSection";
 import HeroSection from "@/components/Features/Sections/HeroSection";
 import ProjectsSection from "@/components/Features/Sections/ProjectsSection";
@@ -21,6 +22,7 @@ const HomePage = async () => {
         <AboutSection />
         <ExperienceSection />
         <ProjectsSection />
+        <ConnectSection />
       </main>
     </>
   );
