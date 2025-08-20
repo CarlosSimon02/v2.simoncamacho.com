@@ -11,10 +11,10 @@ const ExperienceSection = ({ className }: ExperienceSectionProps) => {
   return (
     <ContentContainer
       sectionId="experience"
-      className={cn("flex flex-col gap-9", className)}
+      className={cn("flex flex-col gap-12", className)}
     >
       <SectionTitle title="Experience" number={2} />
-      <div className="flex flex-col gap-4 md:mb-12">
+      <div className="mx-auto flex flex-col gap-4 md:mb-12">
         <Timeline />
       </div>
     </ContentContainer>
