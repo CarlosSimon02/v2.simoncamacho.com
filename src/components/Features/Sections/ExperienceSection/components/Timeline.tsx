@@ -3,8 +3,12 @@
 import { EXPERIENCES } from "@/data/experiences";
 import { cn } from "@/utils";
 import { useGSAP } from "@gsap/react";
-import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
+import {
+  ArrowUpRightIcon,
+  PaperAirplaneIcon,
+} from "@heroicons/react/24/outline";
 import gsap from "gsap";
+import Link from "next/link";
 import { EXPERIENCE_TIMELINE_ITEM_CLASS } from "../constants";
 
 type TimelineProps = {
@@ -55,9 +59,13 @@ const Timeline = ({ className }: TimelineProps) => {
                 <div className="font-oswald text-lg font-semibold md:hidden md:text-xl">
                   {experience.date}
                 </div>
-                <div className="font-oswald text-lg font-black md:text-xl">
-                  @ {experience.company.name}
-                </div>
+                <Link
+                  href={experience.company.url}
+                  className="font-oswald hover:text-accent group/link flex items-baseline gap-2 text-lg font-black transition-colors duration-200 md:text-xl"
+                >
+                  <span>@ {experience.company.name}</span>
+                  <ArrowUpRightIcon className="relative bottom-0 left-0 size-4 transition-[bottom,left] duration-200 group-hover/link:bottom-1 group-hover/link:left-1" />
+                </Link>
               </div>
               <div className="bg-light-gray-300 dark:bg-dark-gray-500 size-fit rounded-xl p-3 md:p-4">
                 <experience.company.logo className="fill-dark-gray-50 size-10 md:size-10 dark:fill-white" />

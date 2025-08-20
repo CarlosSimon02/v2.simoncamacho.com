@@ -35,7 +35,10 @@ const ProjectsSection = ({ className }: ProjectsSectionProps) => {
                 PROJECT_ITEM_HIDDEN_STYLE
               )}
             >
-              <div className="bg-light-gray-200 dark:bg-dark-gray-700 relative flex aspect-video w-full flex-col items-center justify-center overflow-hidden rounded-lg">
+              <Link
+                href={project.slug}
+                className="bg-light-gray-200 dark:bg-dark-gray-700 group relative flex aspect-video w-full flex-col items-center justify-center overflow-hidden rounded-lg"
+              >
                 <InteractiveGridPattern
                   className={cn(
                     "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
@@ -47,9 +50,9 @@ const ProjectsSection = ({ className }: ProjectsSectionProps) => {
                   alt={project.title}
                   width={1000}
                   height={1000}
-                  className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+                  className="pointer-events-none absolute inset-0 h-full w-full object-cover transition-[scale] duration-5000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"
                 />
-              </div>
+              </Link>
               <div className="flex flex-col gap-3">
                 <h3 className="subheading mb-1 md:mb-2">{project.title}</h3>
                 <div className="flex flex-wrap gap-2">
