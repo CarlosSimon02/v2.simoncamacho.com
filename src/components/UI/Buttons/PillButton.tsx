@@ -2,9 +2,7 @@ import { cn } from "@/utils";
 import { Slot } from "@radix-ui/react-slot";
 import type React from "react";
 
-type PillButtonProps = {
-  className?: string;
-  children: React.ReactNode;
+type PillButtonProps = React.ComponentProps<"button"> & {
   variant?: "primary" | "accent";
   asChild?: boolean;
 };
@@ -14,6 +12,7 @@ const PillButton = ({
   children,
   variant = "primary",
   asChild = false,
+  ...props
 }: PillButtonProps) => {
   const Comp = asChild ? Slot : "button";
 
@@ -28,6 +27,7 @@ const PillButton = ({
         variant === "primary" && ["bg-fg-secondary text-bg-secondary"],
         variant === "accent" && ["border-accent text-accent border-[0.0625rem]"]
       )}
+      {...props}
     >
       {children}
     </Comp>

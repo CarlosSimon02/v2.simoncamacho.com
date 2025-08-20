@@ -39,6 +39,9 @@
       "github": "Visit my GitHub",
       "linkedin": "Visit my LinkedIn profile",
       "email": "Send me an email"
+    },
+    "skipToContentButton": {
+      "open": "Skip to content"
     }
   },
   "heroSection": {

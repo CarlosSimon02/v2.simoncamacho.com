@@ -3,6 +3,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 
 import Background from "@/components/UI/Background";
+import SkipToContentButton from "@/components/UI/Buttons/SkipToContentButton";
 import TailwindScreenIndicator from "@/components/UI/TailwindScreenIndicator";
 import { LEXEND, MONTSERRAT, OSWALD } from "@/constants/fonts";
 import { GSAPSetupProvider } from "@/providers/GSAPSetupProvider";
@@ -42,6 +43,7 @@ const LocaleLayout = async ({
               enableSystem
             >
               <Background />
+              <SkipToContentButton className="!absolute top-[var(--header-height)] -left-52 z-9999 opacity-0 duration-500 focus:left-4 focus:opacity-100" />
               {children}
               <TailwindScreenIndicator />
             </ThemeProvider>
