@@ -6,7 +6,7 @@ import { Link } from "@/i18n/navigation";
 import { cn } from "@/utils";
 import Image from "next/image";
 import ProjectsSectionAnimation from "./components/ProjectsSectionAnimation";
-import { PROJECT_ITEM_HIDDEN_STYLE } from "./constants";
+import { PROJECT_ITEM_CLASS } from "./constants";
 
 type ProjectsSectionProps = {
   className?: string;
@@ -31,8 +31,8 @@ const ProjectsSection = ({ className }: ProjectsSectionProps) => {
             <div
               key={project.slug}
               className={cn(
-                "flex flex-col gap-5 md:gap-8",
-                PROJECT_ITEM_HIDDEN_STYLE
+                "from-bottom-xs flex flex-col gap-5 md:gap-8",
+                PROJECT_ITEM_CLASS
               )}
             >
               <Link
@@ -51,6 +51,13 @@ const ProjectsSection = ({ className }: ProjectsSectionProps) => {
                   width={1000}
                   height={1000}
                   className="pointer-events-none absolute inset-0 h-full w-full object-cover transition-[scale] duration-5000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"
+                />
+                <Image
+                  src={project.logo}
+                  alt={project.title}
+                  width={100}
+                  height={100}
+                  className="absolute top-4 left-4 size-6"
                 />
               </Link>
               <div className="flex flex-col gap-3">

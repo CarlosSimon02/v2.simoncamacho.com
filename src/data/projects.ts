@@ -1,11 +1,13 @@
 import audiophile from "@/assets/projects/audiophile.png";
 import kanban from "@/assets/projects/kanban.png";
 import pomodoro from "@/assets/projects/pomodoro.png";
+import pomodoroLogo from "@/assets/projects/pomodoroLogo.png";
 
 export const PROJECTS = [
   {
     title: "Kanban Web App",
     slug: "kanban",
+    logo: pomodoroLogo.src,
     technologies: [
       { name: "React" },
       { name: "Next.js" },
@@ -18,6 +20,7 @@ export const PROJECTS = [
   {
     title: "Audiophile E-commerce Website",
     slug: "audiophile",
+    logo: pomodoroLogo.src,
     technologies: [
       { name: "React" },
       { name: "Next.js" },
@@ -30,6 +33,7 @@ export const PROJECTS = [
   {
     title: "FEM Pomodoro App",
     slug: "pomodoro",
+    logo: pomodoroLogo.src,
     technologies: [
       { name: "React" },
       { name: "Next.js" },
