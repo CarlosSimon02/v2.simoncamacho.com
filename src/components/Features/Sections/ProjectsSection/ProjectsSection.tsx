@@ -23,7 +23,7 @@ const ProjectsSection = ({ className }: ProjectsSectionProps) => {
         <SectionTitle title="Projects" number={3} />
         <div
           className={cn(
-            "grid gap-9 overflow-hidden md:gap-12",
+            "grid gap-9  md:gap-12",
             "md:grid-cols-[repeat(auto-fit,minmax(18rem,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(24rem,1fr))]"
           )}
         >
@@ -36,6 +36,7 @@ const ProjectsSection = ({ className }: ProjectsSectionProps) => {
               )}
             >
               <Link
+                tabIndex={-1}
                 href={project.slug}
                 className="bg-light-gray-200 dark:bg-dark-gray-700 group relative flex aspect-video w-full flex-col items-center justify-center overflow-hidden rounded-lg"
               >

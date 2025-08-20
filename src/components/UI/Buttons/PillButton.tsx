@@ -1,27 +1,36 @@
 import { cn } from "@/utils";
+import { Slot } from "@radix-ui/react-slot";
+import type React from "react";
 
 type PillButtonProps = {
   className?: string;
   children: React.ReactNode;
   variant?: "primary" | "accent";
+  asChild?: boolean;
 };
 
 const PillButton = ({
   className,
   children,
   variant = "primary",
+  asChild = false,
 }: PillButtonProps) => {
+  const Comp = asChild ? Slot : "button";
+
   return (
-    <button
+    <Comp
       className={cn(
         className,
         "font-oswald rounded-full px-6 py-2 font-semibold uppercase md:px-8 md:py-3",
-        variant === "primary" && "bg-fg-secondary text-bg-secondary",
-        variant === "accent" && "border-accent text-accent border-[0.0625rem]"
+        "relative transition-all duration-150 ease-in-out",
+        "translate-y-0 transform",
+        "hover:-translate-y-1",
+        variant === "primary" && ["bg-fg-secondary text-bg-secondary"],
+        variant === "accent" && ["border-accent text-accent border-[0.0625rem]"]
       )}
     >
       {children}
-    </button>
+    </Comp>
   );
 };
 

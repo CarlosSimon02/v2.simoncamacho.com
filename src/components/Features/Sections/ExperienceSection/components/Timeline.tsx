@@ -61,7 +61,7 @@ const Timeline = ({ className }: TimelineProps) => {
                 </div>
                 <Link
                   href={experience.company.url}
-                  className="font-oswald hover:text-accent group/link flex items-baseline gap-2 text-lg font-black transition-colors duration-200 md:text-xl"
+                  className="font-oswald hover:text-accent group/link flex w-fit items-baseline gap-2 text-lg font-black transition-colors duration-200 md:text-xl"
                 >
                   <span>@ {experience.company.name}</span>
                   <ArrowUpRightIcon className="relative bottom-0 left-0 size-4 transition-[bottom,left] duration-200 group-hover/link:bottom-1 group-hover/link:left-1" />
