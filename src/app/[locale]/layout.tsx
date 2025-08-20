@@ -41,6 +41,7 @@ const LocaleLayout = async ({
               defaultTheme="system"
               storageKey="theme"
               enableSystem
+              disableTransitionOnChange
             >
               <Background />
               <SkipToContentButton className="!absolute top-[var(--header-height)] -left-52 z-9999 opacity-0 duration-500 focus:left-4 focus:opacity-100" />

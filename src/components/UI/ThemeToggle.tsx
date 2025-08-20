@@ -18,9 +18,16 @@ const ThemeToggle = ({ className }: ThemeToggleProps) => {
   return (
     <GhostButton
       onClick={() => {
-        setTheme(theme === "dark" ? "light" : "dark");
         document.body.classList.add("no-transition");
         setTimeout(() => document.body.classList.remove("no-transition"), 20);
+
+        if (!document.startViewTransition) {
+          setTheme(theme === "dark" ? "light" : "dark");
+        } else {
+          document.startViewTransition(() => {
+            setTheme(theme === "dark" ? "light" : "dark");
+          });
+        }
       }}
       className={cn("relative size-6", className)}
       color="secondary"

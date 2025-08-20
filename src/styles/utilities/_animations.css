@@ -17,3 +17,7 @@ body.no-transition * {
   transition: none !important;
   animation: none !important;
 }
+
+::view-transition-group(root) {
+  animation-duration: 300ms;
+}
