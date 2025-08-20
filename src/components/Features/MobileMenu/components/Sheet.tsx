@@ -61,7 +61,7 @@ const SheetContent = ({
         data-slot="sheet-content"
         className={cn(
           "fixed z-50 flex flex-col gap-4 shadow-lg/80 transition ease-in-out",
-          "dark:bg-dark-gray-950 bg-light-gray-50",
+          "bg-bg-secondary",
           "data-[state=open]:animate-in data-[state=open]:duration-500",
           "data-[state=closed]:animate-out data-[state=closed]:duration-300",
           side === "right" && [
@@ -104,7 +104,7 @@ const SheetFooter = ({ className, ...props }: React.ComponentProps<"div">) => {
       data-slot="sheet-footer"
       className={cn(
         "sticky right-0 bottom-0 left-0 z-10 mt-auto flex flex-col gap-2 border-t p-6 shadow-md backdrop-blur-md",
-        "dark:bg-dark-gray-900 dark:border-dark-gray-500 bg-light-gray-100 border-light-gray-400",
+        "bg-bg-primary border-border",
         className
       )}
       {...props}

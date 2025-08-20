@@ -50,8 +50,8 @@ const Timeline = ({ className }: TimelineProps) => {
           <div className="relative flex flex-col gap-7 pb-12 pl-7 group-last:pb-0 md:pl-10">
             <div className="border-light-gray-900 dark:border-medium-gray-500 absolute top-3 left-1 h-full w-0.5 border border-r-0 border-l border-dashed" />
             <span className="absolute top-3 -left-0.25 flex size-3">
-              <span className="bg-light-gray-900 dark:bg-medium-gray-500 absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"></span>
-              <span className="bg-light-gray-900 dark:bg-medium-gray-500 relative inline-flex size-3 rounded-full"></span>
+              <span className="bg-fg-primary absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"></span>
+              <span className="bg-fg-primary relative inline-flex size-3 rounded-full"></span>
             </span>
             <div className="flex flex-wrap-reverse items-end gap-5 max-md:justify-between md:flex-row-reverse md:items-center md:justify-end">
               <div className="flex min-w-[11.25rem] flex-col md:gap-1">

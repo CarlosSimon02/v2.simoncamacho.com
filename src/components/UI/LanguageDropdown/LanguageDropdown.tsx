@@ -56,7 +56,7 @@ const LanguageDropdown = ({ className }: LanguageDropdownProps) => {
               onClick={() => handleLanguageChange(language.code)}
               className={cn(
                 "flex items-center justify-between",
-                isActive && "dark:text-light-gray-50 text-dark-gray-950 "
+                isActive && "text-fg-secondary"
               )}
             >
               <div className={cn("flex w-full items-center gap-2")}>

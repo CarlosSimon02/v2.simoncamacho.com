@@ -44,7 +44,7 @@ const AboutSection = ({ className }: AboutSectionProps) => {
             {TECHNOLOGIES.map((technology) => (
               <div
                 key={technology.name}
-                className="bg-light-gray-200 dark:bg-dark-gray-800 flex items-center gap-4 rounded-xl p-2"
+                className="bg-bg-card flex items-center gap-4 rounded-xl p-2"
               >
                 <div
                   className={cn(

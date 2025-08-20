@@ -19,8 +19,7 @@ const DropdownMenuContent = React.forwardRef<
       sideOffset={sideOffset}
       className={cn(
         "font-oswald z-50 min-w-[8.5rem] overflow-hidden rounded-md border",
-        "text-pale-gray-500 border-light-gray-400 bg-white",
-        "dark:bg-dark-gray-950 dark:text-medium-gray-50 dark:border-dark-gray-500",
+        "text-fg-primary border-border bg-bg-primary",
         "max-h-[var(--radix-dropdown-menu-content-available-height)]",
         "origin-[var(--radix-dropdown-menu-content-transform-origin)]",
         "p-1.5 shadow-md",
