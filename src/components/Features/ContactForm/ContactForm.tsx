@@ -13,7 +13,6 @@ import { Textarea } from "@/components/Primitives/Textarea";
 import PillButton from "@/components/UI/Buttons/PillButton";
 import { cn } from "@/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import submitMessageAction from "./submitMessageAction";
@@ -25,20 +24,22 @@ type ContactFormProps = {
 };
 
 const ContactForm = ({ className }: ContactFormProps) => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
   const form = useForm<ContactFormData>({
     defaultValues: {
       name: "",
       email: "",
       message: "",
+      honeypot: "",
     },
     resolver: zodResolver(contactFormSchema),
     mode: "onChange",
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    setIsSubmitting(true);
+    if (data.honeypot && data.honeypot.trim().length > 0) {
+      toast.error("Spam detected.");
+      return;
+    }
 
     try {
       const response: SubmitMessageActionResponse =
@@ -69,8 +70,6 @@ const ContactForm = ({ className }: ContactFormProps) => {
           : "An unexpected error occurred. Please try again.";
 
       toast.error(errorMessage);
-    } finally {
-      setIsSubmitting(false);
     }
   };
 
@@ -81,6 +80,13 @@ const ContactForm = ({ className }: ContactFormProps) => {
         className={cn("space-y-4", className)}
         noValidate
       >
+        <input
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          className="hidden"
+          {...form.register("honeypot")}
+        />
         <FormField
           control={form.control}
           name="name"
@@ -124,10 +130,12 @@ const ContactForm = ({ className }: ContactFormProps) => {
           variant="accent"
           type="submit"
           className="flex w-full items-center justify-center"
-          disabled={isSubmitting}
-          aria-describedby={isSubmitting ? "submit-loading" : undefined}
+          disabled={form.formState.isSubmitting}
+          aria-describedby={
+            form.formState.isSubmitting ? "submit-loading" : undefined
+          }
         >
-          {isSubmitting ? (
+          {form.formState.isSubmitting ? (
             <>
               <div className="grid animate-spin grid-cols-2 gap-0.5">
                 {Array.from({ length: 4 }, (_, i) => (
