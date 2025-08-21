@@ -2,6 +2,7 @@ import { routing } from "@/i18n/routing";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 
+import { Toaster } from "@/components/Primitives/Sonner";
 import Background from "@/components/UI/Background";
 import SkipToContentButton from "@/components/UI/Buttons/SkipToContentButton";
 import TailwindScreenIndicator from "@/components/UI/TailwindScreenIndicator";
@@ -46,6 +47,7 @@ const LocaleLayout = async ({
               <Background />
               <SkipToContentButton className="!absolute top-[var(--header-height)] -left-52 z-9999 opacity-0 duration-500 focus:left-4 focus:opacity-100" />
               {children}
+              <Toaster />
               <TailwindScreenIndicator />
             </ThemeProvider>
           </NextIntlClientProvider>

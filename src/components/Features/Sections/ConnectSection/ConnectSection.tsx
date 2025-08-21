@@ -1,3 +1,4 @@
+import ContactForm from "@/components/Features/ContactForm";
 import ContentContainer from "@/components/UI/Containers/ContentContainer";
 import SectionTitle from "@/components/UI/SectionTitle";
 import { cn } from "@/utils";
@@ -24,7 +25,9 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
               <p>{t("getInTouch.description")}</p>
             </div>
           </div>
-          <div className="basis-1/2 text-start"></div>
+          <div className="basis-1/2 text-start">
+            <ContactForm />
+          </div>
         </div>
         <div className="flex flex-col items-center gap-[2rem] md:flex-row-reverse md:gap-12">
           <div className="relative grid basis-[40%] gap-3 md:gap-8">
