@@ -24,12 +24,6 @@ type ContactFormProps = {
   className?: string;
 };
 
-type FormResponse = {
-  success: boolean;
-  errors: Partial<Record<keyof ContactFormData, string[]>> | null;
-  message: string;
-};
-
 const ContactForm = ({ className }: ContactFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -69,7 +63,6 @@ const ContactForm = ({ className }: ContactFormProps) => {
         toast.error(response.message);
       }
     } catch (error) {
-      // Network or unexpected errors
       const errorMessage =
         error instanceof Error
           ? error.message
