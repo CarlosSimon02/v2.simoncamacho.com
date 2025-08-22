@@ -1,8 +1,13 @@
+import femProject1 from "@/assets/femProjects/femProject1.png";
+import femProject2 from "@/assets/femProjects/femProject2.png";
+import femProject3Desktop from "@/assets/femProjects/femProject3Desktop.png";
+import femProject3Mobile from "@/assets/femProjects/femProject3Mobile.png";
 import ContactForm from "@/components/Features/ContactForm";
 import ContentContainer from "@/components/UI/Containers/ContentContainer";
 import SectionTitle from "@/components/UI/SectionTitle";
 import { cn } from "@/utils";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 type ConnectSectionProps = {
   className?: string;
@@ -39,7 +44,36 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
                 <p>{t("onFrontendMentor.description")}</p>
               </div>
             </div>
-            <div className="basis-[60%]"></div>
+            <div className="grid max-w-xl basis-[60%] gap-3 sm:grid-cols-3 sm:grid-rows-2">
+              <Image
+                src={femProject3Mobile.src}
+                alt="Frontend Mentor Project 1"
+                className="row-span-2 aspect-[15/20] h-full rounded-2xl object-cover max-sm:hidden"
+                width={400}
+                height={400}
+              />
+              <Image
+                src={femProject1.src}
+                alt="Frontend Mentor Project 1"
+                className="col-span-2 aspect-[20/9] rounded-2xl object-cover max-sm:w-full sm:h-full"
+                width={400}
+                height={400}
+              />
+              <Image
+                src={femProject2.src}
+                alt="Frontend Mentor Project 1"
+                className="col-span-2 aspect-[20/9] rounded-2xl object-cover max-sm:w-full sm:h-full"
+                width={400}
+                height={400}
+              />
+              <Image
+                src={femProject3Desktop.src}
+                alt="Frontend Mentor Project 1"
+                className="col-span-2 aspect-[20/9] rounded-2xl object-cover max-sm:w-full sm:hidden sm:h-full"
+                width={400}
+                height={400}
+              />
+            </div>
           </div>
           <div className="flex flex-col items-center gap-[2rem] md:flex-row md:gap-12">
             <div className="grid basis-[60%] gap-3 md:gap-8">
