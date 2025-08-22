@@ -8,6 +8,9 @@ import SectionTitle from "@/components/UI/SectionTitle";
 import { cn } from "@/utils";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { lazy } from "react";
+
+const ChessBoard = lazy(() => import("./components/ChessBoard"));
 
 type ConnectSectionProps = {
   className?: string;
@@ -82,7 +85,9 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
                 <p>{t("playChess.description")}</p>
               </div>
             </div>
-            <div className="basis-[40%]"></div>
+            <div className="aspect-square w-full basis-[40%]">
+              <ChessBoard />
+            </div>
           </div>
         </div>
       </ContentContainer>
