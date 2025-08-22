@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { Toaster as Sonner, ToasterProps } from "sonner";
+import { Toaster as Sonner, ToasterProps, toast as sonnerToast } from "sonner";
 
 const Toaster = ({ ...props }: ToasterProps) => {
   const { theme = "system" } = useTheme();
@@ -38,4 +38,17 @@ const Toaster = ({ ...props }: ToasterProps) => {
   );
 };
 
-export { Toaster };
+const toast = {
+  success: (message: string) => {
+    const successAudio = new Audio("./audios/success.mp3");
+    successAudio.play();
+    sonnerToast.success(message);
+  },
+  error: (message: string) => {
+    const errorAudio = new Audio("./audios/error.mp3");
+    errorAudio.play();
+    sonnerToast.error(message);
+  },
+};
+
+export { Toaster, toast };

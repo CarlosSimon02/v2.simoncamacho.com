@@ -1,7 +1,7 @@
+import { toast } from "@/components/Primitives/Sonner";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { toast } from "sonner";
 import submitMessageAction from "../actions/submitMessageAction";
 import { SubmitMessageActionResponse } from "../types";
 import { ContactFormData, contactFormSchema } from "../validations";
