@@ -85,7 +85,7 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
                 <p>{t("playChess.description")}</p>
               </div>
             </div>
-            <div className="aspect-square w-full basis-[40%]">
+            <div className="aspect-square w-full max-w-lg basis-[40%]">
               <ChessBoard />
             </div>
           </div>
