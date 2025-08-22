@@ -19,7 +19,7 @@ const ContactForm = ({ className }: ContactFormProps) => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit, onError)}
-        className={cn("space-y-8", className)}
+        className={cn("space-y-6 md:space-y-8", className)}
         noValidate
       >
         <HoneypotField />
