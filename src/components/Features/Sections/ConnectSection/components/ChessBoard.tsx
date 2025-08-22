@@ -10,7 +10,20 @@ const ReactChessboard = dynamic(
 );
 
 const ChessBoard = () => {
-  return <ReactChessboard key="chessboard" />;
+  return (
+    <ReactChessboard
+      key="chessboard"
+      options={{
+        darkSquareStyle: {
+          backgroundColor: "var(--color-chess-board-dark-square)",
+        },
+        lightSquareStyle: {
+          backgroundColor: "var(--color-chess-board-light-square)",
+        },
+        showNotation: false,
+      }}
+    />
+  );
 };
 
 export default ChessBoard;

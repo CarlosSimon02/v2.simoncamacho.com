@@ -64,6 +64,9 @@
   --color-border: var(--border);
   --color-bg-card: var(--bg-card);
   --color-destructive: var(--color-red-500);
+
+  --color-chess-board-dark-square: var(--chess-board-dark-square);
+  --color-chess-board-light-square: var(--chess-board-light-square);
 }
 
 :root {
@@ -76,6 +79,9 @@
   --fg-subtle: var(--color-light-gray-600);
   --border: var(--color-light-gray-400);
   --bg-card: var(--color-light-gray-200);
+
+  --chess-board-dark-square: var(--color-light-gray-400);
+  --chess-board-light-square: var(--color-light-gray-200);
 }
 
 [data-theme="dark"] {
@@ -88,4 +94,7 @@
   --fg-subtle: var(--color-dark-gray-200);
   --border: var(--color-dark-gray-500);
   --bg-card: var(--color-dark-gray-800);
+
+  --chess-board-dark-square: var(--color-dark-gray-800);
+  --chess-board-light-square: var(--color-dark-gray-600);
 }
