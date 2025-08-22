@@ -15,6 +15,7 @@ import {
 
 import { Label } from "@/components/Primitives/Label";
 import { cn } from "@/utils";
+import { InformationCircleIcon } from "@heroicons/react/24/outline";
 
 const Form = FormProvider;
 
@@ -148,9 +149,13 @@ function FormMessage({ className, ...props }: React.ComponentProps<"p">) {
     <p
       data-slot="form-message"
       id={formMessageId}
-      className={cn("text-destructive text-sm", className)}
+      className={cn(
+        "text-destructive flex items-center px-5 text-[0.75rem]",
+        className
+      )}
       {...props}
     >
+      <InformationCircleIcon className="mr-1 inline-block size-4 text-current" />
       {body}
     </p>
   );

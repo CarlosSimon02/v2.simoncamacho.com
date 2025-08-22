@@ -120,7 +120,7 @@ const ContactForm = ({ className }: ContactFormProps) => {
             <FormItem>
               <FormLabel>Your Message</FormLabel>
               <FormControl>
-                <Textarea placeholder="e.g. Hello! Let's connect." {...field} />
+                <Textarea placeholder="Hello! Let's connect." {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

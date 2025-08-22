@@ -25,8 +25,8 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
               <p>{t("getInTouch.description")}</p>
             </div>
           </div>
-          <div className="basis-1/2 text-start">
-            <ContactForm />
+          <div className="w-full max-w-xl basis-1/2 text-start">
+            <ContactForm className="w-full" />
           </div>
         </div>
         <div className="flex flex-col items-center gap-[2rem] md:flex-row-reverse md:gap-12">
