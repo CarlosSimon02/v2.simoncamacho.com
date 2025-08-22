@@ -44,7 +44,7 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
                 <p>{t("onFrontendMentor.description")}</p>
               </div>
             </div>
-            <div className="grid max-w-xl basis-[60%] gap-3 sm:grid-cols-3 sm:grid-rows-2">
+            <div className="grid basis-[60%] gap-3 max-md:max-w-xl sm:grid-cols-3 sm:grid-rows-2">
               <Image
                 src={femProject3Mobile.src}
                 alt="Frontend Mentor Project 1"
