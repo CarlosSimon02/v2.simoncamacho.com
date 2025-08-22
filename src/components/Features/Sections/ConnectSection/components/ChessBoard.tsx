@@ -6,20 +6,56 @@ import Knight from "@/components/UI/Icons/ChessPieces/Knight";
 import Pawn from "@/components/UI/Icons/ChessPieces/Pawn";
 import Queen from "@/components/UI/Icons/ChessPieces/Queen";
 import Rook from "@/components/UI/Icons/ChessPieces/Rook";
+import { Chess } from "chess.js";
 import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 
 const ReactChessboard = dynamic(
   () => import("react-chessboard").then((mod) => mod.Chessboard),
-  {
-    ssr: false,
-  }
+  { ssr: false }
 );
 
-const ChessBoard = () => {
+type ChessBoardProps = {
+  notations: string;
+};
+
+const ChessBoard = ({ notations }: ChessBoardProps) => {
+  const [game, setGame] = useState<Chess>(new Chess());
+  const [currentMoveIndex, setCurrentMoveIndex] = useState(0);
+
+  const moves = notations
+    .split(/\d+\./)
+    .join(" ")
+    .trim()
+    .split(/\s+/)
+    .filter((move) => move !== "");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (currentMoveIndex < moves.length) {
+        const chess = new Chess(game.fen());
+
+        try {
+          chess.move(moves[currentMoveIndex]);
+          setGame(chess);
+          setCurrentMoveIndex((prev) => prev + 1);
+        } catch (e) {
+          console.error("Invalid move:", moves[currentMoveIndex]);
+          clearInterval(interval);
+        }
+      } else {
+        clearInterval(interval);
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [currentMoveIndex, game, moves]);
+
   return (
     <ReactChessboard
       key="chessboard"
       options={{
+        position: game.fen(),
         pieces: {
           wK: () => <King className="fill-chess-pieces-white" />,
           wQ: () => <Queen className="fill-chess-pieces-white" />,
