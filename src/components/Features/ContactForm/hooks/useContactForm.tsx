@@ -17,7 +17,7 @@ const useContactForm = () => {
       honeypot: "",
     },
     resolver: zodResolver(contactFormSchema),
-    mode: "onChange",
+    mode: "onSubmit",
     shouldFocusError: false,
   });
 
