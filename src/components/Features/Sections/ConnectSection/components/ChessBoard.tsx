@@ -56,19 +56,45 @@ const ChessBoard = ({ notations }: ChessBoardProps) => {
       key="chessboard"
       options={{
         position: game.fen(),
+        allowDragging: false,
+
         pieces: {
-          wK: () => <King className="fill-chess-pieces-white" />,
-          wQ: () => <Queen className="fill-chess-pieces-white" />,
-          wR: () => <Rook className="fill-chess-pieces-white" />,
-          wB: () => <Bishop className="fill-chess-pieces-white" />,
-          wN: () => <Knight className="fill-chess-pieces-white" />,
-          wP: () => <Pawn className="fill-chess-pieces-white" />,
-          bK: () => <King className="fill-chess-pieces-black " />,
-          bQ: () => <Queen className="fill-chess-pieces-black " />,
-          bR: () => <Rook className="fill-chess-pieces-black " />,
-          bB: () => <Bishop className="fill-chess-pieces-black " />,
-          bN: () => <Knight className="fill-chess-pieces-black " />,
-          bP: () => <Pawn className="fill-chess-pieces-black " />,
+          wK: () => (
+            <King className="fill-chess-pieces-white !cursor-default" />
+          ),
+          wQ: () => (
+            <Queen className="fill-chess-pieces-white !cursor-default" />
+          ),
+          wR: () => (
+            <Rook className="fill-chess-pieces-white !cursor-default" />
+          ),
+          wB: () => (
+            <Bishop className="fill-chess-pieces-white !cursor-default" />
+          ),
+          wN: () => (
+            <Knight className="fill-chess-pieces-white !cursor-default" />
+          ),
+          wP: () => (
+            <Pawn className="fill-chess-pieces-white !cursor-default" />
+          ),
+          bK: () => (
+            <King className="fill-chess-pieces-black !cursor-default" />
+          ),
+          bQ: () => (
+            <Queen className="fill-chess-pieces-black !cursor-default" />
+          ),
+          bR: () => (
+            <Rook className="fill-chess-pieces-black !cursor-default" />
+          ),
+          bB: () => (
+            <Bishop className="fill-chess-pieces-black !cursor-default" />
+          ),
+          bN: () => (
+            <Knight className="fill-chess-pieces-black !cursor-default" />
+          ),
+          bP: () => (
+            <Pawn className="fill-chess-pieces-black !cursor-default" />
+          ),
         },
         darkSquareStyle: {
           backgroundColor: "var(--color-chess-board-dark-square)",
