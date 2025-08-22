@@ -18,6 +18,7 @@ const useContactForm = () => {
     },
     resolver: zodResolver(contactFormSchema),
     mode: "onSubmit",
+    reValidateMode: "onSubmit",
     shouldFocusError: false,
   });
 

@@ -9,7 +9,7 @@ const SubmitButton = ({ isSubmitting }: SubmitButtonProps) => (
   <PillButton
     variant="accent"
     type="submit"
-    className="flex w-full items-center justify-center"
+    className="flex h-[2.53125rem] w-full items-center justify-center md:h-[3.125rem]"
     disabled={isSubmitting}
     aria-describedby={isSubmitting ? "submit-loading" : undefined}
   >
