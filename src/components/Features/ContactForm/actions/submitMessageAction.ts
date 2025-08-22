@@ -1,7 +1,7 @@
 "use server";
 
 import { z } from "zod";
-import { ContactFormData, contactFormSchema } from "./validations";
+import { ContactFormData, contactFormSchema } from "../validations";
 
 const GOOGLE_FORM_URL = process.env.GOOGLE_FORM_URL!;
 const GOOGLE_FORM_NAME = process.env.GOOGLE_FORM_NAME_ENTRY_ID!;
