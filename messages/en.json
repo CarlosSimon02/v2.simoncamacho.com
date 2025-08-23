@@ -65,23 +65,15 @@
     "title": "Connect",
     "getInTouch": {
       "title": "Get in touch",
-      "description": "Whether you have an exciting project in mind, an amazing job opportunity, or just want to say hello, I'd be thrilled to hear from you!",
-      "messageForm": {
-        "name": "Name",
-        "email": "Email",
-        "message": "Your Message",
-        "send": "Submit",
-        "success": "Thanks for reaching out! I'll get back to you soon.",
-        "error": "Oops! Something went wrong. Please try again later."
-      }
+      "description": "Whether you have an exciting project in mind, an amazing job opportunity, or just want to say hello, I'd be thrilled to hear from you!"
     },
     "onFrontendMentor": {
       "title": "Join me on Frontend Mentor!",
       "description": "Frontend Mentor is an excellent platform to sharpen your skills, and that's based on my experience. Follow me so we can share ideas and solutions, discuss various topics, and check out my work!",
-      "screenshotsAlt": "Frontend Mentor Screenshots",
-      "screenshots": {
-        "desktop": "Desktop",
-        "mobile": "Mobile"
+      "screenshotsAlt": {
+        "bmiCalculator": "Body Mass Index calculator",
+        "articlePreviewComponent": "Article preview component",
+        "skilledELearningLandingPage": "Responsive skilled E-learning landing page"
       }
     },
     "playChess": {

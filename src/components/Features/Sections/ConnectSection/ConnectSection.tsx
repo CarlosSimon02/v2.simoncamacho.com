@@ -1,7 +1,7 @@
-import femProject1 from "@/assets/femProjects/femProject1.png";
-import femProject2 from "@/assets/femProjects/femProject2.png";
-import femProject3Desktop from "@/assets/femProjects/femProject3Desktop.png";
-import femProject3Mobile from "@/assets/femProjects/femProject3Mobile.png";
+import articlePreviewComponent from "@/assets/femProjects/articlePreviewComponent.png";
+import bmiCalculator from "@/assets/femProjects/bmiCalculator.png";
+import skilledLandingPageDesktop from "@/assets/femProjects/skilledLandingPageDesktop.png";
+import skilledLandingPageMobile from "@/assets/femProjects/skilledLandingPageMobile.png";
 import ContactForm from "@/components/Features/ContactForm";
 import ContentContainer from "@/components/UI/Containers/ContentContainer";
 import SectionTitle from "@/components/UI/SectionTitle";
@@ -47,32 +47,38 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
                 <p>{t("onFrontendMentor.description")}</p>
               </div>
             </div>
-            <div className="grid basis-[60%] gap-3 max-md:max-w-xl sm:grid-cols-3 sm:grid-rows-2">
+            <div className="grid basis-[60%] gap-3 max-md:max-w-xl min-[30em]:grid-cols-3 min-[30em]:grid-rows-2">
               <Image
-                src={femProject3Mobile.src}
-                alt="Frontend Mentor Project 1"
-                className="row-span-2 aspect-[15/20] h-full rounded-2xl object-cover max-sm:hidden"
+                src={skilledLandingPageMobile.src}
+                alt={t(
+                  "onFrontendMentor.screenshotsAlt.skilledELearningLandingPage"
+                )}
+                className="row-span-2 aspect-[15/20] h-full rounded-2xl object-cover max-[30em]:hidden"
                 width={400}
                 height={400}
               />
               <Image
-                src={femProject1.src}
-                alt="Frontend Mentor Project 1"
-                className="col-span-2 aspect-[20/9] rounded-2xl object-cover max-sm:w-full sm:h-full"
+                src={articlePreviewComponent.src}
+                alt={t(
+                  "onFrontendMentor.screenshotsAlt.articlePreviewComponent"
+                )}
+                className="col-span-2 aspect-[20/9] rounded-2xl object-cover max-[30em]:w-full min-[30em]:h-full"
                 width={400}
                 height={400}
               />
               <Image
-                src={femProject2.src}
-                alt="Frontend Mentor Project 1"
-                className="col-span-2 aspect-[20/9] rounded-2xl object-cover max-sm:w-full sm:h-full"
+                src={bmiCalculator.src}
+                alt={t("onFrontendMentor.screenshotsAlt.bmiCalculator")}
+                className="col-span-2 aspect-[20/9] rounded-2xl object-cover max-[30em]:w-full min-[30em]:h-full"
                 width={400}
                 height={400}
               />
               <Image
-                src={femProject3Desktop.src}
-                alt="Frontend Mentor Project 1"
-                className="col-span-2 aspect-[20/9] rounded-2xl object-cover max-sm:w-full sm:hidden sm:h-full"
+                src={skilledLandingPageDesktop.src}
+                alt={t(
+                  "onFrontendMentor.screenshotsAlt.skilledELearningLandingPage"
+                )}
+                className="col-span-2 aspect-[20/9] rounded-2xl object-cover max-[30em]:w-full min-[30em]:hidden min-[30em]:h-full"
                 width={400}
                 height={400}
               />
