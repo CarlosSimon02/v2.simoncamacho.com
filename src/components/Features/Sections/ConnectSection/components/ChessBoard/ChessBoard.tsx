@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useRef } from "react";
-import { useChessPlayback } from "./hooks/useChessPlayback";
+import useChessPlayback from "./hooks/useChessPlayback";
 import { getChessboardPieces } from "./utils";
 
 const ReactChessboard = dynamic(
@@ -21,8 +21,6 @@ const ChessBoard = ({ notations }: ChessBoardProps) => {
     notations,
     containerRef,
     intervalMs: 1500,
-    scrollTriggerStart: "top 100%",
-    scrollTriggerEnd: "bottom",
   });
 
   return (

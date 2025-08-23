@@ -1,25 +1,33 @@
-// hooks/useChessPlayback.ts
+// hooks/useChessPlaybackIO.ts
 "use client";
 
 import { Chess } from "chess.js";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-type UseChessPlaybackOptions = {
+type UseChessPlaybackIOOptions = {
   notations: string;
   containerRef: React.RefObject<HTMLElement | null>;
   intervalMs?: number;
-  scrollTriggerStart?: string;
-  scrollTriggerEnd?: string;
+  /**
+   * IntersectionObserver threshold (0 -> any pixel visible, 1 -> fully visible).
+   * Default 0.5 (50% visible).
+   */
+  threshold?: number | number[];
+  /**
+   * IntersectionObserver rootMargin to shift the viewport rectangle.
+   * Example: "0px 0px -20% 0px"
+   */
+  rootMargin?: string;
 };
 
-export function useChessPlayback({
+const useChessPlayback = ({
   notations,
   containerRef,
   intervalMs = 1500,
-  scrollTriggerStart = "top 80%",
-  scrollTriggerEnd = "bottom 20%",
-}: UseChessPlaybackOptions) {
+  threshold = 0.5,
+  rootMargin = "0px",
+}: UseChessPlaybackIOOptions) => {
+  // parse moves once per notations change
   const moves = useMemo(() => {
     return notations
       .split(/\d+\./)
@@ -29,9 +37,9 @@ export function useChessPlayback({
       .filter((m) => m !== "");
   }, [notations]);
 
+  // chess state + refs for interval callback to read latest values
   const [game, setGame] = useState<Chess>(new Chess());
   const gameRef = useRef<Chess>(game);
-
   useEffect(() => {
     gameRef.current = game;
   }, [game]);
@@ -44,6 +52,7 @@ export function useChessPlayback({
 
   const intervalRef = useRef<number | null>(null);
 
+  // start playback (idempotent)
   const startPlayback = () => {
     if (intervalRef.current != null) return;
 
@@ -66,6 +75,8 @@ export function useChessPlayback({
         setGame(chess);
         setCurrentMoveIndex((p) => p + 1);
       } catch (e) {
+        // preserve original behavior: log and stop playback on invalid move
+        // eslint-disable-next-line no-console
         console.error("Invalid move:", moves[idx], e);
         if (intervalRef.current) {
           clearInterval(intervalRef.current);
@@ -75,6 +86,7 @@ export function useChessPlayback({
     }, intervalMs);
   };
 
+  // pause playback (idempotent)
   const pausePlayback = () => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
@@ -82,26 +94,40 @@ export function useChessPlayback({
     }
   };
 
+  // IntersectionObserver to start/pause playback when element enters/leaves viewport
   useEffect(() => {
-    const el = containerRef.current;
-    if (!el || typeof ScrollTrigger === "undefined") return;
+    if (typeof window === "undefined") return;
 
-    const st = ScrollTrigger.create({
-      trigger: el,
-      start: scrollTriggerStart,
-      end: scrollTriggerEnd,
-      onEnter: () => startPlayback(),
-      onEnterBack: () => startPlayback(),
-      onLeave: () => pausePlayback(),
-      onLeaveBack: () => pausePlayback(),
-    });
+    const el = containerRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            startPlayback();
+          } else {
+            pausePlayback();
+          }
+        }
+      },
+      {
+        threshold,
+        rootMargin,
+      }
+    );
+
+    observer.observe(el);
 
     return () => {
-      st.kill();
+      observer.unobserve(el);
+      observer.disconnect();
       pausePlayback();
     };
-  }, [containerRef.current, intervalMs, scrollTriggerStart, scrollTriggerEnd]);
+    // include options so observer re-creates if they change
+  }, [containerRef.current, threshold, rootMargin, intervalMs]);
 
+  // cleanup on unmount
   useEffect(() => {
     return () => {
       pausePlayback();
@@ -114,4 +140,6 @@ export function useChessPlayback({
     startPlayback,
     pausePlayback,
   };
-}
+};
+
+export default useChessPlayback;
