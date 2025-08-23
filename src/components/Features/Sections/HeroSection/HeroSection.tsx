@@ -5,7 +5,6 @@ import { cn } from "@/utils";
 import { MapPinIcon } from "@heroicons/react/24/outline";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
-import Link from "next/link";
 import ContactButton from "./components/ContactButton";
 import HeroSectionAnimation from "./components/HeroSectionAnimation";
 import {
@@ -77,7 +76,7 @@ const HeroSection = async ({ className }: HeroSectionProps) => {
               className="flex w-full max-w-36 items-center justify-center"
               asChild
             >
-              <Link href="/simon_camacho_cv.pdf">{t("resume")}</Link>
+              <a href="/simon_camacho_cv.pdf">{t("resume")}</a>
             </PillButton>
           </div>
         </div>
