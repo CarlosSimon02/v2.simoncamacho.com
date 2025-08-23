@@ -1,13 +1,15 @@
 import { toast } from "@/components/Primitives/Sonner";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import submitMessageAction from "../actions/submitMessageAction";
 import { SubmitMessageActionResponse } from "../types";
-import { ContactFormData, contactFormSchema } from "../validations";
+import { ContactFormData, createContactFormSchema } from "../validations";
 
 const useContactForm = () => {
   const [canFocus, setCanFocus] = useState(true);
+  const t = useTranslations("contactForm");
 
   const form = useForm<ContactFormData>({
     defaultValues: {
@@ -16,7 +18,7 @@ const useContactForm = () => {
       message: "",
       honeypot: "",
     },
-    resolver: zodResolver(contactFormSchema),
+    resolver: zodResolver(createContactFormSchema(t)),
     mode: "onSubmit",
     reValidateMode: "onSubmit",
     shouldFocusError: false,
@@ -45,7 +47,7 @@ const useContactForm = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     if (data.honeypot && data.honeypot.trim().length > 0) {
-      toast.error("Spam detected.");
+      toast.error(t("errors.spamDetected"));
       return;
     }
 
@@ -61,9 +63,7 @@ const useContactForm = () => {
       }
     } catch (error) {
       toast.error(
-        error instanceof Error
-          ? error.message
-          : "An unexpected error occurred. Please try again."
+        error instanceof Error ? error.message : t("errors.unexpectedError")
       );
     }
   };

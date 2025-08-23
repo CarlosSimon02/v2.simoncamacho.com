@@ -80,5 +80,47 @@
       "title": "Let's Play Chess!",
       "description": "Do you play chess? I do too! It's what I often do in my free time because it's relaxing and it sharpens my mind. Add me on Chess.com and challenge me to a game. I'm excited to play and learn from you!"
     }
+  },
+  "contactForm": {
+    "fields": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Juan Dela Cruz"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "juandelacruz@example.com"
+      },
+      "message": {
+        "label": "Your Message",
+        "placeholder": "e.g. Hello! Let's connect."
+      }
+    },
+    "submit": {
+      "button": "Send Message",
+      "loading": "Sending Message..."
+    },
+    "validation": {
+      "name": {
+        "minLength": "Name must be at least 2 characters long",
+        "maxLength": "Name must be less than 50 characters"
+      },
+      "email": {
+        "invalid": "Please enter a valid email address"
+      },
+      "message": {
+        "minLength": "Message must be at least 10 characters long",
+        "maxLength": "Message must be less than 500 characters"
+      }
+    },
+    "errors": {
+      "spamDetected": "Spam detected.",
+      "unexpectedError": "An unexpected error occurred. Please try again."
+    },
+    "messages": {
+      "fixErrors": "Please fix the errors in the form",
+      "success": "Message sent successfully!",
+      "submissionError": "An error occurred while sending your message. Please try again."
+    }
   }
 }

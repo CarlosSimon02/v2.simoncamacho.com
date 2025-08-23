@@ -1,7 +1,8 @@
 "use server";
 
+import { getTranslations } from "next-intl/server";
 import { z } from "zod";
-import { ContactFormData, contactFormSchema } from "../validations";
+import { ContactFormData, createContactFormSchema } from "../validations";
 
 const GOOGLE_FORM_URL = process.env.GOOGLE_FORM_URL!;
 const GOOGLE_FORM_NAME = process.env.GOOGLE_FORM_NAME_ENTRY_ID!;
@@ -12,13 +13,14 @@ const GOOGLE_FORM_SUBMIT_LABEL =
   process.env.GOOGLE_FORM_SUBMIT_LABEL ?? "Submit";
 
 const submitMessageAction = async (formData: ContactFormData) => {
-  const result = contactFormSchema.safeParse(formData);
+  const t = await getTranslations("contactForm");
+  const result = createContactFormSchema(t).safeParse(formData);
 
   if (!result.success) {
     const fieldErrors = z.treeifyError(result.error);
     return {
       success: false,
-      message: "Please fix the errors in the form",
+      message: t("messages.fixErrors"),
       errors: fieldErrors,
       data: null,
     };
@@ -49,7 +51,7 @@ const submitMessageAction = async (formData: ContactFormData) => {
 
     return {
       success: true,
-      message: "Message sent successfully!",
+      message: t("messages.success"),
       errors: null,
       data: result.data,
     };
@@ -57,8 +59,7 @@ const submitMessageAction = async (formData: ContactFormData) => {
     console.error("Form submission error:", error);
     return {
       success: false,
-      message:
-        "An error occurred while sending your message. Please try again.",
+      message: t("messages.submissionError"),
       errors: null,
       data: null,
     };

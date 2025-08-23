@@ -7,13 +7,12 @@ import {
 } from "@/components/Primitives/Form";
 import { Input } from "@/components/Primitives/Input";
 import { Textarea } from "@/components/Primitives/Textarea";
+import { useTranslations } from "next-intl";
 import { ContactFormData } from "../validations";
 
 type FormFieldRendererProps = {
   control: any;
   name: keyof ContactFormData;
-  label: string;
-  placeholder: string;
   component: "input" | "textarea";
 };
 
@@ -25,11 +24,10 @@ const componentMap = {
 const FormFieldRenderer = ({
   control,
   name,
-  label,
-  placeholder,
   component,
 }: FormFieldRendererProps) => {
   const Component = componentMap[component];
+  const t = useTranslations("contactForm.fields");
 
   return (
     <FormField
@@ -37,9 +35,9 @@ const FormFieldRenderer = ({
       name={name}
       render={({ field, formState: { errors } }) => (
         <FormItem>
-          <FormLabel>{label}</FormLabel>
+          <FormLabel>{t(`${name}.label`)}</FormLabel>
           <FormControl>
-            <Component placeholder={placeholder} {...field} />
+            <Component placeholder={t(`${name}.placeholder`)} {...field} />
           </FormControl>
           <FormMessage />
         </FormItem>
