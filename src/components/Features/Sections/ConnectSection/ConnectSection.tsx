@@ -93,7 +93,9 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
               </div>
             </div>
             <div className="aspect-square w-full max-w-lg basis-[40%]">
-              <ChessBoard notations={CHESS_GAMES.ANDERSSEN_VS_DUFRESNE_1852} />
+              <ChessBoard
+                notations={CHESS_GAMES.ANDERSSEN_VS_KIESERITZKY_1851}
+              />
             </div>
           </div>
         </div>
