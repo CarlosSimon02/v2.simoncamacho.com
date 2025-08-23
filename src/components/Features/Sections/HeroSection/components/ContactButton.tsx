@@ -20,7 +20,8 @@ const ContactButton = ({ className }: ContactButtonProps) => {
         ) as HTMLElement;
 
         if (!nameInput) return;
-        nameInput.focus();
+        nameInput.scrollIntoView({ behavior: "smooth", block: "center" });
+        nameInput.focus({ preventScroll: true });
       }}
     >
       {t("contact")}
