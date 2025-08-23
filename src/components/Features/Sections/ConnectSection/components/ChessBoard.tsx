@@ -46,7 +46,7 @@ const ChessBoard = ({ notations }: ChessBoardProps) => {
       } else {
         clearInterval(interval);
       }
-    }, 1000);
+    }, 1500);
 
     return () => clearInterval(interval);
   }, [currentMoveIndex, game, moves]);
@@ -55,6 +55,7 @@ const ChessBoard = ({ notations }: ChessBoardProps) => {
     <ReactChessboard
       key="chessboard"
       options={{
+        animationDurationInMs: 800,
         position: game.fen(),
         allowDragging: false,
         boardStyle: {
