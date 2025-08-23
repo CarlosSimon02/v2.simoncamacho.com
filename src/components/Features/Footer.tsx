@@ -52,11 +52,17 @@ const AboutSection = async ({ className }: AboutSectionProps) => {
               <div className="flex items-center gap-2">
                 <StarIcon size={24} />
                 <span aria-hidden>{stats ? stats.stargazersCount : "..."}</span>
+                <span className="sr-only">
+                  {t("starsCount", { stars: stats?.stargazersCount ?? 0 })}
+                </span>
               </div>
               <div className="flex items-center gap-2">
                 <GitBranchIcon size={24} />
                 <span className="forks-count">
-                  {stats ? stats.forksCount : "..."}
+                  <span aria-hidden>{stats ? stats.forksCount : "..."}</span>
+                  <span className="sr-only">
+                    {t("forksCount", { forks: stats?.forksCount ?? 0 })}
+                  </span>
                 </span>
               </div>
             </div>
