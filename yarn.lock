@@ -708,6 +708,11 @@
   resolved "https://registry.yarnpkg.com/@pkgr/core/-/core-0.2.9.tgz#d229a7b7f9dac167a156992ef23c7f023653f53b"
   integrity sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA==
 
+"@primer/octicons-react@^19.15.5":
+  version "19.15.5"
+  resolved "https://registry.yarnpkg.com/@primer/octicons-react/-/octicons-react-19.15.5.tgz#4c51c18290ac8b0040e05d54e781cd4c503d2f1c"
+  integrity sha512-JEoxBVkd6F8MaKEO1QKau0Nnk3IVroYn7uXGgMqZawcLQmLljfzua3S1fs2FQs295SYM9I6DlkESgz5ORq5yHA==
+
 "@radix-ui/primitive@1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@radix-ui/primitive/-/primitive-1.1.2.tgz#83f415c4425f21e3d27914c12b3272a32e3dae65"

@@ -81,6 +81,11 @@
       "description": "Do you play chess? I do too! It's what I often do in my free time because it's relaxing and it sharpens my mind. Add me on Chess.com and challenge me to a game. I'm excited to play and learn from you!"
     }
   },
+  "footer": {
+    "attribution": "Designed and built by Simon Camacho",
+    "starsCount": "{stars} stars",
+    "forksCount": "{forks} forks"
+  },
   "contactForm": {
     "fields": {
       "name": {
