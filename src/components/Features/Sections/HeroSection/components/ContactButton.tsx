@@ -1,0 +1,31 @@
+"use client";
+
+import PillButton from "@/components/UI/Buttons/PillButton";
+import { cn } from "@/utils";
+import { useTranslations } from "next-intl";
+
+type ContactButtonProps = {
+  className?: string;
+};
+
+const ContactButton = ({ className }: ContactButtonProps) => {
+  const t = useTranslations("heroSection");
+
+  return (
+    <PillButton
+      className={cn("w-full max-w-36", className)}
+      onClick={() => {
+        const nameInput = document.querySelector(
+          "[name='name']"
+        ) as HTMLElement;
+
+        if (!nameInput) return;
+        nameInput.focus();
+      }}
+    >
+      {t("contact")}
+    </PillButton>
+  );
+};
+
+export default ContactButton;

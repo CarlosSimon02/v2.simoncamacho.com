@@ -5,6 +5,8 @@ import { cn } from "@/utils";
 import { MapPinIcon } from "@heroicons/react/24/outline";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
+import Link from "next/link";
+import ContactButton from "./components/ContactButton";
 import HeroSectionAnimation from "./components/HeroSectionAnimation";
 import {
   HERO_SECTION_CLASS,
@@ -69,9 +71,13 @@ const HeroSection = async ({ className }: HeroSectionProps) => {
             {t("description")}
           </p>
           <div className={cn("flex gap-4", HERO_SECTION_CONTENT_ITEM_STYLE)}>
-            <PillButton className="w-full max-w-36">{t("contact")}</PillButton>
-            <PillButton variant="accent" className="w-full max-w-36">
-              {t("resume")}
+            <ContactButton />
+            <PillButton
+              variant="accent"
+              className="flex w-full max-w-36 items-center justify-center"
+              asChild
+            >
+              <Link href="/simon_camacho_cv.pdf">{t("resume")}</Link>
             </PillButton>
           </div>
         </div>
