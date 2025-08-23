@@ -21,8 +21,8 @@ const ChessBoard = ({ notations }: ChessBoardProps) => {
     notations,
     containerRef,
     intervalMs: 1500,
-    scrollTriggerStart: "top 80%",
-    scrollTriggerEnd: "bottom 20%",
+    scrollTriggerStart: "top 100%",
+    scrollTriggerEnd: "bottom",
   });
 
   return (
