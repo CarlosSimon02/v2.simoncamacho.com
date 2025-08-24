@@ -39,10 +39,7 @@ const AboutSection = async ({ className }: AboutSectionProps) => {
   return (
     <ContentContainer
       sectionId="about"
-      className={cn(
-        "grid justify-center gap-8 !pt-32 !pb-12 text-center",
-        className
-      )}
+      className={cn("grid justify-center gap-8 !pb-12 text-center", className)}
       as="footer"
     >
       <Cubes className="md:hidden" />
