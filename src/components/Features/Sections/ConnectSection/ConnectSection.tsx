@@ -15,9 +15,12 @@ import ConnectSectionAnimation from "./components/ConnectSectionAnimation";
 import {
   CHESS_BOARD_STYLE,
   CONTACT_FORM_STYLE,
+  FRONTEND_MENTOR_CUBE_STYLE,
   FRONTEND_MENTOR_IMAGES_STYLE,
   FRONTEND_MENTOR_STYLE,
+  GET_IN_TOUCH_CUBES_STYLE,
   GET_IN_TOUCH_STYLE,
+  PLAY_CHESS_CUBE_STYLE,
   PLAY_CHESS_STYLE,
 } from "./constants";
 
@@ -46,20 +49,24 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
                 GET_IN_TOUCH_STYLE
               )}
             >
-              <Cube
-                cubeSize={100}
-                defaultAngle={{ x: 80, y: 10 }}
-                autoRotate={true}
-                className="absolute -top-30 right-10 -z-2 max-md:!hidden"
-              />
+              <div className="absolute -top-30 right-10 -z-2 max-md:!hidden">
+                <Cube
+                  cubeSize={100}
+                  defaultAngle={{ x: 80, y: 10 }}
+                  autoRotate={true}
+                  className={cn(GET_IN_TOUCH_CUBES_STYLE)}
+                />
+              </div>
               <h3 className="subheading mb-4">{t("getInTouch.title")}</h3>
               <p>{t("getInTouch.description")}</p>
-              <Cube
-                cubeSize={60}
-                defaultAngle={{ x: 10, y: 180 }}
-                autoRotate={true}
-                className="absolute -bottom-30 left-0 -z-2 mt-14 ml-8 max-md:!hidden"
-              />
+              <div className="absolute -bottom-30 left-0 -z-2 mt-14 ml-8 max-md:!hidden">
+                <Cube
+                  cubeSize={60}
+                  defaultAngle={{ x: 10, y: 180 }}
+                  autoRotate={true}
+                  className={cn(GET_IN_TOUCH_CUBES_STYLE)}
+                />
+              </div>
             </div>
             <div
               className={cn(
@@ -82,12 +89,14 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
                   {t("onFrontendMentor.title")}
                 </h3>
                 <p>{t("onFrontendMentor.description")}</p>
-                <Cube
-                  cubeSize={70}
-                  defaultAngle={{ x: 50, y: 90 }}
-                  autoRotate={true}
-                  className="absolute -top-30 right-10 -z-2 max-lg:!hidden"
-                />
+                <div className="absolute -top-30 right-10 -z-2 max-lg:!hidden">
+                  <Cube
+                    cubeSize={70}
+                    defaultAngle={{ x: 50, y: 90 }}
+                    autoRotate={true}
+                    className={cn(FRONTEND_MENTOR_CUBE_STYLE)}
+                  />
+                </div>
               </div>
             </div>
             <div
@@ -154,12 +163,14 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
               <div className="relative">
                 <h3 className="subheading mb-4">{t("playChess.title")}</h3>
                 <p>{t("playChess.description")}</p>
-                <Cube
-                  cubeSize={100}
-                  defaultAngle={{ x: 50, y: 90 }}
-                  autoRotate={true}
-                  className="absolute -bottom-40 left-1/2 -z-2 max-md:!hidden"
-                />
+                <div className="absolute -bottom-40 left-1/2 -z-2 max-md:!hidden">
+                  <Cube
+                    cubeSize={100}
+                    defaultAngle={{ x: 50, y: 90 }}
+                    autoRotate={true}
+                    className={cn(PLAY_CHESS_CUBE_STYLE)}
+                  />
+                </div>
               </div>
             </div>
             <div
