@@ -3,7 +3,8 @@ import { Link } from "@/i18n/navigation";
 import { cn } from "@/utils";
 import { GitBranchIcon, StarIcon } from "@primer/octicons-react";
 import { getTranslations } from "next-intl/server";
-import GhostButton from "../UI/Buttons/GhostButton";
+import GhostButton from "../../UI/Buttons/GhostButton";
+import Cubes from "./components/Cubes";
 
 type AboutSectionProps = {
   className?: string;
@@ -44,6 +45,7 @@ const AboutSection = async ({ className }: AboutSectionProps) => {
       )}
       as="footer"
     >
+      <Cubes className="md:hidden" />
       <GhostButton color="secondary" asChild>
         <Link href="https://github.com/CarlosSimon02/v2.simoncamacho.com">
           <div className="gap font-oswald grid gap-3 transition-transform group-hover:translate-y-1 md:text-xl">

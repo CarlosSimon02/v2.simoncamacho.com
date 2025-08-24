@@ -1,5 +1,5 @@
 import AnimatedChatButton from "@/components/Features/AnimatedChatButton";
-import Footer from "@/components/Features/Footer";
+import Footer from "@/components/Features/Footer/Footer";
 import Header from "@/components/Features/Header";
 
 type MainLayoutProps = {
