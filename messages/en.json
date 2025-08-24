@@ -87,6 +87,7 @@
     "forksCount": "{forks} forks"
   },
   "contactForm": {
+    "or": "or",
     "fields": {
       "name": {
         "label": "Name",
