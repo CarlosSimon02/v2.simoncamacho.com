@@ -1,7 +1,7 @@
 @reference "../../../../../styles/main.css";
 
 .container {
-  @apply flex 
+  @apply flex
   w-fit
   items-center
   justify-center
@@ -9,7 +9,7 @@
   [--cube-face-border-width:0.0625rem]
   [--cube-face-border:var(--cube-face-border-width)_solid_var(--color-light-gray-300)]
   md:[--cube-face-border-width:0.125rem]
-  dark:[--cube-face-bg:oklch(0.21_0.01_264.695/0.2)]
+  dark:[--cube-face-bg:oklch(0.21_0.01_264.695/0.2)] 
   dark:[--cube-face-border:var(--cube-face-border-width)_solid_var(--color-dark-gray-500)];
 }
 

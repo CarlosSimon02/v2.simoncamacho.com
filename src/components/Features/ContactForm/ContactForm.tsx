@@ -42,7 +42,6 @@ const ContactForm = ({ className }: ContactFormProps) => {
           noValidate
         >
           <HoneypotField />
-
           {formConfig.fields.map((fieldConfig) => (
             <FormFieldRenderer
               key={fieldConfig.name}
@@ -50,7 +49,6 @@ const ContactForm = ({ className }: ContactFormProps) => {
               {...fieldConfig}
             />
           ))}
-
           <SubmitButton isSubmitting={isSubmitting} />
         </form>
       </Form>

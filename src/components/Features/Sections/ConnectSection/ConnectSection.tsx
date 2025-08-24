@@ -4,6 +4,7 @@ import skilledLandingPageDesktop from "@/assets/femProjects/skilledLandingPageDe
 import skilledLandingPageMobile from "@/assets/femProjects/skilledLandingPageMobile.png";
 import ContactForm from "@/components/Features/ContactForm";
 import ContentContainer from "@/components/UI/Containers/ContentContainer";
+import Cube from "@/components/UI/Effects/Cube";
 import SectionTitle from "@/components/UI/SectionTitle";
 import { CHESS_GAMES } from "@/data/chessGames";
 import { cn } from "@/utils";
@@ -34,16 +35,31 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
       <ConnectSectionAnimation />
       <ContentContainer
         sectionId="about"
-        className={cn("flex flex-col gap-12 md:gap-16", className)}
+        className={cn("flex flex-col gap-12 md:gap-16 md:!pb-40", className)}
       >
         <SectionTitle title={t("title") as string} number={4} />
         <div className="flex flex-col gap-14 md:gap-24">
           <div className="flex flex-col items-center justify-stretch gap-[2rem] md:flex-row md:gap-16">
-            <div className={cn("grid basis-1/2 gap-6", GET_IN_TOUCH_STYLE)}>
-              <div>
-                <h3 className="subheading mb-4">{t("getInTouch.title")}</h3>
-                <p>{t("getInTouch.description")}</p>
-              </div>
+            <div
+              className={cn(
+                "relative grid basis-1/2 gap-6",
+                GET_IN_TOUCH_STYLE
+              )}
+            >
+              <Cube
+                cubeSize={100}
+                defaultAngle={{ x: 80, y: 10 }}
+                autoRotate={true}
+                className="absolute -top-30 right-10 -z-2 max-md:!hidden"
+              />
+              <h3 className="subheading mb-4">{t("getInTouch.title")}</h3>
+              <p>{t("getInTouch.description")}</p>
+              <Cube
+                cubeSize={60}
+                defaultAngle={{ x: 10, y: 180 }}
+                autoRotate={true}
+                className="absolute -bottom-30 left-0 -z-2 mt-14 ml-8 max-md:!hidden"
+              />
             </div>
             <div
               className={cn(
@@ -66,6 +82,12 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
                   {t("onFrontendMentor.title")}
                 </h3>
                 <p>{t("onFrontendMentor.description")}</p>
+                <Cube
+                  cubeSize={70}
+                  defaultAngle={{ x: 50, y: 90 }}
+                  autoRotate={true}
+                  className="absolute -top-30 right-10 -z-2 max-lg:!hidden"
+                />
               </div>
             </div>
             <div
@@ -129,9 +151,15 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
                 PLAY_CHESS_STYLE
               )}
             >
-              <div>
+              <div className="relative">
                 <h3 className="subheading mb-4">{t("playChess.title")}</h3>
                 <p>{t("playChess.description")}</p>
+                <Cube
+                  cubeSize={100}
+                  defaultAngle={{ x: 50, y: 90 }}
+                  autoRotate={true}
+                  className="absolute -bottom-40 left-1/2 -z-2 max-md:!hidden"
+                />
               </div>
             </div>
             <div
