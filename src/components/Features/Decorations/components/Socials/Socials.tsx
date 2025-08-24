@@ -23,7 +23,7 @@ const Socials = ({ className }: SocialsProps) => {
     >
       {SOCIALS.map((social) => (
         <li className={cn("from-right-xs", SOCIAL_ITEM_CLASS)} key={social.id}>
-          <SocialButton social={social} hoverDirection="left" color="primary" />
+          <SocialButton social={social} hoverDirection="left" color="subtle" />
         </li>
       ))}
     </ul>
