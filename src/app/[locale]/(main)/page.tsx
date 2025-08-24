@@ -12,6 +12,7 @@ const HomePage = async () => {
   const homePageSections = NAV_ITEMS.map((item) => ({
     id: item.id,
     title: t(`containers.navBar.links.${item.id}`),
+    href: item.href,
   }));
 
   return (

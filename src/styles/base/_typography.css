@@ -1,4 +1,7 @@
 @layer base {
+  html {
+    @apply motion-safe:scroll-smooth;
+  }
   body {
     @apply font-lexend
       text-fg-primary

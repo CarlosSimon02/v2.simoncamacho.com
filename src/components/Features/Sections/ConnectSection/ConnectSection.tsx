@@ -37,7 +37,7 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
     <>
       <ConnectSectionAnimation />
       <ContentContainer
-        sectionId="about"
+        sectionId="connect"
         className={cn("flex flex-col gap-12 md:gap-16 md:!pb-40", className)}
       >
         <SectionTitle title={t("title") as string} number={4} />

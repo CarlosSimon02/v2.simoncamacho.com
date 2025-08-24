@@ -20,7 +20,7 @@ const colorMap = {
   accent: "[&>*]:text-accent",
 } as const;
 
-type GhostButtonProps = React.ComponentProps<"button"> & {
+export type GhostButtonProps = React.ComponentProps<"button"> & {
   asChild?: boolean;
   hoverDirection?: keyof typeof hoverDirectionMap;
   hoverColor?: keyof typeof hoverColorMap;

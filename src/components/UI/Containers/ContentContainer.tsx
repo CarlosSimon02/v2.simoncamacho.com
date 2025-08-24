@@ -18,8 +18,9 @@ const ContentContainer = ({
   return (
     <BaseContainer
       as={as}
+      name={sectionId}
       className={cn(
-        "relative overflow-clip py-12 lg:py-16 xl:!px-[var(--content-padding-x)] xl:py-20",
+        "relative scroll-mt-[var(--header-height)] overflow-clip py-12 lg:py-16 xl:!px-[var(--content-padding-x)] xl:py-20",
         className
       )}
     >

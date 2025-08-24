@@ -1,4 +1,4 @@
-import GhostButton from "@/components/UI/Buttons/GhostButton";
+import SectionLinkButton from "@/components/UI/Buttons/SectionLinkButton";
 import { cn } from "@/utils";
 import { useTranslations } from "next-intl";
 
@@ -7,7 +7,8 @@ type SectionButtonProps = {
   title: string;
   isActive: boolean;
   isLast: boolean;
-  onClick: () => void;
+  id: string;
+  href: string;
 };
 
 const SectionButton = ({
@@ -15,19 +16,21 @@ const SectionButton = ({
   title,
   isActive,
   isLast,
-  onClick,
+  href,
+  id,
 }: SectionButtonProps) => {
   const t = useTranslations();
 
   return (
-    <GhostButton
+    <SectionLinkButton
       className={cn(
         "font-oswald flex items-center justify-center text-xl font-bold",
         isLast ? "flex-col-reverse" : "flex-col"
       )}
       color={isActive ? "primary" : "subtle"}
       hoverDirection="right"
-      onClick={onClick}
+      href={href}
+      id={id}
     >
       <div aria-hidden="true">{String(index).padStart(2, "0")}</div>
       <div
@@ -44,7 +47,7 @@ const SectionButton = ({
       <div className="sr-only">
         {t("common.navigateToSection", { section: title })}
       </div>
-    </GhostButton>
+    </SectionLinkButton>
   );
 };
 
