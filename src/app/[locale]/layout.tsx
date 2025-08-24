@@ -7,7 +7,8 @@ import Background from "@/components/UI/Background";
 import SkipToContentButton from "@/components/UI/Buttons/SkipToContentButton";
 import TailwindScreenIndicator from "@/components/UI/TailwindScreenIndicator";
 import { LEXEND, MONTSERRAT, OSWALD } from "@/constants/fonts";
-import { GSAPSetupProvider } from "@/providers/GSAPSetupProvider";
+import { GSAPSetup } from "@/providers/GSAPSetup";
+import { ScrollObserver } from "@/providers/ScrollObserver";
 import "@/styles/main.css";
 import { cn } from "@/utils";
 import { useGSAP } from "@gsap/react";
@@ -35,23 +36,23 @@ const LocaleLayout = async ({
   return (
     <html lang={locale} className={fontClasses} suppressHydrationWarning>
       <body>
-        <GSAPSetupProvider>
-          <NextIntlClientProvider>
-            <ThemeProvider
-              attribute="data-theme"
-              defaultTheme="system"
-              storageKey="theme"
-              enableSystem
-              disableTransitionOnChange
-            >
-              <Background />
-              <SkipToContentButton className="!absolute top-[var(--header-height)] -left-52 z-9999 opacity-0 duration-500 focus:left-4 focus:opacity-100" />
-              {children}
-              <Toaster />
-              <TailwindScreenIndicator />
-            </ThemeProvider>
-          </NextIntlClientProvider>
-        </GSAPSetupProvider>
+        <GSAPSetup />
+        <ScrollObserver />
+        <NextIntlClientProvider>
+          <ThemeProvider
+            attribute="data-theme"
+            defaultTheme="system"
+            storageKey="theme"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Background />
+            <SkipToContentButton className="!absolute top-[var(--header-height)] -left-52 z-9999 opacity-0 duration-500 focus:left-4 focus:opacity-100" />
+            {children}
+            <Toaster />
+            <TailwindScreenIndicator />
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

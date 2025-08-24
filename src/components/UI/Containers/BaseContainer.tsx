@@ -20,7 +20,7 @@ const BaseContainer = ({
         "mx-auto w-full max-w-[90rem] px-[1rem] sm:px-[2rem] lg:px-[3rem]",
         className
       )}
-      name={name}
+      id={name}
     >
       {children}
     </Component>
