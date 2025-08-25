@@ -2,7 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { CUBE_ITEM_CLASS, CUBES_CONTAINER_CLASS } from "../constants";
 
-const useSocialsAnimation = () => {
+const useCubesAnimation = () => {
   useGSAP(() => {
     gsap.to(`.${CUBE_ITEM_CLASS}`, {
       top: 0,
@@ -18,4 +18,4 @@ const useSocialsAnimation = () => {
   });
 };
 
-export default useSocialsAnimation;
+export default useCubesAnimation;

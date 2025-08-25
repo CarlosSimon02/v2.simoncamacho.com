@@ -6,7 +6,7 @@ import {
   FOOTER_CUBES_CONTAINER_CLASS,
 } from "../constants";
 
-const useSocialsAnimation = () => {
+const useCubesAnimation = () => {
   useGSAP(() => {
     const mm = gsap.matchMedia();
 
@@ -36,4 +36,4 @@ const useSocialsAnimation = () => {
   });
 };
 
-export default useSocialsAnimation;
+export default useCubesAnimation;
