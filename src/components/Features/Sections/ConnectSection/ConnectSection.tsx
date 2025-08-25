@@ -43,12 +43,7 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
         <SectionTitle title={t("title") as string} number={4} />
         <div className="flex flex-col gap-14 md:gap-24">
           <div className="flex flex-col items-center justify-stretch gap-[2rem] md:flex-row md:gap-16">
-            <div
-              className={cn(
-                "relative grid basis-1/2 gap-6",
-                GET_IN_TOUCH_STYLE
-              )}
-            >
+            <div className={cn("relative basis-1/2", GET_IN_TOUCH_STYLE)}>
               <div className="absolute -top-30 right-10 -z-2 max-md:!hidden">
                 <Cube
                   cubeSize={100}
