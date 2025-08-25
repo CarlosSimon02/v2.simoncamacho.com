@@ -8,15 +8,7 @@ type UseChessPlaybackIOOptions = {
   notations: string;
   containerRef: React.RefObject<HTMLElement | null>;
   intervalMs?: number;
-  /**
-   * IntersectionObserver threshold (0 -> any pixel visible, 1 -> fully visible).
-   * Default 0.5 (50% visible).
-   */
   threshold?: number | number[];
-  /**
-   * IntersectionObserver rootMargin to shift the viewport rectangle.
-   * Example: "0px 0px -20% 0px"
-   */
   rootMargin?: string;
 };
 
@@ -27,7 +19,6 @@ const useChessPlayback = ({
   threshold = 0.5,
   rootMargin = "0px",
 }: UseChessPlaybackIOOptions) => {
-  // parse moves once per notations change
   const moves = useMemo(() => {
     return notations
       .split(/\d+\./)
@@ -37,7 +28,6 @@ const useChessPlayback = ({
       .filter((m) => m !== "");
   }, [notations]);
 
-  // chess state + refs for interval callback to read latest values
   const [game, setGame] = useState<Chess>(new Chess());
   const gameRef = useRef<Chess>(game);
   useEffect(() => {
@@ -52,7 +42,6 @@ const useChessPlayback = ({
 
   const intervalRef = useRef<number | null>(null);
 
-  // start playback (idempotent)
   const startPlayback = () => {
     if (intervalRef.current != null) return;
 
@@ -75,8 +64,6 @@ const useChessPlayback = ({
         setGame(chess);
         setCurrentMoveIndex((p) => p + 1);
       } catch (e) {
-        // preserve original behavior: log and stop playback on invalid move
-        // eslint-disable-next-line no-console
         console.error("Invalid move:", moves[idx], e);
         if (intervalRef.current) {
           clearInterval(intervalRef.current);
@@ -86,7 +73,6 @@ const useChessPlayback = ({
     }, intervalMs);
   };
 
-  // pause playback (idempotent)
   const pausePlayback = () => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
@@ -94,7 +80,6 @@ const useChessPlayback = ({
     }
   };
 
-  // IntersectionObserver to start/pause playback when element enters/leaves viewport
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -124,10 +109,8 @@ const useChessPlayback = ({
       observer.disconnect();
       pausePlayback();
     };
-    // include options so observer re-creates if they change
   }, [containerRef.current, threshold, rootMargin, intervalMs]);
 
-  // cleanup on unmount
   useEffect(() => {
     return () => {
       pausePlayback();
