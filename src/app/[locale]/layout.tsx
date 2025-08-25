@@ -15,10 +15,13 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger as GSAPScrollTrigger } from "gsap/ScrollTrigger";
 import { ThemeProvider } from "next-themes";
+import { metadata as _metadata } from "./metadata";
 
 const fontClasses = cn(MONTSERRAT.variable, OSWALD.variable, LEXEND.variable);
 
 gsap.registerPlugin(useGSAP, GSAPScrollTrigger);
+
+export const metadata = _metadata;
 
 const LocaleLayout = async ({
   children,

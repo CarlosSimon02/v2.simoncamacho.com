@@ -13,7 +13,7 @@ function Textarea({ className, ...props }: React.ComponentProps<"textarea">) {
         "disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50",
         "focus-visible:border-fg-primary focus-visible:ring-fg-primary focus-visible:ring-[1px]",
         "aria-invalid:ring-destructive/50 dark:aria-invalid:ring-destructive/50 aria-invalid:border-destructive/50",
-        "field-sizing-content min-h-24 py-3 text-base",
+        "field-sizing-content min-h-24 py-3",
         className
       )}
       {...props}
