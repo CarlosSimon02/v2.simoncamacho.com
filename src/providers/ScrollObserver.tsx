@@ -31,7 +31,7 @@ export const ScrollObserver = () => {
                 }
               }
             });
-          }, 500);
+          }, 800);
         },
         {
           root: null,
