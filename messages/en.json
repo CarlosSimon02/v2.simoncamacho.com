@@ -1,4 +1,11 @@
 {
+  "info": {
+    "name": "Simon Camacho",
+    "title": "Software Engineer",
+    "location": "Pampanga, Philippines",
+    "description": "I am a developer who enjoys learning and expanding knowledge in the field of web. I am also determined to create solutions that provide excellent online experiences. Explore my portfolio to see my growing skills and dedication to quality development.",
+    "siteName": "Simon Camacho Portfolio"
+  },
   "containers": {
     "navBar": {
       "controls": {
@@ -85,6 +92,55 @@
     "attribution": "Designed and built by Simon Camacho",
     "starsCount": "{stars} stars",
     "forksCount": "{forks} forks"
+  },
+  "projectsSection": {
+    "title": "Projects",
+    "explore": "Explore",
+    "projects": {
+      "kanban": {
+        "title": "Kanban Web App",
+        "description": "Kanban is a project management tool that helps you manage your projects and tasks."
+      },
+      "audiophile": {
+        "title": "Audiophile E-commerce Website",
+        "description": "Audiophile is a project management tool that helps you manage your projects and tasks."
+      },
+      "pomodoro": {
+        "title": "FEM Pomodoro App",
+        "description": "Pomodoro is a project management tool that helps you manage your projects and tasks."
+      }
+    }
+  },
+  "experienceSection": {
+    "title": "Experience",
+    "atCompany": "@ {companyName}",
+    "experiences": {
+      "supafaya": {
+        "title": "Software Engineer",
+        "companyName": "Supafaya",
+        "date": "2024 – Present",
+        "descriptions": [
+          "Develop full-stack features for e-commerce, event ticketing, and paid voting platforms across multiple projects",
+          "Build and maintain systems such as product listings, payment integrations (Stripe, Xendit), and admin dashboards",
+          "Lead CMS development for the Amora e-commerce site and payment-secured voting system for The House of Collab",
+          "Integrate public APIs with external platforms like WordPress (Zumafest) and manage third-party services (ImageKit, Algolia, Firebase, Wix CMS)",
+          "Collaborate with remote teams using Zulip and maintain clear communication with designers, developers, and product managers"
+        ]
+      },
+      "staMonica": {
+        "title": "IT Staff",
+        "companyName": "Brgy Hall Sta. Monica",
+        "date": "2020 – 2022",
+        "descriptions": [
+          "Designed and developed a resident management system using Microsoft Access and VBA to streamline data handling and request tracking",
+          "Automated report generation and data entry, significantly reducing manual workload",
+          "Produced and maintained key reports for community initiatives and administrative processes",
+          "Handled the full process for resident ID requests, from data collection to coordination with ID producers",
+          "Assisted with resident concerns and provided tech support for data-driven conflict resolution",
+          "Maintained structured databases while enforcing best practices in data management and integrity"
+        ]
+      }
+    }
   },
   "contactForm": {
     "or": "or",
