@@ -20,7 +20,8 @@ type HeroSectionProps = {
 };
 
 const HeroSection = async ({ className }: HeroSectionProps) => {
-  const t = await getTranslations("heroSection");
+  const t = await getTranslations();
+
   return (
     <>
       <HeroSectionAnimation />
@@ -41,7 +42,7 @@ const HeroSection = async ({ className }: HeroSectionProps) => {
               )}
             >
               <MapPinIcon className="stroke-foreground-2 size-5" />
-              <span>{t("location")}</span>
+              <span>{t("info.location")}</span>
             </div>
             <h1
               className={cn(
@@ -49,10 +50,10 @@ const HeroSection = async ({ className }: HeroSectionProps) => {
                 HERO_SECTION_CONTENT_ITEM_STYLE
               )}
             >
-              {t("name")}
+              {t("info.name")}
             </h1>
             <h2 className={cn("subheading", HERO_SECTION_CONTENT_ITEM_STYLE)}>
-              {t("title")}
+              {t("info.title")}
             </h2>
             <div
               className={cn(
@@ -67,7 +68,7 @@ const HeroSection = async ({ className }: HeroSectionProps) => {
               HERO_SECTION_CONTENT_ITEM_STYLE
             )}
           >
-            {t("description")}
+            {t("info.description")}
           </p>
           <div className={cn("flex gap-4", HERO_SECTION_CONTENT_ITEM_STYLE)}>
             <ContactButton />
@@ -76,7 +77,7 @@ const HeroSection = async ({ className }: HeroSectionProps) => {
               className="flex w-full max-w-36 items-center justify-center"
               asChild
             >
-              <a href="/simon_camacho_cv.pdf">{t("resume")}</a>
+              <a href="/simon_camacho_cv.pdf">{t("heroSection.resume")}</a>
             </PillButton>
           </div>
         </div>
@@ -94,7 +95,7 @@ const HeroSection = async ({ className }: HeroSectionProps) => {
           >
             <Image
               src={heroImage.src}
-              alt={t("heroImageAlt")}
+              alt={t("heroSection.heroImageAlt")}
               fill
               priority
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -102,7 +103,7 @@ const HeroSection = async ({ className }: HeroSectionProps) => {
           </div>
           <div className="text-decor absolute bottom-16 text-9xl max-md:left-1/2 max-md:-translate-x-1/2 max-md:text-center md:text-[10rem]">
             <div className={HERO_SECTION_TEXT_DECOR_ITEM_STYLE}>
-              {t("backgroundCarlos")}
+              {t("heroSection.backgroundCarlos")}
             </div>
             <span
               className={cn(
@@ -110,7 +111,7 @@ const HeroSection = async ({ className }: HeroSectionProps) => {
                 HERO_SECTION_TEXT_DECOR_ITEM_STYLE
               )}
             >
-              {t("backgroundSimon")}
+              {t("heroSection.backgroundSimon")}
             </span>
           </div>
         </div>

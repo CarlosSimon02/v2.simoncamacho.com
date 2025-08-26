@@ -1,9 +1,7 @@
+import { DEFAULT_LANG_CODE, LANGUAGES } from "@/constants/languages";
 import { defineRouting } from "next-intl/routing";
 
 export const routing = defineRouting({
-  // A list of all locales that are supported
-  locales: ["en"],
-
-  // Used when no locale matches
-  defaultLocale: "en",
+  locales: LANGUAGES.map((lang) => lang.code),
+  defaultLocale: DEFAULT_LANG_CODE,
 });

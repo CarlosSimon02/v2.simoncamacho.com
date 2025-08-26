@@ -1,16 +1,16 @@
 "use server";
 
+import { env } from "@/env";
 import { getTranslations } from "next-intl/server";
 import { z } from "zod";
 import { ContactFormData, createContactFormSchema } from "../validations";
 
-const GOOGLE_FORM_URL = process.env.GOOGLE_FORM_URL!;
-const GOOGLE_FORM_NAME = process.env.GOOGLE_FORM_NAME_ENTRY_ID!;
-const GOOGLE_FORM_EMAIL = process.env.GOOGLE_FORM_EMAIL_ENTRY_ID!;
-const GOOGLE_FORM_MESSAGE = process.env.GOOGLE_FORM_MESSAGE_ENTRY_ID!;
-const GOOGLE_FORM_USP = process.env.GOOGLE_FORM_USP ?? "pp_url";
-const GOOGLE_FORM_SUBMIT_LABEL =
-  process.env.GOOGLE_FORM_SUBMIT_LABEL ?? "Submit";
+const GOOGLE_FORM_URL = env.GOOGLE_FORM_URL;
+const GOOGLE_FORM_NAME = env.GOOGLE_FORM_NAME_ENTRY_ID;
+const GOOGLE_FORM_EMAIL = env.GOOGLE_FORM_EMAIL_ENTRY_ID;
+const GOOGLE_FORM_MESSAGE = env.GOOGLE_FORM_MESSAGE_ENTRY_ID;
+const GOOGLE_FORM_USP = env.GOOGLE_FORM_USP;
+const GOOGLE_FORM_SUBMIT_LABEL = env.GOOGLE_FORM_SUBMIT_LABEL;
 
 const submitMessageAction = async (formData: ContactFormData) => {
   const t = await getTranslations("contactForm");
