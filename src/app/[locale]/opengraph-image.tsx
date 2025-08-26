@@ -3,8 +3,7 @@ import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-// Image metadata
-export const alt = "About Acme";
+export const alt = "Simon Camacho";
 export const size = {
   width: 1200,
   height: 630,
@@ -12,10 +11,8 @@ export const size = {
 
 export const contentType = "image/png";
 
-// Gizmo positions (Y-axis along grid lines)
 const gizmoData = ["25%", "80%", "10%"];
 
-// Shared gizmo style
 const gizmoStyle = {
   width: 7,
   height: 24,
