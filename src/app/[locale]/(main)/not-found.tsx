@@ -1,14 +1,17 @@
 import PillButton from "@/components/UI/Buttons/PillButton";
 import BaseContainer from "@/components/UI/Containers/BaseContainer";
 import Cube from "@/components/UI/Effects/Cube";
+import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 
-const NotFound = () => {
+const NotFound = async () => {
+  const t = await getTranslations("notFound");
+
   return (
     <main className="flex flex-1 flex-col items-center justify-center gap-4 px-3 text-center md:px-12">
       <BaseContainer className="relative">
         {/* Decorative animated cubes */}
-        <div className="pointer-events-none absolute top-0 right-60 -z-2 max-md:hidden">
+        <div className="pointer-events-none absolute top-0 right-0 -z-2 max-md:hidden lg:right-30 xl:right-60">
           <Cube
             cubeSize={110}
             defaultAngle={{ x: 80, y: 10 }}
@@ -16,7 +19,7 @@ const NotFound = () => {
             className="opacity-70"
           />
         </div>
-        <div className="pointer-events-none absolute -bottom-20 left-50 -z-2 mt-14 ml-8 max-md:hidden">
+        <div className="pointer-events-none absolute -bottom-20 left-8 -z-2 mt-14 ml-8 max-md:hidden lg:left-20 xl:left-50">
           <Cube
             cubeSize={80}
             defaultAngle={{ x: 10, y: 180 }}
@@ -31,11 +34,9 @@ const NotFound = () => {
             </h1>
           </div>
           <div className="-mt-14 flex flex-col items-center justify-center gap-6 text-center">
-            <h2 className="subheading">
-              Sorry, we can’t find the page you’re looking for
-            </h2>
+            <h2 className="subheading">{t("subtitle")}</h2>
             <PillButton variant="accent" asChild>
-              <Link href="/">Go back home</Link>
+              <Link href="/">{t("goHome")}</Link>
             </PillButton>
           </div>
         </div>

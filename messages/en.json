@@ -180,5 +180,9 @@
       "success": "Message sent successfully!",
       "submissionError": "An error occurred while sending your message. Please try again."
     }
+  },
+  "notFound": {
+    "subtitle": "Sorry, we can’t find the page you’re looking for",
+    "goHome": "Go back home"
   }
 }
