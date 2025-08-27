@@ -8,12 +8,12 @@ type MainLayoutProps = {
 
 const MainLayout = ({ children }: MainLayoutProps) => {
   return (
-    <>
+    <div className="flex min-h-screen flex-col">
       <Header />
       {children}
       <Footer />
       <AnimatedChatButton className="fixed right-5 bottom-5 z-10 md:right-10 md:bottom-10 lg:right-16 lg:bottom-16 " />
-    </>
+    </div>
   );
 };
 

@@ -15,31 +15,40 @@ type GitHubStats = {
   forksCount: number;
 };
 
-const AboutSection = async ({ className }: AboutSectionProps) => {
-  const t = await getTranslations("footer");
-
-  let stats: GitHubStats | null = null;
-
+async function getGitHubStats(
+  repo = "CarlosSimon02/v2.simoncamacho.com"
+): Promise<GitHubStats | null> {
+  "use cache";
   try {
-    const response = await fetch(
-      "https://api.github.com/repos/CarlosSimon02/v2.simoncamacho.com"
-    );
+    const response = await fetch(`https://api.github.com/repos/${repo}`, {
+      headers: {
+        Accept: "application/vnd.github+json",
+      },
+      // cache strategy optional:
+      next: { revalidate: 3600 }, // revalidate every hour
+    });
 
-    if (response.ok) {
-      const data = await response.json();
-      stats = {
-        stargazersCount: data.stargazers_count,
-        forksCount: data.forks_count,
-      };
-    }
+    if (!response.ok) return null;
+
+    const data = await response.json();
+    return {
+      stargazersCount: data.stargazers_count,
+      forksCount: data.forks_count,
+    };
   } catch (error) {
     console.error("Failed to fetch GitHub stats:", error);
+    return null;
   }
+}
+
+const AboutSection = async ({ className }: AboutSectionProps) => {
+  const t = await getTranslations("footer");
+  const stats = await getGitHubStats();
 
   return (
     <ContentContainer
       sectionId="about"
-      className={cn("grid justify-center gap-8 !pb-12 text-center", className)}
+      className={cn("grid justify-center gap-8 !pb-7 text-center", className)}
       as="footer"
     >
       <Cubes className="md:hidden" />
