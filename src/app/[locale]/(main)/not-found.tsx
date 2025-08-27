@@ -1,5 +1,3 @@
-"use client";
-
 import PillButton from "@/components/UI/Buttons/PillButton";
 import BaseContainer from "@/components/UI/Containers/BaseContainer";
 import Cube from "@/components/UI/Effects/Cube";
