@@ -43,9 +43,9 @@ const AboutSection = async ({ className }: AboutSectionProps) => {
       as="footer"
     >
       <Cubes className="md:hidden" />
-      <GhostButton color="secondary" asChild>
+      <GhostButton color="primary" asChild>
         <Link href="https://github.com/CarlosSimon02/v2.simoncamacho.com">
-          <div className="gap font-oswald grid gap-3 transition-transform group-hover:translate-y-1 md:text-xl">
+          <div className="gap grid gap-3 transition-transform group-hover:translate-y-1">
             <div>{t("attribution")}</div>
             <div className="flex justify-center gap-8">
               <div className="flex items-center gap-2">
