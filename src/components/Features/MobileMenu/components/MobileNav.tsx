@@ -19,7 +19,7 @@ const MobileNav = ({ className }: MobileNavProps) => {
         {NAV_ITEMS.map(({ href, id, icon: Icon }) => (
           <li key={id} className="w-fit">
             <SectionLinkButton
-              href={href}
+              href={`/${href}`}
               id={id}
               color={currentSection === id ? "secondary" : "primary"}
             >

@@ -21,7 +21,7 @@ const NavMenu = ({ className }: NavMenuProps) => {
         {NAV_ITEMS.map(({ href, id }) => (
           <li key={id} className={cn("from-top-md", HEADER_ITEM_CLASS)}>
             <SectionLinkButton
-              href={href}
+              href={`/${href}`}
               id={id}
               color={currentSection === id ? "secondary" : "primary"}
             >
