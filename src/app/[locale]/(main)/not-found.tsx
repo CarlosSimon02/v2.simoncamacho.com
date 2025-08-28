@@ -33,7 +33,7 @@ const NotFound = async () => {
               404
             </h1>
           </div>
-          <div className="-mt-14 flex flex-col items-center justify-center gap-6 text-center">
+          <div className="flex flex-col items-center justify-center gap-6 text-center">
             <h2 className="subheading">{t("subtitle")}</h2>
             <PillButton variant="accent" asChild>
               <Link href="/">{t("goHome")}</Link>
