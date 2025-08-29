@@ -1,11 +1,13 @@
 "use client";
 
 import { useCurrentSectionStore } from "@/stores/useCurrentSectionStore";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 
 export const ScrollObserver = () => {
   const { setCurrentSection } = useCurrentSectionStore();
   const timeoutRef = useRef<number>(0);
+  const pathname = usePathname(); // ✅ detects route change
 
   useEffect(() => {
     const header = document.querySelector("header");
@@ -52,12 +54,20 @@ export const ScrollObserver = () => {
     };
     window.addEventListener("resize", handleResize);
 
+    // ✅ handle initial page load OR route change
+    if (sections.length > 0) {
+      const firstVisible = [...sections].find(
+        (s) => s.getBoundingClientRect().top >= 0
+      );
+      if (firstVisible?.id) setCurrentSection(firstVisible.id);
+    }
+
     return () => {
       observer.disconnect();
       window.removeEventListener("resize", handleResize);
       clearTimeout(timeoutRef.current);
     };
-  }, [setCurrentSection]);
+  }, [setCurrentSection, pathname]); // ✅ re-run on route change
 
   return null;
 };
