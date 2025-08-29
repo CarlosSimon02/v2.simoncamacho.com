@@ -51,7 +51,7 @@ const LocaleLayout = async ({
           >
             <Background />
             <SkipToContentButton className="!absolute top-[var(--header-height)] -left-52 z-9999 opacity-0 duration-500 focus:left-4 focus:opacity-100" />
-            {children}
+            <div className="flex min-h-screen flex-col">{children}</div>
             <Toaster />
             <TailwindScreenIndicator />
           </ThemeProvider>

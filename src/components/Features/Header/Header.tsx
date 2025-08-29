@@ -2,36 +2,24 @@
 
 import MobileMenu from "@/components/Features/MobileMenu";
 import BaseContainer from "@/components/UI/Containers/BaseContainer";
+import HeaderContainer from "@/components/UI/Containers/HeaderContainer";
 import LanguageDropdown from "@/components/UI/LanguageDropdown";
 import LogoLink from "@/components/UI/LogoLink";
 import ThemeToggle from "@/components/UI/ThemeToggle";
 import { cn } from "@/utils";
 import NavMenu from "./components/NavMenu";
-import {
-  HEADER_ITEM_CLASS,
-  HEADER_ITEM_MOBILE_CLASS,
-  SCROLL_THRESHOLD_PX,
-} from "./constants";
+import { HEADER_ITEM_CLASS, HEADER_ITEM_MOBILE_CLASS } from "./constants";
 import useHeaderAnimation from "./hooks/useHeaderAnimation";
-import useScrollDetection from "./hooks/useScrollDetection";
 
 type HeaderProps = {
   className?: string;
 };
 
 const Header = ({ className }: HeaderProps) => {
-  const hasScrolled = useScrollDetection(SCROLL_THRESHOLD_PX);
   const { headerRef } = useHeaderAnimation();
 
   return (
-    <header
-      ref={headerRef}
-      className={cn(
-        "sticky top-0 z-40 h-[var(--header-height)] border-b border-transparent",
-        hasScrolled && "bg-bg-primary border-border",
-        className
-      )}
-    >
+    <HeaderContainer className={className} ref={headerRef}>
       <BaseContainer className="relative flex h-full items-center justify-between">
         <LogoLink
           className={cn(
@@ -61,7 +49,7 @@ const Header = ({ className }: HeaderProps) => {
           />
         </div>
       </BaseContainer>
-    </header>
+    </HeaderContainer>
   );
 };
 
