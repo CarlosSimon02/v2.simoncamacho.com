@@ -18,7 +18,7 @@ const Chat = () => {
             alt="Jack"
             className="size-24"
           />
-          <h1 className="font-montserrat text-accent text-3xl font-black whitespace-nowrap md:text-4xl">
+          <h1 className="font-montserrat text-accent text-3xl font-black md:text-4xl">
             Hi, I'm Jack.
           </h1>
         </div>
