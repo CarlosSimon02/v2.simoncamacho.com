@@ -63,6 +63,7 @@
   --color-fg-subtle: var(--fg-subtle);
   --color-border: var(--border);
   --color-bg-card: var(--bg-card);
+  --color-bg-user-chat: var(--bg-user-chat);
   --color-destructive: var(--color-red-500);
 
   --color-chess-board-dark-square: var(--chess-board-dark-square);
@@ -81,6 +82,7 @@
   --fg-subtle: var(--color-light-gray-600);
   --border: var(--color-light-gray-400);
   --bg-card: var(--color-light-gray-200);
+  --bg-user-chat: var(---color-light-gray-500);
 
   --chess-board-dark-square: var(--color-light-gray-300);
   --chess-board-light-square: transparent;
@@ -98,6 +100,7 @@
   --fg-subtle: var(--color-dark-gray-200);
   --border: var(--color-dark-gray-500);
   --bg-card: var(--color-dark-gray-800);
+  --bg-user-chat: var(--color-dark-gray-500);
 
   --chess-board-dark-square: transparent;
   --chess-board-light-square: var(--color-dark-gray-700);

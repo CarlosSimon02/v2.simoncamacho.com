@@ -1,76 +1,54 @@
 "use client";
 
 import jackImage from "@/assets/heroes/jack.png";
-import { Input } from "@/components/Primitives/Input";
 import ChatContentContainer from "@/components/UI/Containers/ChatContentContainer";
-import { useChat } from "@ai-sdk/react";
-import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
-
-const inputId = "chat-message-input";
+import { useSearchParams } from "next/navigation";
+import ChatInput from "./components/ChatInput";
+import EmptyQueryState from "./components/EmptyQueryState";
 
 const Chat = () => {
-  const { messages, status, sendMessage } = useChat({
-    onData: (dataPart) => {
-      console.log(dataPart);
-    },
-  });
+  const searchParams = useSearchParams();
+  const query = searchParams.get("query");
 
-  const onSubmit = async () => {
-    sendMessage({
-      role: "user" as const,
-      parts: [{ type: "text", text: "Hello, how are you?" }],
-    });
-  };
+  if (!query || query.trim() === "") {
+    return <EmptyQueryState />;
+  }
 
   return (
-    <ChatContentContainer className="flex flex-col items-center justify-center gap-6 py-12">
-      {messages.map((message) => (
-        <div key={message.id}>
-          <strong>{`${message.role}: `}</strong>
-          {message.parts.map((part, index) => {
-            switch (part.type) {
-              case "text":
-                return <span key={index}>{part.text}</span>;
-
-              // other cases can handle images, tool calls, etc
-            }
-          })}
+    <>
+      <ChatContentContainer className="flex self-stretch">
+        <div className="h-[1024px] w-full py-10">
+          <div className="flex w-full justify-end pb-10">
+            <p className="bg-bg-user-chat text-fg-secondary ml-10 max-w-2xl rounded-3xl rounded-br-none px-5 py-3 text-sm">
+              Hello, how are you doing today?
+            </p>
+          </div>
+          <div className="flex items-start gap-3 !text-sm md:gap-6">
+            <Image
+              height={100}
+              width={100}
+              src={jackImage.src}
+              alt="Jack"
+              className="size-9 md:size-12"
+            />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
         </div>
-      ))}
-      <div className="flex flex-col items-center justify-center gap-6 text-center">
-        <div className="flex flex-col items-center justify-center gap-6 text-center md:flex-row md:items-end md:gap-8">
-          <Image
-            height={200}
-            width={200}
-            src={jackImage.src}
-            alt="Jack"
-            className="size-24"
-          />
-          <h1 className="font-montserrat text-accent text-3xl font-black md:text-4xl">
-            Hi, I'm Jack.
-          </h1>
-        </div>
-        <p>I'm Simon Camacho's AI assistant. How can I help you today?</p>
-      </div>
-      <form className="relative w-full" onSubmit={onSubmit}>
-        <label htmlFor={inputId} className="sr-only">
-          Message Jack
-        </label>
-        <Input
-          id={inputId}
-          placeholder="Message Jack"
-          className="pr-[2.53125rem] md:pr-[3.125rem]"
-        />
-        <button
-          aria-label="Send message"
-          className="absolute top-0 right-0 flex size-[2.53125rem] items-center justify-center md:size-[3.125rem]"
-          type="submit"
-        >
-          <PaperAirplaneIcon className="text-accent size-5 md:size-6" />
-        </button>
-      </form>
-    </ChatContentContainer>
+      </ChatContentContainer>
+      <ChatContentContainer className="fixed bottom-0 left-1/2 flex w-full -translate-x-1/2 flex-col items-center gap-1 py-3">
+        <ChatInput />
+        <p className="text-[0.75rem]">AI-generated, for reference only</p>
+      </ChatContentContainer>
+    </>
   );
 };
 
