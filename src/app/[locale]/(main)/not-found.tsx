@@ -37,9 +37,12 @@ const NotFound = async () => {
               </h1>
             </div>
             <div className="flex flex-col items-center justify-center gap-6 text-center">
-              <h2 className="font-montserrat text-accent text-3xl font-black md:text-4xl">
-                {t("subtitle")}
-              </h2>
+              <div className="flex flex-col items-center justify-center gap-2 text-center">
+                <h2 className="font-montserrat text-accent text-3xl font-black md:text-4xl">
+                  {t("subtitle")}
+                </h2>
+                <p>{t("description")}</p>
+              </div>
               <PillButton asChild>
                 <Link href="/">{t("goHome")}</Link>
               </PillButton>

@@ -183,7 +183,8 @@
     }
   },
   "notFound": {
-    "subtitle": "Sorry, we can’t find the page you’re looking for",
+    "subtitle": "Page not found",
+    "description": "Sorry, we can’t find the page you’re looking for",
     "goHome": "Go back home"
   }
 }
