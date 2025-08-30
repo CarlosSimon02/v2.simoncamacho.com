@@ -13,6 +13,7 @@ export const env = createEnv({
     GOOGLE_FORM_MESSAGE_ENTRY_ID: z.string().min(1),
     GOOGLE_FORM_USP: z.string().min(1),
     GOOGLE_FORM_SUBMIT_LABEL: z.string().min(1),
+    OPENAI_API_KEY: z.string().min(1),
   },
   /*
    * Environment variables available on the client (and server).
@@ -35,6 +36,7 @@ export const env = createEnv({
     GOOGLE_FORM_MESSAGE_ENTRY_ID: process.env.GOOGLE_FORM_MESSAGE_ENTRY_ID,
     GOOGLE_FORM_USP: process.env.GOOGLE_FORM_USP,
     GOOGLE_FORM_SUBMIT_LABEL: process.env.GOOGLE_FORM_SUBMIT_LABEL,
+    OPENAI_API_KEY: process.env.OPENAI_API_KEY,
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
   },
 });
