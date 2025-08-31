@@ -72,13 +72,13 @@ const ProjectsSection = ({ className }: ProjectsSectionProps) => {
                   {project.technologies.map((technology) => (
                     <span
                       key={technology.name}
-                      className="border-foreground-2 text-foreground-2 rounded-full border px-2 py-1 text-sm"
+                      className="border-foreground-2 text-foreground-2 rounded-full border px-2 py-1"
                     >
                       {technology.name}
                     </span>
                   ))}
                 </div>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground">
                   {t(`projects.${project.slug}.description`)}
                 </p>
                 <Link
