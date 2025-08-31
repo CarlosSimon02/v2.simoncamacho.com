@@ -2,6 +2,7 @@
 
 import jackImage from "@/assets/heroes/jack.png";
 import ChatContentContainer from "@/components/UI/Containers/ChatContentContainer";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import useChatNavigation from "../hooks/useChatNavigation";
 import ChatInput from "./ChatInput";
@@ -27,13 +28,15 @@ const ConversationInterface = ({ query }: ConversationInterfaceProps) => {
             </p>
           </div>
           <div className="flex items-start gap-3 !text-sm md:gap-6">
-            <Image
-              height={100}
-              width={100}
-              src={jackImage.src}
-              alt="Jack"
-              className="size-9 md:size-12"
-            />
+            <Link href="/chat" className="size-9 shrink-0 md:size-12">
+              <Image
+                height={100}
+                width={100}
+                src={jackImage.src}
+                alt="Jack"
+                className="size-full"
+              />
+            </Link>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
