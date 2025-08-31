@@ -184,7 +184,7 @@
   },
   "notFound": {
     "subtitle": "Page not found",
-    "description": "Sorry, we can’t find the page you’re looking for",
+    "description": "We can’t find the page you’re looking for",
     "goHome": "Go back home"
   }
 }

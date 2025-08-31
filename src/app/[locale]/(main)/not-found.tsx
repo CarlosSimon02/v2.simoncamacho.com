@@ -43,7 +43,7 @@ const NotFound = async () => {
                 </h2>
                 <p>{t("description")}</p>
               </div>
-              <PillButton asChild>
+              <PillButton variant="accent" asChild>
                 <Link href="/">{t("goHome")}</Link>
               </PillButton>
             </div>
