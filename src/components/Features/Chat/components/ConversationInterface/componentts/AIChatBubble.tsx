@@ -16,7 +16,7 @@ const ChatBubble = ({ className, parts }: ChatBubbleProps) => {
     <div className={cn("flex items-start gap-3 md:gap-6", className)}>
       <button
         onClick={() => setMessages([])}
-        className="size-9 shrink-0 md:size-12"
+        className="size-10 shrink-0 md:size-12"
       >
         <Image
           height={100}
