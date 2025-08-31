@@ -13,7 +13,7 @@ type ConversationInterfaceProps = {
 };
 
 const ConversationInterface = ({ query }: ConversationInterfaceProps) => {
-  const { navigateWithQuery, hasQuery } = useChatNavigation();
+  const { navigateWithQuery, hasQuery } = useChatNavigation({});
 
   const handleNewMessage = (message: string) => {
     navigateWithQuery(message);
