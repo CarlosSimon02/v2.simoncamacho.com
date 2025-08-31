@@ -1,18 +1,17 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
 import ConversationInterface from "./components/ConversationInterface";
 import EmptyQueryState from "./components/EmptyQueryState";
+import useChatNavigation from "./hooks/useChatNavigation";
 
 const Chat = () => {
-  const searchParams = useSearchParams();
-  const query = searchParams.get("query");
+  const { currentQuery, hasQuery } = useChatNavigation();
 
-  if (!query || query.trim() === "") {
+  if (!hasQuery) {
     return <EmptyQueryState />;
   }
 
-  return <ConversationInterface query={query} />;
+  return <ConversationInterface query={currentQuery!} />;
 };
 
 export default Chat;

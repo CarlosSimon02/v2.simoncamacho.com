@@ -1,9 +1,14 @@
+"use client";
+
 import jackImage from "@/assets/heroes/jack.png";
 import ChatContentContainer from "@/components/UI/Containers/ChatContentContainer";
 import Image from "next/image";
+import useChatNavigation from "../hooks/useChatNavigation";
 import ChatInput from "./ChatInput";
 
 const EmptyQueryState = () => {
+  const { navigateWithQuery } = useChatNavigation();
+
   return (
     <ChatContentContainer className="flex flex-col items-center justify-center gap-6 py-12">
       <div className="flex flex-col items-center justify-center gap-6 text-center">
@@ -21,7 +26,7 @@ const EmptyQueryState = () => {
         </div>
         <p>I'm Simon Camacho's AI assistant. How can I help you today?</p>
       </div>
-      <ChatInput />
+      <ChatInput onSubmit={navigateWithQuery} />
     </ChatContentContainer>
   );
 };

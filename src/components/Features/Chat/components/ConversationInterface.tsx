@@ -1,6 +1,9 @@
+"use client";
+
 import jackImage from "@/assets/heroes/jack.png";
 import ChatContentContainer from "@/components/UI/Containers/ChatContentContainer";
 import Image from "next/image";
+import useChatNavigation from "../hooks/useChatNavigation";
 import ChatInput from "./ChatInput";
 
 type ConversationInterfaceProps = {
@@ -8,6 +11,12 @@ type ConversationInterfaceProps = {
 };
 
 const ConversationInterface = ({ query }: ConversationInterfaceProps) => {
+  const { navigateWithQuery } = useChatNavigation();
+
+  const handleNewMessage = (message: string) => {
+    navigateWithQuery(message);
+  };
+
   return (
     <>
       <ChatContentContainer className="flex self-stretch">
@@ -38,7 +47,7 @@ const ConversationInterface = ({ query }: ConversationInterfaceProps) => {
         </div>
       </ChatContentContainer>
       <ChatContentContainer className="fixed bottom-0 left-1/2 flex w-full -translate-x-1/2 flex-col items-center gap-1 py-3">
-        <ChatInput />
+        <ChatInput onSubmit={handleNewMessage} />
         <p className="text-[0.75rem]">AI-generated, for reference only</p>
       </ChatContentContainer>
     </>

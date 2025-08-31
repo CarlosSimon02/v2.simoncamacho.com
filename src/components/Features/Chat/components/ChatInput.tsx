@@ -1,11 +1,24 @@
 import { Input } from "@/components/Primitives/Input";
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
+import { useState } from "react";
 
 const inputId = "chat-message-input";
 
-const ChatInput = () => {
+type ChatInputProps = {
+  onSubmit: (message: string) => void;
+};
+
+const ChatInput = ({ onSubmit }: ChatInputProps) => {
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    onSubmit(message);
+    setMessage("");
+  };
+
   return (
-    <form className="relative w-full">
+    <form className="relative w-full" onSubmit={handleSubmit}>
       <label htmlFor={inputId} className="sr-only">
         Message Jack
       </label>
@@ -13,6 +26,8 @@ const ChatInput = () => {
         id={inputId}
         placeholder="Message Jack"
         className="pr-[2.53125rem] md:pr-[3.125rem]"
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
       />
       <button
         aria-label="Send message"
