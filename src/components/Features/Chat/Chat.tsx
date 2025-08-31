@@ -1,17 +1,17 @@
 "use client";
 
-import ConversationInterface from "./components/ConversationInterface";
+import ConversationInterface from "./components/ConversationInterface/ConversationInterface";
 import EmptyQueryState from "./components/EmptyQueryState";
-import useChatNavigation from "./hooks/useChatNavigation";
+import { useChatContext } from "./providers/ChatProvider";
 
 const Chat = () => {
-  const { currentQuery, hasQuery } = useChatNavigation();
+  const { messages } = useChatContext();
 
-  if (!hasQuery) {
+  if (messages.length === 0) {
     return <EmptyQueryState />;
   }
 
-  return <ConversationInterface query={currentQuery!} />;
+  return <ConversationInterface />;
 };
 
 export default Chat;

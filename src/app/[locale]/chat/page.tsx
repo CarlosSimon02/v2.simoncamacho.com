@@ -1,4 +1,5 @@
 import Chat from "@/components/Features/Chat";
+import { ChatProvider } from "@/components/Features/Chat/providers/ChatProvider";
 import Decorations from "@/components/Features/Decorations";
 
 const HomePage = async () => {
@@ -6,7 +7,9 @@ const HomePage = async () => {
     <>
       <Decorations />
       <main id="main" className="flex flex-1">
-        <Chat />
+        <ChatProvider>
+          <Chat />
+        </ChatProvider>
       </main>
     </>
   );

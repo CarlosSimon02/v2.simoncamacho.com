@@ -37,7 +37,12 @@ const LocaleLayout = async ({
   }
 
   return (
-    <html lang={locale} className={fontClasses} suppressHydrationWarning>
+    <html
+      lang={locale}
+      className={fontClasses}
+      suppressHydrationWarning
+      data-scroll-behavior="smooth"
+    >
       <body>
         <GSAPSetup />
         <ScrollObserver />

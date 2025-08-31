@@ -3,11 +3,11 @@
 import jackImage from "@/assets/heroes/jack.png";
 import ChatContentContainer from "@/components/UI/Containers/ChatContentContainer";
 import Image from "next/image";
-import useChatNavigation from "../hooks/useChatNavigation";
+import { useChatContext } from "../providers/ChatProvider";
 import ChatInput from "./ChatInput";
 
 const EmptyQueryState = () => {
-  const { navigateWithQuery } = useChatNavigation();
+  const { sendMessage } = useChatContext();
 
   return (
     <ChatContentContainer className="flex flex-col items-center justify-center gap-6 py-12">
@@ -26,7 +26,11 @@ const EmptyQueryState = () => {
         </div>
         <p>I'm Simon Camacho's AI assistant. How can I help you today?</p>
       </div>
-      <ChatInput onSubmit={navigateWithQuery} />
+      <ChatInput
+        onSubmit={(message) => {
+          sendMessage({ text: message });
+        }}
+      />
     </ChatContentContainer>
   );
 };
