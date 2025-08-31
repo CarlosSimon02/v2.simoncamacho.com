@@ -6,9 +6,7 @@
     @apply font-lexend
       text-fg-primary
       bg-bg-primary
-      text-[0.9375rem]
-      motion-safe:scroll-smooth
-      sm:text-base;
+      motion-safe:scroll-smooth;
   }
 
   p,
