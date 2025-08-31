@@ -4,6 +4,7 @@ import jackImage from "@/assets/heroes/jack.png";
 import ChatContentContainer from "@/components/UI/Containers/ChatContentContainer";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { useEffect } from "react";
 import useChatNavigation from "../hooks/useChatNavigation";
 import ChatInput from "./ChatInput";
 
@@ -12,11 +13,22 @@ type ConversationInterfaceProps = {
 };
 
 const ConversationInterface = ({ query }: ConversationInterfaceProps) => {
-  const { navigateWithQuery } = useChatNavigation();
+  const { navigateWithQuery, hasQuery } = useChatNavigation();
 
   const handleNewMessage = (message: string) => {
     navigateWithQuery(message);
   };
+
+  const handleQueryChange = (newQuery: string) => {
+    if (!hasQuery) return;
+    console.log("Processing query:", newQuery);
+  };
+
+  useEffect(() => {
+    console.log("Query changed to:", query);
+
+    handleQueryChange(query);
+  }, [query]);
 
   return (
     <>

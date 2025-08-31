@@ -2,9 +2,13 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { useCallback, useMemo } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 
-const useChatNavigation = () => {
+type UseChatNavigationProps = {
+  onQueryChange?: (newQuery?: string | null) => void;
+};
+
+const useChatNavigation = ({ onQueryChange }: UseChatNavigationProps = {}) => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -27,6 +31,10 @@ const useChatNavigation = () => {
   const hasQuery = useMemo(() => {
     return !!currentQuery?.trim();
   }, [currentQuery]);
+
+  useEffect(() => {
+    onQueryChange?.(currentQuery);
+  }, [currentQuery, onQueryChange]);
 
   return {
     navigateWithQuery,
