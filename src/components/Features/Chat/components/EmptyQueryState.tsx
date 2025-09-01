@@ -2,12 +2,12 @@
 
 import jackImage from "@/assets/heroes/jack.png";
 import ChatContentContainer from "@/components/UI/Containers/ChatContentContainer";
+import { useChat } from "@/providers/ChatProvider";
 import Image from "next/image";
-import { useChatContext } from "../providers/ChatProvider";
 import ChatInput from "./ChatInput";
 
 const EmptyQueryState = () => {
-  const { sendMessage } = useChatContext();
+  const { sendMessage } = useChat();
 
   return (
     <ChatContentContainer className="flex flex-col items-center justify-center gap-6 py-12">

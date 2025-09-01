@@ -1,8 +1,8 @@
 import jackImage from "@/assets/heroes/jack.png";
+import { useChat } from "@/providers/ChatProvider";
 import { cn } from "@/utils";
 import { UIDataTypes, UIMessagePart, UITools } from "ai";
 import Image from "next/image";
-import { useChatContext } from "../../../providers/ChatProvider";
 
 type ChatBubbleProps = {
   parts: UIMessagePart<UIDataTypes, UITools>[];
@@ -10,7 +10,7 @@ type ChatBubbleProps = {
 };
 
 const ChatBubble = ({ className, parts }: ChatBubbleProps) => {
-  const { setMessages } = useChatContext();
+  const { setMessages } = useChat();
 
   return (
     <div className={cn("flex items-start gap-3 md:gap-6", className)}>

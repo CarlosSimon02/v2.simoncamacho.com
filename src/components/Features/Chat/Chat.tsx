@@ -1,11 +1,11 @@
 "use client";
 
+import { useChat } from "@/providers/ChatProvider";
 import ConversationInterface from "./components/ConversationInterface/ConversationInterface";
 import EmptyQueryState from "./components/EmptyQueryState";
-import { useChatContext } from "./providers/ChatProvider";
 
 const Chat = () => {
-  const { messages } = useChatContext();
+  const { messages } = useChat();
 
   if (messages.length === 0) {
     return <EmptyQueryState />;

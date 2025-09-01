@@ -1,6 +1,6 @@
 import Chat from "@/components/Features/Chat";
-import { ChatProvider } from "@/components/Features/Chat/providers/ChatProvider";
 import Decorations from "@/components/Features/Decorations";
+import { ChatProvider } from "@/providers/ChatProvider";
 
 const HomePage = async () => {
   return (

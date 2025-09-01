@@ -1,13 +1,13 @@
 "use client";
 
 import ChatContentContainer from "@/components/UI/Containers/ChatContentContainer";
-import { useChatContext } from "../../providers/ChatProvider";
+import { useChat } from "@/providers/ChatProvider";
 import ChatInput from "../ChatInput";
 import AIChatBubble from "./componentts/AIChatBubble";
 import UserChatBubble from "./componentts/UserChatBubble";
 
 const ConversationInterface = () => {
-  const { sendMessage, messages } = useChatContext();
+  const { sendMessage, messages } = useChat();
 
   return (
     <>

@@ -23,6 +23,7 @@ const ChatInput = ({ onSubmit }: ChatInputProps) => {
         Message Jack
       </label>
       <Input
+        autoComplete="off"
         id={inputId}
         placeholder="Message Jack"
         className="pr-[2.53125rem] md:pr-[3.125rem]"
