@@ -9,7 +9,7 @@ export const MONTSERRAT = Montserrat({
 export const OSWALD = Oswald({
   variable: "--font-oswald",
   subsets: ["latin"],
-  display: "swap",
+  preload: false,
 });
 
 export const LEXEND = Lexend({
