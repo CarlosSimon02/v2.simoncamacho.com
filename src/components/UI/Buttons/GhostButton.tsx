@@ -11,6 +11,7 @@ const hoverDirectionMap = {
 
 const hoverColorMap = {
   accent: "[&>*]:group-hover:text-accent",
+  secondary: "[&>*]:group-hover:text-fg-secondary",
 } as const;
 
 const colorMap = {

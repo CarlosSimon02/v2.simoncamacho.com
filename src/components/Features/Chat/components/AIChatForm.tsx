@@ -3,25 +3,23 @@ import {
   PromptInputSubmit,
   PromptInputTextInput,
 } from "@/components/UI/AIElements/PromptInput";
+import { useChat } from "@/providers/ChatProvider";
 import { useRef } from "react";
 
-type AIChatFormProps = {
-  onSubmit: (message: string) => void;
-};
-
-const AIChatForm = ({ onSubmit }: AIChatFormProps) => {
+const AIChatForm = () => {
   const inputRef = useRef<HTMLInputElement>(null);
+  const { sendMessage } = useChat();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const value = inputRef.current?.value ?? "";
     if (!value.trim()) return;
-    onSubmit(value);
+    sendMessage({ text: value });
     if (inputRef.current) inputRef.current.value = "";
   };
 
   return (
-    <PromptInput onSubmit={handleSubmit} className="relative mt-4">
+    <PromptInput onSubmit={handleSubmit} className="relative">
       <PromptInputTextInput
         ref={inputRef}
         className="pr-[2.53125rem] md:pr-[3.125rem]"

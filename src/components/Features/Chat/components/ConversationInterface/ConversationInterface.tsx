@@ -4,10 +4,11 @@ import ChatContentContainer from "@/components/UI/Containers/ChatContentContaine
 import { useChat } from "@/providers/ChatProvider";
 import AIChatForm from "../AIChatForm";
 import AIChatBubble from "./componentts/AIChatBubble";
+import CollapsibleQuickQuestions from "./componentts/CollapsibleQuickQuestions";
 import UserChatBubble from "./componentts/UserChatBubble";
 
 const ConversationInterface = () => {
-  const { sendMessage, messages } = useChat();
+  const { messages } = useChat();
 
   return (
     <>
@@ -36,11 +37,8 @@ const ConversationInterface = () => {
         </div>
       </ChatContentContainer>
       <ChatContentContainer className="fixed bottom-0 left-1/2 flex w-full -translate-x-1/2 flex-col items-center gap-1 py-3">
-        <AIChatForm
-          onSubmit={(message) => {
-            sendMessage({ text: message });
-          }}
-        />
+        <CollapsibleQuickQuestions />
+        <AIChatForm />
         <p className="text-[0.75rem]">AI-generated, for reference only</p>
       </ChatContentContainer>
     </>
