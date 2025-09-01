@@ -8,7 +8,7 @@ import { useState } from "react";
 import QuickQuestions from "../../QuickQuestions";
 
 const CollapsibleQuickQuestions = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   return (
     <Collapsible
