@@ -3,13 +3,14 @@ import { useChat } from "@/providers/ChatProvider";
 import { cn } from "@/utils";
 import { UIDataTypes, UIMessagePart, UITools } from "ai";
 import Image from "next/image";
+import { memo } from "react";
 
 type ChatBubbleProps = {
   parts: UIMessagePart<UIDataTypes, UITools>[];
   className?: string;
 };
 
-const ChatBubble = ({ className, parts }: ChatBubbleProps) => {
+const AIChatBubble = ({ className, parts }: ChatBubbleProps) => {
   const { setMessages } = useChat();
 
   return (
@@ -38,4 +39,4 @@ const ChatBubble = ({ className, parts }: ChatBubbleProps) => {
   );
 };
 
-export default ChatBubble;
+export default memo(AIChatBubble);

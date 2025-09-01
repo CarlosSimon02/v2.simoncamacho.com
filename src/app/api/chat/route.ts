@@ -1,5 +1,6 @@
 import { simulateReadableStream, streamText } from "ai";
 import { MockLanguageModelV2 } from "ai/test";
+// import { openai } from "@ai-sdk/openai";
 
 export async function POST(req: Request) {
   const result = streamText({

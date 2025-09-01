@@ -1,5 +1,6 @@
 import { cn } from "@/utils";
 import { UIDataTypes, UIMessagePart, UITools } from "ai";
+import { memo } from "react";
 
 type UserChatBubbleProps = {
   parts: UIMessagePart<UIDataTypes, UITools>[];
@@ -21,4 +22,4 @@ const UserChatBubble = ({ parts, className }: UserChatBubbleProps) => {
   );
 };
 
-export default UserChatBubble;
+export default memo(UserChatBubble);

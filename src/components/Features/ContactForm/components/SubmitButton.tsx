@@ -1,6 +1,6 @@
 import PillButton from "@/components/UI/Buttons/PillButton";
+import LoadingSpinner from "@/components/UI/LoadingSpinner";
 import { useTranslations } from "next-intl";
-import LoadingSpinner from "./LoadingSpinner";
 
 type SubmitButtonProps = {
   isSubmitting: boolean;

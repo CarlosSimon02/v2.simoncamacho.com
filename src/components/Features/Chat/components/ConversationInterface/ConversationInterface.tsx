@@ -2,7 +2,7 @@
 
 import ChatContentContainer from "@/components/UI/Containers/ChatContentContainer";
 import { useChat } from "@/providers/ChatProvider";
-import ChatInput from "../ChatInput";
+import AIChatForm from "../AIChatForm";
 import AIChatBubble from "./componentts/AIChatBubble";
 import UserChatBubble from "./componentts/UserChatBubble";
 
@@ -13,12 +13,12 @@ const ConversationInterface = () => {
     <>
       <ChatContentContainer className="flex self-stretch">
         <div className="h-[1024px] w-full py-10">
-          {messages.map((message, i) => {
+          {messages.map((message) => {
             switch (message.role) {
               case "user":
                 return (
                   <UserChatBubble
-                    key={i}
+                    key={message.id}
                     parts={message.parts}
                     className="pb-10 last:pb-0"
                   />
@@ -26,7 +26,7 @@ const ConversationInterface = () => {
               case "assistant":
                 return (
                   <AIChatBubble
-                    key={i}
+                    key={message.id}
                     parts={message.parts}
                     className="pb-10 last:pb-0"
                   />
@@ -36,7 +36,7 @@ const ConversationInterface = () => {
         </div>
       </ChatContentContainer>
       <ChatContentContainer className="fixed bottom-0 left-1/2 flex w-full -translate-x-1/2 flex-col items-center gap-1 py-3">
-        <ChatInput
+        <AIChatForm
           onSubmit={(message) => {
             sendMessage({ text: message });
           }}

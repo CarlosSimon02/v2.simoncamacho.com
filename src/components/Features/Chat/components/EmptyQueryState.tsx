@@ -4,7 +4,7 @@ import jackImage from "@/assets/heroes/jack.png";
 import ChatContentContainer from "@/components/UI/Containers/ChatContentContainer";
 import { useChat } from "@/providers/ChatProvider";
 import Image from "next/image";
-import ChatInput from "./ChatInput";
+import AIChatForm from "./AIChatForm";
 
 const EmptyQueryState = () => {
   const { sendMessage } = useChat();
@@ -26,7 +26,7 @@ const EmptyQueryState = () => {
         </div>
         <p>I'm Simon Camacho's AI assistant. How can I help you today?</p>
       </div>
-      <ChatInput
+      <AIChatForm
         onSubmit={(message) => {
           sendMessage({ text: message });
         }}
