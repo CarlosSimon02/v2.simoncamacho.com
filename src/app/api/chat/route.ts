@@ -8,6 +8,7 @@ export async function POST(req: Request) {
     model: new MockLanguageModelV2({
       doStream: async () => ({
         stream: simulateReadableStream({
+          chunkDelayInMs: 1000,
           chunks: [
             { type: "text-start", id: `text-1` },
             {

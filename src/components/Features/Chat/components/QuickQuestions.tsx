@@ -10,7 +10,7 @@ type QuickQuestionsProps = {
 };
 
 const QuickQuestions = ({ className }: QuickQuestionsProps) => {
-  const { sendMessage } = useChat();
+  const { sendMessage, status } = useChat();
 
   return (
     <ul
@@ -25,6 +25,7 @@ const QuickQuestions = ({ className }: QuickQuestionsProps) => {
           <GhostButton
             hoverColor="accent"
             aria-label={`Ask: ${questions[question.key].label}`}
+            disabled={status === "submitted" || status === "streaming"}
             onClick={() =>
               sendMessage({ text: questions[question.key].question })
             }

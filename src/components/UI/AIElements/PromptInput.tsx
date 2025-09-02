@@ -94,10 +94,10 @@ export const PromptInputSubmit = ({
   return (
     <button
       className={cn(
-        "text-accent absolute top-0 right-0 flex size-[2.53125rem] items-center justify-center disabled:cursor-not-allowed disabled:opacity-50 md:size-[3.125rem]",
+        "text-accent absolute top-0 right-0 flex size-[2.53125rem] items-center justify-center opacity-100 transition-opacity hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50 md:size-[3.125rem]",
         className
       )}
-      type="submit"
+      type={status === "streaming" ? "button" : "submit"}
       {...props}
     >
       {children ?? Icon}

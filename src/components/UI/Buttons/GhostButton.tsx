@@ -49,6 +49,7 @@ const GhostButton = ({
         hoverColorMap[hoverColor],
         colorMap[color],
         "[&>*:not(.sr-only)]:relative [&>*:not(.sr-only)]:transition-all [&>*:not(.sr-only)]:duration-300",
+        "disabled:pointer-events-none disabled:opacity-50",
         className
       )}
       {...props}
