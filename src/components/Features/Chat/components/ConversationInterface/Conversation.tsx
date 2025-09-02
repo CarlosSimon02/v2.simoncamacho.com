@@ -6,9 +6,11 @@ import { useChat } from "@/providers/ChatProvider";
 import { cn } from "@/utils";
 import { ArrowDownIcon } from "@heroicons/react/24/outline";
 import { StickToBottom, useStickToBottomContext } from "use-stick-to-bottom";
-import { useIsQuickQuestionsOpenStore } from "../stores/useIsQuickQuestionsOpenStore";
-import AIChatBubble from "./AIChatBubble";
-import UserChatBubble from "./UserChatBubble";
+import AIChatForm from "../AIChatForm";
+import AIChatBubble from "./componentts/AIChatBubble";
+import CollapsibleQuickQuestions from "./componentts/CollapsibleQuickQuestions";
+import UserChatBubble from "./componentts/UserChatBubble";
+import { useIsQuickQuestionsOpenStore } from "./stores/useIsQuickQuestionsOpenStore";
 
 const ConversationContent = () => {
   const { messages } = useChat();
@@ -71,21 +73,24 @@ const ScrollToBottomButton = ({
 };
 
 const Conversation = () => {
-  const { isOpen } = useIsQuickQuestionsOpenStore();
-
   return (
     <div className="pointer-events-none flex h-[calc(100dvh-var(--header-height))] flex-1 self-stretch overflow-hidden">
       <StickToBottom
         initial="smooth"
         resize="smooth"
         role="log"
-        className="pointer-events-auto relative w-full"
+        className="pointer-events-auto w-full"
       >
         <ConversationContent />
-        <ScrollToBottomButton
-          data-state={isOpen ? "open" : "closed"}
-          className="absolute bottom-32 left-[50%] translate-x-[-50%] rounded-full transition-[bottom] data-[state=open]:bottom-46"
-        />
+        <ChatContentContainer className="pointer-events-none fixed bottom-0 left-1/2 flex w-full -translate-x-1/2 flex-col gap-4">
+          <ScrollToBottomButton className="pointer-events-auto self-center" />
+          <div className="pointer-events-auto relative flex flex-col items-center gap-1 pt-5">
+            <div className="to-bg-primary absolute inset-0 -z-9 bg-gradient-to-b from-transparent to-15%" />
+            <CollapsibleQuickQuestions />
+            <AIChatForm />
+            <p className="text-[0.75rem]">AI-generated, for reference only</p>
+          </div>
+        </ChatContentContainer>
       </StickToBottom>
     </div>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import { useChat } from "@/providers/ChatProvider";
-import ConversationInterface from "./components/ConversationInterface/ConversationInterface";
+import Conversation from "./components/ConversationInterface";
 import EmptyQueryState from "./components/EmptyQueryState";
 
 const Chat = () => {
@@ -11,7 +11,7 @@ const Chat = () => {
     return <EmptyQueryState />;
   }
 
-  return <ConversationInterface />;
+  return <Conversation />;
 };
 
 export default Chat;
