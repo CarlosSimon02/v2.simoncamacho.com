@@ -10,3 +10,4 @@
 @import "./utilities/_text.css";
 @import "./utilities/_animations.css";
 @import "./utilities/_gsap.css";
+@source "../../node_modules/streamdown/dist/index.js";

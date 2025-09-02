@@ -38,6 +38,18 @@ const AIChatBubble = ({ className, parts }: ChatBubbleProps) => {
                 "size-full [&>*:first-child]:mt-0 [&>*:last-child]:mb-0"
               )}
               key={`${i}`}
+              components={{
+                h1: (props) => (
+                  <h1
+                    className="font-montserrat text-accent text-3xl font-black whitespace-nowrap md:text-4xl"
+                    {...props}
+                  />
+                ),
+                h2: (props) => <h2 className="subheading" {...props} />,
+                h3: (props) => (
+                  <h2 className="subheading text-xl lg:text-2xl" {...props} />
+                ),
+              }}
             >
               {part.text}
             </Streamdown>
