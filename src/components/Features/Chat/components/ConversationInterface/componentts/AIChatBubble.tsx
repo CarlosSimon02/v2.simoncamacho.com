@@ -4,6 +4,7 @@ import { cn } from "@/utils";
 import { UIDataTypes, UIMessagePart, UITools } from "ai";
 import Image from "next/image";
 import { memo } from "react";
+import { Streamdown } from "streamdown";
 
 type ChatBubbleProps = {
   parts: UIMessagePart<UIDataTypes, UITools>[];
@@ -29,10 +30,18 @@ const AIChatBubble = ({ className, parts }: ChatBubbleProps) => {
       </button>
       <p className="bg-bg-ai-chat text-fg-primary rounded-3xl rounded-bl-none">
         {parts.map((part, i) => {
-          switch (part.type) {
-            case "text":
-              return <span key={i}>{part.text}</span>;
-          }
+          if (part.type !== "text" || !part.text) return null;
+
+          return (
+            <Streamdown
+              className={cn(
+                "size-full [&>*:first-child]:mt-0 [&>*:last-child]:mb-0"
+              )}
+              key={`${i}`}
+            >
+              {part.text}
+            </Streamdown>
+          );
         })}
       </p>
     </div>
