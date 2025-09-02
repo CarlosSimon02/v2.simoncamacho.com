@@ -74,12 +74,12 @@ const Conversation = () => {
   const { isOpen } = useIsQuickQuestionsOpenStore();
 
   return (
-    <div className="flex h-[calc(100dvh-var(--header-height))] flex-1 self-stretch overflow-hidden">
+    <div className="pointer-events-none flex h-[calc(100dvh-var(--header-height))] flex-1 self-stretch overflow-hidden">
       <StickToBottom
         initial="smooth"
         resize="smooth"
         role="log"
-        className="relative w-full"
+        className="pointer-events-auto relative w-full"
       >
         <ConversationContent />
         <ScrollToBottomButton
