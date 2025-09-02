@@ -1,8 +1,11 @@
 "use client";
 
+import GhostButton from "@/components/UI/Buttons/GhostButton";
 import ChatContentContainer from "@/components/UI/Containers/ChatContentContainer";
 import { useChat } from "@/providers/ChatProvider";
-import { StickToBottom } from "use-stick-to-bottom";
+import { cn } from "@/utils";
+import { ArrowDownIcon } from "@heroicons/react/24/outline";
+import { StickToBottom, useStickToBottomContext } from "use-stick-to-bottom";
 import { useIsQuickQuestionsOpenStore } from "../stores/useIsQuickQuestionsOpenStore";
 import AIChatBubble from "./AIChatBubble";
 import UserChatBubble from "./UserChatBubble";
@@ -42,7 +45,34 @@ const ConversationContent = () => {
   );
 };
 
+type ScrollToBottomButtonProps = Omit<
+  React.ComponentProps<typeof GhostButton>,
+  "children"
+>;
+
+const ScrollToBottomButton = ({
+  className,
+  ...props
+}: ScrollToBottomButtonProps) => {
+  const { isAtBottom, scrollToBottom } = useStickToBottomContext();
+
+  return (
+    <GhostButton
+      onClick={() => scrollToBottom()}
+      color="primary"
+      className={cn(isAtBottom && "hidden", className)}
+      {...props}
+    >
+      <div className="bg-bg-primary flex size-7 items-center justify-center rounded-full border border-current md:size-8">
+        <ArrowDownIcon className="size-4 rounded-full md:size-5" />
+      </div>
+    </GhostButton>
+  );
+};
+
 const Conversation = () => {
+  const { isOpen } = useIsQuickQuestionsOpenStore();
+
   return (
     <div className="flex h-[calc(100dvh-var(--header-height))] flex-1 self-stretch overflow-hidden">
       <StickToBottom
@@ -52,6 +82,10 @@ const Conversation = () => {
         className="relative w-full"
       >
         <ConversationContent />
+        <ScrollToBottomButton
+          data-state={isOpen ? "open" : "closed"}
+          className="absolute bottom-32 left-[50%] translate-x-[-50%] rounded-full transition-[bottom] data-[state=open]:bottom-46"
+        />
       </StickToBottom>
     </div>
   );
