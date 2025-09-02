@@ -8,12 +8,14 @@ type HeaderContainerProps = {
   className?: string;
   ref?: React.Ref<HTMLElement>;
   children?: React.ReactNode;
+  hasScrollDetection?: boolean;
 };
 
 const HeaderContainer = ({
   className,
   ref,
   children,
+  hasScrollDetection = true,
 }: HeaderContainerProps) => {
   const hasScrolled = useScrollDetection(SCROLL_THRESHOLD_PX);
 
@@ -21,8 +23,10 @@ const HeaderContainer = ({
     <header
       ref={ref}
       className={cn(
-        "sticky top-0 z-40 h-[var(--header-height)] border-b border-transparent",
-        hasScrolled && "bg-bg-primary border-border",
+        "bg-bg-primary border-border sticky top-0 z-40  h-[var(--header-height)] border-b",
+        !hasScrolled &&
+          hasScrollDetection &&
+          "border-transparent bg-transparent",
         className
       )}
     >

@@ -56,7 +56,7 @@ const ScrollToBottomButton = ({
   className,
   ...props
 }: ScrollToBottomButtonProps) => {
-  const { isAtBottom, scrollToBottom } = useStickToBottomContext();
+  const { isAtBottom, scrollToBottom, state } = useStickToBottomContext();
 
   return (
     <GhostButton
@@ -82,7 +82,7 @@ const Conversation = () => {
         className="pointer-events-auto w-full"
       >
         <ConversationContent />
-        <ChatContentContainer className="pointer-events-none fixed bottom-0 left-1/2 flex w-full -translate-x-1/2 flex-col gap-4">
+        <ChatContentContainer className="pointer-events-none fixed bottom-0 left-1/2 flex w-full -translate-x-1/2 flex-col">
           <ScrollToBottomButton className="pointer-events-auto self-center" />
           <div className="pointer-events-auto relative flex flex-col items-center gap-1 pt-5">
             <div className="to-bg-primary absolute inset-0 -z-9 bg-gradient-to-b from-transparent to-15%" />

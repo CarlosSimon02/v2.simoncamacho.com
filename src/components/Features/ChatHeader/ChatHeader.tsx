@@ -18,7 +18,11 @@ const ChatHeader = ({ className }: ChatHeaderProps) => {
   const { headerRef } = useChatHeaderAnimation();
 
   return (
-    <HeaderContainer className={className} ref={headerRef}>
+    <HeaderContainer
+      className={className}
+      ref={headerRef}
+      hasScrollDetection={false}
+    >
       <ChatContentContainer className="relative flex h-full items-center justify-between">
         <div className="flex items-center gap-4 md:gap-6">
           <BackButton className={cn("from-top-md", CHAT_HEADER_ITEM_CLASS)} />
