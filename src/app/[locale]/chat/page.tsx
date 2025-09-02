@@ -6,7 +6,7 @@ const HomePage = async () => {
   return (
     <>
       <Decorations />
-      <main id="main" className="flex flex-1">
+      <main id="main" className="flex h-full flex-1">
         <ChatProvider>
           <Chat />
         </ChatProvider>
