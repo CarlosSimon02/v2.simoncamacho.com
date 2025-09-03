@@ -93,7 +93,7 @@ const Conversation = () => {
         <ChatContentContainer className="pointer-events-none fixed bottom-0 left-1/2 flex w-full -translate-x-1/2 flex-col">
           <ScrollToBottomButton className="pointer-events-auto self-center" />
           <div className="pointer-events-auto relative flex flex-col items-center pt-5 pb-2 md:gap-1">
-            <div className="to-bg-primary absolute inset-0 -z-9 bg-gradient-to-b from-transparent to-15%" />
+            <div className="to-bg-primary absolute inset-0 -z-9 bg-gradient-to-b from-transparent to-12%" />
             <CollapsibleQuickQuestions />
             <AIChatForm />
             <p className="text-[0.75rem]">AI-generated, for reference only</p>
