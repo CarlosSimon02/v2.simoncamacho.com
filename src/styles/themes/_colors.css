@@ -82,7 +82,7 @@
   --fg-subtle: var(--color-light-gray-600);
   --border: var(--color-light-gray-600);
   --bg-card: var(--color-light-gray-200);
-  --bg-user-chat: var(--color-light-gray-500);
+  --bg-user-chat: var(--color-light-gray-400);
 
   --chess-board-dark-square: var(--color-light-gray-300);
   --chess-board-light-square: transparent;
@@ -100,10 +100,10 @@
   --fg-subtle: var(--color-dark-gray-200);
   --border: var(--color-dark-gray-300);
   --bg-card: var(--color-dark-gray-800);
-  --bg-user-chat: var(--color-dark-gray-500);
+  --bg-user-chat: var(--color-dark-gray-700);
 
   --chess-board-dark-square: transparent;
-  --chess-board-light-square: var(--color-dark-gray-700);
+  --chess-board-light-square: var(--color-dark-gray-600);
   --chess-pieces-white: var(--color-white);
   --chess-pieces-black: var(--color-accent);
 }
