@@ -13,26 +13,54 @@ export async function POST(req: Request) {
             {
               type: "text-delta",
               id: "text-1",
-              delta:
-                "# Markdown Example\n\n## Code Block\n\n```javascript\nconst greet = (name) => {\n  console.log(`Hello ${name}!`);\n};\n\ngreet('World');\n```\n\n",
+              delta: `# GitHub Flavored Markdown Features
+
+GFM extends standard Markdown with powerful features. Here's a comprehensive demo:
+
+## Tables
+
+| Feature | Standard MD | GFM |
+|---------|------------|-----|
+| Tables | ❌ | ✅ |
+| Task Lists | ❌ | ✅ |
+| Strikethrough | ❌ | ✅ |
+
+## Task Lists
+
+- [x] Implement authentication
+- [x] Add database models
+- [ ] Write unit tests
+- [ ] Deploy to production
+
+## Strikethrough
+
+~~Old approach~~ → New approach with AI models
+`,
             },
             {
               type: "text-delta",
               id: "text-1",
-              delta:
-                "## Table Example\n\n| Header 1 | Header 2 |\n|----------|----------|\n| Cell 1   | Cell 2   |\n| Cell 3   | Cell 4   |\n\n",
-            },
-            {
-              type: "text-delta",
-              id: "text-1",
-              delta:
-                "## List Example\n\n- Item 1\n- Item 2\n  - Nested Item 2.1\n  - Nested Item 2.2\n\n1. Ordered Item 1\n2. Ordered Item 2\n\n",
-            },
-            {
-              type: "text-delta",
-              id: "text-1",
-              delta:
-                "## Other Elements\n\n**Bold text** *Italic text* ~~Strikethrough~~\n\n> Blockquote example\n\n---\n\n[Link example](https://example.com)",
+              delta: `
+\`\`\`tsx
+import React from "react";
+
+type ButtonProps = {
+  label: string;
+  onClick: () => void;
+};
+
+export const Button: React.FC<ButtonProps> = ({ label, onClick }) => (
+  <button
+    type="button"
+    className="button"
+    onClick={onClick}
+    aria-label={label}
+  >
+    {label}
+  </button>
+);
+\`\`\`
+`,
             },
             { type: "text-end", id: "text-1" },
             {

@@ -7,7 +7,7 @@ const AIChatAvatar = () => {
   return (
     <button
       onClick={() => setMessages([])}
-      className="size-10 shrink-0 md:size-12"
+      className="size-8 shrink-0 md:size-12"
     >
       <Image
         height={100}

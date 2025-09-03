@@ -10,7 +10,7 @@ type UserChatBubbleProps = {
 const UserChatBubble = ({ parts, className }: UserChatBubbleProps) => {
   return (
     <div className={cn("flex w-full justify-end pb-10", className)}>
-      <p className="bg-bg-user-chat text-fg-secondary ml-10 max-w-2xl rounded-3xl rounded-br-none px-5 py-3">
+      <p className="bg-bg-user-chat text-fg-secondary ml-10 max-w-2xl rounded-3xl rounded-br-none px-5 py-3 text-sm md:text-base">
         {parts.map((part, i) => {
           switch (part.type) {
             case "text":

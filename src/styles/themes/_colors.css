@@ -80,7 +80,7 @@
   --fg-secondary: var(--color-dark-gray-50);
   --fg-muted: var(--color-light-gray-900);
   --fg-subtle: var(--color-light-gray-600);
-  --border: var(--color-light-gray-400);
+  --border: var(--color-light-gray-600);
   --bg-card: var(--color-light-gray-200);
   --bg-user-chat: var(--color-light-gray-500);
 
@@ -98,7 +98,7 @@
   --fg-secondary: var(--color-white);
   --fg-muted: var(--color-medium-gray-900);
   --fg-subtle: var(--color-dark-gray-200);
-  --border: var(--color-dark-gray-500);
+  --border: var(--color-dark-gray-300);
   --bg-card: var(--color-dark-gray-800);
   --bg-user-chat: var(--color-dark-gray-500);
 

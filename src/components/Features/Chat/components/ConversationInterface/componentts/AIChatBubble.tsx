@@ -14,38 +14,27 @@ const AIChatBubble = ({ className, parts }: ChatBubbleProps) => {
   return (
     <div className={cn("flex items-start gap-3 md:gap-6", className)}>
       <AIChatAvatar />
-      <p className="bg-bg-ai-chat text-fg-primary rounded-3xl rounded-bl-none">
-        {parts ? (
-          parts.map((part, i) => {
-            if (part.type !== "text" || !part.text) return null;
 
-            return (
-              <Streamdown
-                className={cn(
-                  "size-full [&>*:first-child]:mt-0 [&>*:last-child]:mb-0"
-                )}
-                key={`${i}`}
-                components={{
-                  h1: (props) => (
-                    <h1
-                      className="font-montserrat text-accent text-3xl font-black whitespace-nowrap md:text-4xl"
-                      {...props}
-                    />
-                  ),
-                  h2: (props) => <h2 className="subheading" {...props} />,
-                  h3: (props) => (
-                    <h2 className="subheading text-xl lg:text-2xl" {...props} />
-                  ),
-                }}
-              >
-                {part.text}
-              </Streamdown>
-            );
-          })
-        ) : (
-          <LoadingSpinner className="text-accent" />
-        )}
-      </p>
+      {parts ? (
+        parts.map((part, i) => {
+          if (part.type !== "text" || !part.text) return null;
+
+          return (
+            <Streamdown
+              className={cn(
+                "min-w-0 text-sm md:text-base [&_*]:wrap-break-word [&>*:first-child]:mt-0 [&>*:last-child]:mb-0",
+                "[&_*]:!border-border [&_*]:!border-t-border [&_*]:!border-b-border [&_*]:!border-l-border [&_*]:!border-r-border",
+                "[&_h1,h2,h3,h4,h5,h6,th]:text-fg-secondary [&_h1,h2,h3,h4,h5,h6,th]:font-oswald"
+              )}
+              key={`${i}`}
+            >
+              {part.text}
+            </Streamdown>
+          );
+        })
+      ) : (
+        <LoadingSpinner className="text-accent" />
+      )}
     </div>
   );
 };
