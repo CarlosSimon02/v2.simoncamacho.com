@@ -30,7 +30,7 @@ const QuickQuestions = ({ className }: QuickQuestionsProps) => {
               sendMessage({ text: questions[question.key].question })
             }
           >
-            <div className="bg-bg-card/50 dark:bg-bg-card border-fg-primary/50 flex gap-2 rounded-full border px-4 py-1 hover:border-current">
+            <div className="bg-bg-card/50 dark:bg-bg-card border-fg-primary/50 flex gap-2 rounded-full border px-4 py-1 text-sm hover:border-current md:text-base">
               <span aria-hidden="true">{question.icon}</span>
               <span>{questions[question.key].label}</span>
             </div>
