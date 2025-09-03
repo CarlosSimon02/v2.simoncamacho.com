@@ -22,7 +22,7 @@ const AIChatBubble = ({ className, parts }: ChatBubbleProps) => {
           return (
             <Streamdown
               className={cn(
-                "min-w-0 text-sm md:text-base [&_*]:wrap-break-word [&>*:first-child]:mt-0 [&>*:last-child]:mb-0",
+                "min-w-0 [&_*]:wrap-break-word [&>*:first-child]:mt-0 [&>*:last-child]:mb-0",
                 "[&_*]:!border-border [&_*]:!border-t-border [&_*]:!border-b-border [&_*]:!border-l-border [&_*]:!border-r-border",
                 "[&_h1,h2,h3,h4,h5,h6,th]:text-fg-secondary [&_h1,h2,h3,h4,h5,h6,th]:font-oswald"
               )}
