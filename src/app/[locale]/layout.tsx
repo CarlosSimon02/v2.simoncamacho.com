@@ -15,6 +15,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger as GSAPScrollTrigger } from "gsap/ScrollTrigger";
 import { ThemeProvider } from "next-themes";
+import NextTopLoader from "nextjs-toploader";
 import { generateMetadata as _generateMetadata } from "../metadata";
 
 const fontClasses = cn(MONTSERRAT.variable, OSWALD.variable, LEXEND.variable);
@@ -44,6 +45,7 @@ const LocaleLayout = async ({
       data-scroll-behavior="smooth"
     >
       <body>
+        <NextTopLoader color="#d97706" showSpinner={false} />
         <GSAPSetup />
         <ScrollObserver />
         <NextIntlClientProvider>
