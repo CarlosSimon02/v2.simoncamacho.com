@@ -49,7 +49,10 @@ const QuickQuestions = ({ className }: QuickQuestionsProps) => {
         </QuickQuestionsButton>
       ))}
       <OtherQuestions>
-        <QuickQuestionsButton aria-label="Open other questions">
+        <QuickQuestionsButton
+          aria-label="Open other questions"
+          disabled={status === "submitted" || status === "streaming"}
+        >
           <EllipsisHorizontalIcon className="size-6" />
         </QuickQuestionsButton>
       </OtherQuestions>
