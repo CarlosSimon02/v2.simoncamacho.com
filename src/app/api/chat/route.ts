@@ -1,79 +1,50 @@
-import { simulateReadableStream, streamText } from "ai";
-import { MockLanguageModelV2 } from "ai/test";
+import { LANGUAGES } from "@/constants/languages";
+import { routing } from "@/i18n/routing";
+import { convertToModelMessages, stepCountIs, streamText } from "ai";
+import { hasLocale } from "next-intl";
+import { NextResponse } from "next/server";
+import { exampleModel } from "./prompts/models.test";
+import { getSystemPrompt } from "./prompts/systemPrompt";
+import { getContact } from "./tools/getContact";
+import { getPresentation } from "./tools/getPresentation";
+import { getProjects } from "./tools/getProjects";
+import { getResume } from "./tools/getResume";
+import { getSkills } from "./tools/getSkills";
+import { getSports } from "./tools/getSport";
+import { getWorkExperience } from "./tools/getWorkExperience";
+
+const MAX_HISTORY = 5;
 
 export async function POST(req: Request) {
+  const { messages } = await req.json();
+  const { searchParams } = new URL(req.url);
+  const locale = searchParams.get("locale");
+
+  if (!hasLocale(routing.locales, locale)) {
+    return NextResponse.json({ error: "Invalid locale" }, { status: 400 });
+  }
+
+  const tools = {
+    getProjects,
+    getPresentation,
+    getResume,
+    getContact,
+    getSkills,
+    getSports,
+    getInternship: getWorkExperience,
+  };
+
+  const [firstMessage, ...rest] = messages;
+  const trimmedMessages = [firstMessage, ...rest.slice(-MAX_HISTORY)];
+
   const result = streamText({
-    model: new MockLanguageModelV2({
-      doStream: async () => ({
-        stream: simulateReadableStream({
-          chunkDelayInMs: 1000,
-          initialDelayInMs: 1000,
-          chunks: [
-            { type: "text-start", id: "text-1" },
-            {
-              type: "text-delta",
-              id: "text-1",
-              delta: `# GitHub Flavored Markdown Features
-
-GFM extends standard Markdown with powerful features. Here's a comprehensive demo:
-
-## Tables
-
-| Feature | Standard MD | GFM |
-|---------|------------|-----|
-| Tables | ❌ | ✅ |
-| Task Lists | ❌ | ✅ |
-| Strikethrough | ❌ | ✅ |
-
-## Task Lists
-
-- [x] Implement authentication
-- [x] Add database models
-- [ ] Write unit tests
-- [ ] Deploy to production
-
-## Strikethrough
-
-~~Old approach~~ → New approach with AI models
-`,
-            },
-            {
-              type: "text-delta",
-              id: "text-1",
-              delta: `
-\`\`\`tsx
-import React from "react";
-
-type ButtonProps = {
-  label: string;
-  onClick: () => void;
-};
-
-export const Button: React.FC<ButtonProps> = ({ label, onClick }) => (
-  <button
-    type="button"
-    className="button"
-    onClick={onClick}
-    aria-label={label}
-  >
-    {label}
-  </button>
-);
-\`\`\`
-`,
-            },
-            { type: "text-end", id: "text-1" },
-            {
-              type: "finish",
-              finishReason: "stop",
-              logprobs: undefined,
-              usage: { inputTokens: 3, outputTokens: 42, totalTokens: 45 },
-            },
-          ],
-        }),
-      }),
-    }),
-    prompt: "Generate markdown with various elements",
+    tools,
+    stopWhen: stepCountIs(2),
+    system: getSystemPrompt(
+      LANGUAGES.find((l) => l.code === locale)?.name ?? "English"
+    ),
+    model: exampleModel,
+    messages: convertToModelMessages(trimmedMessages),
   });
 
   return result.toUIMessageStreamResponse();

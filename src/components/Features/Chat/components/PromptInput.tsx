@@ -1,6 +1,7 @@
 "use client";
 
 import { Input } from "@/components/Primitives/Input";
+import LoadingSpinner from "@/components/UI/LoadingSpinner";
 import { cn } from "@/utils";
 import {
   PaperAirplaneIcon,
@@ -9,7 +10,6 @@ import {
 } from "@heroicons/react/24/outline";
 import type { ChatStatus } from "ai";
 import type { HTMLAttributes, KeyboardEventHandler } from "react";
-import LoadingSpinner from "../LoadingSpinner";
 
 const inputId = "chat-message-input";
 

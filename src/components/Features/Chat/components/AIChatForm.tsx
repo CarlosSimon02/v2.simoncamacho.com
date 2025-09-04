@@ -2,7 +2,7 @@ import {
   PromptInput,
   PromptInputSubmit,
   PromptInputTextInput,
-} from "@/components/UI/AIElements/PromptInput";
+} from "@/components/Features/Chat/components/PromptInput";
 import { useChat } from "@/providers/ChatProvider";
 import { useRef } from "react";
 
