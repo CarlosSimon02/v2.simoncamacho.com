@@ -45,7 +45,11 @@ const LocaleLayout = async ({
       data-scroll-behavior="smooth"
     >
       <body>
-        <NextTopLoader color="#d97706" showSpinner={false} />
+        <NextTopLoader
+          color="#d97706"
+          showSpinner={false}
+          showForHashAnchor={false}
+        />
         <GSAPSetup />
         <ScrollObserver />
         <NextIntlClientProvider>
