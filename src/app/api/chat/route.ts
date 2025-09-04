@@ -1,6 +1,13 @@
 import { LANGUAGES } from "@/constants/languages";
 import { routing } from "@/i18n/routing";
-import { convertToModelMessages, stepCountIs, streamText } from "ai";
+import {
+  convertToModelMessages,
+  InferUITools,
+  stepCountIs,
+  streamText,
+  UIDataTypes,
+  UIMessage,
+} from "ai";
 import { hasLocale } from "next-intl";
 import { NextResponse } from "next/server";
 import { exampleModel } from "./prompts/models.test";
@@ -15,24 +22,27 @@ import { getWorkExperience } from "./tools/getWorkExperience";
 
 const MAX_HISTORY = 5;
 
+const tools = {
+  getProjects,
+  getPresentation,
+  getResume,
+  getContact,
+  getSkills,
+  getSports,
+  getWorkExperience,
+};
+
+export type ChatTools = InferUITools<typeof tools>;
+export type ChatMessage = UIMessage<never, UIDataTypes, ChatTools>;
+
 export async function POST(req: Request) {
-  const { messages } = await req.json();
+  const { messages }: { messages: ChatMessage[] } = await req.json();
   const { searchParams } = new URL(req.url);
   const locale = searchParams.get("locale");
 
   if (!hasLocale(routing.locales, locale)) {
     return NextResponse.json({ error: "Invalid locale" }, { status: 400 });
   }
-
-  const tools = {
-    getProjects,
-    getPresentation,
-    getResume,
-    getContact,
-    getSkills,
-    getSports,
-    getInternship: getWorkExperience,
-  };
 
   const [firstMessage, ...rest] = messages;
   const trimmedMessages = [firstMessage, ...rest.slice(-MAX_HISTORY)];

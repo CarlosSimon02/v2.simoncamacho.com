@@ -1,11 +1,12 @@
 "use client";
 
+import { ChatMessage } from "@/app/api/chat/route";
 import { Chat, useChat as useChatAi } from "@ai-sdk/react";
-import { DefaultChatTransport, UIDataTypes, UIMessage, UITools } from "ai";
+import { DefaultChatTransport } from "ai";
 import { useLocale } from "next-intl";
 import React from "react";
 
-type ChatContextValue = Chat<UIMessage<unknown, UIDataTypes, UITools>> | null;
+type ChatContextValue = Chat<ChatMessage> | null;
 
 const ChatContext = React.createContext<ChatContextValue>(null);
 
@@ -17,7 +18,7 @@ export const ChatProvider = ({ children }: ChatProviderProps) => {
   const locale = useLocale();
   const [chat] = React.useState(
     () =>
-      new Chat({
+      new Chat<ChatMessage>({
         transport: new DefaultChatTransport({
           api: `/api/chat/?locale=${locale}`,
         }),
@@ -34,5 +35,5 @@ export const useChat = () => {
   const chat = React.useContext(ChatContext);
   if (!chat) throw new Error("ChatProvider is missing");
 
-  return useChatAi({ chat });
+  return useChatAi<ChatMessage>({ chat });
 };
