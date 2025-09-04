@@ -21,7 +21,15 @@ const OtherQuestions = ({ children }: OtherQuestionsProps) => {
   return (
     <Drawer>
       <DrawerTrigger asChild>{children}</DrawerTrigger>
-      <DrawerContent className="p-4">
+      <DrawerContent
+        className="p-4"
+        onCloseAutoFocus={(e) => {
+          e.preventDefault();
+        }}
+        onOpenAutoFocus={(e) => {
+          e.preventDefault();
+        }}
+      >
         <DrawerHeader className="from-bg-secondary absolute inset-x-3 top-0 z-10 flex items-center justify-center gap-4 bg-gradient-to-b from-70% to-transparent p-4">
           <div className="bg-fg-primary h-1 w-12 rounded-full" aria-hidden />
           <DrawerTitle className="sr-only">Other Questions</DrawerTitle>
