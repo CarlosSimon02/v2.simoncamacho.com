@@ -16,7 +16,7 @@ type OtherQuestionsProps = {
 };
 
 const OtherQuestions = ({ children }: OtherQuestionsProps) => {
-  const { sendMessage } = useChat();
+  const { sendMessage, status } = useChat();
 
   return (
     <Drawer>
@@ -45,8 +45,11 @@ const OtherQuestions = ({ children }: OtherQuestionsProps) => {
                   {category.questions.map((q, idx) => (
                     <button
                       key={idx}
-                      className="bg-bg-card/50 dark:bg-bg-card border-fg-primary/50 hover:text-accent rounded-full border px-4 py-2 transition-colors hover:border-current"
+                      className="bg-bg-card/50 dark:bg-bg-card border-fg-primary/50 hover:text-accent rounded-full border px-4 py-2 transition-colors hover:border-current disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:text-current"
                       onClick={() => sendMessage({ text: q })}
+                      disabled={
+                        status === "submitted" || status === "streaming"
+                      }
                     >
                       {q}
                     </button>
