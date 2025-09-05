@@ -10,7 +10,8 @@ const SocialsHorizontal = ({ className }: SocialsHorizontalProps) => {
   return (
     <div
       className={cn(
-        "mx-auto flex w-full max-w-[17rem] flex-wrap justify-center gap-6"
+        "mx-auto flex w-full max-w-[17rem] flex-wrap justify-center gap-6",
+        className
       )}
     >
       {SOCIALS.map((social) => (

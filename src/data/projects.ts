@@ -2,8 +2,9 @@ import audiophile from "@/assets/projects/audiophile.png";
 import kanban from "@/assets/projects/kanban.png";
 import pomodoro from "@/assets/projects/pomodoro.png";
 import pomodoroLogo from "@/assets/projects/pomodoroLogo.png";
+import { Project } from "@/types/project";
 
-export const PROJECTS = [
+export const PROJECTS: Project[] = [
   {
     slug: "kanban",
     logo: pomodoroLogo.src,
