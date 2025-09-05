@@ -71,7 +71,7 @@ export const TECHNOLOGIES = [
     color: "#47A248",
   },
   {
-    name: "Material UI",
+    name: "MUI",
     icon: MaterialUiIcon,
     color: "#007FFF",
   },

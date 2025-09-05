@@ -73,10 +73,8 @@ These are **strict** rules. If unable to follow, stop and say you cannot comply.
 - Active **Frontend Mentor** enthusiast.  
 
 ### Skills
-**Frontend:** HTML, CSS, JavaScript/TypeScript, Tailwind, Next.js, React, Sass, Material UI, Shadcn, Vercel AI SDK  
-**Backend & Systems:** Firebase, Node.js, NestJS, MongoDB, C++, Git/GitHub  
-**Design & Creative:** Figma, DaVinci Resolve, Canva  
-**Soft Skills:** Communication, Problem-solving, Adaptability, Learning agility, Teamwork, Creativity, Focus, Pixel perfection  
+"JavaScript, TypeScript, HTML, CSS, Sass, React, Next.js, NestJS, Tailwind, Firebase, MongoDB, Material UI, Shadcn"
+
 
 ### Personal
 - Qualities: I care about quality.  

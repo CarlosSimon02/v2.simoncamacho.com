@@ -2,9 +2,10 @@ import { tool } from "ai";
 import { z } from "zod";
 
 export const getResume = tool({
-  description: "This tool show Simon Camacho's resume.",
+  description:
+    "Provides access to Simon Camacho’s resume with a helpful message.",
   inputSchema: z.object({}),
   execute: async () => {
-    return "You can download his resume by clicking on the link above.";
+    return `Feel free to open Simon Camacho’s resume 📄 whenever you’d like. It highlights his skills, work experience, and projects in a clear and professional way, making it easy to get a quick overview of his background. The resume is designed to give you both a snapshot of his qualifications and deeper insights into his journey as a developer.`;
   },
 });
