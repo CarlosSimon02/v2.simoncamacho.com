@@ -19,7 +19,6 @@ import { getProjects } from "./tools/getProjects";
 import { getResume } from "./tools/getResume";
 import { getSkills } from "./tools/getSkills";
 import { getSports } from "./tools/getSport";
-import { getWorkExperience } from "./tools/getWorkExperience";
 
 const MAX_HISTORY = 5;
 
@@ -30,7 +29,6 @@ const tools = {
   getContact,
   getSkills,
   getSports,
-  getWorkExperience,
   getCats,
 };
 

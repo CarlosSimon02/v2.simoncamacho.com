@@ -2,6 +2,7 @@
 
 import {
   Drawer,
+  DrawerClose,
   DrawerContent,
   DrawerDescription,
   DrawerHeader,
@@ -51,16 +52,17 @@ const OtherQuestions = ({ children }: OtherQuestionsProps) => {
 
                 <div className="grid gap-2">
                   {category.questions.map((q, idx) => (
-                    <button
-                      key={idx}
-                      className="bg-bg-card/50 dark:bg-bg-card border-fg-primary/50 hover:text-accent rounded-[1.3125rem] border px-4 py-2 transition-colors hover:border-current disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:text-current"
-                      onClick={() => sendMessage({ text: q })}
-                      disabled={
-                        status === "submitted" || status === "streaming"
-                      }
-                    >
-                      {q}
-                    </button>
+                    <DrawerClose key={idx} asChild>
+                      <button
+                        className="bg-bg-card/50 dark:bg-bg-card border-fg-primary/50 hover:text-accent rounded-[1.3125rem] border px-4 py-2 transition-colors hover:border-current disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:text-current"
+                        onClick={() => sendMessage({ text: q })}
+                        disabled={
+                          status === "submitted" || status === "streaming"
+                        }
+                      >
+                        {q}
+                      </button>
+                    </DrawerClose>
                   ))}
                 </div>
               </div>

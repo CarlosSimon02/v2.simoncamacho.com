@@ -13,7 +13,6 @@ export const questionsByCategory = [
     name: "Profile",
     icon: UserCircleIcon,
     questions: [
-      "Who is Simon Camacho?",
       "Can you tell me about Simon's background?",
       "How did Simon get into programming?",
       "What motivates Simon to keep learning?",
@@ -68,6 +67,7 @@ export const questionsByCategory = [
       "What’s Simon’s fastest Rubik’s cube solve?",
       "Does Simon like BTS?",
       "What’s Simon’s favorite chess opening?",
+      "Does Simon have any pets?",
       "What does Simon do for fun outside coding?",
     ],
   },
@@ -76,7 +76,6 @@ export const questionsByCategory = [
     name: "Contact & Future",
     icon: EnvelopeIcon,
     questions: [
-      "How can I reach Simon?",
       "What kind of projects is Simon interested in?",
       "Where is Simon located?",
       "Is Simon open for work or collaborations?",
@@ -91,21 +90,19 @@ export const questions = {
     label: "Profile",
   },
   projects: {
-    question: "What are Simon’s projects? What is he working on right now?",
+    question: "What are Simon’s projects?",
     label: "Projects",
   },
   skills: {
-    question: "What are Simon’s skills? Can you list his soft and hard skills?",
+    question: "What are Simon’s skills?",
     label: "Skills",
   },
-  fun: {
-    question:
-      "What’s the craziest thing Simon has ever done? What are his hobbies?",
-    label: "Fun",
+  cats: {
+    question: "Does Simon have any cats? Can you tell me about them?",
+    label: "Cats",
   },
   contact: {
-    question:
-      "How can I reach Simon? What kind of project would make him say 'yes' immediately?",
+    question: "How can I reach Simon?",
     label: "Contact",
   },
 };
@@ -116,6 +113,6 @@ export const QUICK_QUESTIONS: { key: QuestionKey; icon: string }[] = [
   { key: "profile", icon: "🙃" },
   { key: "projects", icon: "📂" },
   { key: "skills", icon: "🧠" },
-  { key: "fun", icon: "🎉" },
+  { key: "cats", icon: "😺" },
   { key: "contact", icon: "📞" },
 ];

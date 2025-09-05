@@ -14,7 +14,7 @@ const AIChatBubble = ({ className, parts }: ChatBubbleProps) => {
   return (
     <div className={cn("flex items-start gap-3 md:gap-6", className)}>
       <AIChatAvatar />
-      <div className="flex min-w-0 flex-col gap-3">
+      <div className="flex min-w-0 flex-col gap-10">
         {parts.map((part, i) => {
           if (part.type.startsWith("tool-")) {
             return <ToolRenderer key={`${i}`} part={part} />;

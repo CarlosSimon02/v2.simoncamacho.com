@@ -1,0 +1,23 @@
+{
+  "status": "ready",
+  "originalFilePath": "videos\\kenzy.mp4",
+  "provider": "mux",
+  "providerMetadata": {
+    "mux": {
+      "uploadId": "9JUf61dJ8QSO01kIzTxC6g8EV6KKUNypdw1sy1Leusqo",
+      "assetId": "53gYE4xehGKS5uxXkHpltHL302oQdTbdzaFhuTmuz02CE",
+      "playbackId": "myeXigypqg8QxNoAYx4vVBMCQ7TVhC02NuaX4ZIarn02o"
+    }
+  },
+  "createdAt": 1757079911630,
+  "updatedAt": 1757079936138,
+  "size": 2603155,
+  "sources": [
+    {
+      "src": "https://stream.mux.com/myeXigypqg8QxNoAYx4vVBMCQ7TVhC02NuaX4ZIarn02o.m3u8",
+      "type": "application/x-mpegURL"
+    }
+  ],
+  "poster": "https://image.mux.com/myeXigypqg8QxNoAYx4vVBMCQ7TVhC02NuaX4ZIarn02o/thumbnail.webp",
+  "blurDataURL": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAABwAgCdASoQAAkAAQAcJYgCdLoAEJKYyzkWL8UIAP7XnVY/iBqQT6biyOy/ik0+5fgJ9u1rdp5HNlWEi5ulZ2USoxfbuznbhZ+hx457cdG7F8eZ+OF1+DKi5nVJxxnOmny3/jACly8YR+ikd35IgK7BVIAAAA=="
+}

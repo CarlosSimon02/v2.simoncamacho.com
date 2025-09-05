@@ -1,0 +1,23 @@
+{
+  "status": "ready",
+  "originalFilePath": "videos\\coco.mp4",
+  "provider": "mux",
+  "providerMetadata": {
+    "mux": {
+      "uploadId": "XR5ceH01ynceDr701k01OVLvJ4W6kz501lyIUdZtSItna44",
+      "assetId": "Ftt02N7wFiBnfIR9wUVVHWHOFrvvo02mcEZ5AqijV4eKg",
+      "playbackId": "K8brfTCYGSU1Nn5SfdyHyLP9cESwaDN81523XCN2Z5E"
+    }
+  },
+  "createdAt": 1757079911624,
+  "updatedAt": 1757079935924,
+  "size": 536057,
+  "sources": [
+    {
+      "src": "https://stream.mux.com/K8brfTCYGSU1Nn5SfdyHyLP9cESwaDN81523XCN2Z5E.m3u8",
+      "type": "application/x-mpegURL"
+    }
+  ],
+  "poster": "https://image.mux.com/K8brfTCYGSU1Nn5SfdyHyLP9cESwaDN81523XCN2Z5E/thumbnail.webp",
+  "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADwAQCdASoQAAkAAQAcJZQCdAEYH8nL0hAA/vjELM/4ww5KvzBVCcgl6taf1/oT1n2Cv6l/1aN2xg4Mz9BqWiRpWc2FinD0vfTru8da7C1l4mcTLby/Qoi6CTnoAv+WgAA="
+}

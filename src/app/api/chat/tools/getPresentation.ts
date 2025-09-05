@@ -2,8 +2,7 @@ import { tool } from "ai";
 import { z } from "zod";
 
 export const getPresentation = tool({
-  description:
-    'This tool returns a concise personal introduction of Simon Camacho. It is used to answer the question "Who is Simon Camacho?" or "Tell me about Simon Camacho"',
+  description: 'It is used to answer the question "Who is Simon Camacho?"',
   inputSchema: z.object({}),
   execute: async () => {
     return {

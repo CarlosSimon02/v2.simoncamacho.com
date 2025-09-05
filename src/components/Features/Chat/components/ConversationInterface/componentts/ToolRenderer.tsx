@@ -1,9 +1,13 @@
 import { UIDataTypes, UIMessagePart, UITools } from "ai";
+import CatsTool, { CatsToolLoading } from "./ToolUIs/CatsTool";
 import ContactTool, { ContactToolLoading } from "./ToolUIs/ContactTool";
 import PresentationTool, {
   PresentationToolLoading,
 } from "./ToolUIs/PresentationTool";
 import ProjectsTool, { ProjectsToolLoading } from "./ToolUIs/ProjectsTool";
+import ResumeTool, { ResumeToolLoading } from "./ToolUIs/ResumeTool";
+import SkillsTool, { SkillsToolLoading } from "./ToolUIs/SkillsTool";
+import SportTool, { SportToolLoading } from "./ToolUIs/SportTool";
 import ToolError from "./ToolUIs/ToolError";
 
 type ToolRendererProps = {
@@ -46,9 +50,9 @@ const ToolRenderer = ({ part }: ToolRendererProps) => {
       switch (part.state) {
         case "input-streaming":
         case "input-available":
-          return <div>Loading...</div>;
+          return <ResumeToolLoading />;
         case "output-available":
-          return <div>Output available</div>;
+          return <ResumeTool />;
         case "output-error":
           return <div>Output error</div>;
       }
@@ -56,9 +60,9 @@ const ToolRenderer = ({ part }: ToolRendererProps) => {
       switch (part.state) {
         case "input-streaming":
         case "input-available":
-          return <div>Loading...</div>;
+          return <SkillsToolLoading />;
         case "output-available":
-          return <div>Output available</div>;
+          return <SkillsTool />;
         case "output-error":
           return <div>Output error</div>;
       }
@@ -66,19 +70,19 @@ const ToolRenderer = ({ part }: ToolRendererProps) => {
       switch (part.state) {
         case "input-streaming":
         case "input-available":
-          return <div>Loading...</div>;
+          return <SportToolLoading />;
         case "output-available":
-          return <div>Output available</div>;
+          return <SportTool />;
         case "output-error":
           return <div>Output error</div>;
       }
-    case "tool-getWorkExperience":
+    case "tool-getCats":
       switch (part.state) {
         case "input-streaming":
         case "input-available":
-          return <div>Loading...</div>;
+          return <CatsToolLoading />;
         case "output-available":
-          return <div>Output available</div>;
+          return <CatsTool />;
         case "output-error":
           return <div>Output error</div>;
       }
