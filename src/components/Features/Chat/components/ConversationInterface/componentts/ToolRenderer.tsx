@@ -66,7 +66,7 @@ const ToolRenderer = ({ part }: ToolRendererProps) => {
         case "output-error":
           return <div>Output error</div>;
       }
-    case "tool-getSport":
+    case "tool-getSports":
       switch (part.state) {
         case "input-streaming":
         case "input-available":

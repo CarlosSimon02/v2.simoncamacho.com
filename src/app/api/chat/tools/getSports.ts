@@ -2,7 +2,7 @@ import { tool } from "ai";
 import { z } from "zod";
 
 export const getSports = tool({
-  description: "This tool will show some of Simon Camacho's favorite sports",
+  description: "This tool will show some of Simon Camacho's sports",
   inputSchema: z.object({}),
   execute: async () => {
     return `**Simon Camacho's favorite sports** 🏀♟️  

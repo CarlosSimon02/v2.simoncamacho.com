@@ -55,6 +55,7 @@ const ResumeTool = () => {
         <TailedButton
           href="/simon_camacho_cv.pdf"
           label={tResume("openButton")}
+          target="_blank"
         />
       </div>
     </div>

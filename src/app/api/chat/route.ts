@@ -18,7 +18,7 @@ import { getPresentation } from "./tools/getPresentation";
 import { getProjects } from "./tools/getProjects";
 import { getResume } from "./tools/getResume";
 import { getSkills } from "./tools/getSkills";
-import { getSports } from "./tools/getSport";
+import { getSports } from "./tools/getSports";
 
 const MAX_HISTORY = 5;
 
