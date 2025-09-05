@@ -12,6 +12,7 @@ import { hasLocale } from "next-intl";
 import { NextResponse } from "next/server";
 import { exampleModel } from "./prompts/models.test";
 import { getSystemPrompt } from "./prompts/systemPrompt";
+import { getCats } from "./tools/getCats";
 import { getContact } from "./tools/getContact";
 import { getPresentation } from "./tools/getPresentation";
 import { getProjects } from "./tools/getProjects";
@@ -30,6 +31,7 @@ const tools = {
   getSkills,
   getSports,
   getWorkExperience,
+  getCats,
 };
 
 export type ChatTools = InferUITools<typeof tools>;

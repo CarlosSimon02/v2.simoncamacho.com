@@ -50,7 +50,8 @@
     "skipToContentButton": {
       "open": "Skip to content"
     },
-    "backButtonLabel": "Back"
+    "backButtonLabel": "Back",
+    "or": "or"
   },
   "heroSection": {
     "contact": "Contact",
@@ -140,7 +141,6 @@
     }
   },
   "contactForm": {
-    "or": "or",
     "fields": {
       "name": {
         "label": "Name",
@@ -186,5 +186,12 @@
     "subtitle": "Page not found",
     "description": "We can’t find the page you’re looking for",
     "goHome": "Go back home"
+  },
+  "chat": {
+    "tools": {
+      "contact": {
+        "description": "Get in touch with Simon — whether through socials or by sending a quick message below."
+      }
+    }
   }
 }

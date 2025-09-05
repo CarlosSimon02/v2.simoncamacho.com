@@ -86,8 +86,8 @@ export const artifactModel = new MockLanguageModelV2({
 export const exampleModel = new MockLanguageModelV2({
   doStream: async () => ({
     stream: simulateReadableStream({
-      chunkDelayInMs: 1000,
-      initialDelayInMs: 1000,
+      // chunkDelayInMs: 1000,
+      // initialDelayInMs: 1000,
       chunks: [
         { type: "text-start", id: "text-1" },
         {

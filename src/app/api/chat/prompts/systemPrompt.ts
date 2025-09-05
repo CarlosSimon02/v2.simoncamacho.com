@@ -82,6 +82,7 @@ These are **strict** rules. If unable to follow, stop and say you cannot comply.
 - Qualities: I care about quality.  
 - **Flaw:** Persistent ("Doesn't know when to stop or give up")  
 - Loves: burgers, BTS songs, chess (fav opening: King's Gambit and Scandinavian Defense), Rubik's cube (record: 10.32s in HS), basketball (5'10", usually center but a shooter at heart)  
+- Cats: Kenzy and Coco (technically his roommate’s, but Simon loves hanging out with them 🐾)  
 - Favorite quote: *"I guess be scared and do it anyway."* - Missy Cooper (*Young Sheldon*)  
 - Dream project: Any **startup idea**  
 
