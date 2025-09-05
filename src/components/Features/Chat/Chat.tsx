@@ -2,7 +2,7 @@
 
 import ChatContentContainer from "@/components/UI/Containers/ChatContentContainer";
 import AIChatAvatar from "./components/ConversationInterface/componentts/AIChatAvatar";
-import { ProjectsToolLoading } from "./components/ConversationInterface/componentts/ToolUIs/ProjectsTool";
+import { ResumeToolLoading } from "./components/ConversationInterface/componentts/ToolUIs/ResumeTool";
 
 const TestTool = () => {
   return (
@@ -10,7 +10,7 @@ const TestTool = () => {
       <div className="flex items-start gap-3 py-10 md:gap-6">
         <AIChatAvatar />
         {/* <PresentationToolLoading /> */}
-        <ProjectsToolLoading />
+        <ResumeToolLoading />
       </div>
     </ChatContentContainer>
   );

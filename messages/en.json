@@ -194,6 +194,13 @@
       },
       "projects": {
         "description": "Explore Simon’s projects — each one comes with a detailed explanation, including the thought process, problem-solving approach, and in-depth description of the work. Browse through his portfolio to see not just what he built, but also how he built it."
+      },
+      "resume": {
+        "title": "Software Engineer",
+        "fileType": "PDF",
+        "fileSize": "1.5MB",
+        "date": "Updated September 2025",
+        "openButton": "Open"
       }
     }
   }

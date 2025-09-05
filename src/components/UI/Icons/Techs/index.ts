@@ -6,6 +6,7 @@ import MaterialUiIcon from "./MaterialUiIcon";
 import MongodbIcon from "./MongoDbIcon";
 import NestJsIcon from "./NestJsIcon";
 import NextJsIcon from "./NextJsIcon";
+import PDFIcon from "./PDFIcon";
 import ReactIcon from "./ReactIcon";
 import SassIcon from "./SassIcon";
 import ShadCnIcon from "./ShadCnIcon";
@@ -21,6 +22,7 @@ export {
   MongodbIcon,
   NestJsIcon,
   NextJsIcon,
+  PDFIcon,
   ReactIcon,
   SassIcon,
   ShadCnIcon,
