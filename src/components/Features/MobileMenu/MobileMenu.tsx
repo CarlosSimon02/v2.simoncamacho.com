@@ -3,9 +3,8 @@
 import heroWaving from "@/assets/heroes/waving.png";
 import CloseButton from "@/components/UI/Buttons/CloseButton";
 import GhostButton from "@/components/UI/Buttons/GhostButton";
-import SocialButton from "@/components/UI/Buttons/SocialButton";
 import Ripple from "@/components/UI/Effects/Ripple";
-import { SOCIALS } from "@/data/socials";
+import SocialsHorizontal from "@/components/UI/SocialsHorizontal";
 import useBreakpoint from "@/hooks/useBreakpoints";
 import { cn } from "@/utils";
 import { Bars3BottomRightIcon } from "@heroicons/react/24/outline";
@@ -81,15 +80,7 @@ const MobileMenu = ({ className }: MobileMenuProps) => {
           </div>
         </div>
         <SheetFooter>
-          <div className="mx-auto flex w-full max-w-[17rem] flex-wrap justify-center gap-6">
-            {SOCIALS.map((social) => (
-              <SocialButton
-                key={social.id}
-                social={social}
-                hoverDirection="up"
-              />
-            ))}
-          </div>
+          <SocialsHorizontal />
         </SheetFooter>
       </SheetContent>
     </Sheet>

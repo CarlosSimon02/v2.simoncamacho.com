@@ -5,7 +5,9 @@ import skilledLandingPageMobile from "@/assets/femProjects/skilledLandingPageMob
 import ContactForm from "@/components/Features/ContactForm";
 import ContentContainer from "@/components/UI/Containers/ContentContainer";
 import Cube from "@/components/UI/Effects/Cube";
+import OrSeperator from "@/components/UI/OrSeperator";
 import SectionTitle from "@/components/UI/SectionTitle";
+import SocialsHorizontal from "@/components/UI/SocialsHorizontal";
 import { CHESS_GAMES } from "@/data/chessGames";
 import { cn } from "@/utils";
 import { useTranslations } from "next-intl";
@@ -31,7 +33,7 @@ type ConnectSectionProps = {
 };
 
 const ConnectSection = ({ className }: ConnectSectionProps) => {
-  const t = useTranslations("connectSection");
+  const t = useTranslations();
 
   return (
     <>
@@ -40,7 +42,7 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
         sectionId="connect"
         className={cn("flex flex-col gap-12 md:gap-16 md:!pb-40", className)}
       >
-        <SectionTitle title={t("title") as string} number={4} />
+        <SectionTitle title={t("connectSection.title") as string} number={4} />
         <div className="flex flex-col gap-14 md:gap-24">
           <div className="flex flex-col items-center justify-stretch gap-[2rem] md:flex-row md:gap-16">
             <div className={cn("relative basis-1/2", GET_IN_TOUCH_STYLE)}>
@@ -52,8 +54,10 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
                   className={cn(GET_IN_TOUCH_CUBES_STYLE)}
                 />
               </div>
-              <h3 className="subheading mb-4">{t("getInTouch.title")}</h3>
-              <p>{t("getInTouch.description")}</p>
+              <h3 className="subheading mb-4">
+                {t("connectSection.getInTouch.title")}
+              </h3>
+              <p>{t("connectSection.getInTouch.description")}</p>
               <div className="absolute -bottom-30 left-0 -z-2 mt-14 ml-8 max-md:!hidden">
                 <Cube
                   cubeSize={60}
@@ -69,7 +73,11 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
                 CONTACT_FORM_STYLE
               )}
             >
-              <ContactForm className="w-full" />
+              <div className="flex flex-col gap-6 md:gap-8">
+                <SocialsHorizontal className="xl:hidden" />
+                <OrSeperator className="xl:hidden" />
+                <ContactForm className="w-full" />
+              </div>
             </div>
           </div>
           <div className="flex flex-col items-center gap-[2rem] md:flex-row-reverse md:gap-12">
@@ -81,9 +89,9 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
             >
               <div>
                 <h3 className="subheading mb-4">
-                  {t("onFrontendMentor.title")}
+                  {t("connectSection.onFrontendMentor.title")}
                 </h3>
-                <p>{t("onFrontendMentor.description")}</p>
+                <p>{t("connectSection.onFrontendMentor.description")}</p>
                 <div className="absolute -top-30 right-10 -z-2 max-lg:!hidden">
                   <Cube
                     cubeSize={70}
@@ -103,7 +111,7 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
               <Image
                 src={skilledLandingPageMobile.src}
                 alt={t(
-                  "onFrontendMentor.screenshotsAlt.skilledELearningLandingPage"
+                  "connectSection.onFrontendMentor.screenshotsAlt.skilledELearningLandingPage"
                 )}
                 className={cn(
                   "row-span-2 aspect-[15/20] h-full rounded-2xl object-cover max-[30em]:hidden",
@@ -115,7 +123,7 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
               <Image
                 src={articlePreviewComponent.src}
                 alt={t(
-                  "onFrontendMentor.screenshotsAlt.articlePreviewComponent"
+                  "connectSection.onFrontendMentor.screenshotsAlt.articlePreviewComponent"
                 )}
                 className={cn(
                   "col-span-2 aspect-[20/9] rounded-2xl object-cover max-[30em]:w-full min-[30em]:h-full",
@@ -126,7 +134,9 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
               />
               <Image
                 src={bmiCalculator.src}
-                alt={t("onFrontendMentor.screenshotsAlt.bmiCalculator")}
+                alt={t(
+                  "connectSection.onFrontendMentor.screenshotsAlt.bmiCalculator"
+                )}
                 className={cn(
                   "col-span-2 aspect-[20/9] rounded-2xl object-cover max-[30em]:w-full min-[30em]:h-full",
                   "relative top-[4rem] opacity-0"
@@ -137,7 +147,7 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
               <Image
                 src={skilledLandingPageDesktop.src}
                 alt={t(
-                  "onFrontendMentor.screenshotsAlt.skilledELearningLandingPage"
+                  "connectSection.onFrontendMentor.screenshotsAlt.skilledELearningLandingPage"
                 )}
                 className={cn(
                   "col-span-2 aspect-[20/9] rounded-2xl object-cover max-[30em]:w-full min-[30em]:hidden min-[30em]:h-full",
@@ -156,8 +166,10 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
               )}
             >
               <div className="relative">
-                <h3 className="subheading mb-4">{t("playChess.title")}</h3>
-                <p>{t("playChess.description")}</p>
+                <h3 className="subheading mb-4">
+                  {t("connectSection.playChess.title")}
+                </h3>
+                <p>{t("connectSection.playChess.description")}</p>
                 <div className="absolute -bottom-40 left-1/2 -z-2 max-md:!hidden">
                   <Cube
                     cubeSize={100}
