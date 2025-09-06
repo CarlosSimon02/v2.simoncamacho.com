@@ -7,11 +7,14 @@ import {
   streamText,
   UIDataTypes,
   UIMessage,
+  wrapLanguageModel,
 } from "ai";
 import { hasLocale } from "next-intl";
 import { NextResponse } from "next/server";
-import { exampleModel } from "./prompts/models.test";
-import { getSystemPrompt } from "./prompts/systemPrompt";
+import { cacheMiddleware } from "./ai/middleware";
+import { model } from "./ai/models";
+import { exampleModel } from "./ai/models.test";
+import { getSystemPrompt } from "./ai/systemPrompt";
 import { getCats } from "./tools/getCats";
 import { getContact } from "./tools/getContact";
 import { getPresentation } from "./tools/getPresentation";
@@ -34,6 +37,11 @@ const tools = {
 
 export type ChatTools = InferUITools<typeof tools>;
 export type ChatMessage = UIMessage<never, UIDataTypes, ChatTools>;
+
+const wrappedModel = wrapLanguageModel({
+  model: model,
+  middleware: cacheMiddleware,
+});
 
 export async function POST(req: Request) {
   const { messages }: { messages: ChatMessage[] } = await req.json();

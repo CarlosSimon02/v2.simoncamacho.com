@@ -27,6 +27,7 @@
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-slot": "^1.2.3",
     "@t3-oss/env-nextjs": "^0.13.8",
+    "@upstash/redis": "^1.35.3",
     "ai": "^5.0.28",
     "chess.js": "^1.4.0",
     "clsx": "^2.1.1",

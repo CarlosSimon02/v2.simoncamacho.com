@@ -65,7 +65,7 @@ export const questionsByCategory = [
       "What’s Simon’s favorite food?",
       "Does Simon play any sports?",
       "What’s Simon’s fastest Rubik’s cube solve?",
-      "Does Simon like BTS?",
+      "What's Simon's favorite quote?",
       "What’s Simon’s favorite chess opening?",
       "Does Simon have any pets?",
       "What does Simon do for fun outside coding?",
