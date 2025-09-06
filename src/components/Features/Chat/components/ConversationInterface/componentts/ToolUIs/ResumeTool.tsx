@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 
 export const ResumeToolLoading = () => {
   return (
-    <div className="mb-12 flex w-full min-w-0 flex-wrap gap-6 md:gap-8">
+    <div className="flex w-full min-w-0 flex-wrap gap-6 md:gap-8">
       {/* Left side (image placeholder) */}
       <div className="relative aspect-video w-full max-w-md overflow-hidden rounded-lg">
         <Skeleton className="h-full w-full" />
