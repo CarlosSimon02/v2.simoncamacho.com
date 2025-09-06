@@ -34,7 +34,7 @@ const ResumeTool = () => {
   const tResume = useTranslations("chat.tools.resume");
 
   return (
-    <div className="mb-12 flex w-full min-w-0 flex-wrap gap-6 md:gap-8">
+    <div className="flex w-full min-w-0 flex-wrap gap-6 md:gap-8">
       <ImageWithGridBg
         alt="Resume"
         image={resumeScreenshot.src}
