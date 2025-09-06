@@ -22,6 +22,7 @@ const MobileNav = ({ className }: MobileNavProps) => {
               href={`/${href}`}
               id={id}
               color={currentSection === id ? "secondary" : "primary"}
+              hoverDirection="right"
             >
               <DialogClose className="font-oswald flex items-center gap-3">
                 <Icon className="size-6" />
