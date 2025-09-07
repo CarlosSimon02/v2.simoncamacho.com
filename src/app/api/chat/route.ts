@@ -50,36 +50,70 @@ const ratelimit = new Ratelimit({
 });
 
 export async function POST(req: NextRequest) {
-  const ip = req.headers.get("x-forwarded-for") || "121.0.0.1";
-  const ipFinal = ip.split(/, /)[0];
+  try {
+    // Rate limiting
+    const ip =
+      req.headers.get("x-forwarded-for")?.split(/, /)[0] || "127.0.0.1";
+    const { success } = await ratelimit.limit(ip);
 
-  const { success } = await ratelimit.limit(ipFinal);
+    if (!success) {
+      return NextResponse.json(
+        { error: "Rate limit exceeded" },
+        { status: 429 }
+      );
+    }
 
-  if (!success) {
-    return new Response("Ratelimited!", { status: 429 });
+    // Request validation
+    let body;
+    try {
+      body = await req.json();
+    } catch (e) {
+      return NextResponse.json(
+        { error: "Invalid JSON in request body" },
+        { status: 400 }
+      );
+    }
+
+    const { messages } = body;
+    if (!messages || !Array.isArray(messages)) {
+      return NextResponse.json(
+        { error: "Missing or invalid messages array" },
+        { status: 400 }
+      );
+    }
+
+    // Locale validation
+    const { searchParams } = new URL(req.url);
+    const locale = searchParams.get("locale");
+
+    if (!locale || !hasLocale(routing.locales, locale)) {
+      return NextResponse.json(
+        { error: "Invalid or missing locale parameter" },
+        { status: 400 }
+      );
+    }
+
+    // Message processing
+    const [firstMessage, ...rest] = messages;
+    const trimmedMessages = [firstMessage, ...rest.slice(-MAX_HISTORY)];
+
+    // AI response generation
+    const result = streamText({
+      tools,
+      stopWhen: stepCountIs(2),
+      system: getSystemPrompt(
+        LANGUAGES.find((l) => l.code === locale)?.name ?? "English"
+      ),
+      model: wrappedModel,
+      messages: convertToModelMessages(trimmedMessages),
+    });
+
+    return result.toUIMessageStreamResponse();
+  } catch (error) {
+    console.error("Chat API error:", error);
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 }
+    );
   }
-
-  const { messages }: { messages: ChatMessage[]; ip: string } =
-    await req.json();
-  const { searchParams } = new URL(req.url);
-  const locale = searchParams.get("locale");
-
-  if (!hasLocale(routing.locales, locale)) {
-    return NextResponse.json({ error: "Invalid locale" }, { status: 400 });
-  }
-
-  const [firstMessage, ...rest] = messages;
-  const trimmedMessages = [firstMessage, ...rest.slice(-MAX_HISTORY)];
-
-  const result = streamText({
-    tools,
-    stopWhen: stepCountIs(2),
-    system: getSystemPrompt(
-      LANGUAGES.find((l) => l.code === locale)?.name ?? "English"
-    ),
-    model: wrappedModel,
-    messages: convertToModelMessages(trimmedMessages),
-  });
-
-  return result.toUIMessageStreamResponse();
 }
