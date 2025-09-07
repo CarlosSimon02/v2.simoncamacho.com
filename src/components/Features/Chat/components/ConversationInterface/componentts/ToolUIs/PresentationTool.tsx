@@ -56,13 +56,6 @@ const PresentationTool = () => {
           <div className={cn("bg-accent mt-2 h-1 w-12 rounded-full")}></div>
         </div>
       </div>
-      <div className={cn("relative max-w-[31.25rem] md:flex-1")}>
-        <div
-          className={cn(
-            "relative mx-auto aspect-[384/490] w-64 max-w-96 md:w-full"
-          )}
-        ></div>
-      </div>
     </div>
   );
 };

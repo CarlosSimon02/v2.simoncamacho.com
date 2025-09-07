@@ -1,5 +1,7 @@
 import { LANGUAGES } from "@/constants/languages";
 import { routing } from "@/i18n/routing";
+import { Ratelimit } from "@upstash/ratelimit";
+import { kv } from "@vercel/kv";
 import {
   convertToModelMessages,
   InferUITools,
@@ -10,10 +12,9 @@ import {
   wrapLanguageModel,
 } from "ai";
 import { hasLocale } from "next-intl";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { cacheMiddleware } from "./ai/middleware";
 import { model } from "./ai/models";
-import { exampleModel } from "./ai/models.test";
 import { getSystemPrompt } from "./ai/systemPrompt";
 import { getCats } from "./tools/getCats";
 import { getContact } from "./tools/getContact";
@@ -43,8 +44,23 @@ const wrappedModel = wrapLanguageModel({
   middleware: cacheMiddleware,
 });
 
-export async function POST(req: Request) {
-  const { messages }: { messages: ChatMessage[] } = await req.json();
+const ratelimit = new Ratelimit({
+  redis: kv,
+  limiter: Ratelimit.fixedWindow(10, "1d"),
+});
+
+export async function POST(req: NextRequest) {
+  const ip = req.headers.get("x-forwarded-for") || "121.0.0.1";
+  const ipFinal = ip.split(/, /)[0];
+
+  const { success } = await ratelimit.limit(ipFinal);
+
+  if (!success) {
+    return new Response("Ratelimited!", { status: 429 });
+  }
+
+  const { messages }: { messages: ChatMessage[]; ip: string } =
+    await req.json();
   const { searchParams } = new URL(req.url);
   const locale = searchParams.get("locale");
 
@@ -61,7 +77,7 @@ export async function POST(req: Request) {
     system: getSystemPrompt(
       LANGUAGES.find((l) => l.code === locale)?.name ?? "English"
     ),
-    model: exampleModel,
+    model: wrappedModel,
     messages: convertToModelMessages(trimmedMessages),
   });
 

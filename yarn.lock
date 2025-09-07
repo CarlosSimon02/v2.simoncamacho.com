@@ -3235,7 +3235,21 @@
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-win32-x64-msvc/-/resolver-binding-win32-x64-msvc-1.11.1.tgz#538b1e103bf8d9864e7b85cc96fa8d6fb6c40777"
   integrity sha512-lrW200hZdbfRtztbygyaq/6jP6AKE8qQN2KvPcJ+x7wiD038YtnYtZ82IMNJ69GJibV7bwL3y9FgK+5w/pYt6g==
 
-"@upstash/redis@^1.35.3":
+"@upstash/core-analytics@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@upstash/core-analytics/-/core-analytics-0.0.10.tgz#e686a313ec2279d5a8d53e6c215085f1c0f5ab4b"
+  integrity sha512-7qJHGxpQgQr9/vmeS1PktEwvNAF7TI4iJDi8Pu2CFZ9YUGHZH4fOP5TfYlZ4aVxfopnELiE4BS4FBjyK7V1/xQ==
+  dependencies:
+    "@upstash/redis" "^1.28.3"
+
+"@upstash/ratelimit@^2.0.6":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@upstash/ratelimit/-/ratelimit-2.0.6.tgz#d51aaae8145c7f27bc2bc593e813472388b13008"
+  integrity sha512-Uak5qklMfzFN5RXltxY6IXRENu+Hgmo9iEgMPOlUs2etSQas2N+hJfbHw37OUy4vldLRXeD0OzL+YRvO2l5acg==
+  dependencies:
+    "@upstash/core-analytics" "^0.0.10"
+
+"@upstash/redis@^1.28.3", "@upstash/redis@^1.34.0", "@upstash/redis@^1.35.3":
   version "1.35.3"
   resolved "https://registry.yarnpkg.com/@upstash/redis/-/redis-1.35.3.tgz#7b383b6a8af57e619c054bdccdb7a6159860cdf5"
   integrity sha512-hSjv66NOuahW3MisRGlSgoszU2uONAY2l5Qo3Sae8OT3/Tng9K+2/cBRuyPBX8egwEGcNNCF9+r0V6grNnhL+w==
@@ -3257,6 +3271,13 @@
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/@vercel/edge/-/edge-1.2.2.tgz#22647e3333399c9d3e35fbfd49a99d3bfc6ffc5c"
   integrity sha512-1+y+f6rk0Yc9ss9bRDgz/gdpLimwoRteKHhrcgHvEpjbP1nyT3ByqEMWm2BTcpIO5UtDmIFXc8zdq4LR190PDA==
+
+"@vercel/kv@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@vercel/kv/-/kv-3.0.0.tgz#4579153536c9fc0ca8c52d3d7cfe944ccffd08c0"
+  integrity sha512-pKT8fRnfyYk2MgvyB6fn6ipJPCdfZwiKDdw7vB+HL50rjboEBHDVBEcnwfkEpVSp2AjNtoaOUH7zG+bVC/rvSg==
+  dependencies:
+    "@upstash/redis" "^1.34.0"
 
 "@zkochan/rimraf@^3.0.2":
   version "3.0.2"
