@@ -10,4 +10,5 @@
 @import "./utilities/_text.css";
 @import "./utilities/_animations.css";
 @import "./utilities/_gsap.css";
+@import "./utilities/_imageZoom.css";
 @source "../../node_modules/streamdown/**/*.{ts,tsx}";

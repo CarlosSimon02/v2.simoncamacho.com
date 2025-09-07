@@ -4,6 +4,7 @@ import { cn } from "@/utils";
 import { MapPinIcon } from "@heroicons/react/24/outline";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import Zoom from "react-medium-image-zoom";
 
 export const PresentationToolLoading = () => {
   return (
@@ -32,13 +33,15 @@ const PresentationTool = () => {
 
   return (
     <div className={cn("flex w-full min-w-0 flex-wrap gap-6 md:gap-8")}>
-      <Image
-        src={simonImage.src}
-        width={300}
-        height={300}
-        alt={t("heroSection.heroImageAlt")}
-        className="border-border aspect-square size-36 rounded-xl border md:size-48 lg:size-56"
-      />
+      <Zoom>
+        <Image
+          src={simonImage.src}
+          width={1000}
+          height={1000}
+          alt={t("heroSection.heroImageAlt")}
+          className="border-border aspect-square size-36 rounded-xl border md:size-48 lg:size-56"
+        />
+      </Zoom>
       <div className="flex flex-col gap-5 md:gap-7 lg:gap-9">
         <div className="after:bg-accent flex flex-col gap-2 md:gap-3">
           <div className={cn("flex items-center gap-1")}>
