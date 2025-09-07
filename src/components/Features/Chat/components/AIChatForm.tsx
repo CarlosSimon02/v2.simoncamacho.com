@@ -8,7 +8,8 @@ import { useRef } from "react";
 
 const AIChatForm = () => {
   const inputRef = useRef<HTMLInputElement>(null);
-  const { sendMessage, status, stop, messages, setMessages } = useChat();
+  const { sendMessage, status, stop, error } = useChat();
+  const errorCode = error ? JSON.parse(error.message).code : null;
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     switch (status) {
@@ -34,13 +35,13 @@ const AIChatForm = () => {
         ref={inputRef}
         className="pr-[2.53125rem] md:pr-[3.125rem]"
         placeholder="Message Jack"
-        disabled={status === "submitted"}
+        disabled={status === "submitted" || errorCode === 429}
       />
       <PromptInputSubmit
         aria-label="Send message"
         className="absolute top-0 right-0"
         status={status}
-        disabled={status === "submitted"}
+        disabled={status === "submitted" || errorCode === 429}
         onClick={() => {
           status === "streaming" && stop();
         }}

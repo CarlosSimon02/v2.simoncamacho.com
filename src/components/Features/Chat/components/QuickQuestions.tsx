@@ -23,7 +23,8 @@ type QuickQuestionsProps = {
 };
 
 const QuickQuestions = ({ className }: QuickQuestionsProps) => {
-  const { sendMessage, status } = useChat();
+  const { sendMessage, status, error } = useChat();
+  const errorCode = error ? JSON.parse(error.message).code : null;
 
   return (
     <ul
@@ -33,11 +34,15 @@ const QuickQuestions = ({ className }: QuickQuestionsProps) => {
       )}
       role="list"
     >
-      {QUICK_QUESTIONS.map((question, index) => (
+      {QUICK_QUESTIONS.map((question) => (
         <QuickQuestionsButton
           key={question.key}
           aria-label={`Ask: ${questions[question.key].label}`}
-          disabled={status === "submitted" || status === "streaming"}
+          disabled={
+            status === "submitted" ||
+            status === "streaming" ||
+            errorCode === 429
+          }
           onClick={() =>
             sendMessage({ text: questions[question.key].question })
           }
@@ -51,7 +56,11 @@ const QuickQuestions = ({ className }: QuickQuestionsProps) => {
       <OtherQuestions>
         <QuickQuestionsButton
           aria-label="Open other questions"
-          disabled={status === "submitted" || status === "streaming"}
+          disabled={
+            status === "submitted" ||
+            status === "streaming" ||
+            errorCode === 429
+          }
         >
           <EllipsisHorizontalIcon className="size-6" />
         </QuickQuestionsButton>

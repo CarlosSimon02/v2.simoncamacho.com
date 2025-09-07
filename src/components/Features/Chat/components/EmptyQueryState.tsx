@@ -1,10 +1,16 @@
+"use client";
+
 import jackImage from "@/assets/heroes/jack.png";
 import ChatContentContainer from "@/components/UI/Containers/ChatContentContainer";
+import { useChat } from "@/providers/ChatProvider";
 import Image from "next/image";
 import AIChatForm from "./AIChatForm";
+import ErrorBubble from "./ConversationInterface/componentts/ErrorBubble";
 import QuickQuestions from "./QuickQuestions";
 
 const EmptyQueryState = () => {
+  const { error } = useChat();
+  const errorCode = error ? JSON.parse(error.message).code : null;
   return (
     <ChatContentContainer className="flex flex-col items-center justify-center gap-6 py-12">
       <div className="flex flex-col items-center justify-center gap-6 text-center">
@@ -21,6 +27,9 @@ const EmptyQueryState = () => {
           </h1>
         </div>
         <p>I'm Simon Camacho's AI assistant. How can I help you today?</p>
+        {errorCode === 429 && (
+          <ErrorBubble errorCode={429} className="mr-0 rounded-bl-3xl" />
+        )}
       </div>
       <AIChatForm />
       <QuickQuestions />

@@ -17,7 +17,8 @@ type OtherQuestionsProps = {
 };
 
 const OtherQuestions = ({ children }: OtherQuestionsProps) => {
-  const { sendMessage, status } = useChat();
+  const { sendMessage, status, error } = useChat();
+  let errorCode = error ? JSON.parse(error.message).code : null;
 
   return (
     <Drawer>
@@ -57,7 +58,9 @@ const OtherQuestions = ({ children }: OtherQuestionsProps) => {
                         className="bg-bg-card/50 dark:bg-bg-card border-fg-primary/50 hover:text-accent rounded-[1.3125rem] border px-4 py-2 transition-colors hover:border-current disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:text-current"
                         onClick={() => sendMessage({ text: q })}
                         disabled={
-                          status === "submitted" || status === "streaming"
+                          status === "submitted" ||
+                          status === "streaming" ||
+                          errorCode === 429
                         }
                       >
                         {q}
