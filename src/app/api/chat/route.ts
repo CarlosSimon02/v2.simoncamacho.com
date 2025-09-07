@@ -51,34 +51,6 @@ const ratelimit = new Ratelimit({
 
 export async function POST(req: NextRequest) {
   try {
-    const forceError: string = "rate-limit";
-    if (forceError) {
-      switch (forceError) {
-        case "rate-limit":
-          return NextResponse.json(
-            { error: "Rate limit exceeded", code: 429 },
-            { status: 429 }
-          );
-        case "invalid-json":
-          return NextResponse.json(
-            { error: "Invalid JSON in request body", code: 400 },
-            { status: 400 }
-          );
-        case "missing-messages":
-          return NextResponse.json(
-            { error: "Missing or invalid messages array", code: 400 },
-            { status: 400 }
-          );
-        case "invalid-locale":
-          return NextResponse.json(
-            { error: "Invalid or missing locale parameter", code: 400 },
-            { status: 400 }
-          );
-        case "internal-error":
-          throw new Error("Forced internal server error");
-      }
-    }
-
     // Rate limiting
     const ip =
       req.headers.get("x-forwarded-for")?.split(/, /)[0] || "127.0.0.1";
