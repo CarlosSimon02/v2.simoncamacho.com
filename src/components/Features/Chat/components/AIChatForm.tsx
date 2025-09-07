@@ -17,6 +17,7 @@ const AIChatForm = () => {
       case "submitted":
         break;
       case "ready":
+      case "error":
         e.preventDefault();
         const value = inputRef.current?.value ?? "";
         if (!value.trim()) return;

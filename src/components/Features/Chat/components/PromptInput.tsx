@@ -3,11 +3,7 @@
 import { Input } from "@/components/Primitives/Input";
 import LoadingSpinner from "@/components/UI/LoadingSpinner";
 import { cn } from "@/utils";
-import {
-  PaperAirplaneIcon,
-  StopCircleIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
+import { PaperAirplaneIcon, StopCircleIcon } from "@heroicons/react/24/outline";
 import type { ChatStatus } from "ai";
 import type { HTMLAttributes, KeyboardEventHandler } from "react";
 
@@ -87,8 +83,6 @@ export const PromptInputSubmit = ({
     Icon = <LoadingSpinner />;
   } else if (status === "streaming") {
     Icon = <StopCircleIcon className="size-5 md:size-6" />;
-  } else if (status === "error") {
-    Icon = <XMarkIcon className="size-5 md:size-6" />;
   }
 
   return (
@@ -97,7 +91,9 @@ export const PromptInputSubmit = ({
         "text-accent absolute top-0 right-0 flex size-[2.53125rem] items-center justify-center opacity-100 transition-opacity hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50 md:size-[3.125rem]",
         className
       )}
-      type={status === "streaming" ? "button" : "submit"}
+      type={
+        status === "streaming" || status === "submitted" ? "button" : "submit"
+      }
       {...props}
     >
       {children ?? Icon}

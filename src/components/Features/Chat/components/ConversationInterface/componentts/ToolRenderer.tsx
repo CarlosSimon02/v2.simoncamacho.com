@@ -1,4 +1,5 @@
 import { UIDataTypes, UIMessagePart, UITools } from "ai";
+import ErrorBubble from "./ErrorBubble";
 import CatsTool, { CatsToolLoading } from "./ToolUIs/CatsTool";
 import ContactTool, { ContactToolLoading } from "./ToolUIs/ContactTool";
 import PresentationTool, {
@@ -8,7 +9,6 @@ import ProjectsTool, { ProjectsToolLoading } from "./ToolUIs/ProjectsTool";
 import ResumeTool, { ResumeToolLoading } from "./ToolUIs/ResumeTool";
 import SkillsTool, { SkillsToolLoading } from "./ToolUIs/SkillsTool";
 import SportTool, { SportToolLoading } from "./ToolUIs/SportTool";
-import ToolError from "./ToolUIs/ToolError";
 
 type ToolRendererProps = {
   part: UIMessagePart<UIDataTypes, UITools>;
@@ -24,7 +24,7 @@ const ToolRenderer = ({ part }: ToolRendererProps) => {
         case "output-available":
           return <ContactTool />;
         case "output-error":
-          return <ToolError />;
+          return <ErrorBubble errorCode="tool-error" />;
       }
     case "tool-getPresentation":
       switch (part.state) {
@@ -34,7 +34,7 @@ const ToolRenderer = ({ part }: ToolRendererProps) => {
         case "output-available":
           return <PresentationTool />;
         case "output-error":
-          return <ToolError />;
+          return <ErrorBubble errorCode="tool-error" />;
       }
     case "tool-getProjects":
       switch (part.state) {
@@ -44,7 +44,7 @@ const ToolRenderer = ({ part }: ToolRendererProps) => {
         case "output-available":
           return <ProjectsTool />;
         case "output-error":
-          return <ToolError />;
+          return <ErrorBubble errorCode="tool-error" />;
       }
     case "tool-getResume":
       switch (part.state) {

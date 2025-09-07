@@ -9,7 +9,6 @@ import { StickToBottom, useStickToBottomContext } from "use-stick-to-bottom";
 import AIChatForm from "../AIChatForm";
 import AIChatBubble from "./componentts/AIChatBubble";
 import CollapsibleQuickQuestions from "./componentts/CollapsibleQuickQuestions";
-import ErrorBubble from "./componentts/ErrorBubble";
 import LoadingBubble from "./componentts/LoadingBubble";
 import UserChatBubble from "./componentts/UserChatBubble";
 import { useIsQuickQuestionsOpenStore } from "./stores/useIsQuickQuestionsOpenStore";
@@ -45,7 +44,7 @@ const ConversationContent = () => {
           }
         })}
         {status === "submitted" && <LoadingBubble />}
-        {error && <ErrorBubble errorCode={JSON.parse(error.message).code} />}
+        {/* {error && <ErrorBubble errorCode={JSON.parse(error.message).code} />} */}
       </ChatContentContainer>
     </StickToBottom.Content>
   );

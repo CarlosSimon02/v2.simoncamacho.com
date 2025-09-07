@@ -51,6 +51,34 @@ const ratelimit = new Ratelimit({
 
 export async function POST(req: NextRequest) {
   try {
+    const forceError: string = "rate-limit";
+    if (forceError) {
+      switch (forceError) {
+        case "rate-limit":
+          return NextResponse.json(
+            { error: "Rate limit exceeded", code: 429 },
+            { status: 429 }
+          );
+        case "invalid-json":
+          return NextResponse.json(
+            { error: "Invalid JSON in request body", code: 400 },
+            { status: 400 }
+          );
+        case "missing-messages":
+          return NextResponse.json(
+            { error: "Missing or invalid messages array", code: 400 },
+            { status: 400 }
+          );
+        case "invalid-locale":
+          return NextResponse.json(
+            { error: "Invalid or missing locale parameter", code: 400 },
+            { status: 400 }
+          );
+        case "internal-error":
+          throw new Error("Forced internal server error");
+      }
+    }
+
     // Rate limiting
     const ip =
       req.headers.get("x-forwarded-for")?.split(/, /)[0] || "127.0.0.1";
@@ -58,7 +86,7 @@ export async function POST(req: NextRequest) {
 
     if (!success) {
       return NextResponse.json(
-        { error: "Rate limit exceeded" },
+        { error: "Rate limit exceeded", code: 429 },
         { status: 429 }
       );
     }
@@ -69,7 +97,7 @@ export async function POST(req: NextRequest) {
       body = await req.json();
     } catch (e) {
       return NextResponse.json(
-        { error: "Invalid JSON in request body" },
+        { error: "Invalid JSON in request body", code: 400 },
         { status: 400 }
       );
     }
@@ -77,7 +105,7 @@ export async function POST(req: NextRequest) {
     const { messages } = body;
     if (!messages || !Array.isArray(messages)) {
       return NextResponse.json(
-        { error: "Missing or invalid messages array" },
+        { error: "Missing or invalid messages array", code: 400 },
         { status: 400 }
       );
     }
@@ -88,7 +116,7 @@ export async function POST(req: NextRequest) {
 
     if (!locale || !hasLocale(routing.locales, locale)) {
       return NextResponse.json(
-        { error: "Invalid or missing locale parameter" },
+        { error: "Invalid or missing locale parameter", code: 400 },
         { status: 400 }
       );
     }
@@ -112,7 +140,7 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     console.error("Chat API error:", error);
     return NextResponse.json(
-      { error: "Internal server error" },
+      { error: "Internal server error", code: 500 },
       { status: 500 }
     );
   }
