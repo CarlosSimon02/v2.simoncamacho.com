@@ -8,8 +8,8 @@ export const env = createEnv({
     GOOGLE_FORM_NAME_ENTRY_ID: z.string().min(1),
     GOOGLE_FORM_EMAIL_ENTRY_ID: z.string().min(1),
     GOOGLE_FORM_MESSAGE_ENTRY_ID: z.string().min(1),
-    GOOGLE_FORM_USP: z.string().min(1).optional(),
-    GOOGLE_FORM_SUBMIT_LABEL: z.string().min(1).optional(),
+    GOOGLE_FORM_USP: z.string().min(1),
+    GOOGLE_FORM_SUBMIT_LABEL: z.string().min(1),
 
     // OpenAI API
     OPENAI_API_KEY: z.string().min(1),
