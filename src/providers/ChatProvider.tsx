@@ -22,9 +22,6 @@ export const ChatProvider = ({ children }: ChatProviderProps) => {
         transport: new DefaultChatTransport({
           api: `/api/chat/?locale=${locale}`,
         }),
-        onError: (error) => {
-          console.error(error);
-        },
       })
   );
 

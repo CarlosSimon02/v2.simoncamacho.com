@@ -2,20 +2,20 @@
 
 import GhostButton from "@/components/UI/Buttons/GhostButton";
 import ChatContentContainer from "@/components/UI/Containers/ChatContentContainer";
-import LoadingSpinner from "@/components/UI/LoadingSpinner";
 import { useChat } from "@/providers/ChatProvider";
 import { cn } from "@/utils";
 import { ArrowDownIcon } from "@heroicons/react/24/outline";
 import { StickToBottom, useStickToBottomContext } from "use-stick-to-bottom";
 import AIChatForm from "../AIChatForm";
-import AIChatAvatar from "./componentts/AIChatAvatar";
 import AIChatBubble from "./componentts/AIChatBubble";
 import CollapsibleQuickQuestions from "./componentts/CollapsibleQuickQuestions";
+import ErrorBubble from "./componentts/ErrorBubble";
+import LoadingBubble from "./componentts/LoadingBubble";
 import UserChatBubble from "./componentts/UserChatBubble";
 import { useIsQuickQuestionsOpenStore } from "./stores/useIsQuickQuestionsOpenStore";
 
 const ConversationContent = () => {
-  const { messages, status } = useChat();
+  const { messages, status, error } = useChat();
   const { isOpen } = useIsQuickQuestionsOpenStore();
 
   return (
@@ -44,12 +44,8 @@ const ConversationContent = () => {
               );
           }
         })}
-        {status === "submitted" && (
-          <div className="flex items-center gap-3 md:gap-6">
-            <AIChatAvatar />
-            <LoadingSpinner className="text-accent" />
-          </div>
-        )}
+        {status === "submitted" && <LoadingBubble />}
+        {error && <ErrorBubble errorCode={JSON.parse(error.message).code} />}
       </ChatContentContainer>
     </StickToBottom.Content>
   );
