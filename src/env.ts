@@ -18,14 +18,14 @@ export const env = createEnv({
     MUX_TOKEN_ID: z.string().min(1),
     MUX_TOKEN_SECRET: z.string().min(1),
 
-    // KV/R2 Storage (Cloudflare)
+    // KV/R2 Storage (Vercel)
     KV_URL: z.string().min(1),
     KV_REST_API_URL: z.string().min(1),
     KV_REST_API_TOKEN: z.string().min(1),
     KV_REST_API_READ_ONLY_TOKEN: z.string().min(1),
 
     // Redis
-    REDIS_URL: z.string().url(),
+    REDIS_URL: z.url(),
   },
   client: {
     // Site URL
