@@ -20,7 +20,7 @@ const OpenToWorkBadge = ({ className }: OpenToWorkBadgeProps) => {
     tl.to(".work-badge", { marginBottom: 8, duration: 0.6 }, "<");
     tl.to(".work-badge", { width: 141.267, duration: 0.6 });
     tl.to(".work-text", { opacity: 1, duration: 1 }, "<");
-    tl.to(".work-wrapper", { paddingLeft: 19, duration: 0.1 }, "<");
+    tl.to(".work-wrapper", { paddingLeft: 19, duration: 0.6 }, "<");
   });
 
   return (
