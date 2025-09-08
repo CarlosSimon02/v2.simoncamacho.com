@@ -1,6 +1,7 @@
 import heroImage from "@/assets/heroes/main.png";
 import PillButton from "@/components/UI/Buttons/PillButton";
 import ContentContainer from "@/components/UI/Containers/ContentContainer";
+import OpenToWorkBadge from "@/components/UI/OpenToWorkBadge";
 import { cn } from "@/utils";
 import { MapPinIcon } from "@heroicons/react/24/outline";
 import { getTranslations } from "next-intl/server";
@@ -62,14 +63,17 @@ const HeroSection = async ({ className }: HeroSectionProps) => {
               )}
             ></div>
           </div>
-          <p
-            className={cn(
-              "max-w-[70ch] md:max-w-[40ch] lg:max-w-[50ch]",
-              HERO_SECTION_CONTENT_ITEM_STYLE
-            )}
-          >
-            {t("info.description")}
-          </p>
+          <div className="flex flex-col">
+            <OpenToWorkBadge />
+            <p
+              className={cn(
+                "max-w-[70ch] md:max-w-[40ch] lg:max-w-[50ch]",
+                HERO_SECTION_CONTENT_ITEM_STYLE
+              )}
+            >
+              {t("info.description")}
+            </p>
+          </div>
           <div className={cn("flex gap-4", HERO_SECTION_CONTENT_ITEM_STYLE)}>
             <ContactButton />
             <PillButton

@@ -27,6 +27,7 @@
     }
   },
   "common": {
+    "openToWork": "Open to work",
     "mainNavigation": "Main navigation",
     "navigateToHome": "Navigate to Home",
     "navigateToSection": "Navigate to {section} section",
