@@ -91,7 +91,7 @@ const ProjectsGrid = ({
               {project.technologies.map((technology) => (
                 <span
                   key={technology.name}
-                  className="border-foreground-2 text-foreground-2 rounded-full border px-2 py-1"
+                  className="border-pill-border text-foreground-2 bg-pill-bg rounded-full border px-3 py-1 text-sm"
                 >
                   {technology.name}
                 </span>

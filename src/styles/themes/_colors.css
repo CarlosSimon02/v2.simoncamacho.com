@@ -70,6 +70,9 @@
   --color-chess-board-light-square: var(--chess-board-light-square);
   --color-chess-pieces-white: var(--chess-pieces-white);
   --color-chess-pieces-black: var(--chess-pieces-black);
+
+  --color-pill-bg: var(--pill-bg);
+  --color-pill-border: var(--pill-border);
 }
 
 :root {
@@ -88,6 +91,17 @@
   --chess-board-light-square: transparent;
   --chess-pieces-white: var(--color-accent);
   --chess-pieces-black: var(--color-black);
+
+  --pill-border: color-mix(
+    in oklab,
+    var(--color-fg-primary, var(--fg-primary)) 50%,
+    transparent
+  );
+  --pill-bg: color-mix(
+    in oklab,
+    var(--color-bg-card, var(--bg-card)) 50%,
+    transparent
+  );
 }
 
 [data-theme="dark"] {
@@ -106,4 +120,11 @@
   --chess-board-light-square: var(--color-dark-gray-600);
   --chess-pieces-white: var(--color-white);
   --chess-pieces-black: var(--color-accent);
+
+  --pill-border: color-mix(
+    in oklab,
+    var(--color-fg-primary, var(--fg-primary)) 50%,
+    transparent
+  );
+  --pill-bg: var(--color-bg-card);
 }

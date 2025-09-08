@@ -11,6 +11,7 @@ type OpenToWorkBadgeProps = {
 
 const OpenToWorkBadge = ({ className }: OpenToWorkBadgeProps) => {
   const t = useTranslations("common");
+
   useGSAP(() => {
     let tl = gsap.timeline({ delay: 2.2 });
 
@@ -27,7 +28,7 @@ const OpenToWorkBadge = ({ className }: OpenToWorkBadgeProps) => {
     <div
       className={cn(
         "work-badge mb-0 h-0 w-0 opacity-0",
-        "border-fg-primary/50 bg-bg-card/50 dark:bg-bg-card text-fg-secondary flex items-center gap-2 overflow-hidden rounded-full border text-sm",
+        "border-pill-border bg-pill-bg text-fg-secondary flex items-center gap-2 overflow-hidden rounded-full border text-sm",
         className
       )}
     >

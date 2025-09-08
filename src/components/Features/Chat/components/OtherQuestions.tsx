@@ -55,7 +55,7 @@ const OtherQuestions = ({ children }: OtherQuestionsProps) => {
                   {category.questions.map((q, idx) => (
                     <DrawerClose key={idx} asChild>
                       <button
-                        className="bg-bg-card/50 dark:bg-bg-card border-fg-primary/50 hover:text-accent rounded-[1.3125rem] border px-4 py-2 transition-colors hover:border-current disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:text-current"
+                        className="bg-pill-bg border-pill-border hover:text-accent rounded-[1.3125rem] border px-4 py-2 transition-colors hover:border-current disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:text-current"
                         onClick={() => sendMessage({ text: q })}
                         disabled={
                           status === "submitted" ||

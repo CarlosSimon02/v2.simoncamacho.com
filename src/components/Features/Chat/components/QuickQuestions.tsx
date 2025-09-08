@@ -12,7 +12,7 @@ const QuickQuestionsButton = ({
   ...props
 }: React.ComponentProps<typeof GhostButton>) => (
   <GhostButton hoverColor="accent" {...props}>
-    <div className="bg-bg-card/50 dark:bg-bg-card border-fg-primary/50 flex gap-2 rounded-full border px-4 py-1 hover:border-current">
+    <div className="bg-pill-bg border-pill-border flex gap-2 rounded-full border px-4 py-1 hover:border-current">
       {children}
     </div>
   </GhostButton>
