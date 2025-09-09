@@ -1,4 +1,5 @@
 import Decorations from "@/components/Features/Decorations";
+import Footer from "@/components/Features/Footer/Footer";
 import AboutSection from "@/components/Features/Sections/AboutSection";
 import ConnectSection from "@/components/Features/Sections/ConnectSection/ConnectSection";
 import ExperienceSection from "@/components/Features/Sections/ExperienceSection";
@@ -25,6 +26,7 @@ const HomePage = async () => {
         <ProjectsSection />
         <ConnectSection />
       </main>
+      <Footer />
     </>
   );
 };
