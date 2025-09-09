@@ -29,7 +29,7 @@ const AboutSection = ({ className }: AboutSectionProps) => {
               MY_JOURNEY_STYLE
             )}
           >
-            <h3 className="subheading mb-5 md:mb-7">{t("journeyHeader")}</h3>
+            <h3 className="subheading mb-4 md:mb-5">{t("journeyHeader")}</h3>
             <p>
               {t.rich("journey", {
                 br: () => <br />,
@@ -38,8 +38,8 @@ const AboutSection = ({ className }: AboutSectionProps) => {
           </div>
           <Cubes />
         </div>
-        <div className={cn("flex flex-col gap-4", MY_SKILLS_STYLE)}>
-          <h3 className="subheading mb-5 md:mb-7">{t("skillsHeader")}</h3>
+        <div className={cn("flex flex-col gap-2", MY_SKILLS_STYLE)}>
+          <h3 className="subheading mb-4 md:mb-5">{t("skillsHeader")}</h3>
           <SkillsGrid />
         </div>
       </ContentContainer>

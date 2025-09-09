@@ -18,7 +18,7 @@ const PlayChessSection = async () => {
     <div className="flex flex-col items-center gap-[2rem] md:flex-row md:gap-12">
       <div className={cn("grid basis-[60%] gap-3 md:gap-8", PLAY_CHESS_STYLE)}>
         <div className="relative">
-          <h3 className="subheading mb-4">{t("title")}</h3>
+          <h3 className="subheading mb-4 md:mb-5">{t("title")}</h3>
           <p>{t("description")}</p>
           <div className="absolute -bottom-40 left-1/2">
             <CubeDecoration

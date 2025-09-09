@@ -17,7 +17,7 @@ const GetInTouch = async () => {
         />
       </div>
 
-      <h3 className="subheading mb-4">{t("title")}</h3>
+      <h3 className="subheading mb-4 md:mb-5">{t("title")}</h3>
       <p>{t("description")}</p>
 
       <div className="absolute -bottom-30 left-0 mt-14 ml-8">
