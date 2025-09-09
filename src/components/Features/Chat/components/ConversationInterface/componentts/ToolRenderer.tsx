@@ -54,7 +54,7 @@ const ToolRenderer = ({ part }: ToolRendererProps) => {
         case "output-available":
           return <ResumeTool />;
         case "output-error":
-          return <div>Output error</div>;
+          return <ErrorBubble errorCode="tool-error" />;
       }
     case "tool-getSkills":
       switch (part.state) {
@@ -64,7 +64,7 @@ const ToolRenderer = ({ part }: ToolRendererProps) => {
         case "output-available":
           return <SkillsTool />;
         case "output-error":
-          return <div>Output error</div>;
+          return <ErrorBubble errorCode="tool-error" />;
       }
     case "tool-getSports":
       switch (part.state) {
@@ -74,7 +74,7 @@ const ToolRenderer = ({ part }: ToolRendererProps) => {
         case "output-available":
           return <SportTool />;
         case "output-error":
-          return <div>Output error</div>;
+          return <ErrorBubble errorCode="tool-error" />;
       }
     case "tool-getCats":
       switch (part.state) {
@@ -84,7 +84,7 @@ const ToolRenderer = ({ part }: ToolRendererProps) => {
         case "output-available":
           return <CatsTool />;
         case "output-error":
-          return <div>Output error</div>;
+          return <ErrorBubble errorCode="tool-error" />;
       }
   }
 };

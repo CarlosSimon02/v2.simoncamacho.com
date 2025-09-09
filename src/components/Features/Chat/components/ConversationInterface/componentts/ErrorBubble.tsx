@@ -1,4 +1,5 @@
 import { cn } from "@/utils";
+import { useTranslations } from "next-intl";
 
 type ErrorBubbleProps = {
   errorCode: 400 | 500 | 429 | "tool-error";
@@ -6,27 +7,25 @@ type ErrorBubbleProps = {
 };
 
 const ErrorBubble = ({ errorCode, className }: ErrorBubbleProps) => {
+  const t = useTranslations("chat.errors");
+
   let errorMessage;
 
   switch (errorCode) {
     case 400:
-      errorMessage =
-        "⚠️ Oops, something wasn’t quite right with your request. Please double-check what you entered and try again!";
+      errorMessage = t("400");
       break;
     case 500:
-      errorMessage =
-        "💥 Yikes! Something went wrong on our end. Don’t worry—it’s not you, it’s me. Try again in a bit!";
+      errorMessage = t("500");
       break;
     case 429:
-      errorMessage =
-        "⏳ Whoa there! You’ve reached the daily chat limit. I need a short break 💤. Please try again later.";
+      errorMessage = t("429");
       break;
     case "tool-error":
-      errorMessage =
-        "🛠️ Hmm, I couldn’t load that tool right now. It might be taking a little nap 😴. Please try again in a moment!";
+      errorMessage = t("toolError");
+      break;
     default:
-      errorMessage =
-        "❓ Hmm, I ran into an unexpected issue. Let’s try again or come back a little later!";
+      errorMessage = t("default");
       break;
   }
 

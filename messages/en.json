@@ -189,15 +189,130 @@
     "goHome": "Go back home"
   },
   "chat": {
+    "emptyState": {
+      "greeting": "Hi, I'm Jack.",
+      "description": "I'm Simon Camacho's AI assistant. How can I help you today?",
+      "jackAlt": "Jack"
+    },
+    "form": {
+      "messageLabel": "Message Jack",
+      "placeholder": "Message Jack",
+      "sendButton": "Send message"
+    },
+    "quickQuestions": {
+      "show": "Show quick questions",
+      "hide": "Hide quick questions",
+      "openOtherQuestions": "Open other questions"
+    },
+    "otherQuestions": {
+      "title": "Other Questions",
+      "description": "Not sure what to ask? Pick a question below and I'll tell you all about Simon."
+    },
+    "conversation": {
+      "aiGenerated": "AI-generated, for reference only"
+    },
+    "errors": {
+      "400": "⚠️ Oops, something wasn't quite right with your request. Please double-check what you entered and try again!",
+      "500": "💥 Yikes! Something went wrong on our end. Don't worry—it's not you, it's me. Try again in a bit!",
+      "429": "⏳ Whoa there! You've reached the daily chat limit. I need a short break 💤. Please try again later.",
+      "toolError": "🛠️ Hmm, I couldn't load that tool right now. It might be taking a little nap 😴. Please try again in a moment!",
+      "default": "❓ Hmm, I ran into an unexpected issue. Let's try again or come back a little later!"
+    },
+    "questionCategories": {
+      "profile": {
+        "name": "Profile",
+        "questions": [
+          "Can you tell me about Simon's background?",
+          "How did Simon get into programming?",
+          "What motivates Simon to keep learning?",
+          "Where does Simon see himself in 5 years?",
+          "What's Simon's biggest strength?",
+          "What's a weakness Simon is working on?"
+        ]
+      },
+      "professional": {
+        "name": "Professional",
+        "questions": [
+          "Can I see Simon's resume?",
+          "Where is Simon working now?",
+          "What kind of work does Simon do at Supafaya?",
+          "What makes Simon a valuable team member?",
+          "Why should someone hire Simon?",
+          "What's Simon's educational background?",
+          "Has Simon worked with clients or startups before?"
+        ]
+      },
+      "projects": {
+        "name": "Projects",
+        "questions": [
+          "What projects is Simon most proud of?",
+          "What is Simon's portfolio website built with?",
+          "Has Simon done any game development?"
+        ]
+      },
+      "skills": {
+        "name": "Skills",
+        "questions": [
+          "What are Simon's main skills?",
+          "Which frontend frameworks does Simon use?",
+          "Does Simon have backend experience too?",
+          "What tools does Simon use for design?",
+          "How does Simon keep his skills sharp?"
+        ]
+      },
+      "fun": {
+        "name": "Fun",
+        "questions": [
+          "What's Simon's favorite food?",
+          "Does Simon play any sports?",
+          "What's Simon's fastest Rubik's cube solve?",
+          "What's Simon's favorite quote?",
+          "What's Simon's favorite chess opening?",
+          "Does Simon have any pets?",
+          "What does Simon do for fun outside coding?"
+        ]
+      },
+      "contact": {
+        "name": "Contact & Future",
+        "questions": [
+          "What kind of projects is Simon interested in?",
+          "Where is Simon located?",
+          "Is Simon open for work or collaborations?",
+          "What's Simon's dream project?"
+        ]
+      }
+    },
+    "questions": {
+      "profile": {
+        "question": "Who is Simon Camacho? I want to know more about him.",
+        "label": "Profile"
+      },
+      "projects": {
+        "question": "What are Simon's projects?",
+        "label": "Projects"
+      },
+      "skills": {
+        "question": "What are Simon's skills?",
+        "label": "Skills"
+      },
+      "cats": {
+        "question": "Does Simon have any cats? Can you tell me about them?",
+        "label": "Cats"
+      },
+      "contact": {
+        "question": "How can I reach Simon?",
+        "label": "Contact"
+      }
+    },
     "tools": {
       "contact": {
         "description": "Get in touch with Simon — whether through socials or by sending a quick message below."
       },
       "projects": {
-        "description": "Explore Simon’s projects — each one comes with a detailed explanation, including the thought process, problem-solving approach, and in-depth description of the work. Browse through his portfolio to see not just what he built, but also how he built it."
+        "description": "Explore Simon's projects — each one comes with a detailed explanation, including the thought process, problem-solving approach, and in-depth description of the work. Browse through his portfolio to see not just what he built, but also how he built it."
       },
       "resume": {
-        "title": "Software Engineer",
+        "title": "Simon's Resume",
         "fileType": "PDF",
         "fileSize": "1.5MB",
         "date": "Updated September 2025",

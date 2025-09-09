@@ -51,6 +51,8 @@ export const cacheMiddleware: LanguageModelMiddleware = {
       );
       return {
         stream: simulateReadableStream({
+          initialDelayInMs: 0,
+          chunkDelayInMs: 10,
           chunks: formattedChunks,
         }),
       };

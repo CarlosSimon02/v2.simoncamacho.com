@@ -45,7 +45,7 @@ const ResumeTool = () => {
         className="max-w-md"
       />
       <div className="flex flex-col gap-2 md:gap-4">
-        <div className="subheading">Simon's Resume</div>
+        <div className="subheading">{tResume("title")}</div>
         <div className="flex flex-col">
           <p>{tInfo("title")}</p>
           <p>

@@ -5,6 +5,7 @@ import LoadingSpinner from "@/components/UI/LoadingSpinner";
 import { cn } from "@/utils";
 import { PaperAirplaneIcon, StopCircleIcon } from "@heroicons/react/24/outline";
 import type { ChatStatus } from "ai";
+import { useTranslations } from "next-intl";
 import type { HTMLAttributes, KeyboardEventHandler } from "react";
 
 const inputId = "chat-message-input";
@@ -23,6 +24,8 @@ export const PromptInputTextInput = ({
   placeholder,
   ...props
 }: PromptInputTextInputProps) => {
+  const t = useTranslations("chat.form");
+
   const handleKeyDown: KeyboardEventHandler<HTMLInputElement> = (e) => {
     if (e.key === "Enter") {
       // Don't submit if IME composition is in progress
@@ -47,7 +50,7 @@ export const PromptInputTextInput = ({
   return (
     <>
       <label htmlFor={inputId} className="sr-only">
-        Message Jack
+        {t("messageLabel")}
       </label>
       <Input
         className={cn(
