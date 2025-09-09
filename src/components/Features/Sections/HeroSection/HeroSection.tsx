@@ -64,7 +64,9 @@ const HeroSection = async ({ className }: HeroSectionProps) => {
             ></div>
           </div>
           <div className="flex flex-col">
-            <OpenToWorkBadge />
+            <OpenToWorkBadge
+              className={cn("mb-2 w-fit", HERO_SECTION_CONTENT_ITEM_STYLE)}
+            />
             <p
               className={cn(
                 "max-w-[70ch] md:max-w-[40ch] lg:max-w-[50ch]",
