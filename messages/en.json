@@ -188,6 +188,12 @@
     "description": "We can’t find the page you’re looking for",
     "goHome": "Go back home"
   },
+  "errorPage": {
+    "subtitle": "Something went wrong",
+    "description": "An unexpected error occurred on our side. Please try again in a moment.",
+    "retry": "Try again",
+    "goHome": "Go back home"
+  },
   "chat": {
     "emptyState": {
       "greeting": "Hi, I'm Jack.",
