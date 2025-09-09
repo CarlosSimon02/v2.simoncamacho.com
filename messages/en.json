@@ -202,7 +202,8 @@
     "quickQuestions": {
       "show": "Show quick questions",
       "hide": "Hide quick questions",
-      "openOtherQuestions": "Open other questions"
+      "openOtherQuestions": "Open other questions",
+      "askAria": "Ask: {label}"
     },
     "otherQuestions": {
       "title": "Other Questions",

@@ -12,6 +12,7 @@ import {
 import { useChat } from "@/providers/ChatProvider";
 import { useTranslations } from "next-intl";
 import { questionCategories } from "../constants";
+import { getErrorCode } from "../utils";
 
 type OtherQuestionsProps = {
   children?: React.ReactNode;
@@ -20,7 +21,7 @@ type OtherQuestionsProps = {
 const OtherQuestions = ({ children }: OtherQuestionsProps) => {
   const { sendMessage, status, error } = useChat();
   const t = useTranslations("chat");
-  let errorCode = error ? JSON.parse(error.message).code : null;
+  let errorCode = getErrorCode(error?.message ?? "");
 
   return (
     <Drawer>

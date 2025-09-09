@@ -5,6 +5,7 @@ import ChatContentContainer from "@/components/UI/Containers/ChatContentContaine
 import { useChat } from "@/providers/ChatProvider";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { getErrorCode } from "../utils";
 import AIChatForm from "./AIChatForm";
 import ErrorBubble from "./ConversationInterface/componentts/ErrorBubble";
 import QuickQuestions from "./QuickQuestions";
@@ -12,7 +13,8 @@ import QuickQuestions from "./QuickQuestions";
 const EmptyQueryState = () => {
   const { error } = useChat();
   const t = useTranslations("chat.emptyState");
-  const errorCode = error ? JSON.parse(error.message).code : null;
+  const errorCode = getErrorCode(error?.message ?? "");
+
   return (
     <ChatContentContainer className="flex flex-col items-center justify-center gap-6 py-12">
       <div className="flex flex-col items-center justify-center gap-6 text-center">

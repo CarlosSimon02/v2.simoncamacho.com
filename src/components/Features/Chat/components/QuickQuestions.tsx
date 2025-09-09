@@ -6,6 +6,7 @@ import { cn } from "@/utils";
 import { EllipsisHorizontalIcon } from "@heroicons/react/24/outline";
 import { useTranslations } from "next-intl";
 import { QUICK_QUESTIONS } from "../constants";
+import { getErrorCode } from "../utils";
 import OtherQuestions from "./OtherQuestions";
 
 const QuickQuestionsButton = ({
@@ -26,7 +27,7 @@ type QuickQuestionsProps = {
 const QuickQuestions = ({ className }: QuickQuestionsProps) => {
   const { sendMessage, status, error } = useChat();
   const t = useTranslations("chat");
-  const errorCode = error ? JSON.parse(error.message).code : null;
+  const errorCode = getErrorCode(error?.message ?? "");
 
   return (
     <ul
@@ -39,7 +40,9 @@ const QuickQuestions = ({ className }: QuickQuestionsProps) => {
       {QUICK_QUESTIONS.map((question) => (
         <QuickQuestionsButton
           key={question.key}
-          aria-label={`Ask: ${t(`questions.${question.key}.label`)}`}
+          aria-label={t("quickQuestions.askAria", {
+            label: t(`questions.${question.key}.label`),
+          })}
           disabled={
             status === "submitted" ||
             status === "streaming" ||
