@@ -6,12 +6,13 @@ import {
 import { useChat } from "@/providers/ChatProvider";
 import { useTranslations } from "next-intl";
 import { useRef } from "react";
+import { getErrorCode } from "../utils";
 
 const AIChatForm = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const { sendMessage, status, stop, error } = useChat();
   const t = useTranslations("chat.form");
-  const errorCode = error ? JSON.parse(error.message).code : null;
+  const errorCode = getErrorCode(error?.message ?? "");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     switch (status) {

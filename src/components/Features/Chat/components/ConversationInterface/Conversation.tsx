@@ -6,6 +6,7 @@ import { useChat } from "@/providers/ChatProvider";
 import { cn } from "@/utils";
 import { ArrowDownIcon } from "@heroicons/react/24/outline";
 import { useTranslations } from "next-intl";
+import { useEffect } from "react";
 import { StickToBottom, useStickToBottomContext } from "use-stick-to-bottom";
 import AIChatForm from "../AIChatForm";
 import AIChatBubble from "./componentts/AIChatBubble";
@@ -77,6 +78,16 @@ const ScrollToBottomButton = ({
 
 const Conversation = () => {
   const t = useTranslations("chat");
+
+  // Prevent body scrolling while conversation is open
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, []);
 
   return (
     <div className="pointer-events-none flex h-[calc(100dvh-var(--header-height))] flex-1 self-stretch overflow-hidden">
