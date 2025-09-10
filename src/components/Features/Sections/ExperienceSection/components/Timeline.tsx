@@ -35,13 +35,13 @@ const Timeline = ({ className }: TimelineProps) => {
   });
 
   return (
-    <ol className={cn("flex flex-col gap-10", className)}>
+    <ol className={cn("flex flex-col gap-6 md:gap-10", className)}>
       {EXPERIENCES.map((experience) => (
         <li
           key={experience.key}
           className={cn(
             EXPERIENCE_TIMELINE_ITEM_CLASS,
-            "group from-bottom-xs border-b-border first:border-t-border flex gap-18 border-b pb-10 first:border-t first:pt-10"
+            "group from-bottom-xs border-b-border first:border-t-border flex gap-18 border-b pb-6 first:border-t first:pt-6 md:pb-10 md:first:pt-10"
           )}
         >
           <div className="shrink-0 basis-[7.1875rem] max-md:hidden">

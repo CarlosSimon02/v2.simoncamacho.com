@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { Skeleton } from "../Primitives/Skeleton";
 import TailedButton from "./Buttons/TailedButton";
 import ImageWithGridBg from "./ImageWithGridBg";
+import TechnologiesList from "./TechnologiesList";
 
 export const ProjectsGridLoading = ({ className }: { className?: string }) => {
   // Show e.g. 3–4 skeleton cards while loading
@@ -87,6 +88,7 @@ const ProjectsGrid = ({
             <h3 className="subheading mb-1 md:mb-2">
               {t(`projects.${project.slug}.title`)}
             </h3>
+            <TechnologiesList technologies={project.technologies} />
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((technology) => (
                 <span

@@ -1,13 +1,13 @@
 @utility text-decor {
-  @apply font-oswald
-    text-bg-card
-    -z-10
-    font-black
-    whitespace-nowrap 
-    uppercase;
+  @apply font-oswald -z-10 bg-clip-text font-black whitespace-nowrap text-transparent uppercase;
+
+  background-image: linear-gradient(
+    to right,
+    var(--color-bg-card, var(--bg-card)) 40rem,
+    transparent
+  );
 
   -webkit-text-stroke: 0.25rem currentColor;
-  paint-order: stroke fill;
 }
 
 @utility leading-paragraph {

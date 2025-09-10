@@ -107,13 +107,15 @@ const HeroSection = async ({ className }: HeroSectionProps) => {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
-          <div className="text-decor absolute bottom-16 text-9xl max-md:left-1/2 max-md:-translate-x-1/2 max-md:text-center md:text-[10rem]">
-            <div className={HERO_SECTION_TEXT_DECOR_ITEM_STYLE}>
+          <div className="absolute bottom-16 -z-10 text-9xl max-md:left-1/2 max-md:-translate-x-1/2 max-md:text-center md:text-[10rem]">
+            <div
+              className={cn("text-decor", HERO_SECTION_TEXT_DECOR_ITEM_STYLE)}
+            >
               {t("heroSection.backgroundCarlos")}
             </div>
             <span
               className={cn(
-                "text-[10rem] md:text-[12rem]",
+                "text-decor text-[10rem] md:text-[12rem]",
                 HERO_SECTION_TEXT_DECOR_ITEM_STYLE
               )}
             >
