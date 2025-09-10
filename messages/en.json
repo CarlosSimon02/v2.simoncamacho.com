@@ -119,11 +119,11 @@
         "companyName": "Supafaya",
         "date": "2024 – Present",
         "descriptions": [
-          "Develop full-stack features for e-commerce, event ticketing, and paid voting platforms across multiple projects",
-          "Build and maintain systems such as product listings, payment integrations (Stripe, Xendit), and admin dashboards",
-          "Lead CMS development for the Amora e-commerce site and payment-secured voting system for The House of Collab",
-          "Integrate public APIs with external platforms like WordPress (Zumafest) and manage third-party services (ImageKit, Algolia, Firebase, Wix CMS)",
-          "Collaborate with remote teams using Zulip and maintain clear communication with designers, developers, and product managers"
+          "Developed full-stack features for e-commerce, event ticketing, and voting platforms",
+          "Built product listings, payment integrations (Stripe, Xendit), and admin dashboards",
+          "Led CMS development for Amora e-commerce and secure voting system for The House of Collab",
+          "Integrated APIs with WordPress, ImageKit, Algolia, Firebase, and Wix CMS",
+          "Collaborated with remote teams via Zulip and coordinated with designers, developers, and PMs"
         ]
       },
       "staMonica": {
@@ -131,12 +131,12 @@
         "companyName": "Brgy Hall Sta. Monica",
         "date": "2020 – 2022",
         "descriptions": [
-          "Designed and developed a resident management system using Microsoft Access and VBA to streamline data handling and request tracking",
-          "Automated report generation and data entry, significantly reducing manual workload",
-          "Produced and maintained key reports for community initiatives and administrative processes",
-          "Handled the full process for resident ID requests, from data collection to coordination with ID producers",
-          "Assisted with resident concerns and provided tech support for data-driven conflict resolution",
-          "Maintained structured databases while enforcing best practices in data management and integrity"
+          "Built a resident management system with Microsoft Access and VBA",
+          "Automated report generation and streamlined data entry",
+          "Produced and maintained key community and administrative reports",
+          "Managed resident ID requests from data collection to processing",
+          "Assisted with tech support and data-driven conflict resolution",
+          "Maintained structured databases and enforced data integrity"
         ]
       }
     }

@@ -17,7 +17,7 @@ const ExperienceSection = ({ className }: ExperienceSectionProps) => {
       className={cn("flex flex-col gap-12", className)}
     >
       <SectionTitle title={t("title")} number={2} />
-      <div className="mx-auto flex flex-col gap-4 md:mb-12">
+      <div className="flex flex-col gap-4 md:mb-12">
         <Timeline />
       </div>
     </ContentContainer>

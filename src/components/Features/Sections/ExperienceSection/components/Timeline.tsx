@@ -1,15 +1,14 @@
 "use client";
 
+import TechnologiesList from "@/components/UI/TechnologiesList";
 import { EXPERIENCES } from "@/data/experiences";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/utils";
 import { useGSAP } from "@gsap/react";
-import {
-  ArrowUpRightIcon,
-  PaperAirplaneIcon,
-} from "@heroicons/react/24/outline";
+import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import gsap from "gsap";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import Image from "next/image";
 import { EXPERIENCE_TIMELINE_ITEM_CLASS } from "../constants";
 
 type TimelineProps = {
@@ -36,16 +35,70 @@ const Timeline = ({ className }: TimelineProps) => {
   });
 
   return (
-    <ol className={cn("flex flex-col", className)}>
+    <ol className={cn("flex flex-col gap-10", className)}>
       {EXPERIENCES.map((experience) => (
         <li
           key={experience.key}
           className={cn(
             EXPERIENCE_TIMELINE_ITEM_CLASS,
-            "group from-bottom-xs flex gap-10"
+            "group from-bottom-xs border-b-border first:border-t-border flex gap-18 border-b pb-10 first:border-t first:pt-10"
           )}
         >
-          <div className="flex shrink-0 flex-col max-md:hidden md:w-[9rem]">
+          <div className="shrink-0 basis-[7.1875rem] max-md:hidden">
+            {t(`experiences.${experience.key}.date`)}
+          </div>
+          <div className="flex w-full flex-col gap-6">
+            <div className="flex gap-4 max-md:flex-row-reverse max-md:justify-between">
+              <Image
+                src={experience.company.logo}
+                alt={t(`experiences.${experience.key}.companyName`)}
+                width={100}
+                height={100}
+                className="border-border size-14 rounded-xl border sm:size-18 md:size-20"
+              />
+              <div className="flex flex-col gap-1 md:gap-2">
+                <div className="md:hidden">
+                  {t(`experiences.${experience.key}.date`)}
+                </div>
+                <h2 className="subheading">
+                  {t(`experiences.${experience.key}.title`)}
+                </h2>
+                <Link
+                  href={experience.company.url}
+                  className="font-oswald text-accent text-lg md:text-xl"
+                >
+                  <span>
+                    {t("atCompany", {
+                      companyName: t(
+                        `experiences.${experience.key}.companyName`
+                      ),
+                    })}
+                  </span>
+                </Link>
+              </div>
+            </div>
+            <TechnologiesList technologies={experience.technologies} />
+            <ul className="flex flex-col">
+              {t
+                .raw(`experiences.${experience.key}.descriptions`)
+                .map((description: string) => (
+                  <li key={description} className="flex items-start gap-2">
+                    <PaperAirplaneIcon className="stroke-accent size-5 flex-shrink-0 pt-1 sm:size-6" />
+                    <span>{description}</span>
+                  </li>
+                ))}
+            </ul>
+          </div>
+        </li>
+      ))}
+    </ol>
+  );
+};
+
+export default Timeline;
+
+{
+  /* <div className="flex shrink-0 flex-col max-md:hidden md:w-[9rem]">
             <div className="font-oswald self-end text-lg font-semibold  md:text-xl">
               {t(`experiences.${experience.key}.date`)}
             </div>
@@ -92,11 +145,5 @@ const Timeline = ({ className }: TimelineProps) => {
                   </li>
                 ))}
             </ul>
-          </div>
-        </li>
-      ))}
-    </ol>
-  );
-};
-
-export default Timeline;
+          </div> */
+}
