@@ -89,16 +89,6 @@ const ProjectsGrid = ({
               {t(`projects.${project.slug}.title`)}
             </h3>
             <TechnologiesList technologies={project.technologies} />
-            <div className="flex flex-wrap gap-2">
-              {project.technologies.map((technology) => (
-                <span
-                  key={technology.name}
-                  className="border-pill-border text-foreground-2 bg-pill-bg rounded-full border px-3 py-1 text-sm"
-                >
-                  {technology.name}
-                </span>
-              ))}
-            </div>
             <p className="text-muted-foreground">
               {t(`projects.${project.slug}.description`)}
             </p>

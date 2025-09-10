@@ -5,7 +5,7 @@ import { EXPERIENCES } from "@/data/experiences";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/utils";
 import { useGSAP } from "@gsap/react";
-import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
+import { CalendarIcon, PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import gsap from "gsap";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -57,8 +57,9 @@ const Timeline = ({ className }: TimelineProps) => {
                 className="border-border size-14 rounded-xl border sm:size-18 md:size-20"
               />
               <div className="flex flex-col gap-1 md:gap-2">
-                <div className="md:hidden">
-                  {t(`experiences.${experience.key}.date`)}
+                <div className="flex items-center gap-1 md:hidden">
+                  <CalendarIcon className="stroke-foreground-2 size-5" />
+                  <span>{t(`experiences.${experience.key}.date`)}</span>
                 </div>
                 <h2 className="subheading">
                   {t(`experiences.${experience.key}.title`)}
