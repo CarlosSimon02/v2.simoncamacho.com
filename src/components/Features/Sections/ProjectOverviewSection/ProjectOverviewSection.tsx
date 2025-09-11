@@ -39,7 +39,7 @@ const ProjectOverviewSection = ({
   return (
     <ContentContainer
       sectionId="project-overview"
-      className={cn("flex flex-col gap-18 md:gap-18", className)}
+      className={cn("flex flex-col gap-12 md:gap-18", className)}
     >
       <h1 className="font-montserrat text-accent flex-1 text-3xl leading-none font-black md:text-4xl lg:text-5xl">
         {projectName}
