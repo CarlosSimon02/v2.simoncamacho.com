@@ -44,7 +44,7 @@ const ProjectOverviewSection = ({
       <h1 className="font-montserrat text-accent flex-1 text-3xl leading-none font-black md:text-4xl lg:text-5xl">
         {projectName}
       </h1>
-      <div className="flex items-center gap-8 max-md:flex-col md:gap-12">
+      <div className="flex items-center gap-16 max-md:flex-col md:gap-12">
         <div className="flex max-w-md flex-1 flex-col gap-5 max-md:w-full md:gap-6">
           <ImageWithGridBg
             href="/"
