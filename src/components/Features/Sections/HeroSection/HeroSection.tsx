@@ -1,7 +1,6 @@
 import heroImage from "@/assets/heroes/main.png";
 import PillButton from "@/components/UI/Buttons/PillButton";
 import ContentContainer from "@/components/UI/Containers/ContentContainer";
-import OpenToWorkBadge from "@/components/UI/OpenToWorkBadge";
 import { cn } from "@/utils";
 import { MapPinIcon } from "@heroicons/react/24/outline";
 import { getTranslations } from "next-intl/server";
@@ -64,9 +63,9 @@ const HeroSection = async ({ className }: HeroSectionProps) => {
             ></div>
           </div>
           <div className="flex flex-col">
-            <OpenToWorkBadge
+            {/* <OpenToWorkBadge
               className={cn("mb-2 w-fit", HERO_SECTION_CONTENT_ITEM_STYLE)}
-            />
+            /> */}
             <p
               className={cn(
                 "max-w-[70ch] md:max-w-[40ch] lg:max-w-[50ch]",
