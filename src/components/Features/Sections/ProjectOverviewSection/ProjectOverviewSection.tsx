@@ -64,7 +64,7 @@ const ProjectOverviewSection = ({
           </p>
           <div className="mt-2 flex flex-wrap items-stretch gap-4">
             <PillButton
-              variant="primary"
+              variant="outline"
               className="flex-1 text-nowrap sm:min-w-[10.3125rem]"
             >
               View Code
@@ -87,7 +87,7 @@ const ProjectOverviewSection = ({
                 <TechnologyCard
                   key={technology.name}
                   technology={technology}
-                  className="w-full max-w-[12rem]"
+                  className="w-full max-w-[10rem]"
                 />
               ))}
             </div>

@@ -3,7 +3,7 @@ import { Slot } from "@radix-ui/react-slot";
 import type React from "react";
 
 type PillButtonProps = React.ComponentProps<"button"> & {
-  variant?: "primary" | "accent";
+  variant?: "primary" | "accent" | "outline";
   asChild?: boolean;
 };
 
@@ -27,6 +27,7 @@ const PillButton = ({
         variant === "accent" && [
           "border-accent text-accent border-[0.0625rem]",
         ],
+        variant === "outline" && ["border-fg-primary text-fg-primary border"],
         className
       )}
       {...props}
