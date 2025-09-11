@@ -1,11 +1,5 @@
 @utility text-decor {
-  @apply font-oswald -z-10 bg-clip-text font-black whitespace-nowrap text-transparent uppercase;
-
-  background-image: linear-gradient(
-    to right,
-    var(--color-bg-card, var(--bg-card)) 40rem,
-    transparent
-  );
+  @apply font-oswald from-bg-card -z-10 bg-gradient-to-r from-[40rem] to-transparent bg-clip-text font-black whitespace-nowrap text-transparent uppercase;
 
   -webkit-text-stroke: 0.25rem currentColor;
 }

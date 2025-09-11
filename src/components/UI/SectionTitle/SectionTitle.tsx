@@ -29,7 +29,7 @@ const SectionTitle = ({ title, number }: SectionTitleProps) => {
           </h2>
         </div>
         <div className="text-decor text-9xl select-none md:text-[10rem]">
-          {title}
+          {title.slice(0, 10)}
         </div>
       </div>
     </>
