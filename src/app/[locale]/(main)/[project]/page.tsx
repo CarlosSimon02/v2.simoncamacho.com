@@ -1,5 +1,7 @@
 import Decorations from "@/components/Features/Decorations";
 import Footer from "@/components/Features/Footer/Footer";
+import MessageMeSection from "@/components/Features/Sections/MessageMeSection";
+import OtherProjectsSection from "@/components/Features/Sections/OtherProjectsSection/OtherProjectsSection";
 import ProjectInsightsSection from "@/components/Features/Sections/ProjectInsightsSection";
 import ProjectOverviewSection from "@/components/Features/Sections/ProjectOverviewSection";
 
@@ -42,6 +44,9 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
         description={"Project description"}
       />
       <ProjectInsightsSection />
+      <OtherProjectsSection />
+      <MessageMeSection />
+      <div className="h-[1000px]"></div>
       <Footer />
     </>
   );

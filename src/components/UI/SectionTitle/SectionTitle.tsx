@@ -24,7 +24,7 @@ const SectionTitle = ({ title, number }: SectionTitleProps) => {
           <span className="font-oswald text-light-gray-300 dark:text-dark-gray-700 text-5xl font-black md:text-6xl">
             {String(number).padStart(2, "0")}
           </span>
-          <h2 className="font-montserrat text-accent text-3xl font-black whitespace-nowrap md:text-4xl">
+          <h2 className="font-montserrat text-accent w-[8.75rem] text-3xl font-black whitespace-nowrap md:text-4xl">
             {title}
           </h2>
         </div>

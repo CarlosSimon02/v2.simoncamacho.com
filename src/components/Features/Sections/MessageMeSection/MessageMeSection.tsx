@@ -3,23 +3,23 @@ import SectionTitle from "@/components/UI/SectionTitle";
 import { cn } from "@/utils";
 import { useTranslations } from "next-intl";
 
-type ProjectInsightsSectionProps = {
+type MessageMeSectionProps = {
   className?: string;
 };
 
-const ProjectInsightsSection = ({ className }: ProjectInsightsSectionProps) => {
-  const t = useTranslations("projectInsightsSection");
+const MessageMeSection = ({ className }: MessageMeSectionProps) => {
+  const t = useTranslations("messageSection");
 
   return (
     <>
       <ContentContainer
-        sectionId="projectInsights"
+        sectionId="messageMe"
         className={cn(className, "flex flex-col gap-9 md:gap-12")}
       >
-        <SectionTitle title={t("title")} number={1} />
+        <SectionTitle title={t("title")} number={3} />
       </ContentContainer>
     </>
   );
 };
 
-export default ProjectInsightsSection;
+export default MessageMeSection;
