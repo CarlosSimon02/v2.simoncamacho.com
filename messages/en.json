@@ -183,6 +183,21 @@
       "submissionError": "An error occurred while sending your message. Please try again."
     }
   },
+  "projectOverviewSection": {
+    "description": "Description",
+    "webStackAndExplanation": "Web Stack and Explanation",
+    "viewCode": "View Code",
+    "previewProject": "Preview Project"
+  },
+  "projectInsightsSection": {
+    "title": "Insights"
+  },
+  "otherProjectsSection": {
+    "title": "Other Projects"
+  },
+  "messageSection": {
+    "title": "Message"
+  },
   "notFound": {
     "subtitle": "Page not found",
     "description": "We can’t find the page you’re looking for",

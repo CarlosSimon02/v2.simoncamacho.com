@@ -1,5 +1,6 @@
 import Decorations from "@/components/Features/Decorations";
 import Footer from "@/components/Features/Footer/Footer";
+import ProjectInsightsSection from "@/components/Features/Sections/ProjectInsightsSection";
 import ProjectOverviewSection from "@/components/Features/Sections/ProjectOverviewSection";
 
 type ProjectPageProps = {
@@ -40,6 +41,7 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
         projectName={"Project name"}
         description={"Project description"}
       />
+      <ProjectInsightsSection />
       <Footer />
     </>
   );

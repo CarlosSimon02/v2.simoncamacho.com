@@ -62,7 +62,7 @@ const ProjectOverviewSection = ({
             aliquip ex ea commodo consequat. Duis aute irure dolor in
             reprehenderit.
           </p>
-          <div className="mt-2 flex flex-wrap items-stretch gap-4">
+          <div className="flex flex-wrap items-stretch gap-4">
             <PillButton
               variant="outline"
               className="flex-1 text-nowrap sm:min-w-[10.3125rem]"
