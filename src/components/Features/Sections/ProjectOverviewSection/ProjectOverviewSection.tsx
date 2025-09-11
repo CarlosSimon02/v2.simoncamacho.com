@@ -58,6 +58,18 @@ const ProjectOverviewSection = ({
           </div>
         </div>
       </div>
+      <div className="flex items-center gap-8 max-md:flex-col md:gap-12">
+        <div className="flex flex-1 flex-col gap-4 md:gap-5">
+          <h2 className="subheading">Web Stack and Technologies</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit.
+          </p>
+        </div>
+      </div>
     </ContentContainer>
   );
 };

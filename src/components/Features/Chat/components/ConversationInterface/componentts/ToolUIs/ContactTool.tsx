@@ -41,7 +41,7 @@ const ContactTool = () => {
   const t = useTranslations("chat.tools.contact");
 
   return (
-    <div className="flex flex-col gap-8 md:gap-12">
+    <div className="mb-5 flex flex-col gap-8 md:gap-12">
       <p>{t("description")}</p>
       <div className="flex w-full max-w-lg min-w-0 flex-col gap-6 md:gap-8">
         <SocialsHorizontal />
