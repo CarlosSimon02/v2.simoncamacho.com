@@ -1,5 +1,8 @@
+"use client";
+
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/utils";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React from "react";
 import { InteractiveGridPattern } from "./Effects/InteractiveGridPattern";
@@ -23,6 +26,8 @@ const ImageWithGridBg = ({
   logoAlt,
   isLocal = true,
 }: ImageWithGridBgProps) => {
+  const t = useTranslations("common.imageAltPostText");
+
   const Wrapper = isLocal ? Link : "a";
 
   return (
@@ -45,7 +50,7 @@ const ImageWithGridBg = ({
       {/* Background Image */}
       <Image
         src={image}
-        alt={alt}
+        alt={t(`screenshot`, { name: alt })}
         width={1000}
         height={1000}
         className="pointer-events-none absolute inset-0 h-full w-full object-cover transition-[scale] duration-5000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"
@@ -54,7 +59,12 @@ const ImageWithGridBg = ({
       {/* Logo */}
       <div className="absolute top-4 left-4 size-6">
         {typeof logo === "string" ? (
-          <Image src={logo} alt={logoAlt} width={100} height={100} />
+          <Image
+            src={logo}
+            alt={t(`logo`, { name: logoAlt })}
+            width={100}
+            height={100}
+          />
         ) : (
           logo
         )}

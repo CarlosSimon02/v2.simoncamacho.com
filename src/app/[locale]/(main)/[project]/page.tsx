@@ -4,15 +4,25 @@ import MessageMeSection from "@/components/Features/Sections/MessageMeSection";
 import OtherProjectsSection from "@/components/Features/Sections/OtherProjectsSection/OtherProjectsSection";
 import ProjectInsightsSection from "@/components/Features/Sections/ProjectInsightsSection";
 import ProjectOverviewSection from "@/components/Features/Sections/ProjectOverviewSection";
+import { PROJECTS, ProjectSlug } from "@/data/projects";
+import { getTranslations } from "next-intl/server";
+import { notFound } from "next/navigation";
 
 type ProjectPageProps = {
   params: Promise<{
-    project: string;
+    project: ProjectSlug;
   }>;
 };
 
 const ProjectPage = async ({ params }: ProjectPageProps) => {
   const { project } = await params;
+  const projectInfo = PROJECTS.find((p) => p.slug === project);
+  const t = await getTranslations(`projectsSection.projects.${project}`);
+
+  if (!project || !PROJECTS.find((p) => p.slug === project) || !projectInfo) {
+    notFound();
+  }
+
   const projectPageSections = [
     {
       id: "project-overview",
@@ -40,11 +50,20 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
     <>
       <Decorations sections={projectPageSections} />
       <ProjectOverviewSection
-        projectName={"Project name"}
-        description={"Project description"}
+        projectName={t("title")}
+        description={t("description")}
+        codeLink={projectInfo.codeLink}
+        previewLink={projectInfo.previewLink}
+        image={projectInfo.image}
+        imageAlt={t("title")}
+        logo={projectInfo.logo}
+        href={projectInfo.slug}
+        logoAlt={t("title")}
+        technologies={projectInfo.technologies}
+        stackAndExplanation={t("stackAndExplanation")}
       />
       <ProjectInsightsSection />
-      <OtherProjectsSection />
+      <OtherProjectsSection currentProject={project} />
       <MessageMeSection />
       <Footer />
     </>

@@ -7,7 +7,6 @@ import ImageWithGridBg from "./ImageWithGridBg";
 import TechnologiesList from "./TechnologiesList";
 
 export const ProjectsGridLoading = ({ className }: { className?: string }) => {
-  // Show e.g. 3–4 skeleton cards while loading
   const fakeCards = Array.from({ length: 4 });
 
   return (

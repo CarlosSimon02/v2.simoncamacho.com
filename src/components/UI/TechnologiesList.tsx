@@ -1,7 +1,8 @@
+import { TechnologyName } from "@/data/technologies";
 import { cn } from "@/utils";
 
 type TechnologiesListProps = {
-  technologies: { name: string }[];
+  technologies: TechnologyName[];
   className?: string;
 };
 
@@ -11,12 +12,12 @@ const TechnologiesList = ({
 }: TechnologiesListProps) => {
   return (
     <div className={cn("flex flex-wrap gap-2", className)}>
-      {technologies.map((technology) => (
+      {technologies.map((name, i) => (
         <span
-          key={technology.name}
+          key={`${name}-${i}`}
           className="border-pill-border text-foreground-2 bg-pill-bg rounded-full border px-3 py-1 text-sm"
         >
-          {technology.name}
+          {name}
         </span>
       ))}
     </div>

@@ -40,7 +40,7 @@ const ResumeTool = () => {
         image={resumeScreenshot.src}
         href="/simon_camacho_cv.pdf"
         logo={<PDFIcon className="size-full" />}
-        logoAlt="PDF icon"
+        logoAlt={tResume("fileType")}
         isLocal={false}
         className="max-w-md"
       />

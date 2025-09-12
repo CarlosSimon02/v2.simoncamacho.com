@@ -81,3 +81,5 @@ export const TECHNOLOGIES = [
     color: "system",
   },
 ];
+
+export type TechnologyName = (typeof TECHNOLOGIES)[number]["name"];
