@@ -1,10 +1,10 @@
+import { CubeDecoration } from "@/components/UI/Effects/Cube";
 import { cn } from "@/utils";
 import { getTranslations } from "next-intl/server";
 import {
   FRONTEND_MENTOR_CUBE_STYLE,
   FRONTEND_MENTOR_STYLE,
 } from "../constants";
-import CubeDecoration from "./CubeDecoration";
 
 const FrontendMentorCard = async () => {
   const t = await getTranslations("connectSection.onFrontendMentor");

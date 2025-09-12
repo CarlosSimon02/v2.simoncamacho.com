@@ -21,18 +21,18 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
     },
     {
       id: "insights",
-      title: "Project Overview",
-      href: "#project-overview",
+      title: "Insights",
+      href: "#insights",
     },
     {
       id: "other-projects",
-      title: "Project Overview",
-      href: "#project-overview",
+      title: "Other Projects",
+      href: "#other-projects",
     },
     {
-      id: "Message",
-      title: "Message",
-      href: "#message",
+      id: "message-me",
+      title: "Message Me",
+      href: "#message-me",
     },
   ];
 
@@ -46,7 +46,6 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
       <ProjectInsightsSection />
       <OtherProjectsSection />
       <MessageMeSection />
-      <div className="h-[1000px]"></div>
       <Footer />
     </>
   );

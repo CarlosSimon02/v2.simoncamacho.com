@@ -13,7 +13,7 @@ const ProjectInsightsSection = ({ className }: ProjectInsightsSectionProps) => {
   return (
     <>
       <ContentContainer
-        sectionId="projectInsights"
+        sectionId="insights"
         className={cn(className, "flex flex-col gap-9 md:gap-12")}
       >
         <SectionTitle title={t("title")} number={1} />

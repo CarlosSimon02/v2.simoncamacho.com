@@ -1,3 +1,4 @@
+import GetInTouch from "@/components/Features/GetInTouch/GetInTouch";
 import ContentContainer from "@/components/UI/Containers/ContentContainer";
 import SectionTitle from "@/components/UI/SectionTitle";
 import { cn } from "@/utils";
@@ -13,10 +14,11 @@ const MessageMeSection = ({ className }: MessageMeSectionProps) => {
   return (
     <>
       <ContentContainer
-        sectionId="messageMe"
-        className={cn(className, "flex flex-col gap-9 md:gap-12")}
+        sectionId="message-me"
+        className={cn(className, "flex flex-col gap-12 md:gap-16 md:!pb-40")}
       >
         <SectionTitle title={t("title")} number={3} />
+        <GetInTouch />
       </ContentContainer>
     </>
   );

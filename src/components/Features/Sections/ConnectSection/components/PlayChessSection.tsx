@@ -1,3 +1,4 @@
+import { CubeDecoration } from "@/components/UI/Effects/Cube";
 import { CHESS_GAMES } from "@/data/chessGames";
 import { cn } from "@/utils";
 import { getTranslations } from "next-intl/server";
@@ -7,7 +8,6 @@ import {
   PLAY_CHESS_CUBE_STYLE,
   PLAY_CHESS_STYLE,
 } from "../constants";
-import CubeDecoration from "./CubeDecoration";
 
 const ChessBoard = lazy(() => import("@/components/UI/ChessBoard"));
 

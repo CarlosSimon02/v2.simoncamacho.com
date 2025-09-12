@@ -41,7 +41,7 @@ const ProjectOverviewSection = ({
       sectionId="project-overview"
       className={cn("flex flex-col gap-16 md:gap-24", className)}
     >
-      <h1 className="font-montserrat text-accent flex-1 text-3xl leading-none font-black md:text-4xl lg:text-5xl">
+      <h1 className="font-montserrat text-accent flex-1 text-center text-3xl leading-none font-black md:text-4xl lg:text-5xl">
         {projectName}
       </h1>
       <div className="flex items-center gap-16 max-md:flex-col md:gap-12">
