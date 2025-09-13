@@ -19,7 +19,7 @@ const PillButton = ({
   return (
     <Comp
       className={cn(
-        "font-oswald rounded-full px-6 py-2 font-semibold uppercase md:px-8 md:py-3",
+        "font-oswald rounded-full px-6 py-2 text-center font-semibold uppercase md:px-8 md:py-3",
         "relative transition-all duration-150 ease-in-out",
         "translate-y-0 transform",
         "hover:-translate-y-1",
