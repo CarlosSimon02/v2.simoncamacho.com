@@ -5,6 +5,7 @@ import OtherProjectsSection from "@/components/Features/Sections/OtherProjectsSe
 import ProjectInsightsSection from "@/components/Features/Sections/ProjectInsightsSection";
 import ProjectOverviewSection from "@/components/Features/Sections/ProjectOverviewSection";
 import { PROJECTS, ProjectSlug } from "@/data/projects";
+import { Locale } from "@/types/locale";
 import { loadProjectMDX } from "@/utils/mdxLoader";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -12,7 +13,7 @@ import { notFound } from "next/navigation";
 type ProjectPageProps = {
   params: Promise<{
     project: ProjectSlug;
-    locale: string;
+    locale: Locale;
   }>;
 };
 
@@ -26,7 +27,7 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
   }
 
   // Load the MDX content for the current project and locale
-  const mdxContent = await loadProjectMDX(project, locale as "en" | "fil");
+  const mdxContent = await loadProjectMDX(project, locale);
 
   const projectPageSections = [
     {

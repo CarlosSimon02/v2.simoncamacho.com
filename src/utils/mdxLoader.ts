@@ -1,6 +1,5 @@
 import { ProjectSlug } from "@/data/projects";
-
-type Locale = "en" | "fil";
+import { Locale } from "@/types/locale";
 
 /**
  * Dynamically imports MDX content for a specific project and locale
