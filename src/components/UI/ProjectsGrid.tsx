@@ -88,7 +88,7 @@ const ProjectsGrid = ({
               {t(`projects.${project.slug}.title`)}
             </h3>
             <TechnologiesList technologies={project.technologies} />
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground line-clamp-2">
               {t(`projects.${project.slug}.description`)}
             </p>
             <TailedButton href={project.slug} label={t("explore")} />

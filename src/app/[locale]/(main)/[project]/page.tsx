@@ -5,23 +5,28 @@ import OtherProjectsSection from "@/components/Features/Sections/OtherProjectsSe
 import ProjectInsightsSection from "@/components/Features/Sections/ProjectInsightsSection";
 import ProjectOverviewSection from "@/components/Features/Sections/ProjectOverviewSection";
 import { PROJECTS, ProjectSlug } from "@/data/projects";
+import { loadProjectMDX } from "@/utils/mdxLoader";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 type ProjectPageProps = {
   params: Promise<{
     project: ProjectSlug;
+    locale: string;
   }>;
 };
 
 const ProjectPage = async ({ params }: ProjectPageProps) => {
-  const { project } = await params;
+  const { project, locale } = await params;
   const projectInfo = PROJECTS.find((p) => p.slug === project);
   const t = await getTranslations(`projectsSection.projects.${project}`);
 
   if (!project || !PROJECTS.find((p) => p.slug === project) || !projectInfo) {
     notFound();
   }
+
+  // Load the MDX content for the current project and locale
+  const mdxContent = await loadProjectMDX(project, locale as "en" | "fil");
 
   const projectPageSections = [
     {
@@ -62,7 +67,7 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
         technologies={projectInfo.technologies}
         stackAndExplanation={t("stackAndExplanation")}
       />
-      <ProjectInsightsSection />
+      <ProjectInsightsSection mdxContent={mdxContent} />
       <OtherProjectsSection currentProject={project} />
       <MessageMeSection />
       <Footer />
