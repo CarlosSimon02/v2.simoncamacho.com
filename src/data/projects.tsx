@@ -1,13 +1,15 @@
 import audiophile from "@/assets/projects/audiophile.png";
 import kanban from "@/assets/projects/kanban.png";
+import kanbanLogo from "@/assets/projects/kanbanLogo.png";
 import pomodoro from "@/assets/projects/pomodoro.png";
 import pomodoroLogo from "@/assets/projects/pomodoroLogo.png";
+import AudiophileIcon from "@/components/UI/Icons/Projects/AudiophileIcon";
 import { Project } from "@/types/project";
 
 export const PROJECTS: Project[] = [
   {
     slug: "kanban",
-    logo: pomodoroLogo.src,
+    logo: kanbanLogo.src,
     technologies: ["MongoDB", "Express.js", "React", "Node.js", "Tailwind"],
     image: kanban.src,
     previewLink: "https://fem-kanban.onrender.com/",
@@ -45,7 +47,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: "audiophile",
-    logo: pomodoroLogo.src,
+    logo: <AudiophileIcon />,
     technologies: ["Next.js", "Tailwind", "React", "CSS", "JavaScript", "HTML"],
     image: audiophile.src,
     previewLink: "https://officialaudiophile.vercel.app/",
