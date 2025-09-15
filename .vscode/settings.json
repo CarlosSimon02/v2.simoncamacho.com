@@ -26,5 +26,13 @@
   },
   "files.associations": {
     "*.css": "tailwindcss"
+  },
+  "[mdx]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": false,
+      "source.fixAll.eslint": false
+    }
   }
 }

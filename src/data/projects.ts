@@ -83,7 +83,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "pomodoro",
     logo: pomodoroLogo.src,
-    technologies: [],
+    technologies: ["HTML", "Sass", "JavaScript"],
     image: pomodoro.src,
     previewLink: "https://fempomodoro.netlify.app/",
     codeLink: "https://github.com/CarlosSimon02/fem-pomodoro-app",

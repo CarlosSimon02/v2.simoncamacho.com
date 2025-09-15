@@ -17,3 +17,7 @@
   font-semibold 
   lg:text-3xl;
 }
+
+@utility inline-link {
+  @apply text-fg-tertiary hover:text-accent transition-colors;
+}

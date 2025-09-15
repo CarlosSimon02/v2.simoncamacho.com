@@ -59,6 +59,7 @@
   --color-bg-secondary: var(--bg-secondary);
   --color-fg-primary: var(--fg-primary);
   --color-fg-secondary: var(--fg-secondary);
+  --color-fg-tertiary: var(--fg-tertiary);
   --color-fg-muted: var(--fg-muted);
   --color-fg-subtle: var(--fg-subtle);
   --color-border: var(--border);
@@ -81,6 +82,11 @@
   --bg-secondary: var(--color-light-gray-50);
   --fg-primary: var(--color-pale-gray-500);
   --fg-secondary: var(--color-dark-gray-50);
+  --fg-tertiary: color-mix(
+    in oklab,
+    var(--color-black, oklch(0 0.01 264.695)) 70%,
+    transparent
+  );
   --fg-muted: var(--color-light-gray-900);
   --fg-subtle: var(--color-light-gray-600);
   --border: var(--color-light-gray-600);
@@ -110,6 +116,11 @@
   --bg-secondary: var(--color-dark-gray-950);
   --fg-primary: var(--color-medium-gray-50);
   --fg-secondary: var(--color-white);
+  --fg-tertiary: color-mix(
+    in oklab,
+    var(--color-white, oklch(1 0.01 264.695)) 70%,
+    transparent
+  );
   --fg-muted: var(--color-medium-gray-900);
   --fg-subtle: var(--color-dark-gray-200);
   --border: var(--color-dark-gray-300);

@@ -23,7 +23,7 @@ const ProjectInsightsSection = ({
       >
         <SectionTitle title={t("title")} number={1} />
         {MDXContent && (
-          <div className="prose prose-lg dark:prose-invert max-w-none">
+          <div className="prose prose-lg dark:prose-invert mx-auto max-w-3xl">
             <MDXContent />
           </div>
         )}

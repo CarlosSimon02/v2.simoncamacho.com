@@ -46,14 +46,14 @@ const ProjectOverviewSection = async ({
   return (
     <ContentContainer
       sectionId="project-overview"
-      className={cn("flex flex-col gap-16 md:gap-24", className)}
+      className={cn("flex flex-col gap-12 md:gap-20", className)}
     >
       <h1 className="font-montserrat text-accent flex-1 text-center text-3xl leading-none font-black md:text-4xl lg:text-5xl">
         {projectName}
       </h1>
 
       <div className="flex items-center gap-16 max-md:flex-col md:gap-12">
-        <div className="flex max-w-md flex-1 flex-col gap-5 max-md:w-full md:gap-6">
+        <div className="flex flex-1 flex-col gap-5 max-md:w-full md:gap-6">
           <ImageWithGridBg
             href={href}
             alt={imageAlt}
