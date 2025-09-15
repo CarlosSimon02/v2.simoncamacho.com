@@ -1,5 +1,6 @@
 import {
   CssIcon,
+  ExpressIcon,
   FirebaseIcon,
   HtmlIcon,
   JavascriptIcon,
@@ -7,6 +8,7 @@ import {
   MongodbIcon,
   NestJsIcon,
   NextJsIcon,
+  NodeIcon,
   ReactIcon,
   SassIcon,
   ShadCnIcon,
@@ -48,6 +50,16 @@ export const TECHNOLOGIES = [
   {
     name: "Next.js",
     icon: NextJsIcon,
+    color: "system",
+  },
+  {
+    name: "Node.js",
+    icon: NodeIcon,
+    color: "#539E43",
+  },
+  {
+    name: "Express.js",
+    icon: ExpressIcon,
     color: "system",
   },
   {

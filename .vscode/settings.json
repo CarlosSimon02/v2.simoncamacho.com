@@ -31,8 +31,8 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
-      "source.organizeImports": false,
-      "source.fixAll.eslint": false
+      "source.organizeImports": "never",
+      "source.fixAll.eslint": "never"
     }
   }
 }

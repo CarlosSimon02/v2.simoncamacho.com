@@ -66,7 +66,9 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
         href={projectInfo.slug}
         logoAlt={t("title")}
         technologies={projectInfo.technologies}
-        stackAndExplanation={t("stackAndExplanation")}
+        stackAndExplanation={t.rich("stackAndExplanation", {
+          br: () => <br />,
+        })}
       />
       <ProjectInsightsSection mdxContent={mdxContent} />
       <OtherProjectsSection currentProject={project} />

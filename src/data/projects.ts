@@ -8,7 +8,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "kanban",
     logo: pomodoroLogo.src,
-    technologies: ["React", "Next.js", "Tailwind CSS"],
+    technologies: ["MongoDB", "Express.js", "React", "Node.js", "Tailwind"],
     image: kanban.src,
     previewLink: "https://fem-kanban.onrender.com/",
     codeLink: "https://github.com/CarlosSimon02/fem-kanban-task-management",
@@ -39,8 +39,8 @@ export const PROJECTS: Project[] = [
       "portfolio",
       "Simon Camacho",
     ],
-    dateModified: "2024-07-03",
-    datePublished: "2024-07-03",
+    dateModified: "2025-07-03",
+    datePublished: "2025-07-03",
     type: "WebPage",
   },
   {
@@ -76,8 +76,8 @@ export const PROJECTS: Project[] = [
       "portfolio",
       "Simon Camacho",
     ],
-    dateModified: "2024-07-03",
-    datePublished: "2024-07-03",
+    dateModified: "2025-07-03",
+    datePublished: "2025-07-03",
     type: "WebPage",
   },
   {
@@ -109,8 +109,8 @@ export const PROJECTS: Project[] = [
       "portfolio",
       "Simon Camacho",
     ],
-    dateModified: "2024-07-03",
-    datePublished: "2024-07-03",
+    dateModified: "2025-07-03",
+    datePublished: "2025-07-03",
     type: "WebPage",
   },
 ] as const;

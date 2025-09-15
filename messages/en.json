@@ -102,8 +102,8 @@
     "projects": {
       "kanban": {
         "title": "Kanban Web App",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        "stackAndExplanation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+        "description": "Manage and track your tasks with my full-stack MERN web app. Switch between dark and light modes to suit your style. You can sign up to save your data or use it without an account, thanks to local storage. Enjoy intuitive drag-and-drop task management.",
+        "stackAndExplanation": "For this project, I decided to use the MERN stack along with Tailwind CSS, Zustand, Radix UI, and Beautiful DnD. The MERN stack felt like a natural choice—MongoDB gave me the flexibility I needed for storing task data, Express made it easy to build a solid backend, React kept the frontend development smooth, and Node.js brought everything together seamlessly.<br></br><br></br>Since I’d already worked with Tailwind CSS and Zustand in past projects, I stuck with them here. Tailwind’s utility-first approach let me quickly build a clean and responsive interface, while Zustand kept state management simple without adding unnecessary complexity.<br></br><br></br>To round things out, I pulled in Radix UI and Beautiful DnD. Radix UI gave me accessible and consistent UI components right out of the box, and Beautiful DnD made drag-and-drop interactions effortless—exactly what I needed for a smooth Kanban experience."
       },
       "audiophile": {
         "title": "Audiophile E-commerce Website",
