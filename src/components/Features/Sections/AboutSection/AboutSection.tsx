@@ -1,3 +1,4 @@
+import InlineLink from "@/components/UI/Buttons/InlineLink";
 import ContentContainer from "@/components/UI/Containers/ContentContainer";
 import SectionTitle from "@/components/UI/SectionTitle";
 import SkillsGrid from "@/components/UI/SkillsGrid";
@@ -33,6 +34,11 @@ const AboutSection = ({ className }: AboutSectionProps) => {
             <p>
               {t.rich("journey", {
                 br: () => <br />,
+                tetrisLink: (chunks) => (
+                  <InlineLink href="https://www.youtube.com/watch?v=zH_omFPqMO4">
+                    {chunks}
+                  </InlineLink>
+                ),
               })}
             </p>
           </div>

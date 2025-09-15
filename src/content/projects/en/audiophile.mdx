@@ -1,11 +1,55 @@
-# Welcome to my MDX page!
+import MDXContentWrapper from "@/components/UI/MDX/MDXContentWrapper";
+import TitleContent from "@/components/UI/MDX/TitleContent";
 
-This is some **bold** and _italics_ text.
-
-This is a list in markdown:
-
-- One
-- Two
-- Three
-
-Checkout my React component:
+<MDXContentWrapper>
+  <TitleContent title="Purpose and Goal">
+    I started this project with one main goal: to get better at React. I wanted
+    to push myself by trying new tools and learning how experienced developers
+    build their sites. On top of that, I wanted to sharpen my eye for detail by
+    matching designs as closely as possible.
+    <br />
+    Another big reason was to have something solid for my portfolio. Building a
+    real project meant I could actually show what I’d learned—not just talk
+    about it. Along the way, I knew I’d run into tough problems, but that was
+    the point: solving them was how I’d grow.
+  </TitleContent>
+  <TitleContent title="Problems and Thought Process">
+    Performance and SEO were some of the toughest hurdles. E-commerce sites need
+    to be lightning fast and discoverable on search engines. Thankfully,
+    [Next.js’s server-side
+    rendering](https://nextjs.org/learn/seo/rendering-and-ranking) made both
+    achievable. Pages loaded quickly, and I didn’t have to stress too much about
+    search engines missing my content.
+    <br />
+    Design was a whole different story. At first, Tailwind CSS felt
+    overwhelming—so many utility classes everywhere. But after watching [this
+    Tailwind Crash Course on
+    YouTube](https://www.youtube.com/watch?v=dFgzHOX84xQ), things started to
+    click. Suddenly, building a clean, responsive UI felt natural, almost fun.
+    <br />
+    Looking back, this project wasn’t just about getting a shopping site
+    online—it was about learning how to juggle performance, SEO, and design all
+    at once. Those lessons are now baked into how I approach every new project.
+  </TitleContent>
+  <TitleContent title="Lessons Learned">
+    One of the biggest takeaways was performance. E-commerce sites can’t afford
+    to be slow, so using [Next.js server-side
+    rendering](https://nextjs.org/learn/seo/rendering-and-ranking) taught me how
+    to build pages that load quickly and stay SEO-friendly. Seeing product pages
+    render almost instantly was a big win.
+    <br />
+    Tailwind CSS also changed how I approach design. At first, the utility-first
+    approach felt cluttered, but after building out responsive product pages, I
+    realized how much time it saved. The design came together faster, and I
+    could stay focused on consistency instead of writing endless CSS rules.
+    <br />
+    State management was another challenge. A shopping cart, product filters,
+    and user sessions all had to stay in sync. That’s where
+    [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction) came
+    in. Its simple API made complex state feel manageable, and it gave me
+    confidence to scale features without the usual headaches.
+    <br />
+    This project reinforced how important performance, design, and state
+    management are in building a smooth e-commerce experience.
+  </TitleContent>
+</MDXContentWrapper>

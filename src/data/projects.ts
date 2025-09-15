@@ -46,7 +46,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "audiophile",
     logo: pomodoroLogo.src,
-    technologies: [],
+    technologies: ["Next.js", "Tailwind", "React", "CSS", "JavaScript", "HTML"],
     image: audiophile.src,
     previewLink: "https://officialaudiophile.vercel.app/",
     codeLink:
