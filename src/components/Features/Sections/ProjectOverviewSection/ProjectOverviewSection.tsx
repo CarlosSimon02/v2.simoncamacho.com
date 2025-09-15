@@ -14,7 +14,7 @@ type ProjectOverviewSectionProps = {
   description: React.ReactNode;
   image: string;
   imageAlt: string;
-  logo: string;
+  logo: string | React.ReactNode;
   href: string;
   logoAlt: string;
   codeLink: string;
