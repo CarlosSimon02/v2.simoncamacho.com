@@ -1,11 +1,70 @@
-# Welcome to my MDX page!
+import MDXContentWrapper from "@/components/UI/MDX/MDXContentWrapper";
+import TitleContent from "@/components/UI/MDX/TitleContent";
 
-This is some **bold** and _italics_ text.
-
-This is a list in markdown:
-
-- One
-- Two
-- Three
-
-Checkout my React component:
+<MDXContentWrapper>
+  <TitleContent title="Purpose and Goal">
+    After finishing a few projects, I wanted to build something that could
+    actually make my life easier. That’s when I came up with the idea of a
+    Kanban web app. I needed a better way to manage tasks, and building my own
+    tool felt like the perfect challenge. My goal wasn’t just to practice the
+    MERN stack—it was to create something I’d use every day, and maybe even help
+    others stay organized too.
+  </TitleContent>
+  <TitleContent title="Problems and Thought Process">
+    Building this app wasn’t easy. One of the biggest hurdles was keeping
+    everything in sync—when a task updated in one place, it had to instantly
+    reflect everywhere else. At first, I tried juggling React’s built-in state,
+    but it quickly got messy. That’s when I leaned on Zustand. Its
+    straightforward API made it easy to centralize state, so I didn’t have to
+    worry about data getting out of step. Suddenly, what felt like chaos became
+    manageable.
+    <br />
+    Performance was another tricky problem. Early on, I noticed that some
+    queries to MongoDB were slow, and re-rendering large sections of the board
+    in React caused lag. My first instinct was to optimize React components, but
+    I also had to rethink how I queried the database—fetching only what I
+    needed, instead of pulling everything at once. Tailwind CSS also played a
+    huge role here. Instead of fighting with long CSS files, I could quickly
+    design a clean, responsive layout without adding extra weight.
+    <br />
+    Radix UI came with its own challenges. At first, I struggled to get its
+    components to look the way I wanted, and I even considered scrapping it for
+    something simpler. But once I understood how to style and extend it, the
+    payoff was worth it—every piece of UI was accessible, consistent, and
+    polished, which lined up perfectly with my goal of making the app usable for
+    everyone.
+    <br />
+    Then came drag-and-drop. Beautiful DnD wasn’t just a plug-and-play solution;
+    I had to figure out how to preserve task order, handle edge cases where
+    items dropped outside of columns, and prevent “weird” UI glitches. The first
+    few attempts were clunky, but after trial and error—tracking indexes more
+    carefully and refining the drop logic—I finally got smooth, intuitive
+    interactions that felt natural on the Kanban board.
+    <br />
+    Looking back, this project was more than just building a task manager. It
+    was about tackling real-world challenges: syncing state across the app,
+    squeezing performance out of both the frontend and backend, and pushing
+    through the learning curve of new tools. Each obstacle forced me to think
+    critically and adapt. In the end, I didn’t just build an app—I walked away
+    with sharper problem-solving skills and a stronger foundation as a
+    full-stack developer.
+  </TitleContent>
+  <TitleContent title="Lessons Learned">
+    This project felt like a milestone for me. It was the first time I built a
+    full-stack app from scratch with the MERN stack, and I remember the thrill
+    of connecting the pieces together—MongoDB for data, Express and Node.js for
+    the backend, and React to bring it all to life on the frontend. Debugging my
+    first database query that actually updated the UI in real time was such a
+    “wow, this works!” moment.
+    <br />I also discovered the value of accessibility through Radix UI. At
+    first, I didn’t think much about it, but after reading [The A11Y
+    Project](https://www.a11yproject.com), I realized how important it is to
+    design for everyone. Radix gave me a great head start with components that
+    weren’t just functional, but inclusive.
+    <br />
+    And of course, I couldn’t forget drag-and-drop. Implementing Beautiful DnD
+    wasn’t plug-and-play—I had to wrestle with task ordering and edge cases. But
+    once it clicked, moving tasks across the Kanban board felt buttery smooth,
+    and that was incredibly satisfying to see in action.
+  </TitleContent>
+</MDXContentWrapper>

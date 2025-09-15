@@ -1,3 +1,5 @@
+"use client";
+
 import { SVGProps, useId } from "react";
 
 type TailwindIconProps = SVGProps<SVGSVGElement>;
