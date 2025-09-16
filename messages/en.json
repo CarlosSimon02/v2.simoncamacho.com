@@ -79,7 +79,7 @@
     },
     "onFrontendMentor": {
       "title": "Join me on Frontend Mentor!",
-      "description": "Frontend Mentor is an excellent platform to sharpen your skills, and that's based on my experience. Follow me so we can share ideas and solutions, discuss various topics, and check out my work!",
+      "description": "Frontend Mentor is an excellent platform to sharpen your skills, and that's based on my experience. <femLink>Follow me</femLink> so we can share ideas and solutions, discuss various topics, and check out my work!",
       "screenshotsAlt": {
         "bmiCalculator": "Body Mass Index calculator",
         "articlePreviewComponent": "Article preview component",
@@ -88,7 +88,7 @@
     },
     "playChess": {
       "title": "Let's Play Chess!",
-      "description": "Do you play chess? I do too! It's what I often do in my free time because it's relaxing and it sharpens my mind. Add me on Chess.com and challenge me to a game. I'm excited to play and learn from you!"
+      "description": "Do you play chess? I do too! It's what I often do in my free time because it's relaxing and it sharpens my mind. <chessLink>Add me on Chess.com</chessLink> and challenge me to a game. I'm excited to play and learn from you!"
     }
   },
   "footer": {

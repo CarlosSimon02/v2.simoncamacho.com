@@ -1,0 +1,357 @@
+{
+  "info": {
+    "name": "Simon Camacho",
+    "title": "Software Engineer",
+    "location": "Pampanga, Pilipinas",
+    "description": "Ako ay isang developer na mahilig matuto at palawakin ang kaalaman sa larangan ng web. Determinado rin akong lumikha ng mga solusyon na nagbibigay ng mahusay at maayos na karanasan online. Silipin ang aking portfolio para makita ang lumalaking kakayahan ko at ang aking dedikasyon sa de-kalidad na pag-develop.",
+    "siteName": "Portfolio ni Simon Camacho"
+  },
+  "containers": {
+    "navBar": {
+      "controls": {
+        "toggle": "I-toggle ang menu ng nabigasyon"
+      },
+      "mobileMenu": {
+        "title": "Menu ng Nabigasyon",
+        "description": "Tingnan ang mga pangunahing seksyon ng site.",
+        "close": "Isara ang mobile menu",
+        "avatar": "Avatar ng mobile nav"
+      },
+      "links": {
+        "home": "Tahanan",
+        "about": "Tungkol",
+        "experience": "Karanasan",
+        "projects": "Mga Proyekto",
+        "connect": "Makipag-ugnay"
+      }
+    }
+  },
+  "common": {
+    "openToWork": "Bukás sa trabaho",
+    "mainNavigation": "Pangunahing nabigasyon",
+    "navigateToHome": "Pumunta sa Tahanan",
+    "navigateToSection": "Mag-navigate sa seksyong {section}",
+    "imageAltPostText": {
+      "screenshot": "Screenshot ng {name}",
+      "logo": "Logo ng {name}"
+    },
+    "languageDropdown": {
+      "label": "Pumili ng wika"
+    },
+    "themeToggle": {
+      "darkMode": "I-toggle ang madilim na tema",
+      "lightMode": "I-toggle ang maliwanag na tema"
+    },
+    "chatButton": {
+      "open": "Buksan ang chat"
+    },
+    "socialLinks": {
+      "reddit": "Bisitahin ang profile ko sa Reddit",
+      "frontendmentor": "Bisitahin ang profile ko sa Frontend Mentor",
+      "github": "Bisitahin ang aking GitHub",
+      "linkedin": "Bisitahin ang aking LinkedIn profile",
+      "email": "Magpadala ng email sa akin"
+    },
+    "skipToContentButton": {
+      "open": "Laktawan sa nilalaman"
+    },
+    "backButtonLabel": "Bumalik",
+    "or": "o"
+  },
+  "heroSection": {
+    "contact": "Makipag-ugnay",
+    "resume": "Resume",
+    "backgroundCarlos": "Carlos",
+    "backgroundSimon": "Simon",
+    "heroImageAlt": "Hero Image"
+  },
+  "aboutSection": {
+    "title": "Tungkol sa Akin",
+    "journeyHeader": "Ang Aking Paglalakbay",
+    "journey": "Hi! Ako si Simon. Nagsimula ang paglalakbay ko sa coding noong 2018 nang makita ko sa YouTube ang isang taong gumagawa ng <tetrisLink>Tetris in C++</tetrisLink>. 16 pa lang ako noon, at grabe — parang bumugso ang isip ko: pwedeng gumawa ng laro mula sa simula. Mula noon, nasapian ako ng oras ng panonood ng tutorials at pagsubok na i-recreate ang mga klasikong laro tulad ng Snake at Frogger.<br></br><br></br>Isa sa mga pinakaproud akong moments sa trabaho ay nang matutunan kong mag-setup ng payments—tsaka makita na may mga estranghero talagang gumagamit at nagbabayad para sa bagay na tinulungan kong buuin.<br></br><br></br>Nasisiyahan ako sa parehong aspeto ng development: ang pagdidisenyo ng malinis at maayos na interface, at ang paglutas ng masalimuot na mga problema sa likod ng eksena. Sa paglipas ng panahon, natutunan kong ang code ay hindi lang pang-gawa ng laro — paraan din ito para lutasin ang totoong problema ng totoong tao.<br></br><br></br>Pag hindi ako nagko-code, madalas ako nasa gym, nagkukuwenta ng tulog, o nasa harap pa rin ng computer — pero hindi nagko-code.<br></br><br></br>Ang focus ko ay panatilihin ang pagiging simple: bumubuo ng mga sistema na malinaw, madaling alagaan, at matibay para tumagal.",
+    "skillsHeader": "Mga Kasanayan Ko"
+  },
+  "connectSection": {
+    "title": "Makipag-ugnay",
+    "getInTouch": {
+      "title": "Makipag-ugnay",
+      "description": "Kung may nakakatuwang proyekto kang naiisip, isang magandang oportunidad sa trabaho, o gusto mo lang kumustahin—sabik akong makarinig mula sa'yo!"
+    },
+    "onFrontendMentor": {
+      "title": "Sama ka sa Frontend Mentor!",
+      "description": "Ang Frontend Mentor ay isang mahusay na platform para hasain ang iyong kasanayan—base sa karanasan ko. <femLink>Sundan mo ako</femLink> para magbahagi tayo ng ideya at solusyon, magtalakay ng iba't ibang paksa, at makita ang ginagawa ko!",
+      "screenshotsAlt": {
+        "bmiCalculator": "Kalkulador ng Body Mass Index",
+        "articlePreviewComponent": "Komponent ng preview ng artikulo",
+        "skilledELearningLandingPage": "Responsive na landing page para sa skilled e-learning"
+      }
+    },
+    "playChess": {
+      "title": "Mag-chess tayo!",
+      "description": "Naglalaro ka ba ng chess? Ako rin! Mahilig akong mag-chess sa libreng oras dahil nakakarelax ito at nagpapatalas ng isip. <chessLink>I-add mo ako sa Chess.com</chessLink> at hamunin mo—excited akong makalaro at matuto mula sa'yo!"
+    }
+  },
+  "footer": {
+    "attribution": "Dinisenyo at binuo ni Simon Camacho",
+    "starsCount": "{stars} stars",
+    "forksCount": "{forks} forks"
+  },
+  "projectsSection": {
+    "title": "Mga Proyekto",
+    "explore": "Tuklasin",
+    "projects": {
+      "kanban": {
+        "title": "Kanban Web App",
+        "description": "Pamahalaan at subaybayan ang iyong mga gawain gamit ang aking full-stack MERN web app. Puwede mong i-toggle ang dark at light mode ayon sa gusto mo. Maaari kang mag-sign up para masecure ang data mo o gamitin ito nang walang account dahil sa local storage. Masaya at intuitive ang drag-and-drop na pamamahala ng tasks.",
+        "stackAndExplanation": "Para sa proyektong ito, ginamit ko ang MERN stack kasama ng Tailwind CSS, Zustand, Radix UI, at Beautiful DnD. Natural na pagpipilian ang MERN—binigyan ako ng MongoDB ng flexibility sa pag-iimbak ng task data, madaling gumawa ng solid na backend gamit ang Express, naging maayos ang frontend development sa React, at pinagsama lahat ng iyon ng Node.js.<br></br><br></br>Dahil may karanasan na ako sa Tailwind CSS at Zustand mula sa mga nakaraang proyekto, ipinagpatuloy ko ang paggamit nila dito. Pinabilis ng utility-first na approach ng Tailwind ang paggawa ng malinis at responsive na interface, habang pinanatiling simple ng Zustand ang state management nang hindi nagdadagdag ng sobrang kumplikadong setup.<br></br><br></br>Idinagdag ko pa ang Radix UI at Beautiful DnD para kumpleto: nagbigay ang Radix UI ng accessible at consistent na UI components agad-agad, at ginawang effortless ng Beautiful DnD ang drag-and-drop interactions—eksaktong kailangan para sa isang smooth na Kanban experience."
+      },
+      "audiophile": {
+        "title": "Audiophile E-commerce Website",
+        "description": "Isang multi-page e-commerce website na ginawa gamit ang Next.js; fully responsive at gumagamit ng local storage para i-retain ang mga item sa cart. May modernong disenyo at madaling navigation para sa mas maginhawang karanasan sa pamimili.",
+        "stackAndExplanation": "Una kong naisip gumamit ng Create React App, pero pagkatapos magbasa ng best practices pinili ko na lumipat sa Next.js. Klaro at madaling sundan ang docs, kaya confident ako na mas mapapadali nito ang proseso.<br></br><br></br>Ito rin ang pagkakataon ko para subukan ang Tailwind CSS. Sa simula, ayaw ko sa dami ng classes na nakakalat sa bawat elemento—medyo messy at mahirap tandaan. Pero habang nagpapatuloy ang proyekto, unti-unti itong naging malinaw sa akin, at ngayon nasisiyahan ako kung gaano kabilis nito pinapadali ang pag-style."
+      },
+      "pomodoro": {
+        "title": "FEM Pomodoro App",
+        "description": "Isang Pomodoro-inspired timer na ginawa bilang progressive web app para magamit offline at magbigay ng tuloy-tuloy na produktibidad. Nag-aalok ng mga customizable na opsyon sa itsura (mga tema, fonts) at nagbibigay ng real-time notification alerts para panatilihin kang naka-track.",
+        "stackAndExplanation": "Para sa proyektong ito, ginamit ko ang HTML, Sass, at JavaScript. Pinili ko ang mga teknolohiyang ito para patibayin ang aking pang-unawa sa core tools ng web development bago tumalon sa mas komplikadong frameworks. Baka magtaka ka: bakit Sass sa halip na plain CSS? Madali lang — ang pagharap sa isang napakalaking CSS file ay pwedeng maging bangungot. Sa kabilang banda, pinananatiling organisado at maayos ng Sass ang styles; kung kailangan kong baguhin ang isang estilo, hindi ko kailangang maghukay sa daan-daang linya ng code."
+      }
+    }
+  },
+  "experienceSection": {
+    "title": "Karanasan",
+    "atCompany": "@ {companyName}",
+    "experiences": {
+      "supafaya": {
+        "title": "Software Engineer",
+        "companyName": "Supafaya",
+        "date": "2024 – Kasalukuyan",
+        "descriptions": [
+          "Nag-develop ng full-stack features para sa e-commerce, event ticketing, at voting platforms",
+          "Nagawa ang product listings, payment integrations (Stripe, Xendit), at admin dashboards",
+          "Pinangunahan ang CMS development para sa Amora e-commerce at secure voting system para sa The House of Collab",
+          "Nag-integrate ng APIs sa WordPress, ImageKit, Algolia, Firebase, at Wix CMS",
+          "Nakipag-collaborate sa remote teams gamit ang Zulip at naka-coordinate sa mga designers, developers, at PMs"
+        ]
+      },
+      "staMonica": {
+        "title": "IT Staff",
+        "companyName": "Brgy Hall Sta. Monica",
+        "date": "2020 – 2022",
+        "descriptions": [
+          "Gumawa ng resident management system gamit ang Microsoft Access at VBA",
+          "In-automate ang paggawa ng mga ulat at pinadali ang data entry",
+          "Naglathala at nagpanatili ng mahahalagang community at administrative reports",
+          "Pinamahalaan ang mga request para sa resident ID mula data collection hanggang processing",
+          "Tumulong sa tech support at sa pagresolba ng mga isyung pinaiikot ng data",
+          "Nagpanatili ng maayos na mga database at ipinakita ang pagpapahalaga sa data integrity"
+        ]
+      }
+    }
+  },
+  "contactForm": {
+    "fields": {
+      "name": {
+        "label": "Pangalan",
+        "placeholder": "Juan Dela Cruz"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "juandelacruz@example.com"
+      },
+      "message": {
+        "label": "Ang Iyong Mensahe",
+        "placeholder": "hal. Kumusta! Mag-connect tayo."
+      }
+    },
+    "submit": {
+      "button": "Ipadala ang Mensahe",
+      "loading": "Ipinapadala ang Mensahe..."
+    },
+    "validation": {
+      "name": {
+        "minLength": "Ang pangalan ay dapat hindi bababa sa 2 karakter",
+        "maxLength": "Ang pangalan ay dapat mas mababa sa 50 karakter"
+      },
+      "email": {
+        "invalid": "Mangyaring maglagay ng wastong email address"
+      },
+      "message": {
+        "minLength": "Ang mensahe ay dapat hindi bababa sa 10 karakter",
+        "maxLength": "Ang mensahe ay dapat mas mababa sa 500 karakter"
+      }
+    },
+    "errors": {
+      "spamDetected": "Natukoy ang spam.",
+      "unexpectedError": "Nagkaroon ng hindi inaasahang error. Pakisubukang muli."
+    },
+    "messages": {
+      "fixErrors": "Pakiasaayos ang mga error sa form",
+      "success": "Matagumpay na naipadala ang mensahe!",
+      "submissionError": "Nagkaroon ng error habang ipinapadala ang mensahe. Pakisubukang muli."
+    }
+  },
+  "projectOverviewSection": {
+    "description": "Paglalarawan",
+    "webStackAndExplanation": "Web Stack at Pagpapaliwanag",
+    "viewCode": "Tingnan ang Code",
+    "previewProject": "I-preview ang Proyekto"
+  },
+  "projectInsightsSection": {
+    "title": "Mga Insight"
+  },
+  "otherProjectsSection": {
+    "title": "Ibang Proyekto"
+  },
+  "messageSection": {
+    "title": "Mag-message sa Akin"
+  },
+  "notFound": {
+    "subtitle": "Hindi nakita ang pahina",
+    "description": "Hindi namin makita ang hinahanap mong pahina",
+    "goHome": "Bumalik sa Tahanan"
+  },
+  "errorPage": {
+    "subtitle": "May nangyaring mali",
+    "description": "Nagkaroon ng hindi inaasahang error sa aming panig. Pakisubukang muli sa ibang sandali.",
+    "retry": "Subukang muli",
+    "goHome": "Bumalik sa Tahanan"
+  },
+  "chat": {
+    "info": {
+      "title": "Jack AI",
+      "description": "Personal na AI assistant. Magtanong tungkol kay Simon!",
+      "catchphrase": "Magtanong tungkol kay Simon!"
+    },
+    "emptyState": {
+      "greeting": "Hi, ako si Jack.",
+      "description": "Ako ang AI assistant ni Simon Camacho. Paano kita matutulungan ngayon?",
+      "jackAlt": "Jack"
+    },
+    "form": {
+      "messageLabel": "I-message si Jack",
+      "placeholder": "I-message si Jack",
+      "sendButton": "Magpadala ng mensahe"
+    },
+    "quickQuestions": {
+      "show": "Ipakita ang quick questions",
+      "hide": "Itago ang quick questions",
+      "openOtherQuestions": "Buksan ang ibang tanong",
+      "askAria": "Magtanong: {label}"
+    },
+    "otherQuestions": {
+      "title": "Ibang Tanong",
+      "description": "Hindi sigurado kung ano itanong? Pumili ng tanong sa ibaba at sasabihin ko lahat tungkol kay Simon."
+    },
+    "conversation": {
+      "aiGenerated": "Nilikhang AI, para sa sanggunian lamang"
+    },
+    "errors": {
+      "400": "⚠️ Oops, may mali sa iyong request. Paki-double check ang inilagay at subukang muli!",
+      "500": "💥 Yikes! Nagkaroon ng problema sa aming panig. Huwag mag-alala—hindi ikaw, kami. Subukan muli mamaya!",
+      "429": "⏳ Aba! Naabot mo na ang daily chat limit. Kailangan ko ng kaunting pahinga 💤. Pakisubukang muli mamaya.",
+      "toolError": "🛠️ Hmm, hindi ko ma-load ang tool ngayon. Mukhang nagpapahinga muna ito 😴. Pakisubukang muli sandali lang!",
+      "default": "❓ Hmm, may hindi inaasahang isyu. Subukan muli o bumalik ka mamaya!"
+    },
+    "questionCategories": {
+      "profile": {
+        "name": "Profile",
+        "questions": [
+          "Maaari mo bang ikuwento ang background ni Simon?",
+          "Paano nagsimula si Simon sa programming?",
+          "Ano ang nagtutulak kay Simon para patuloy na matuto?",
+          "Saan nakikita ni Simon ang sarili sa loob ng 5 taon?",
+          "Ano ang pinakamalaking lakas ni Simon?",
+          "Ano ang kahinaan na pinagtatrabahuhan ni Simon?"
+        ]
+      },
+      "professional": {
+        "name": "Propesyonal",
+        "questions": [
+          "Maaari ko bang makita ang resume ni Simon?",
+          "Saan nagtratrabaho ngayon si Simon?",
+          "Anong klaseng trabaho ang ginagawa ni Simon sa Supafaya?",
+          "Bakit mahalaga si Simon sa isang team?",
+          "Bakit dapat kunin si Simon?",
+          "Ano ang edukasyonal na background ni Simon?",
+          "Nagawa na ba ni Simon ang trabaho para sa clients o startups dati?"
+        ]
+      },
+      "projects": {
+        "name": "Mga Proyekto",
+        "questions": [
+          "Ano-anong proyekto ang ipinagmamalaki ni Simon?",
+          "Ano ang ginamit ni Simon sa paggawa ng portfolio website niya?",
+          "Nagawa na ba ni Simon ang game development?"
+        ]
+      },
+      "skills": {
+        "name": "Kasanayan",
+        "questions": [
+          "Ano ang pangunahing kasanayan ni Simon?",
+          "Anong frontend frameworks ang ginagamit ni Simon?",
+          "May backend experience ba si Simon?",
+          "Anong tools ang ginagamit ni Simon para sa design?",
+          "Paano pinananatili ni Simon ang pagiging sharp ng skills niya?"
+        ]
+      },
+      "fun": {
+        "name": "Kasiyahan",
+        "questions": [
+          "Ano paboritong pagkain ni Simon?",
+          "Naglalaro ba si Simon ng sports?",
+          "Ano ang pinakamabilis na Rubik's cube solve ni Simon?",
+          "Ano paboritong quote ni Simon?",
+          "Ano paboritong opening ni Simon sa chess?",
+          "May alaga bang pusa si Simon?",
+          "Ano ang ginagawa ni Simon para mag-enjoy bukod sa pagko-code?"
+        ]
+      },
+      "contact": {
+        "name": "Contact & Hinaharap",
+        "questions": [
+          "Anong klaseng proyekto ang interes ni Simon?",
+          "Saan nakalugar si Simon?",
+          "Open ba si Simon para sa trabaho o collaborations?",
+          "Ano ang dream project ni Simon?"
+        ]
+      }
+    },
+    "questions": {
+      "profile": {
+        "question": "Sino si Simon Camacho? Gusto ko siyang makilala.",
+        "label": "Profile"
+      },
+      "projects": {
+        "question": "Ano ang mga proyekto ni Simon?",
+        "label": "Mga Proyekto"
+      },
+      "skills": {
+        "question": "Ano ang mga kasanayan ni Simon?",
+        "label": "Mga Kasanayan"
+      },
+      "cats": {
+        "question": "May mga pusa ba si Simon? Puwede mo ba akong ikuwento tungkol sa kanila?",
+        "label": "Mga Pusa"
+      },
+      "contact": {
+        "question": "Paano ko maaabot si Simon?",
+        "label": "Contact"
+      }
+    },
+    "tools": {
+      "contact": {
+        "description": "Makipag-ugnay kay Simon—sa pamamagitan ng socials o magpadala ng mabilis na mensahe sa ibaba."
+      },
+      "projects": {
+        "description": "Tuklasin ang mga proyekto ni Simon—bawat isa ay may detalyadong paliwanag kasama ang thought process, paraan ng paglutas ng problema, at malalim na paglalarawan ng ginawa. Silipin ang portfolio para hindi lang makita kung ano ang ginawa, kundi kung paano ito ginawa."
+      },
+      "resume": {
+        "title": "Resume ni Simon",
+        "fileType": "PDF",
+        "fileSize": "1.5MB",
+        "date": "In-update Setyembre 2025",
+        "openButton": "Buksan"
+      }
+    }
+  }
+}

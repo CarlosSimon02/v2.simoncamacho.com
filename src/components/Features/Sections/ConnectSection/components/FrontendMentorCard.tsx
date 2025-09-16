@@ -1,3 +1,4 @@
+import InlineLink from "@/components/UI/Buttons/InlineLink";
 import { CubeDecoration } from "@/components/UI/Effects/Cube";
 import { cn } from "@/utils";
 import { getTranslations } from "next-intl/server";
@@ -18,7 +19,15 @@ const FrontendMentorCard = async () => {
     >
       <div>
         <h3 className="subheading mb-4 md:mb-5">{t("title")}</h3>
-        <p>{t("description")}</p>
+        <p>
+          {t.rich("description", {
+            femLink: (chunks) => (
+              <InlineLink href="https://www.frontendmentor.io/profile/CarlosSimon02">
+                {chunks}
+              </InlineLink>
+            ),
+          })}
+        </p>
         <div className="absolute -top-30 right-10">
           <CubeDecoration
             size={70}

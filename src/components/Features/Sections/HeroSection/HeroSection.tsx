@@ -75,11 +75,16 @@ const HeroSection = async ({ className }: HeroSectionProps) => {
               {t("info.description")}
             </p>
           </div>
-          <div className={cn("flex gap-4", HERO_SECTION_CONTENT_ITEM_STYLE)}>
+          <div
+            className={cn(
+              "flex flex-wrap gap-4",
+              HERO_SECTION_CONTENT_ITEM_STYLE
+            )}
+          >
             <ContactButton />
             <PillButton
               variant="accent"
-              className="flex w-full max-w-36 items-center justify-center"
+              className="flex w-full max-w-48 items-center justify-center text-nowrap"
               asChild
             >
               <a href="/simon_camacho_cv.pdf">{t("heroSection.resume")}</a>

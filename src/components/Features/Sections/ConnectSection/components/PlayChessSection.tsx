@@ -1,3 +1,4 @@
+import InlineLink from "@/components/UI/Buttons/InlineLink";
 import { CubeDecoration } from "@/components/UI/Effects/Cube";
 import { CHESS_GAMES } from "@/data/chessGames";
 import { cn } from "@/utils";
@@ -19,7 +20,15 @@ const PlayChessSection = async () => {
       <div className={cn("grid basis-[60%] gap-3 md:gap-8", PLAY_CHESS_STYLE)}>
         <div className="relative">
           <h3 className="subheading mb-4 md:mb-5">{t("title")}</h3>
-          <p>{t("description")}</p>
+          <p>
+            {t.rich("description", {
+              chessLink: (chunks) => (
+                <InlineLink href="https://www.chess.com/member/simon1129">
+                  {chunks}
+                </InlineLink>
+              ),
+            })}
+          </p>
           <div className="absolute -bottom-40 left-1/2">
             <CubeDecoration
               size={100}
