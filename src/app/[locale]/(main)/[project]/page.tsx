@@ -9,6 +9,9 @@ import { Locale } from "@/types/locale";
 import { loadProjectMDX } from "@/utils/mdxLoader";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { generateMetadata as _generateMetadata } from "./metadata";
+
+export const generateMetadata = _generateMetadata;
 
 type ProjectPageProps = {
   params: Promise<{
@@ -22,7 +25,7 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
   const projectInfo = PROJECTS.find((p) => p.slug === project);
   const t = await getTranslations(`projectsSection.projects.${project}`);
 
-  if (!project || !PROJECTS.find((p) => p.slug === project) || !projectInfo) {
+  if (!project || !projectInfo) {
     notFound();
   }
 

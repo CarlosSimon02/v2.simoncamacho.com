@@ -39,11 +39,10 @@ export const PROJECTS: Project[] = [
       "lessons learned",
       "web development",
       "portfolio",
-      "Simon Camacho",
     ],
     dateModified: "2025-07-03",
     datePublished: "2025-07-03",
-    type: "WebPage",
+    type: "article",
   },
   {
     slug: "audiophile",
@@ -76,11 +75,10 @@ export const PROJECTS: Project[] = [
       "lessons learned",
       "web development",
       "portfolio",
-      "Simon Camacho",
     ],
     dateModified: "2025-07-03",
     datePublished: "2025-07-03",
-    type: "WebPage",
+    type: "article",
   },
   {
     slug: "pomodoro",
@@ -109,11 +107,10 @@ export const PROJECTS: Project[] = [
       "lessons learned",
       "web development",
       "portfolio",
-      "Simon Camacho",
     ],
     dateModified: "2025-07-03",
     datePublished: "2025-07-03",
-    type: "WebPage",
+    type: "article",
   },
 ] as const;
 

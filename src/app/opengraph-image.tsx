@@ -1,9 +1,10 @@
+import { COMMON_DATA } from "@/data/common";
 import { getTranslations } from "next-intl/server";
 import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-export const alt = "Simon Camacho";
+export const alt = COMMON_DATA.owner;
 export const size = {
   width: 1200,
   height: 630,

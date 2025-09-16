@@ -1,11 +1,12 @@
+import { COMMON_DATA } from "@/data/common";
 import { tool } from "ai";
 import { z } from "zod";
 
 export const getSports = tool({
-  description: "This tool will show some of Simon Camacho's sports",
+  description: `This tool will show some of ${COMMON_DATA.owner}'s sports`,
   inputSchema: z.object({}),
   execute: async () => {
-    return `**Simon Camacho's favorite sports** 🏀♟️  
+    return `**${COMMON_DATA.owner}'s favorite sports** 🏀♟️  
     - **Chess** — big fan of the King's Gambit and Scandinavian Defense.  
     - **Basketball** — he's 5'10", usually plays center but secretly a shooter at heart.  
 

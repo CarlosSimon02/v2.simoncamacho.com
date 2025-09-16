@@ -1,10 +1,10 @@
+import { COMMON_DATA } from "@/data/common";
 import { SOCIALS } from "@/data/socials";
 import { tool } from "ai";
 import { z } from "zod";
 
 export const getProjects = tool({
-  description:
-    "This tool will show a list of all projects made by Simon Camacho",
+  description: `This tool will show a list of all projects made by ${COMMON_DATA.owner}`,
   inputSchema: z.object({}),
   execute: async () => {
     const githubLink = SOCIALS.find((s) => s.id === "github")?.href;

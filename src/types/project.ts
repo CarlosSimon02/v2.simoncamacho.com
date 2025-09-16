@@ -10,5 +10,5 @@ export type Project = {
   keywords: string[];
   datePublished: string;
   dateModified: string;
-  type: "WebPage";
+  type: "article";
 };

@@ -1,11 +1,13 @@
 import { DEFAULT_LANG_CODE, LANGUAGES } from "@/constants/languages";
+import { COMMON_DATA } from "@/data/common";
 import { env } from "@/env";
+import { Locale } from "@/types/locale";
 import { getTranslations } from "next-intl/server";
 
 const siteUrl = env.NEXT_PUBLIC_SITE_URL;
 
 type GenerateMetadataProps = {
-  params: Promise<{ locale?: string }>;
+  params: Promise<{ locale?: Locale }>;
 };
 
 export const generateMetadata = async ({ params }: GenerateMetadataProps) => {
@@ -24,14 +26,13 @@ export const generateMetadata = async ({ params }: GenerateMetadataProps) => {
 
   return {
     title: {
-      default: t("name"),
-      template: `%s | ${t("name")}`,
+      default: COMMON_DATA.owner,
+      template: `%s | ${COMMON_DATA.owner}`,
     },
     description: t("description"),
     generator: "Next.js",
-    applicationName: "Simon Camacho",
+    applicationName: COMMON_DATA.owner,
     keywords: [
-      "Simon Camacho",
       "web developer portfolio",
       "web developer",
       "front-end development",
@@ -55,13 +56,9 @@ export const generateMetadata = async ({ params }: GenerateMetadataProps) => {
       "web development skills",
       "coding portfolio",
       "developer portfolio",
-      "web developer Simon Camacho",
-      "Simon Camacho projects",
-      "Simon Camacho web developer",
-      "Simon Camacho portfolio",
     ],
-    authors: [{ name: "Simon Camacho", url: siteUrl }],
-    creator: "Simon Camacho",
+    authors: [{ name: COMMON_DATA.owner, url: siteUrl }],
+    creator: COMMON_DATA.owner,
     formatDetection: {
       email: true,
       address: false,
@@ -69,18 +66,18 @@ export const generateMetadata = async ({ params }: GenerateMetadataProps) => {
     },
     metadataBase: new URL(siteUrl),
     openGraph: {
-      title: t("name"),
+      title: COMMON_DATA.owner,
       description: t("description"),
       url: `${siteUrl}/${currentLang.code}`,
-      siteName: t("name"),
+      siteName: COMMON_DATA.owner,
       locale: currentLang.ogCode,
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: t("name"),
+      title: COMMON_DATA.owner,
       description: t("description"),
-      creator: "@CarlosSimonCam1",
+      creator: COMMON_DATA.twitterHandle,
     },
     alternates: {
       canonical: `${siteUrl}`,
