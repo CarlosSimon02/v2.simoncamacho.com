@@ -84,7 +84,7 @@ const HeroSection = async ({ className }: HeroSectionProps) => {
             <ContactButton />
             <PillButton
               variant="accent"
-              className="flex w-full max-w-48 items-center justify-center text-nowrap"
+              className="flex w-fit shrink-1 basis-[10rem] items-center justify-center text-nowrap"
               asChild
             >
               <a href="/simon_camacho_cv.pdf">{t("heroSection.resume")}</a>

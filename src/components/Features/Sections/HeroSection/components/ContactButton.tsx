@@ -13,7 +13,7 @@ const ContactButton = ({ className }: ContactButtonProps) => {
 
   return (
     <PillButton
-      className={cn("w-full max-w-48 text-nowrap", className)}
+      className={cn("w-fit shrink-1 basis-[10rem] text-nowrap", className)}
       onClick={() => {
         const nameInput = document.querySelector(
           "[name='name']"
