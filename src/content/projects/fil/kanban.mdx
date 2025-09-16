@@ -1,11 +1,74 @@
-# Welcome to my MDX page!
+import MDXContentWrapper from "@/components/UI/MDX/MDXContentWrapper";
+import TitleContent from "@/components/UI/MDX/TitleContent";
 
-This is some **bold** and _italics_ text.
-
-This is a list in markdown:
-
-- One
-- Two
-- Three
-
-Checkout my React component:
+<MDXContentWrapper>
+  <TitleContent title="Layunin at Hangarin">
+    Pagkatapos kong matapos ang ilang proyekto, gusto kong gumawa ng bagay na
+    talagang magpapadali ng buhay ko. Doon ko naisip ang ideya ng isang Kanban
+    web app. Kailangan ko ng mas maayos na paraan para pamahalaan ang mga
+    gawain, at parang perpektong hamon sa akin ang gumawa ng sarili kong tool.
+    Hindi lang ito para mag-praktis ng MERN stack—gusto kong bumuo ng isang
+    bagay na gagamitin ko araw-araw, at baka makatulong din sa iba para maging
+    mas organisado.
+  </TitleContent>
+  <TitleContent title="Mga Problema at Proseso ng Pag-iisip">
+    Hindi madali ang paggawa ng app na ito. Isa sa pinakamalaking hadlang ay ang
+    panatilihing naka-sync ang lahat—kapag na-update ang isang task sa isang
+    lugar, dapat agad itong makita sa iba pang parte. Sa umpisa, sinubukan kong
+    hawakan lang gamit ang built-in na state ng React, pero naging magulo agad.
+    Dito pumasok ang paggamit ko ng Zustand. Simple ang API niya, kaya madali
+    kong na-centralize ang state at hindi ko na kinabahalaang magka-out-of-step
+    ang data. Bigla, yung dating parang gulo—naging kontrolado.
+    <br />
+    Isa pang masalimuot na isyu ang performance. Napansin ko nang maaga na may
+    ilang queries sa MongoDB na mabagal, at ang pag-re-render ng malalaking
+    bahagi ng board sa React ay nagdudulot ng lag. Ang unang instinct ko ay i-
+    optimize ang React components, pero kinailangan ko ring pag-isipan muli kung
+    paano ko kino-query ang database—kunin lang ang kailangan, hindi ang lahat
+    ng sabay-sabay. Malaking tulong din ang Tailwind CSS dito. Sa halip na
+    makipaglaban sa mahabang CSS files, mabilis akong nakakagawa ng malinis at
+    responsive na layout nang hindi nagpapabigat sa app.
+    <br />
+    Dumating din ang Radix UI na may sariling hamon. Sa simula nahirapan ako na
+    magmukha ng gusto kong UI ang mga component nito, at may mga sandaling
+    naisipan ko pang palitan ito ng mas simple. Pero nang maunawaan ko kung
+    paano i-style at i-extend ng maayos, sulit naman—ang bawat parte ng UI ay
+    naging accessible, consistent, at polished, bagay na tumutugma sa layunin
+    kong maging gamitin ang app ng lahat.
+    <br />
+    Sumunod ang drag-and-drop. Hindi basta plug-and-play ang Beautiful DnD;
+    kinailangan kong alamin kung paano panatilihin ang tamang order ng tasks,
+    hawakan ang mga edge case (halimbawa, kung may item na nahuhulog sa labas ng
+    column), at pigilan ang mga “weird” na UI glitch. Medyo paumpisang clunky
+    ang mga unang version, pero sa trial-and-error—mas maingat na pag-track ng
+    indexes at pag-refine ng drop logic—nagawa ko ring magkaroon ng smooth at
+    intuitive na interactions na natural sa Kanban board.
+    <br />
+    Kung babalikan, higit pa ito sa paggawa ng task manager. Tungkol ito sa
+    pagharap sa totoong problema: pagsi-sync ng state sa buong app, pagkuha ng
+    performance mula sa frontend at backend, at pagtagumpayan ng learning curve
+    ng bagong tools. Pinilit akong mag-isip nang kritikal at umangkop. Sa huli,
+    hindi lang ako nakagawa ng app—lumakas din ang problem-solving skills ko at
+    tumibay ang pundasyon ko bilang full-stack developer.
+  </TitleContent>
+  <TitleContent title="Mga Natutunan">
+    Para sa akin, milestone ang proyektong ito. Unang beses kong ginawa mula sa
+    simula ang isang full-stack app gamit ang MERN stack, at naaalala ko pa ang
+    kilig nang nag-connect ang mga piraso—MongoDB para sa data, Express at
+    Node.js para sa backend, at React para buhayin ang frontend. Ang pag-debug
+    ng unang database query na nag-update talaga ng UI in real time—grabe, that
+    “wow, gumagana!” moment.
+    <br />
+    Natutunan ko rin ang halaga ng accessibility dahil sa Radix UI. Sa umpisa,
+    hindi ko gaanong binigyang pansin, pero pagkatapos kong basahin ang [The
+    A11Y Project](https://www.a11yproject.com), na-realize ko kung gaano
+    kahalaga ang mag-design para sa lahat. Binigyan ako ng Radix ng magandang
+    panimulang punto dahil ang mga component niya ay hindi lang
+    gumagana—inclusive pa.
+    <br />
+    At syempre, hindi ko makakalimutan ang drag-and-drop. Hindi plug-and-play
+    ang Beautiful DnD—nakipagbuno ako sa pag-order ng tasks at mga edge case.
+    Pero nung na-click namin iyon, napakakinis ng paglipat-lipat ng tasks sa
+    Kanban board—sobrang satisfying na makita iyon na gumagana sa aktwal.
+  </TitleContent>
+</MDXContentWrapper>
