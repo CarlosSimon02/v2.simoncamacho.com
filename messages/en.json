@@ -217,6 +217,11 @@
     "goHome": "Go back home"
   },
   "chat": {
+    "info": {
+      "title": "Jack AI",
+      "description": "Personal AI assistant. Ask anything about Simon!",
+      "catchphrase": "Ask anything about Simon!"
+    },
     "emptyState": {
       "greeting": "Hi, I'm Jack.",
       "description": "I'm Simon Camacho's AI assistant. How can I help you today?",

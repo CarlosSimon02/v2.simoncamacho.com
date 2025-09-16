@@ -57,7 +57,7 @@ export const generateMetadata = async ({
       creator: COMMON_DATA.twitterHandle,
     },
     alternates: {
-      canonical: projectUrl,
+      canonical: `${siteUrl}/${project}`,
       languages: LANGUAGES.reduce<Record<string, string>>((acc, lang) => {
         acc[lang.altCode] = `${siteUrl}/${lang.code}/${project}`;
         return acc;
