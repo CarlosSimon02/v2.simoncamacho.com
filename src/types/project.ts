@@ -5,6 +5,7 @@ export type Project = {
   logo: string | React.ReactNode;
   technologies: TechnologyName[];
   image: string;
+  ogImage: string;
   codeLink: string;
   previewLink: string;
   keywords: string[];

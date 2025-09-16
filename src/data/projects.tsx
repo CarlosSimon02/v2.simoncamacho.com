@@ -1,8 +1,11 @@
 import audiophile from "@/assets/projects/audiophile.png";
+import audiophileOg from "@/assets/projects/audiophileOg.png";
 import kanban from "@/assets/projects/kanban.png";
 import kanbanLogo from "@/assets/projects/kanbanLogo.png";
+import kanbanOg from "@/assets/projects/kanbanOg.png";
 import pomodoro from "@/assets/projects/pomodoro.png";
 import pomodoroLogo from "@/assets/projects/pomodoroLogo.png";
+import pomodoroOg from "@/assets/projects/pomodoroOg.png";
 import AudiophileIcon from "@/components/UI/Icons/Projects/AudiophileIcon";
 import { Project } from "@/types/project";
 
@@ -12,6 +15,7 @@ export const PROJECTS: Project[] = [
     logo: kanbanLogo.src,
     technologies: ["MongoDB", "Express.js", "React", "Node.js", "Tailwind"],
     image: kanban.src,
+    ogImage: kanbanOg.src,
     previewLink: "https://fem-kanban.onrender.com/",
     codeLink: "https://github.com/CarlosSimon02/fem-kanban-task-management",
     keywords: [
@@ -49,6 +53,7 @@ export const PROJECTS: Project[] = [
     logo: <AudiophileIcon />,
     technologies: ["Next.js", "Tailwind", "React", "CSS", "JavaScript", "HTML"],
     image: audiophile.src,
+    ogImage: audiophileOg.src,
     previewLink: "https://officialaudiophile.vercel.app/",
     codeLink:
       "https://github.com/CarlosSimon02/fem-audiophile-ecommerce-website",
@@ -85,6 +90,7 @@ export const PROJECTS: Project[] = [
     logo: pomodoroLogo.src,
     technologies: ["HTML", "Sass", "JavaScript"],
     image: pomodoro.src,
+    ogImage: pomodoroOg.src,
     previewLink: "https://fempomodoro.netlify.app/",
     codeLink: "https://github.com/CarlosSimon02/fem-pomodoro-app",
     keywords: [

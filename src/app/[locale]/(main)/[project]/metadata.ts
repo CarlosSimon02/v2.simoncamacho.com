@@ -44,6 +44,7 @@ export const generateMetadata = async ({
       description: tProject("description"),
       url: projectUrl,
       siteName: COMMON_DATA.owner,
+      images: projectInfo.ogImage,
       locale: currentLang.ogCode,
       type: projectInfo.type,
       authors: [COMMON_DATA.owner],
