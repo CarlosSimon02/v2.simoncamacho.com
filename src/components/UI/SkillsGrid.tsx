@@ -54,10 +54,15 @@ export const SkillsGridLoading = ({
 
 type SkillsGridProps = {
   className?: string;
+  cardClassName?: string;
   variant?: "default" | "small";
 };
 
-const SkillsGrid = ({ className, variant = "default" }: SkillsGridProps) => {
+const SkillsGrid = ({
+  className,
+  variant = "default",
+  cardClassName,
+}: SkillsGridProps) => {
   return (
     <div
       className={cn(
@@ -72,6 +77,7 @@ const SkillsGrid = ({ className, variant = "default" }: SkillsGridProps) => {
           key={technology.name}
           technology={technology}
           variant={variant}
+          className={cn(cardClassName)}
         />
       ))}
     </div>

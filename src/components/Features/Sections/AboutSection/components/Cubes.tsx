@@ -3,12 +3,28 @@
 import Cube from "@/components/UI/Effects/Cube";
 import useBreakpoint from "@/hooks/useBreakpoints";
 import { cn } from "@/utils";
-import { CUBE_ITEM_STYLE, CUBES_CONTAINER_CLASS } from "./constants";
-import useCubesAnimation from "./hooks/useCubesAnimation";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
+export const CUBE_ITEM_CLASS = "cube-item";
+export const CUBES_CONTAINER_CLASS = "cubes-container";
 
 const Cubes = () => {
   const isMd = useBreakpoint("md");
-  useCubesAnimation();
+
+  useGSAP(() => {
+    gsap.to(`.${CUBE_ITEM_CLASS}`, {
+      top: 0,
+      opacity: 1,
+      stagger: 0.3,
+      duration: 1,
+      ease: "back.out",
+      scrollTrigger: {
+        trigger: `.${CUBES_CONTAINER_CLASS}`,
+        start: "top 60%",
+      },
+    });
+  });
 
   return (
     <div
@@ -22,22 +38,25 @@ const Cubes = () => {
         cubeSize={isMd ? 150 : 110}
         defaultAngle={{ x: 80, y: 10 }}
         autoRotate={true}
-        className={cn("w-fit max-md:order-2 max-md:self-end", CUBE_ITEM_STYLE)}
+        className={cn(
+          "from-bottom-md w-fit max-md:order-2 max-md:self-end",
+          CUBE_ITEM_CLASS
+        )}
       />
       <Cube
         cubeSize={isMd ? 110 : 80}
         defaultAngle={{ x: 50, y: 50 }}
         autoRotate={true}
         className={cn(
-          "max-md:order-3 max-md:self-start md:self-start",
-          CUBE_ITEM_STYLE
+          "from-bottom-md max-md:order-3 max-md:self-start md:self-start",
+          CUBE_ITEM_CLASS
         )}
       />
       <Cube
         cubeSize={isMd ? 70 : 80}
         defaultAngle={{ x: 100, y: 20 }}
         autoRotate={true}
-        className={cn("max-md:order-1", CUBE_ITEM_STYLE)}
+        className={cn("from-bottom-md max-md:order-1", CUBE_ITEM_CLASS)}
       />
     </div>
   );

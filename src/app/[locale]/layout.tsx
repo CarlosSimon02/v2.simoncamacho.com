@@ -11,16 +11,11 @@ import { GSAPSetup } from "@/providers/GSAPSetup";
 import { ScrollObserver } from "@/providers/ScrollObserver";
 import "@/styles/main.css";
 import { cn } from "@/utils";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger as GSAPScrollTrigger } from "gsap/ScrollTrigger";
 import { ThemeProvider } from "next-themes";
 import NextTopLoader from "nextjs-toploader";
 import { generateMetadata as _generateMetadata } from "../metadata";
 
 const fontClasses = cn(MONTSERRAT.variable, OSWALD.variable, LEXEND.variable);
-
-gsap.registerPlugin(useGSAP, GSAPScrollTrigger);
 
 export const generateMetadata = _generateMetadata;
 
