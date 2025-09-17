@@ -16,9 +16,10 @@ import { getErrorCode } from "../utils";
 
 type OtherQuestionsProps = {
   children?: React.ReactNode;
+  onSend?: () => void;
 };
 
-const OtherQuestions = ({ children }: OtherQuestionsProps) => {
+const OtherQuestions = ({ children, onSend }: OtherQuestionsProps) => {
   const { sendMessage, status, error } = useChat();
   const t = useTranslations("chat");
   let errorCode = getErrorCode(error?.message ?? "");
@@ -64,7 +65,10 @@ const OtherQuestions = ({ children }: OtherQuestionsProps) => {
                       <DrawerClose key={idx} asChild>
                         <button
                           className="bg-pill-bg border-pill-border hover:text-accent rounded-[1.3125rem] border px-4 py-2 transition-colors hover:border-current disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:text-current"
-                          onClick={() => sendMessage({ text: q })}
+                          onClick={() => {
+                            sendMessage({ text: q });
+                            onSend?.();
+                          }}
                           disabled={
                             status === "submitted" ||
                             status === "streaming" ||

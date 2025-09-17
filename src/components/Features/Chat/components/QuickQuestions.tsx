@@ -22,9 +22,10 @@ const QuickQuestionsButton = ({
 
 type QuickQuestionsProps = {
   className?: string;
+  onSend?: () => void;
 };
 
-const QuickQuestions = ({ className }: QuickQuestionsProps) => {
+const QuickQuestions = ({ className, onSend }: QuickQuestionsProps) => {
   const { sendMessage, status, error } = useChat();
   const t = useTranslations("chat");
   const errorCode = getErrorCode(error?.message ?? "");
@@ -48,9 +49,10 @@ const QuickQuestions = ({ className }: QuickQuestionsProps) => {
             status === "streaming" ||
             errorCode === 429
           }
-          onClick={() =>
-            sendMessage({ text: t(`questions.${question.key}.question`) })
-          }
+          onClick={() => {
+            sendMessage({ text: t(`questions.${question.key}.question`) });
+            onSend?.();
+          }}
         >
           <>
             <span aria-hidden="true">{question.icon}</span>
@@ -58,7 +60,7 @@ const QuickQuestions = ({ className }: QuickQuestionsProps) => {
           </>
         </QuickQuestionsButton>
       ))}
-      <OtherQuestions>
+      <OtherQuestions onSend={onSend}>
         <QuickQuestionsButton
           aria-label={t("quickQuestions.openOtherQuestions")}
           disabled={

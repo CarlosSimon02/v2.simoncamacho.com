@@ -8,7 +8,13 @@ import { useTranslations } from "next-intl";
 import QuickQuestions from "../../QuickQuestions";
 import { useIsQuickQuestionsOpenStore } from "../stores/useIsQuickQuestionsOpenStore";
 
-const CollapsibleQuickQuestions = () => {
+type CollapsibleQuickQuestionsProps = {
+  onSend?: () => void;
+};
+
+const CollapsibleQuickQuestions = ({
+  onSend,
+}: CollapsibleQuickQuestionsProps) => {
   const { isOpen, setIsOpen } = useIsQuickQuestionsOpenStore();
   const t = useTranslations("chat.quickQuestions");
 
@@ -26,7 +32,7 @@ const CollapsibleQuickQuestions = () => {
         <span className="text-[0.75rem]">{isOpen ? t("hide") : t("show")}</span>
       </CollapsibleTrigger>
       <CollapsibleContent>
-        <QuickQuestions className="py-2" />
+        <QuickQuestions className="py-2" onSend={onSend} />
       </CollapsibleContent>
     </Collapsible>
   );

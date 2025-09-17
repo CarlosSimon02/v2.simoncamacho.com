@@ -51,6 +51,23 @@ const ConversationContent = () => {
   );
 };
 
+const StickToBottomControls = () => {
+  const t = useTranslations("chat");
+  const { scrollToBottom } = useStickToBottomContext();
+
+  return (
+    <ChatContentContainer className="pointer-events-none fixed bottom-0 left-1/2 flex w-full -translate-x-1/2 flex-col">
+      <ScrollToBottomButton className="pointer-events-auto self-center" />
+      <div className="pointer-events-auto relative flex flex-col items-center pt-5 pb-2 md:gap-1">
+        <div className="to-bg-primary absolute inset-0 -z-9 bg-gradient-to-b from-transparent to-8%" />
+        <CollapsibleQuickQuestions onSend={() => scrollToBottom()} />
+        <AIChatForm onSend={() => scrollToBottom()} />
+        <p className="text-[0.75rem]">{t("conversation.aiGenerated")}</p>
+      </div>
+    </ChatContentContainer>
+  );
+};
+
 type ScrollToBottomButtonProps = Omit<
   React.ComponentProps<typeof GhostButton>,
   "children"
@@ -60,7 +77,7 @@ const ScrollToBottomButton = ({
   className,
   ...props
 }: ScrollToBottomButtonProps) => {
-  const { isAtBottom, scrollToBottom, state } = useStickToBottomContext();
+  const { isAtBottom, scrollToBottom } = useStickToBottomContext();
 
   return (
     <GhostButton
@@ -77,8 +94,6 @@ const ScrollToBottomButton = ({
 };
 
 const Conversation = () => {
-  const t = useTranslations("chat");
-
   // Prevent body scrolling while conversation is open
   useEffect(() => {
     const originalOverflow = document.body.style.overflow;
@@ -98,15 +113,7 @@ const Conversation = () => {
         className="pointer-events-auto w-full"
       >
         <ConversationContent />
-        <ChatContentContainer className="pointer-events-none fixed bottom-0 left-1/2 flex w-full -translate-x-1/2 flex-col">
-          <ScrollToBottomButton className="pointer-events-auto self-center" />
-          <div className="pointer-events-auto relative flex flex-col items-center pt-5 pb-2 md:gap-1">
-            <div className="to-bg-primary absolute inset-0 -z-9 bg-gradient-to-b from-transparent to-8%" />
-            <CollapsibleQuickQuestions />
-            <AIChatForm />
-            <p className="text-[0.75rem]">{t("conversation.aiGenerated")}</p>
-          </div>
-        </ChatContentContainer>
+        <StickToBottomControls />
       </StickToBottom>
     </div>
   );

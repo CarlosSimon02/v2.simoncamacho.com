@@ -11,9 +11,10 @@ import { getErrorCode } from "../utils";
 
 type AIChatFormProps = {
   className?: string;
+  onSend?: () => void;
 };
 
-const AIChatForm = ({ className }: AIChatFormProps) => {
+const AIChatForm = ({ className, onSend }: AIChatFormProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const { sendMessage, status, stop, error } = useChat();
   const t = useTranslations("chat.form");
@@ -31,6 +32,7 @@ const AIChatForm = ({ className }: AIChatFormProps) => {
         const value = inputRef.current?.value ?? "";
         if (!value.trim()) return;
         sendMessage({ text: value });
+        onSend?.();
         break;
     }
 
