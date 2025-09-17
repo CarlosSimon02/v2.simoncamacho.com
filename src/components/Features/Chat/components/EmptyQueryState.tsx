@@ -55,7 +55,13 @@ const EmptyQueryState = () => {
           {t("description")}
         </p>
         {errorCode === 429 && (
-          <ErrorBubble errorCode={429} className="mr-0 rounded-bl-3xl" />
+          <ErrorBubble
+            errorCode={429}
+            className={cn(
+              "from-bottom-sm mr-0 rounded-bl-3xl",
+              CHAT_CONTENT_ITEM_CLASS
+            )}
+          />
         )}
       </div>
       <AIChatForm className={cn(CHAT_CONTENT_ITEM_CLASS, "from-bottom-sm")} />

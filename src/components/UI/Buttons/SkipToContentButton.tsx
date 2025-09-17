@@ -1,4 +1,3 @@
-import { Link } from "@/i18n/navigation";
 import { cn } from "@/utils";
 import { useTranslations } from "next-intl";
 import PillButton from "./PillButton";
@@ -16,9 +15,9 @@ const SkipToContentButton = ({
 
   return (
     <PillButton variant="primary" className={cn(className)} asChild>
-      <Link href={href} className={cn(className)}>
+      <a href={href} className={cn(className)}>
         {t("open")}
-      </Link>
+      </a>
     </PillButton>
   );
 };
