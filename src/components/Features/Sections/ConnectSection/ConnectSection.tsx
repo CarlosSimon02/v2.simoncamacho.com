@@ -4,8 +4,7 @@ import SectionTitle from "@/components/UI/SectionTitle";
 import { cn } from "@/utils";
 import { useTranslations } from "next-intl";
 import ConnectSectionAnimation from "./components/ConnectSectionAnimation";
-import FrontendMentorCard from "./components/FrontendMentorCard";
-import FrontendMentorImages from "./components/FrontendMentorImages";
+import FrontendMentorSection from "./components/FrontendMentorSection";
 import PlayChessSection from "./components/PlayChessSection";
 
 type ConnectSectionProps = {
@@ -25,10 +24,7 @@ const ConnectSection = ({ className }: ConnectSectionProps) => {
         <SectionTitle title={t("connectSection.title") as string} number={4} />
         <div className="flex flex-col gap-14 md:gap-24">
           <GetInTouch />
-          <div className="flex flex-col items-center gap-[2rem] md:flex-row-reverse md:gap-12">
-            <FrontendMentorCard />
-            <FrontendMentorImages />
-          </div>
+          <FrontendMentorSection />
           <PlayChessSection />
         </div>
       </ContentContainer>

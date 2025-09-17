@@ -4,11 +4,7 @@ import { CHESS_GAMES } from "@/data/chessGames";
 import { cn } from "@/utils";
 import { getTranslations } from "next-intl/server";
 import { lazy } from "react";
-import {
-  CHESS_BOARD_STYLE,
-  PLAY_CHESS_CUBE_STYLE,
-  PLAY_CHESS_STYLE,
-} from "../constants";
+import { CHESS_BOARD_STYLE, PLAY_CHESS_CUBE_STYLE } from "../constants";
 
 const ChessBoard = lazy(() => import("@/components/UI/ChessBoard"));
 
@@ -17,7 +13,7 @@ const PlayChessSection = async () => {
 
   return (
     <div className="flex flex-col items-center gap-[2rem] md:flex-row md:gap-12">
-      <div className={cn("grid basis-[60%] gap-3 md:gap-8", PLAY_CHESS_STYLE)}>
+      <div className={cn("grid basis-[60%] gap-3 md:gap-8")}>
         <div className="relative">
           <h3 className="subheading mb-4 md:mb-5">{t("title")}</h3>
           <p>
@@ -39,7 +35,6 @@ const PlayChessSection = async () => {
           </div>
         </div>
       </div>
-
       <div
         className={cn(
           "aspect-square w-full max-w-lg basis-[40%]",
