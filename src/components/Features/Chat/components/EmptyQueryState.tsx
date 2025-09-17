@@ -13,7 +13,7 @@ import AIChatForm from "./AIChatForm";
 import ErrorBubble from "./ConversationInterface/componentts/ErrorBubble";
 import QuickQuestions from "./QuickQuestions";
 
-const CHAT_CONTENT_ITEM_CLASS = "hero-section-content-item";
+const CHAT_CONTENT_ITEM_CLASS = "chat-content-item";
 
 const EmptyQueryState = () => {
   const { error } = useChat();

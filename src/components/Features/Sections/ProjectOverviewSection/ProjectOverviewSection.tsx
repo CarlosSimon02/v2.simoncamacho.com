@@ -1,12 +1,20 @@
+"use client";
+
 import PillButton from "@/components/UI/Buttons/PillButton";
 import ContentContainer from "@/components/UI/Containers/ContentContainer";
 import ImageWithGridBg from "@/components/UI/ImageWithGridBg";
 import TechnologyCard from "@/components/UI/TechnologyCard";
+import { CONDITIONAL_BREAKPOINTS } from "@/constants/breakpoints";
 import { TECHNOLOGIES, TechnologyName } from "@/data/technologies";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/utils";
-import { getTranslations } from "next-intl/server";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useTranslations } from "next-intl";
 import React from "react";
+
+const PROJECT_OVERVIEW_ITEM_CLASS = "project-overview-item";
+const TECHNOLOGY_ITEM_CLASS = "technology-items";
 
 type ProjectOverviewSectionProps = {
   className?: string;
@@ -23,7 +31,7 @@ type ProjectOverviewSectionProps = {
   technologies: TechnologyName[];
 };
 
-const ProjectOverviewSection = async ({
+const ProjectOverviewSection = ({
   className,
   projectName,
   description,
@@ -37,7 +45,43 @@ const ProjectOverviewSection = async ({
   stackAndExplanation,
   technologies,
 }: ProjectOverviewSectionProps) => {
-  const t = await getTranslations("projectOverviewSection");
+  const t = useTranslations("projectOverviewSection");
+
+  useGSAP(() => {
+    gsap.to(`.${PROJECT_OVERVIEW_ITEM_CLASS}`, {
+      top: 0,
+      opacity: 1,
+      duration: 2,
+      stagger: 0.1,
+      ease: "power4.out",
+    });
+
+    const mm = gsap.matchMedia();
+
+    mm.add(
+      {
+        isMd: CONDITIONAL_BREAKPOINTS.isMd,
+        isMaxMd: CONDITIONAL_BREAKPOINTS.isMaxMd,
+      },
+      (context) => {
+        const { isMd } = context.conditions as gsap.Conditions;
+
+        if (!isMd) return;
+
+        gsap.to(`.${TECHNOLOGY_ITEM_CLASS}`, {
+          top: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "back.out",
+          stagger: 0.3,
+          scrollTrigger: {
+            trigger: `.${TECHNOLOGY_ITEM_CLASS}`,
+            start: "top 70%",
+          },
+        });
+      }
+    );
+  });
 
   const techObjects = technologies
     .map((name) => TECHNOLOGIES.find((t) => t.name === name))
@@ -48,7 +92,12 @@ const ProjectOverviewSection = async ({
       sectionId="project-overview"
       className={cn("flex flex-col gap-12 md:gap-20", className)}
     >
-      <h1 className="font-montserrat text-accent flex-1 text-center text-3xl leading-none font-black md:text-4xl lg:text-5xl">
+      <h1
+        className={cn(
+          "font-montserrat text-accent from-bottom-sm flex-1 text-center text-3xl leading-none font-black md:text-4xl lg:text-5xl",
+          PROJECT_OVERVIEW_ITEM_CLASS
+        )}
+      >
         {projectName}
       </h1>
 
@@ -60,18 +109,25 @@ const ProjectOverviewSection = async ({
             image={image}
             logo={logo}
             logoAlt={logoAlt}
+            className={cn(PROJECT_OVERVIEW_ITEM_CLASS, "from-bottom-sm")}
           />
           <div className="flex flex-wrap items-stretch gap-4">
             <PillButton
               variant="outline"
-              className="flex-1 text-nowrap sm:min-w-[10.3125rem]"
+              className={cn(
+                "from-bottom-sm flex-1 text-nowrap sm:min-w-[10.3125rem]",
+                PROJECT_OVERVIEW_ITEM_CLASS
+              )}
               asChild
             >
               <Link href={codeLink}>{t("viewCode")}</Link>
             </PillButton>
             <PillButton
               variant="accent"
-              className="flex-1 text-nowrap max-sm:w-full"
+              className={cn(
+                "from-bottom-sm flex-1 text-nowrap max-sm:w-full",
+                PROJECT_OVERVIEW_ITEM_CLASS
+              )}
             >
               <Link href={previewLink}>{t("previewProject")}</Link>
             </PillButton>
@@ -101,7 +157,12 @@ const ProjectOverviewSection = async ({
           </div>
         </div>
 
-        <div className="flex w-full flex-[40%] flex-wrap items-stretch justify-center gap-3 max-md:hidden">
+        <div
+          className={cn(
+            "from-bottom-sm flex w-full flex-[40%] flex-wrap items-stretch justify-center gap-3 max-md:hidden",
+            TECHNOLOGY_ITEM_CLASS
+          )}
+        >
           {techObjects.map((technology) => (
             <TechnologyCard
               key={technology.name}
