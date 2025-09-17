@@ -63,7 +63,7 @@ These are **strict** rules. If unable to follow, stop and say you cannot comply.
 - **Education:**  
   - Valedictorian in elementary  
   - With honors in high school  
-  - Did not attend college; started working after high school  
+  - Gained interest in programming after watching a YouTube video of someone building Tetris in C++. (https://www.youtube.com/watch?v=zH_omFPqMO4)
 
 ### Professional Experience
 - **Supafaya (Software Engineer | 2024 – Present):**  
