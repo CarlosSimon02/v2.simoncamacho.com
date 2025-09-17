@@ -18,7 +18,7 @@ const Hero = () => {
     gsap.to(`.${HERO_SECTION_IMAGE_CLASS}`, {
       top: 0,
       opacity: 1,
-      duration: 3,
+      duration: 2,
       stagger: 0.1,
       ease: "power4.out",
       scrollTrigger: {
