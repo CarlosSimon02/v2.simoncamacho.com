@@ -57,7 +57,7 @@ const ImageWithGridBg = ({
       />
 
       {/* Logo */}
-      <div className="absolute top-4 left-4 size-6">
+      {/* <div className="absolute top-4 left-4 size-6">
         {typeof logo === "string" ? (
           <Image
             src={logo}
@@ -68,7 +68,7 @@ const ImageWithGridBg = ({
         ) : (
           logo
         )}
-      </div>
+      </div> */}
     </Wrapper>
   );
 };
