@@ -20,7 +20,7 @@ const ContentContainer = ({
       as={as}
       name={sectionId}
       className={cn(
-        "relative scroll-mt-[calc(var(--header-height)-0.0625rem)] overflow-clip py-12 lg:py-16 xl:!px-[var(--content-padding-x)] xl:py-20",
+        "relative scroll-mt-[calc(var(--header-height)-0.0625rem)] overflow-x-clip py-12 lg:py-16 xl:!px-[var(--content-padding-x)] xl:py-20",
         className
       )}
     >
