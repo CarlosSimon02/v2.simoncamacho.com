@@ -4,12 +4,11 @@ import TechnologiesList from "@/components/UI/TechnologiesList";
 import { EXPERIENCES } from "@/data/experiences";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/utils";
-import { useGSAP } from "@gsap/react";
 import { CalendarIcon, PaperAirplaneIcon } from "@heroicons/react/24/outline";
-import gsap from "gsap";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { EXPERIENCE_TIMELINE_ITEM_CLASS } from "../constants";
+
+export const EXPERIENCE_TIMELINE_ITEM_CLASS = "experience-timeline-item";
 
 type TimelineProps = {
   className?: string;
@@ -18,22 +17,6 @@ type TimelineProps = {
 const Timeline = ({ className }: TimelineProps) => {
   const t = useTranslations("experienceSection");
 
-  useGSAP(() => {
-    const items = gsap.utils.toArray(`.${EXPERIENCE_TIMELINE_ITEM_CLASS}`);
-    items.forEach((item) => {
-      gsap.to(item as Element, {
-        top: 0,
-        opacity: 1,
-        duration: 1.2,
-        ease: "power4.out",
-        scrollTrigger: {
-          trigger: item as Element,
-          start: "top 80%",
-        },
-      });
-    });
-  });
-
   return (
     <ol className={cn("flex flex-col gap-6 md:gap-10", className)}>
       {EXPERIENCES.map((experience) => (
@@ -41,7 +24,7 @@ const Timeline = ({ className }: TimelineProps) => {
           key={experience.key}
           className={cn(
             EXPERIENCE_TIMELINE_ITEM_CLASS,
-            "group from-bottom-xs border-b-border first:border-t-border flex gap-18 border-b pb-6 first:border-t first:pt-6 md:pb-10 md:first:pt-10"
+            "group border-b-border first:border-t-border flex gap-18 border-b pb-6 first:border-t first:pt-6 md:pb-10 md:first:pt-10"
           )}
         >
           <div className="shrink-0 basis-[7.1875rem] max-md:hidden">
