@@ -6,7 +6,7 @@ import {
 import { useChat } from "@/providers/ChatProvider";
 import { cn } from "@/utils";
 import { useTranslations } from "next-intl";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { getErrorCode } from "../utils";
 
 type AIChatFormProps = {
@@ -20,6 +20,8 @@ const AIChatForm = ({ className, onSend }: AIChatFormProps) => {
   const t = useTranslations("chat.form");
   const errorCode = getErrorCode(error?.message ?? "");
 
+  const [value, setValue] = useState<string>("");
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     switch (status) {
       case "streaming":
@@ -29,15 +31,19 @@ const AIChatForm = ({ className, onSend }: AIChatFormProps) => {
       case "ready":
       case "error":
         e.preventDefault();
-        const value = inputRef.current?.value ?? "";
-        if (!value.trim()) return;
-        sendMessage({ text: value });
+        const text = inputRef.current?.value ?? "";
+        if (!text.trim()) return;
+        sendMessage({ text });
         onSend?.();
         break;
     }
 
     if (inputRef.current) inputRef.current.value = "";
+    setValue("");
   };
+
+  const isEmpty = !value.trim();
+  const isDisabled = isEmpty || status === "submitted" || errorCode === 429;
 
   return (
     <PromptInput onSubmit={handleSubmit} className={cn("relative", className)}>
@@ -46,12 +52,15 @@ const AIChatForm = ({ className, onSend }: AIChatFormProps) => {
         className="pr-[2.53125rem] md:pr-[3.125rem]"
         placeholder={t("placeholder")}
         disabled={status === "submitted" || errorCode === 429}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          setValue(e.target.value)
+        }
       />
       <PromptInputSubmit
         aria-label={t("sendButton")}
         className="absolute top-0 right-0"
         status={status}
-        disabled={status === "submitted" || errorCode === 429}
+        disabled={isDisabled}
         onClick={() => {
           status === "streaming" && stop();
         }}
