@@ -25,6 +25,7 @@ const EmptyQueryState = () => {
             src={jackImage.src}
             alt={t("jackAlt")}
             className="size-24"
+            priority
           />
           <h1 className="font-montserrat text-accent text-3xl font-black md:text-4xl">
             {t("greeting")}

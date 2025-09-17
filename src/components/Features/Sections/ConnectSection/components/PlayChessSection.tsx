@@ -48,7 +48,7 @@ const PlayChessSection = () => {
           opacity: 1,
           duration: 1,
           ease: "back.out",
-          delay: 0.8,
+          delay: 1.2,
           scrollTrigger: {
             trigger: `.${PLAY_CHESS_CONTAINER_CLASS}`,
             start: "top 70%",
