@@ -1,18 +1,70 @@
+"use client";
+
 import InlineLink from "@/components/UI/Buttons/InlineLink";
 import { CubeDecoration } from "@/components/UI/Effects/Cube";
+import { CONDITIONAL_BREAKPOINTS } from "@/constants/breakpoints";
 import { CHESS_GAMES } from "@/data/chessGames";
 import { cn } from "@/utils";
-import { getTranslations } from "next-intl/server";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useTranslations } from "next-intl";
 import { lazy } from "react";
-import { CHESS_BOARD_STYLE, PLAY_CHESS_CUBE_STYLE } from "../constants";
+
+const PLAY_CHESS_CONTAINER_CLASS = "play-chess";
+const PLAY_CHESS_CUBE_CLASS = "play-chess-cube";
+const CHESS_BOARD_CLASS = "chess-board";
 
 const ChessBoard = lazy(() => import("@/components/UI/ChessBoard"));
 
-const PlayChessSection = async () => {
-  const t = await getTranslations("connectSection.playChess");
+const PlayChessSection = () => {
+  const t = useTranslations("connectSection.playChess");
+
+  useGSAP(() => {
+    const mm = gsap.matchMedia();
+
+    gsap.to(`.${CHESS_BOARD_CLASS}`, {
+      top: 0,
+      opacity: 1,
+      duration: 1.2,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: `.${CHESS_BOARD_CLASS}`,
+        start: "top 70%",
+      },
+    });
+
+    mm.add(
+      {
+        isMd: CONDITIONAL_BREAKPOINTS.isMd,
+        isMaxMd: CONDITIONAL_BREAKPOINTS.isMaxMd,
+      },
+      (context) => {
+        const { isMd } = context.conditions as gsap.Conditions;
+
+        if (!isMd) return;
+
+        gsap.to(`.${PLAY_CHESS_CUBE_CLASS}`, {
+          top: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "back.out",
+          delay: 0.8,
+          scrollTrigger: {
+            trigger: `.${PLAY_CHESS_CONTAINER_CLASS}`,
+            start: "top 70%",
+          },
+        });
+      }
+    );
+  });
 
   return (
-    <div className="flex flex-col items-center gap-[2rem] md:flex-row md:gap-12">
+    <div
+      className={cn(
+        "flex flex-col items-center gap-[2rem] md:flex-row md:gap-12",
+        PLAY_CHESS_CONTAINER_CLASS
+      )}
+    >
       <div className={cn("grid basis-[60%] gap-3 md:gap-8")}>
         <div className="relative">
           <h3 className="subheading mb-4 md:mb-5">{t("title")}</h3>
@@ -29,20 +81,19 @@ const PlayChessSection = async () => {
             <CubeDecoration
               size={100}
               angle={{ x: 50, y: 90 }}
-              className={PLAY_CHESS_CUBE_STYLE}
+              className={cn(PLAY_CHESS_CUBE_CLASS, "from-bottom-sm")}
               positionClass="max-md:!hidden"
             />
           </div>
         </div>
       </div>
-      <div
+      <ChessBoard
+        notations={CHESS_GAMES.ANDERSSEN_VS_KIESERITZKY_1851}
         className={cn(
-          "aspect-square w-full max-w-lg basis-[40%]",
-          CHESS_BOARD_STYLE
+          "from-bottom-sm aspect-square w-full max-w-lg basis-[40%]",
+          CHESS_BOARD_CLASS
         )}
-      >
-        <ChessBoard notations={CHESS_GAMES.ANDERSSEN_VS_KIESERITZKY_1851} />
-      </div>
+      />
     </div>
   );
 };

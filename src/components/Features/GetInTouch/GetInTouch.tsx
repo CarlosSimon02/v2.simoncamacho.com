@@ -33,7 +33,7 @@ const GetInTouch = () => {
           duration: 1,
           ease: "back.out",
           stagger: 0.3,
-          delay: 0.5, // Delay to avoid overlapping with section animation
+          delay: 0.8,
           scrollTrigger: {
             trigger: `.${GET_IN_TOUCH_CONTAINER_CLASS}`,
             start: "top 70%",

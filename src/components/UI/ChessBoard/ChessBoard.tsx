@@ -12,9 +12,10 @@ const ReactChessboard = dynamic(
 
 type ChessBoardProps = {
   notations: string;
+  className?: string;
 };
 
-const ChessBoard = ({ notations }: ChessBoardProps) => {
+const ChessBoard = ({ notations, className }: ChessBoardProps) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const { game } = useChessPlayback({
@@ -24,7 +25,7 @@ const ChessBoard = ({ notations }: ChessBoardProps) => {
   });
 
   return (
-    <div ref={containerRef}>
+    <div ref={containerRef} className={className}>
       <ReactChessboard
         key="chessboard"
         options={{
