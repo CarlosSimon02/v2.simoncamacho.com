@@ -83,18 +83,6 @@ yarn start
 yarn lint
 ```
 
----
-
-## Environment Variables 🔐
-
-This project may use environment variables for OpenAI, analytics, and other integrations. Create a `.env.local` file in the repository root and add your keys (example names — replace with real keys):
-
-```
-NEXT_PUBLIC_APP_NAME=SimonCamacho
-OPENAI_API_KEY=sk_xxx
-NEXT_PUBLIC_ANALYTICS_ID=xxxx
-```
-
 ## Deployment 🚀
 
 This site is intended to be deployed on **Vercel**. Connect the repository to Vercel, add the required environment variables in the project settings, and Vercel will run `yarn build` automatically.
