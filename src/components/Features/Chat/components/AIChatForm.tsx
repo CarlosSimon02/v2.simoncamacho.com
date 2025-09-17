@@ -4,11 +4,16 @@ import {
   PromptInputTextInput,
 } from "@/components/Features/Chat/components/PromptInput";
 import { useChat } from "@/providers/ChatProvider";
+import { cn } from "@/utils";
 import { useTranslations } from "next-intl";
 import { useRef } from "react";
 import { getErrorCode } from "../utils";
 
-const AIChatForm = () => {
+type AIChatFormProps = {
+  className?: string;
+};
+
+const AIChatForm = ({ className }: AIChatFormProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const { sendMessage, status, stop, error } = useChat();
   const t = useTranslations("chat.form");
@@ -33,7 +38,7 @@ const AIChatForm = () => {
   };
 
   return (
-    <PromptInput onSubmit={handleSubmit} className="relative">
+    <PromptInput onSubmit={handleSubmit} className={cn("relative", className)}>
       <PromptInputTextInput
         ref={inputRef}
         className="pr-[2.53125rem] md:pr-[3.125rem]"
