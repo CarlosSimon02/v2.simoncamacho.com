@@ -8,7 +8,7 @@ import { CalendarIcon, PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-export const EXPERIENCE_TIMELINE_ITEM_CLASS = "experience-timeline-item";
+const EXPERIENCE_TIMELINE_ITEM_CLASS = "experience-timeline-item";
 
 type TimelineProps = {
   className?: string;
