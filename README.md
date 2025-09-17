@@ -1,32 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Simon Camacho — Portfolio (v2) 🎨
 
-## Getting Started
+> 🌐 Live: **[https://simoncamacho.com](https://simoncamacho.com)**
 
-First, run the development server:
+Welcome to the second version of my portfolio created using Next.js. 💼✨
+
+**⚠️ Note:** This is the **2nd version** of my portfolio. The first version is in the repository `https://github.com/CarlosSimon02/simoncamacho.com` and was deployed at **old.simoncamacho.com**. 🔁🕰️
+
+![portfolio](/screenshot.png)
+
+## Demo / Live 🖥️
+
+Check the live site: **[https://simoncamacho.com](https://simoncamacho.com)** 🌟
+
+## Tech Stack 🧩
+
+- **Next.js** (React framework) ⚛️
+- **Tailwind CSS** (utility-first styling) 🎛️
+- **Vercel** (deployment) ☁️
+- **OpenAI SDK** (Vercel / OpenAI features) 🤖
+- **Radix UI** (accessible primitives) ♿
+- **GSAP** (animations) 🎬
+- **TypeScript** (typed JS) 💠
+
+## Requirements ✅
+
+- Node.js **18.18.0** or higher (recommended) 🟩
+- Yarn (this project uses `yarn` instead of `npm`) 🧶
+
+## Getting Started (Local) 🧭
+
+1. Clone the repository:
 
 ```bash
-
-yarn dev
-
+git clone https://github.com/CarlosSimon02/simoncamacho.com-v2.git
+cd simoncamacho.com-v2
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies with **yarn**:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Create a `.env.local` file for secrets (see .env.example for reference) 🔐
 
-## Learn More
+2. Run the development server:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+yarn dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Open [http://localhost:3000](http://localhost:3000) in your browser. 🖱️👀
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Available Scripts 🛠️
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Scripts in `package.json` (use `yarn`):
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```json
+"scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint"
+}
+```
+
+Usage examples:
+
+```bash
+# start dev server
+yarn dev
+
+# build for production
+yarn build
+
+# start production server (after build)
+yarn start
+
+# run linter
+yarn lint
+```
+
+---
+
+## Environment Variables 🔐
+
+This project may use environment variables for OpenAI, analytics, and other integrations. Create a `.env.local` file in the repository root and add your keys (example names — replace with real keys):
+
+```
+NEXT_PUBLIC_APP_NAME=SimonCamacho
+OPENAI_API_KEY=sk_xxx
+NEXT_PUBLIC_ANALYTICS_ID=xxxx
+```
+
+## Deployment 🚀
+
+This site is intended to be deployed on **Vercel**. Connect the repository to Vercel, add the required environment variables in the project settings, and Vercel will run `yarn build` automatically.
+
+- **Build command:** `yarn build`
+- **Output directory:** Managed by Next.js
+
+## Connect With Me
+
+- [Facebook](https://www.facebook.com/CarlosSimon02/)
+- [Linkedin](https://www.linkedin.com/in/carlossimon02/)
+- [Instagram](https://www.instagram.com/caloycowmoochi/)
+- [Frontend Mentor](https://www.frontendmentor.io/profile/CarlosSimon02)
+- carlossimon.camacho@gmail.com
