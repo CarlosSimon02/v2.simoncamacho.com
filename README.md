@@ -52,8 +52,6 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser. 🖱️👀
 
----
-
 ## Available Scripts 🛠️
 
 Scripts in `package.json` (use `yarn`):
