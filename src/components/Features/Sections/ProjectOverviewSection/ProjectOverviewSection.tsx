@@ -114,12 +114,12 @@ const ProjectOverviewSection = ({
           <div
             className={cn(
               PROJECT_OVERVIEW_ITEM_CLASS,
-              "from-bottom-sm flex flex-col gap-2"
+              "from-bottom-sm flex flex-wrap gap-2"
             )}
           >
             <PillButton
               variant="outline"
-              className={cn("flex-1 text-nowrap sm:min-w-[10.3125rem]")}
+              className={cn("flex-1 text-nowrap")}
               asChild
             >
               <Link href={codeLink}>{t("viewCode")}</Link>
