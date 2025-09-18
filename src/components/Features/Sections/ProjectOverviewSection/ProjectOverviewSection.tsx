@@ -111,23 +111,22 @@ const ProjectOverviewSection = ({
             logoAlt={logoAlt}
             className={cn(PROJECT_OVERVIEW_ITEM_CLASS, "from-bottom-sm")}
           />
-          <div className="flex flex-wrap items-stretch gap-4">
+          <div
+            className={cn(
+              PROJECT_OVERVIEW_ITEM_CLASS,
+              "from-bottom-sm flex flex-col gap-2"
+            )}
+          >
             <PillButton
               variant="outline"
-              className={cn(
-                "from-bottom-sm flex-1 text-nowrap sm:min-w-[10.3125rem]",
-                PROJECT_OVERVIEW_ITEM_CLASS
-              )}
+              className={cn("flex-1 text-nowrap sm:min-w-[10.3125rem]")}
               asChild
             >
               <Link href={codeLink}>{t("viewCode")}</Link>
             </PillButton>
             <PillButton
               variant="accent"
-              className={cn(
-                "from-bottom-sm flex-1 text-nowrap max-sm:w-full",
-                PROJECT_OVERVIEW_ITEM_CLASS
-              )}
+              className={cn("flex-1 text-nowrap max-sm:w-full")}
             >
               <Link href={previewLink}>{t("previewProject")}</Link>
             </PillButton>
