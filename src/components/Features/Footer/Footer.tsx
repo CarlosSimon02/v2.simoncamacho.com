@@ -16,7 +16,7 @@ type GitHubStats = {
 };
 
 async function getGitHubStats(
-  repo = "CarlosSimon02/v2.simoncamacho.com"
+  repo = "CarlosSimon02/www.simoncamacho.dev"
 ): Promise<GitHubStats | null> {
   "use cache";
   try {
@@ -53,7 +53,7 @@ const AboutSection = async ({ className }: AboutSectionProps) => {
     >
       <Cubes className="md:hidden" />
       <GhostButton color="primary" asChild>
-        <Link href="https://github.com/CarlosSimon02/v2.simoncamacho.com">
+        <Link href="https://github.com/CarlosSimon02/www.simoncamacho.dev">
           <div className="gap grid gap-3 transition-transform group-hover:translate-y-1">
             <div>{t("attribution")}</div>
             <div className="flex justify-center gap-8">
