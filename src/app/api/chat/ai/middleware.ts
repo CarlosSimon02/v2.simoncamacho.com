@@ -31,7 +31,7 @@ export const cacheMiddleware: LanguageModelMiddleware = {
 
     const result = await doGenerate();
 
-    redis.set(cacheKey, result);
+    // redis.set(cacheKey, result);
 
     return result;
   },
@@ -71,7 +71,7 @@ export const cacheMiddleware: LanguageModelMiddleware = {
         controller.enqueue(chunk);
       },
       flush() {
-        redis.set(cacheKey, fullResponse);
+        // redis.set(cacheKey, fullResponse);
       },
     });
 
