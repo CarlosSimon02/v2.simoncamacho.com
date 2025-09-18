@@ -250,6 +250,7 @@
       "500": "💥 Yikes! Something went wrong on our end. Don't worry—it's not you, it's me. Try again in a bit!",
       "429": "⏳ Whoa there! You've reached the daily chat limit. I need a short break 💤. Please try again later.",
       "toolError": "🛠️ Hmm, I couldn't load that tool right now. It might be taking a little nap 😴. Please try again in a moment!",
+      "422": "📝 Oops! Your message is too long. Please keep it under 200 characters and try again!",
       "default": "❓ Hmm, I ran into an unexpected issue. Let's try again or come back a little later!"
     },
     "questionCategories": {

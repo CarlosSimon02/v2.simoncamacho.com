@@ -2,7 +2,7 @@ import { cn } from "@/utils";
 import { useTranslations } from "next-intl";
 
 type ErrorBubbleProps = {
-  errorCode: 400 | 500 | 429 | "tool-error";
+  errorCode: 400 | 500 | 429 | "tool-error" | 422;
   className?: string;
 };
 
@@ -23,6 +23,9 @@ const ErrorBubble = ({ errorCode, className }: ErrorBubbleProps) => {
       break;
     case "tool-error":
       errorMessage = t("toolError");
+      break;
+    case 422:
+      errorMessage = t("422");
       break;
     default:
       errorMessage = t("default");

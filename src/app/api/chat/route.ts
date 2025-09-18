@@ -82,6 +82,20 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // Check message length limit
+    const lastMessage = messages[messages.length - 1];
+
+    if (
+      lastMessage &&
+      lastMessage.role === "user" &&
+      lastMessage.parts[0].text.length > 200
+    ) {
+      return NextResponse.json(
+        { error: "Message exceeds 200 character limit", code: 422 },
+        { status: 422 }
+      );
+    }
+
     // Locale validation
     const { searchParams } = new URL(req.url);
     const locale = searchParams.get("locale");

@@ -250,6 +250,7 @@
       "500": "💥 Yikes! Nagkaroon ng problema sa aming panig. Huwag mag-alala—hindi ikaw, kami. Subukan muli mamaya!",
       "429": "⏳ Aba! Naabot mo na ang daily chat limit. Kailangan ko ng kaunting pahinga 💤. Pakisubukang muli mamaya.",
       "toolError": "🛠️ Hmm, hindi ko ma-load ang tool ngayon. Mukhang nagpapahinga muna ito 😴. Pakisubukang muli sandali lang!",
+      "422": "📝 Naku! Masyadong mahaba ang mensahe mo. Pakitiyak na hindi lalampas sa 200 karakter at subukan muli!",
       "default": "❓ Hmm, may hindi inaasahang isyu. Subukan muli o bumalik ka mamaya!"
     },
     "questionCategories": {
