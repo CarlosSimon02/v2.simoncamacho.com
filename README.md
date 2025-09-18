@@ -1,16 +1,16 @@
 # 🚀 Simon Camacho — Portfolio (v2) 🎨
 
-> 🌐 Live: **[https://simoncamacho.com](https://simoncamacho.com)**
+> 🌐 Live: **[https://simoncamacho.dev](https://simoncamacho.dev)**
 
 Welcome to the second version of my portfolio created using Next.js. 💼✨
 
-**⚠️ Note:** This is the **2nd version** of my portfolio. The first version is in the repository `https://github.com/CarlosSimon02/simoncamacho.com` and was deployed at **old.simoncamacho.com**. 🔁🕰️
+**⚠️ Note:** This is the **2nd version** of my portfolio. The first version is in the repository `https://github.com/CarlosSimon02/simoncamacho.dev` and was deployed at **old.simoncamacho.dev**. 🔁🕰️
 
 ![portfolio](/screenshot.png)
 
 ## Demo / Live 🖥️
 
-Check the live site: **[https://simoncamacho.com](https://simoncamacho.com)** 🌟
+Check the live site: **[https://simoncamacho.dev](https://simoncamacho.dev)** 🌟
 
 ## Tech Stack 🧩
 
@@ -32,8 +32,8 @@ Check the live site: **[https://simoncamacho.com](https://simoncamacho.com)** �
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/CarlosSimon02/simoncamacho.com-v2.git
-cd simoncamacho.com-v2
+git clone https://github.com/CarlosSimon02/www.simoncamacho.dev.git
+cd www.simoncamacho.dev
 ```
 
 2. Install dependencies with **yarn**:
