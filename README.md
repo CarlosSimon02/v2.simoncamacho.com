@@ -4,7 +4,7 @@
 
 Welcome to the second version of my portfolio created using Next.js. 💼✨
 
-**⚠️ Note:** This is the **2nd version** of my portfolio. The first version is in the repository `https://github.com/CarlosSimon02/simoncamacho.dev` and was deployed at **old.simoncamacho.dev**. 🔁🕰️
+**⚠️ Note:** This is the **2nd version** of my portfolio. The first version is in the repository `https://github.com/CarlosSimon02/old.simoncamacho.dev` and was deployed at **old.simoncamacho.dev**. 🔁🕰️
 
 ![portfolio](/screenshot.png)
 
