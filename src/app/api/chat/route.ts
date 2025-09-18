@@ -51,19 +51,44 @@ const ratelimit = new Ratelimit({
 
 export async function POST(req: NextRequest) {
   try {
-    // Rate limiting
-    const ip =
-      req.headers.get("x-forwarded-for")?.split(/, /)[0] || "127.0.0.1";
-    const { success } = await ratelimit.limit(ip);
-
-    if (!success) {
+    if (req.method !== "POST") {
       return NextResponse.json(
-        { error: "Rate limit exceeded", code: 429 },
-        { status: 429 }
+        { error: "Bad request", code: 400 },
+        { status: 400 }
       );
     }
 
-    // Request validation
+    const contentType = req.headers.get("content-type") ?? "";
+    if (!contentType.includes("application/json")) {
+      return NextResponse.json(
+        { error: "Bad request", code: 400 },
+        { status: 400 }
+      );
+    }
+
+    const contentLength = Number(req.headers.get("content-length") ?? "0");
+    if (contentLength && contentLength > 200_000) {
+      return NextResponse.json(
+        { error: "Bad request", code: 400 },
+        { status: 400 }
+      );
+    }
+
+    const ip =
+      req.headers.get("x-forwarded-for")?.split(/, /)[0] || "127.0.0.1";
+
+    try {
+      const { success } = await ratelimit.limit(ip);
+      if (!success) {
+        return NextResponse.json(
+          { error: "Rate limit exceeded", code: 429 },
+          { status: 429 }
+        );
+      }
+    } catch (rlErr) {
+      console.error("Rate limit check failed, allowing request:", rlErr);
+    }
+
     let body;
     try {
       body = await req.json();
@@ -82,13 +107,13 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Check message length limit
     const lastMessage = messages[messages.length - 1];
-
+    const lastPartText = lastMessage?.parts?.[0]?.text;
     if (
       lastMessage &&
       lastMessage.role === "user" &&
-      lastMessage.parts[0].text.length > 200
+      typeof lastPartText === "string" &&
+      lastPartText.length > 200
     ) {
       return NextResponse.json(
         { error: "Message exceeds 200 character limit", code: 422 },
@@ -96,10 +121,8 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Locale validation
     const { searchParams } = new URL(req.url);
     const locale = searchParams.get("locale");
-
     if (!locale || !hasLocale(routing.locales, locale)) {
       return NextResponse.json(
         { error: "Invalid or missing locale parameter", code: 400 },
@@ -107,11 +130,9 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Message processing
     const [firstMessage, ...rest] = messages;
     const trimmedMessages = [firstMessage, ...rest.slice(-MAX_HISTORY)];
 
-    // AI response generation
     const result = streamText({
       tools,
       stopWhen: stepCountIs(2),
