@@ -127,6 +127,7 @@ const ProjectOverviewSection = ({
             <PillButton
               variant="accent"
               className={cn("flex-1 text-nowrap max-sm:w-full")}
+              asChild
             >
               <Link href={previewLink}>{t("previewProject")}</Link>
             </PillButton>
