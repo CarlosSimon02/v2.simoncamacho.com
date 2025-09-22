@@ -3,6 +3,7 @@
 import { cn, toKebabCase } from "@/utils";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useId } from "react";
 
 type SectionTitleProps = {
   title: string;
@@ -15,7 +16,8 @@ const SECTION_TITLE_CONTAINER_CLASS = "section-title-container";
 const SectionTitle = ({ title, number }: SectionTitleProps) => {
   const formattedTitle = toKebabCase(title);
   const containerClass = `${SECTION_TITLE_CONTAINER_CLASS}-${formattedTitle}`;
-  const itemClass = `${SECTION_TITLE_ITEM_CLASS}-${formattedTitle}`;
+  const id = useId();
+  const itemClass = `${SECTION_TITLE_ITEM_CLASS}-${formattedTitle}-${id}`;
 
   useGSAP(() => {
     gsap.to(`.${itemClass}`, {
